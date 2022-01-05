@@ -1,0 +1,82 @@
+/*---------------------------------- LAYOUT GENERALE */
+section.margine {
+    margin-bottom: 50px;
+}
+
+/*---------------------------------- FORM */
+form {
+    border: solid 1px black;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+/*---------------------------------- VAGONI */
+.vagone {
+    width: 300px;
+    height: 119px;
+    position: relative;
+    display: table-cell;    
+    vertical-align: middle;
+    text-align: center;
+    animation-play-state: paused;
+    background-image: url("../images/vagone.gif");
+}
+
+.move_0 {
+    animation: mymove0 5s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+.move_300 {
+    animation: mymove3 7s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+.move_600 {
+    animation: mymove6 10s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mymove0 {
+    0%   {left: 0px; top: 0px;}
+    50%  {left: 0px; top: 0px;}
+    100%  {left: 0px; top: 169px;}
+}
+@keyframes mymove3 {
+    0%   {left: 0px; top: 0px;}
+    50%  {left: 300px; top: 0px;}
+    100%  {left: 300px; top: 169px;}
+}
+@keyframes mymove6 {
+    0%   {left: 0px; top: 0px;}
+    50%  {left: 600px; top: 0px;}
+    100%  {left: 600px; top: 169px;}
+}
+
+
+/*---------------------------------- TRENO */
+.locomotiva_sx {
+    background-image: url("../images/locomotiva_sx.gif");
+}
+
+.locomotiva_dx {
+    background-image: url("../images/locomotiva_dx.gif");
+}
+
+.move_vagoni {
+    animation: mymove 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+}
