@@ -11957,6 +11957,11 @@ fieldset:disabled .btn {
   }
 }
 
+.p-6 {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -11965,6 +11970,7 @@ body {
 body .navbar {
   position: relative !important;
   z-index: 1 !important;
+  background: transparent !important;
 }
 
 body .section:nth-of-type(1) {
