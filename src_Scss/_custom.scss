@@ -1,0 +1,14 @@
+// bootstrap nodeModules
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$primary: #0074d9;
+$danger: #ff4136;
+
+
+$custom-colors: (
+  "cs-white": #ebebeb,
+  "cs-blue":  #63b7e7 ,
+  "cs-grey": #777777 
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);

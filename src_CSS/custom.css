@@ -11956,27 +11956,4 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
-
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
-body .navbar {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-body .section:nth-of-type(1) {
-  background-image: url(../assets/images/bg-1.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
-body .section:nth-of-type(2) {
-  background-image: url(../assets/images/bg-2.svg);
-  background-size: 100%;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=custom.css.map */
