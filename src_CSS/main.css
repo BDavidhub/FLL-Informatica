@@ -11985,4 +11985,8 @@ body .section:nth-of-type(2) {
   background-position: bottom;
   background-repeat: no-repeat;
 }
+
+.box-class {
+  width: 50% !important;
+}
 /*# sourceMappingURL=main.css.map */
