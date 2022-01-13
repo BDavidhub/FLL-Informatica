@@ -1,0 +1,59 @@
+
+.bar1{
+    background-color: white;
+    width:650px;
+    box-shadow:0 0 5px gray;
+    height:75px;
+    border-radius:100vw;
+    display:flex;
+    justify-content:end;
+    padding: 0;
+
+    p{
+        padding:0;
+        margin:1rem 0 0 0;
+        font-size: 0.8rem;
+    }
+    input{
+        background:none;
+        border:none;
+        padding:0.1rem 0 0 0;
+    }
+    input:focus{
+        outline:none;
+      }
+    .location{
+        width:40%;
+    }
+    div{
+        border-radius:5em;
+        padding:0.1rem 1.5rem;
+        transition:background-color 250ms ease;
+    }
+    div:hover{
+        background-color:rgb(218, 218, 218);
+    }
+    
+    .check-in, .check-out{
+        width:30%;
+      }
+      .check-out{
+        display:flex;
+        justify-content:center;
+
+          span{
+        display:flex;
+        justify-content:center;
+        align-items: center;    
+        position: absolute;
+        background:#63b7e7;
+        color:white;
+        margin-left: 7.4rem;
+        margin-top: 0.7rem;
+        height: 3rem;
+        width: 3rem;
+        border-radius:50%;
+          }
+      }
+}
+

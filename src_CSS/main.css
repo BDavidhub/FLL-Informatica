@@ -11957,6 +11957,98 @@ fieldset:disabled .btn {
   }
 }
 
+.p-6 {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+
+.bar1 {
+  background-color: white;
+  width: 650px;
+  -webkit-box-shadow: 0 0 5px gray;
+          box-shadow: 0 0 5px gray;
+  height: 75px;
+  border-radius: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 0;
+}
+
+.bar1 p {
+  padding: 0;
+  margin: 1rem 0 0 0;
+  font-size: 0.8rem;
+}
+
+.bar1 input {
+  background: none;
+  border: none;
+  padding: 0.1rem 0 0 0;
+}
+
+.bar1 input:focus {
+  outline: none;
+}
+
+.bar1 .location {
+  width: 40%;
+}
+
+.bar1 div {
+  border-radius: 5em;
+  padding: 0.1rem 1.5rem;
+  -webkit-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
+}
+
+.bar1 div:hover {
+  background-color: #dadada;
+}
+
+.bar1 .check-in, .bar1 .check-out {
+  width: 30%;
+}
+
+.bar1 .check-out {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bar1 .check-out span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background: #63b7e7;
+  color: white;
+  margin-left: 7.4rem;
+  margin-top: 0.7rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -11965,6 +12057,7 @@ body {
 body .navbar {
   position: relative !important;
   z-index: 1 !important;
+  background: transparent !important;
 }
 
 body .section:nth-of-type(1) {
@@ -11978,5 +12071,9 @@ body .section:nth-of-type(2) {
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
+}
+
+.box-class {
+  width: 50% !important;
 }
 /*# sourceMappingURL=main.css.map */
