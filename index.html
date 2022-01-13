@@ -85,24 +85,29 @@
             consectetur nemo corporis nihil!
           </p>
         </div>
+        <form action="php/TreniRicerca.php" method="post">
         <div class="bar1 container-fluid">
           <div class="location">
             <p class="fw-bold">Dove</p>
-            <input type="text" placeholder="Dove vuoi andare?">
+            <input type="text" name="fdove" placeholder="Milano..?">
           </div>
            <div class="check-in">
                 <p class="fw-bold">Destinazione</p>
-            <input type="text" placeholder="Add dates">
+            <input type="text" placeholder="Venezia..">
           </div>
           <div class="check-out">
             <nav class="check-out1">
                 <p class="fw-bold">Data</p>
-            <input type="text" id="date" placeholder="Add dates">
+            <input type="text" placeholder="17/09/2022..">
             </nav>
-            <span><i class="lni lni-search-alt"></i></span>
+            <span>
+              <input type="submit" onclick="vear();"value=" "id="searchButton">
+              <i class="lni lni-search-alt"></i>
+            </span>
           </div> 
+                 
         </div>
-        
+      </form>
       </div>
 
       <div class="section"></div>
