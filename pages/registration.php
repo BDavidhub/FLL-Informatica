@@ -19,7 +19,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
     <link rel="stylesheet" href="../src_CSS/registration.css" />
 
     <title>Log-in/Register Page</title>
@@ -32,18 +32,18 @@
         <label id="label-register" for="log-reg-show">Login</label>
         <input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
       </div>
-                
+
       <div class="register-info-box">
         <h2>Don't have an account?</h2>
         <p>Lorem ipsum dolor sit amet</p>
         <label id="label-login" for="log-login-show">Register</label>
         <input type="radio" name="active-log-panel" id="log-login-show">
       </div>
-                
+
       <div class="white-panel">
         <div class="login-show">
           <h2>LOGIN</h2>
-          <form action="./registration.php" method="post">
+          <form action="./regController.php" method="post">
           <input type="email" placeholder="Email" name="mailLog" class="email">
           <input type="password" placeholder="Password" name="passwordLog">
           <input type="submit" value="Login">
@@ -52,13 +52,12 @@
         </div>
         <div class="register-show">
           <h2>REGISTER</h2>
-          <form action="./registration.php" method="post">
+          <form action="./regController.php" method="post">
             <input type="email" placeholder="Email" name="mailReg" class="email">
             <input type="password" placeholder="Password" name="passwordReg">
             <input type="password" placeholder="Confirm Password" name="passwordCheckReg">
             <input type="submit" value="Resgister">
           </form>
-         
         </div>
       </div>
     </div>
@@ -67,24 +66,3 @@
   </body>
 </html>
 
-<?php
-
-    $mailLog = $_POST["mailLog"];
-    $passwordLog = $_POST["passwordLog"];
-
-    echo "<br>mail: ".$mailLog;
-    echo "<br>Password non encrypted: ".$passwordLog;
-    $passwordHash = password_hash($passwordLog, 
-          PASSWORD_DEFAULT);
-    echo "<br>Password encrypted".$passwordHash;
-
-    $result = password_verify($passwordLog, $passwordHash) ? true : false;
-
-    if($result){
-      echo "<br>SI";
-    }else{
-      echo "<br>NO";
-    }
-    
-
-?>

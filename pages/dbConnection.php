@@ -1,9 +1,11 @@
 <?php
+//  session_start();
 
 $host = "sql11.freemysqlhosting.net";
 $datausername = "sql11465630";
 $datapassword = "4uu4l1i4yh";
 $dbname = "sql11465630";
+
 
 $connect = mysqli_connect($host, $datausername, $datapassword, $dbname);
 
@@ -23,7 +25,7 @@ echo "fatto";
 
 // $namecheck =  mysqli_query($connect,$namecheckquery) or die("2; name check query faied"); 
 
-// if(mysqli_num_rows($namecheck) > 0)
+// if(mysqli_num_rows($namecheck) != 0)
 // {
 //     echo "3; name already exist "; // error #3, name already exist cannot register
 //     exit();
