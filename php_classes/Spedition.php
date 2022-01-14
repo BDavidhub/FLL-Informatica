@@ -1,28 +1,28 @@
 <?php
     class Spedition extends Utility
     {
-        private $arrayDiPath;
+        private $arrayOfPath;
         private $treno;
         private $timeStamp;
         private $partenza;
         
-        public function Spedition($arrayDiPath, $treno, $timeStamp, $partenza)
+        public function Spedition($arrayOfPath, $treno, $timeStamp, $partenza)
         {
             $this->Utility("spedition");
-            $this->arrayDiPath=$arrayDiPath;
+            $this->arrayDiPath=$arrayOfPath;
             $this->treno=$treno;
             $this->timeStamp=$timeStamp;
             $this->partenza=$partenza;
         }
 
-        public function getArrayDiPath()
+        public function getArrayOfPath()
         {
-            return $this->arrayDiPath;
+            return $this->arrayOfPath;
         }
 
-        public function setArrayDiPath($arrayDiPath)
+        public function setArrayOfPath($arrayOfPath)
         {
-            $this->arrayDiPath=$arrayDiPath;
+            $this->arrayOfPath=$arrayOfPath;
         }
 
         public function getTreno()
