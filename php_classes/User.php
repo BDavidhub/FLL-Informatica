@@ -1,15 +1,14 @@
 <?php
-    class User{
+    abstract class User extends Utility{
         private $mail;
         private $password;
-        private $id;
         private $telephone;
 
-        public function User($mail, $password, $id, $telephone)
+        public function User($mail, $password,$string, $telephone)
         {
             $this->mail=$mail;
             $this->password=$password;
-            $this->id=$id;
+            $this->Utility($string);
             $this->telephone=$telephone;
         }
         

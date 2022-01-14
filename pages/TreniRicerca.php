@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <!-- main css  -->
-    <link rel="stylesheet" href="../src_CSS/main.css" />
+    <!-- secondPge css  -->
+    <link rel="stylesheet" href="../src_CSS/secondPage.css" />
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
@@ -61,20 +61,19 @@
                 <div class="bar1 container-fluid">
                     <div class="location">
                         <p class="fw-bold">Dove</p>
-                        <input type="text" name="fdove" placeholder="Milano..?">
+                        <input type="text" placeholder=<?php echo "da dove " . $_POST["fdove"] ?> disabled>
                     </div>
                     <div class="check-in">
                         <p class="fw-bold">Destinazione</p>
-                        <input type="text" placeholder="Venezia..">
+                        <input type="text" placeholder="Venezia.." disabled>
                     </div>
                     <div class="check-out">
                         <nav class="check-out1">
                             <p class="fw-bold">Data</p>
-                            <input type="text" placeholder="17/09/2022..">
+                            <input type="text" placeholder="17/09/2022.." disabled>
                         </nav>
                         <span>
-                            <input type="submit" onclick="vear();" value=" " id="searchButton">
-                            <i class="lni lni-search-alt svgIcon"></i>
+                            <a href="../index.html" onclick="vear();" value=" " id="searchButton">
                         </span>
                     </div>
 
