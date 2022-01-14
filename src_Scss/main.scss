@@ -1,9 +1,9 @@
 @import "./custom";
 @import "./firstPage";
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body {
     width: 100vw;
@@ -12,14 +12,15 @@ body {
     .navbar {
         position: relative !important;
         z-index: 1 !important;
-        background: transparent !important;
+        background-image: url(../assets/images/bg-1.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
     .section {
         &:nth-of-type(1) {
             background-image: url(../assets/images/bg-1.svg);
             background-size: 100em;
             background-repeat: no-repeat;
-         
         }
         &:nth-of-type(2) {
             background-image: url(../assets/images/bg-2.svg);
@@ -30,7 +31,10 @@ body {
     }
 }
 
-
-.box-class{
+.box-class {
     width: 50% !important;
+}
+
+.dropdown-menu {
+    right: 1em;
 }

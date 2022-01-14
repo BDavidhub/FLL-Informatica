@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-blue">
         <a class="navbar-brand" href="#">
             <img src="assets/images/logo.svg" width="30" height="30" class="d-inline-block align-top m-lg-1" alt="" />
             Planck-TS
@@ -48,7 +48,7 @@
     </nav>
 
     <div id="fullpage">
-        <div class="section container-fluid">
+        <div class="section1 container-fluid">
 
             <div class="container-fluid">
                 <h1 class="display-1 text-center fw-bold">Progetto scientifico</h1>
