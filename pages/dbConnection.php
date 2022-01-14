@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
-$datausername = "root";
-$datapassword = "root";
-$dbname = "prova";
+$host = "sql11.freemysqlhosting.net";
+$datausername = "sql11465630";
+$datapassword = "4uu4l1i4yh";
+$dbname = "sql11465630";
 
 $connect = mysqli_connect($host, $datausername, $datapassword, $dbname);
 
@@ -13,17 +13,17 @@ if (mysqli_connect_errno()) {
 }
 $username = $_POST["fdove"];
 echo $username;
-$query = "INSERT INTO `cliente`(`username`) VALUES ('$username');";
+$query = "INSERT INTO `cliente`(`email`) VALUES ('$username');";
 
 mysqli_query($connect, $query) or die("4: error. insert query");
-
+echo "fatto";
 
 // check if name already exist
 // $namecheckquery = " SELECT username FROM user WHERE  username = '" . $username . "';"; 
 
 // $namecheck =  mysqli_query($connect,$namecheckquery) or die("2; name check query faied"); 
 
-// if(mysqli_num_rows($namecheck) > 0)
+// if(mysqli_num_rows($namecheck) != 0)
 // {
 //     echo "3; name already exist "; // error #3, name already exist cannot register
 //     exit();
