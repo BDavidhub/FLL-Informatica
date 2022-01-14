@@ -19,7 +19,7 @@ body {
     .section {
         &:nth-of-type(1) {
             background-image: url(../assets/images/bg-1.svg);
-            background-size: 100em;
+            background-size: 100%;
             background-repeat: no-repeat;
         }
         &:nth-of-type(2) {

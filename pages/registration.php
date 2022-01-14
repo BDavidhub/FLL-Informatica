@@ -58,7 +58,6 @@
             <input type="password" placeholder="Confirm Password" name="passwordCheckReg">
             <input type="submit" value="Resgister">
           </form>
-
         </div>
       </div>
     </div>

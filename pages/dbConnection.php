@@ -1,9 +1,11 @@
 <?php
+//  session_start();
 
 $host = "sql11.freemysqlhosting.net";
 $datausername = "sql11465630";
 $datapassword = "4uu4l1i4yh";
 $dbname = "sql11465630";
+
 
 $connect = mysqli_connect($host, $datausername, $datapassword, $dbname);
 
