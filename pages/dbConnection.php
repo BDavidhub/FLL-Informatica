@@ -23,7 +23,7 @@ mysqli_query($connect, $query) or die("4: error. insert query");
 
 // $namecheck =  mysqli_query($connect,$namecheckquery) or die("2; name check query faied"); 
 
-// if(mysqli_num_rows($namecheck) > 0)
+// if(mysqli_num_rows($namecheck) != 0)
 // {
 //     echo "3; name already exist "; // error #3, name already exist cannot register
 //     exit();
