@@ -23,7 +23,7 @@
         outline:none;
       }
     .location{
-        width:40%;
+        width:30%;
     }
     div{
         border-radius:5em;
@@ -35,7 +35,7 @@
     }
     
     .check-in, .check-out{
-        width:30%;
+        width:35%;
       }
       .check-out{
         display:flex;
@@ -53,8 +53,9 @@
         height: 3rem;
         width: 3rem;
         border-radius:50%;
-        #searchbutton{
-            cursor: pointer;
+            
+        .svgIcon{
+            pointer-events: none;
         }
           }
       }

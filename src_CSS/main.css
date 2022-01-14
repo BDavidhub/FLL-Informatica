@@ -11995,7 +11995,7 @@ fieldset:disabled .btn {
 }
 
 .bar1 .location {
-  width: 40%;
+  width: 30%;
 }
 
 .bar1 div {
@@ -12010,7 +12010,7 @@ fieldset:disabled .btn {
 }
 
 .bar1 .check-in, .bar1 .check-out {
-  width: 30%;
+  width: 35%;
 }
 
 .bar1 .check-out {
@@ -12042,8 +12042,8 @@ fieldset:disabled .btn {
   border-radius: 50%;
 }
 
-.bar1 .check-out span #searchbutton {
-  cursor: pointer;
+.bar1 .check-out span .svgIcon {
+  pointer-events: none;
 }
 
 * {
@@ -12066,7 +12066,7 @@ body .navbar {
 
 body .section:nth-of-type(1) {
   background-image: url(../assets/images/bg-1.svg);
-  background-size: 100%;
+  background-size: 100em;
   background-repeat: no-repeat;
 }
 
