@@ -34,8 +34,11 @@
                 case "box":
                     $this->id='B';
                     break;  
+                case "spedition":
+                    $this->id='S';
+                    break;
             }
-            $this->id .=rand(1000,999999);
+            $this->id .=rand(100000,999999);
         }
 
         public function getId()

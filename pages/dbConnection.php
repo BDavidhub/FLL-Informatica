@@ -14,7 +14,10 @@ if (mysqli_connect_errno()) {
 $username = $_POST["fdove"];
 echo $username;
 $query = "INSERT INTO `cliente`(`username`) VALUES ('$username');";
-mysqli_query($connect, $query) or die("4: error. insert player query");
+
+mysqli_query($connect, $query) or die("4: error. insert query");
+
+
 // check if name already exist
 // $namecheckquery = " SELECT username FROM user WHERE  username = '" . $username . "';"; 
 
