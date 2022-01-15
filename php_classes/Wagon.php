@@ -11,9 +11,8 @@
             $this->arrayOfBox=$arrayOfBox;
             $this->capacity=$capacity;
             $this->Utility("wagon");
-            $this->hubDeparture = $arrayOfBox[0];
-            $this->hubArrive = $arrayOfBox[count($arrayOfBox)-1];
-
+            $this->hubDeparture = $arrayOfBox[0]->getUserDeparture();
+            $this->hubArrive = $arrayOfBox[count($arrayOfBox)-1]->getUserDeparture();
         }
 
         public function getArrayOfBox() {
