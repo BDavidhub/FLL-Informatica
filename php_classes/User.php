@@ -13,10 +13,12 @@
         }
         
         public function getMail() {
+            //ricerca per id su database 
             return $this->mail;
         }
 
         public function setMail($mail) {
+            //uso get mail e poi cambio la mail sul database
              $this->mail = $mail;
         }
 
@@ -32,6 +34,8 @@
             return $this->id;
         }
         
+
+        //??
         public function setId($id) {
              $this->id = $id;
         }

@@ -43,7 +43,7 @@
       <div class="white-panel">
         <div class="login-show">
           <h2>LOGIN</h2>
-          <form action="./regController.php" method="post">
+          <form action="./log_Controller.php" method="post">
           <input type="email" placeholder="Email" name="mailLog" class="email">
           <input type="password" placeholder="Password" name="passwordLog">
           <input type="submit" value="Login">
@@ -52,7 +52,7 @@
         </div>
         <div class="register-show">
           <h2>REGISTER</h2>
-          <form action="./regController.php" method="post">
+          <form action="./reg_Controller.php" method="post">
             <input type="email" placeholder="Email" name="mailReg" class="email">
             <input type="password" placeholder="Password" name="passwordReg">
             <input type="password" placeholder="Confirm Password" name="passwordCheckReg">
