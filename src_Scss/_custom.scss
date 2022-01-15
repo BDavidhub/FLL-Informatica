@@ -1,19 +1,17 @@
 // bootstrap nodeModules
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-$primary: #0074d9;
+$primary:  #D4F1F4;
+$secondary: #189AB4;
+$darker: #05445E;
+$lighter: #75E6DA;
 $danger: #ff4136;
 
 
-$custom-colors: (
-  "cs-white": #ebebeb,
-  "cs-blue":  #63b7e7 ,
-  "cs-grey": #777777 
-);
+
 
 .p-6 {
   padding-left: ($spacer * 5) !important;
   padding-right: ($spacer * 5) !important;
 }
 
-$theme-colors: map-merge($theme-colors, $custom-colors);

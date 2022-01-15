@@ -2,17 +2,12 @@
     class Wagon extends Utility{
         private $arrayOfBox;
         private $capacity;
-        private $hubDeparture;
-        private $hubArrive;
-
 
         public function Wagon($arrayOfBox, $capacity)
         {
             $this->arrayOfBox=$arrayOfBox;
             $this->capacity=$capacity;
             $this->Utility("wagon");
-            $this->hubDeparture = $arrayOfBox[0]->getUserDeparture();
-            $this->hubArrive = $arrayOfBox[count($arrayOfBox)-1]->getUserDeparture();
         }
 
         public function getArrayOfBox() {
@@ -34,19 +29,6 @@
         public function calcolaSpazio()
         {
             return 1;
-        }
-        public function getHubDeparture(){
-            return $this->$hubDeparture;
-        }
-        public function sethubDeparture($hubDeparture){
-            $this->$hubDeparture=$hubDeparture;
-        }
-
-        public function getHubArrive(){
-            return $this->$hubArrive;
-        }
-        public function setHubArrive($hubArrive){
-            $this->$hubArrive=$hubArrive;
         }
 
     }

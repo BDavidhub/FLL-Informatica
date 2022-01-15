@@ -34,8 +34,12 @@
                 case "box":
                     $this->id='B';
                     break;  
+                case "spedition":
+                    $this->id='S';
+                    break;
             }
             $this->id .=rand(100000,999999);
+            //check if id already exists
         }
 
         public function getId()
@@ -48,3 +52,4 @@
             $this->id=$id;
         }
     }
+?>

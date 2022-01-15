@@ -1,35 +1,51 @@
 <?php
-    class Train extends Utility{
-        private $arrayOfWagon;
-        private $limit;
+    abstract class User extends Utility{
+        private $mail;
+        private $password;
+        private $telephone;
 
-        public function Train($arrayOfWagon, $limit)
+        public function User($mail, $password,$string, $telephone)
         {
-            $this->arrayOfWagon=$arrayOfWagon;
-            $this->limit=$limit;
-            $this->Utility("train");
+            $this->mail=$mail;
+            $this->password=$password;
+            $this->Utility($string);
+            $this->telephone=$telephone;
         }
         
-        public function getArrayOfWagon() {
-            return $this->arrayOfWagon;
+        public function getMail() {
+            //ricerca per id su database 
+            return $this->mail;
         }
 
-        public function setArrayOfWagon($arrayOfWagon) {
-             $this->arrayOfWagon = $arrayOfWagon;
+        public function setMail($mail) {
+            //uso get mail e poi cambio la mail sul database
+             $this->mail = $mail;
         }
 
-        public function getLimit() {
-            return $this->limit;
+        public function getPassword() {
+            return $this->password;
+        }
+        
+        public function setPassword($password) {
+             $this->password = $password;
         }
 
-        public function setLimit($limit) {
-             $this->limit = $limit;
+        public function getId() {
+            return $this->id;
+        }
+        
+
+        //??
+        public function setId($id) {
+             $this->id = $id;
         }
 
-        public function calcolaVagoniLiberi()
-        {
-            return 1;
+        public function getTelephone() {
+            return $this->telephone;
         }
-
+        
+        public function setTelephone($telephone) {
+             $this->telephone = $telephone;
+        }
     }
 ?>

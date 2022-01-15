@@ -1,0 +1,145 @@
+.trainNavbar{
+    margin-left: 2em;
+    color:#f7f7f7;
+    transition: color 150ms ease-in;
+}
+.trainNavbar:hover{
+    color:#424242;
+}
+.links-nav{
+    color:#f7f7f7 !important;
+    transition: color 100ms ease-in;
+}
+.links-nav:hover{
+    color:#424242 !important;
+}
+.fa-bars{
+    margin-left:0.5em;
+    color:#747474;
+}
+.fa-bars:hover{
+    color:#2c2c2c;
+    
+}
+.account-menu{
+    width:4.5em;
+    height: 2em;
+    background-color: #f7f7f7;
+    border-radius:5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .outerUser{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:1.8em;
+        height: 1.5em;
+    }
+    transition: background-color 150ms ease-in;
+}
+.account-menu:hover{
+    box-shadow:0 0 9px rgb(139, 139, 139);
+}
+.scritta{
+    position:absolute;
+    margin:0 0 5em 0;
+    top:10em;
+
+    .subtext{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .text-center1{
+            width:40%;
+        }
+    }
+}
+.bar1{
+    background-color: rgb(252, 252, 252);
+    width:700px;
+    box-shadow:0 0 5px rgb(202, 202, 202);
+    height:75px;
+    border-radius:100vw;
+    display:flex;
+    justify-content:end;
+    padding: 0;
+
+    p{
+        padding:0;
+        margin:1rem 0 0 0;
+        font-size: 0.8rem;
+    }
+    input{
+        background:none;
+        border:none;
+        padding:0.1rem 0 0 0;
+    }
+    input:focus{
+        outline:none;
+      }
+    .location{
+        width:30%;
+    }
+    div{
+        border-radius:5em;
+        padding:0.1rem 1.5rem;
+        transition:background-color 250ms ease;
+    }
+    div:hover{
+        background-color:rgb(235, 235, 235);
+    }
+    div:target,div:focus{
+        background-color:rgb(248, 248, 248);
+        box-shadow:0 0 10px rgb(201, 201, 201);
+    }
+    .check-in{
+        width:30%;
+      }
+      .check-out{
+        width:40%;
+    }
+      .check-out{
+        display:flex;
+        justify-content:center;
+
+        .check-out1{
+            input[type="date"]::-webkit-calendar-picker-indicator{
+                left     : 0;
+                margin   : 0;
+            }
+        }
+       
+        span{
+        display:flex;
+        justify-content:center;
+        align-items: center;    
+        position: absolute;
+        background:#63b7e7;
+        color:white;
+        margin-left: 13rem;
+        margin-top: 0.7rem;
+        height: 3rem;
+        width: 3rem;
+        border-radius:50%;
+        input{
+            padding: 1.2em;
+            border-radius:inherit;
+            position:absolute;
+        }
+
+          }
+      }
+}
+
+.dropdown-menu{
+    border-radius: 1rem ;
+    border:none;
+    .dropdown-item:hover,
+    .dropdown-item:focus{
+        background-color: inherit;
+        border-radius: 2rem;
+        color: rgb(160, 158, 158);
+        outline: none;
+    }
+}
