@@ -1,8 +1,62 @@
+.trainNavbar{
+    margin-left: 2em;
+    color:#f7f7f7;
+    transition: color 150ms ease-in;
+}
+.trainNavbar:hover{
+    color:#424242;
+}
+.links-nav{
+    color:#f7f7f7 !important;
+    transition: color 100ms ease-in;
+}
+.links-nav:hover{
+    color:#424242 !important;
+}
+.fa-bars{
 
+    color:#747474;
+}
+.fa-bars:hover{
+    color:#2c2c2c;
+}
+.account-menu{
+    width:4.5em;
+    height: 2em;
+    background-color: #f7f7f7;
+    border-radius:5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .outerUser{
+        width:1.8em;
+        height: 1.5em;
+    }
+    transition: background-color 150ms ease-in;
+}
+.account-menu:hover{
+    background-color: #e7e7e7;
+}
+.scritta{
+    position:absolute;
+    margin:0 0 5em 0;
+    top:10em;
+
+    .subtext{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .text-center1{
+            width:40%;
+
+        }
+    }
+
+}
 .bar1{
-    background-color: white;
+    background-color: rgb(252, 252, 252);
     width:700px;
-    box-shadow:0 0 5px gray;
+    box-shadow:0 0 5px rgb(202, 202, 202);
     height:75px;
     border-radius:100vw;
     display:flex;
@@ -31,12 +85,18 @@
         transition:background-color 250ms ease;
     }
     div:hover{
-        background-color:rgb(218, 218, 218);
+        background-color:rgb(235, 235, 235);
     }
-    
-    .check-in, .check-out{
-        width:35%;
+    div:target,div:focus{
+        background-color:rgb(248, 248, 248);
+        box-shadow:0 0 10px rgb(201, 201, 201);
+    }
+    .check-in{
+        width:30%;
       }
+      .check-out{
+        width:40%;
+    }
       .check-out{
         display:flex;
         justify-content:center;
@@ -47,22 +107,25 @@
                 margin   : 0;
             }
         }
-          span{
+       
+        span{
         display:flex;
         justify-content:center;
         align-items: center;    
         position: absolute;
         background:#63b7e7;
         color:white;
-        margin-left: 11rem;
+        margin-left: 13rem;
         margin-top: 0.7rem;
         height: 3rem;
         width: 3rem;
         border-radius:50%;
-       
-       i{
-            pointer-events: none;
+        input{
+            padding: 1.2em;
+            border-radius:inherit;
+            position:absolute;
         }
+
           }
       }
 }
