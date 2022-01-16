@@ -12028,6 +12028,10 @@ fieldset:disabled .btn {
           box-shadow: 0 0 9px #8b8b8b;
 }
 
+.text-center1 {
+  color: #f7f7f7;
+}
+
 .scritta {
   position: absolute;
   margin: 0 0 5em 0;
@@ -12177,13 +12181,11 @@ body {
 body .navbar {
   position: relative !important;
   z-index: 1 !important;
-  background-image: url(../assets/images/bg-1.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-color: #22afff;
 }
 
 body .section:nth-of-type(1) {
-  background-image: url(../assets/images/bg-1.svg);
+  background-image: url(../assets/images/Grou3.svg);
   background-size: 100%;
   background-repeat: no-repeat;
 }

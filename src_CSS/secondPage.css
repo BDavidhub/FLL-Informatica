@@ -12028,6 +12028,10 @@ fieldset:disabled .btn {
           box-shadow: 0 0 9px #8b8b8b;
 }
 
+.text-center1 {
+  color: #f7f7f7;
+}
+
 .scritta {
   position: absolute;
   margin: 0 0 5em 0;
@@ -12050,7 +12054,7 @@ fieldset:disabled .btn {
 
 .bar1 {
   background-color: #fcfcfc;
-  width: 700px;
+  width: 800px;
   -webkit-box-shadow: 0 0 5px #cacaca;
           box-shadow: 0 0 5px #cacaca;
   height: 75px;
@@ -12102,20 +12106,20 @@ fieldset:disabled .btn {
 }
 
 .bar1 .check-in {
-  width: 30%;
+  width: 20%;
 }
 
 .bar1 .check-out {
-  width: 40%;
+  width: 60%;
 }
 
 .bar1 .check-out {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .bar1 .check-out .check-out1 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -12143,8 +12147,9 @@ fieldset:disabled .btn {
   border-radius: 50%;
 }
 
-.bar1 .check-out span input {
-  padding: 1.2em;
+.bar1 .check-out span a {
+  white-space: nowrap;
+  padding: 5em;
   border-radius: inherit;
   position: absolute;
 }
@@ -12177,8 +12182,13 @@ body {
 body .navbar {
   position: relative !important;
   z-index: 1 !important;
-  background-image: url(../assets/images/bg-1.svg);
+  background-color: #22afff;
+}
+
+body .section:nth-of-type(2) {
+  background-image: url(../assets/images/bg-2.svg);
   background-size: 100%;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 

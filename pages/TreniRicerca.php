@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <!-- secondPge css  -->
+    <!-- main css  -->
     <link rel="stylesheet" href="../src_CSS/secondPage.css" />
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
@@ -15,29 +15,42 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <!--style="background-color: rgba(230, 230, 230,0) !important; -->
         <a class="navbar-brand" href="#">
-            <img src="assets/images/logo.svg" width="30" height="30" class="d-inline-block align-top m-lg-1" alt="" />
-            Planck-TS
+            <!-- <img
+          src="assets/images/logo.svg"
+          width="30"
+          height="30"
+          class="d-inline-block align-top m-lg-1"
+          alt=""
+        />
+        FLL -->
+            <h3 class="trainNavbar fw-bold">TRAIN</h3>
         </a>
 
-        <div class="collapse navbar-collapse justify-content-end m-2" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-end align-content-center m-2" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto p-1 mx-5">
                 <li class="nav-item active mx-2">
-                    <a class="nav-link" href="#section1">Home</a>
+                    <a class="nav-link fw-bolder links-nav" href="#section1">HOME</a>
                 </li>
 
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="#section2">Projects</a>
+                    <a class="nav-link fw-bolder links-nav" href="#section2">PROJECTS</a>
                 </li>
 
                 <li class="nav-item dropdown mx-2">
                     <a class="nav-link fw-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-bars "></i>
+                        <div class="account-menu">
+                            <i class="fas fa-bars"></i>
+                            <div class="outerUser">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Log-In</a>
-                        <a class="dropdown-item" href="#">Register</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
+                        <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something1</a>
                         <a class="dropdown-item" href="#">Something2</a>
@@ -48,37 +61,33 @@
     </nav>
 
     <div id="fullpage">
-        <div class="section1 container-fluid">
 
-            <div class="container-fluid">
-                <h1 class="display-1 text-center fw-bold">Progetto scientifico</h1>
-                <p class="text-center">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                    consectetur nemo corporis nihil!
-                </p>
-            </div>
-            <form action="php/TreniRicerca.php" method="post">
-                <div class="bar1 container-fluid">
-                    <div class="location">
-                        <p class="fw-bold">Dove</p>
-                        <input type="text" placeholder=<?php echo "da dove " . $_POST["fdove"] ?> disabled>
-                    </div>
-                    <div class="check-in">
-                        <p class="fw-bold">Destinazione</p>
-                        <input type="text" placeholder="Venezia.." disabled>
-                    </div>
-                    <div class="check-out">
-                        <nav class="check-out1">
-                            <p class="fw-bold">Data</p>
-                            <input type="text" placeholder="17/09/2022.." disabled>
-                        </nav>
-                        <span>
-                            <a href="../index.html" onclick="vear();" value=" " id="searchButton">
-                        </span>
-                    </div>
+        <div class="section container-fluid">
 
+            <div class="bar1 container-fluid">
+                <div class="location">
+                    <p class="fw-bold">Dove</p>
+                    <input type="text" name="fdove" placeholder="Milano..? " disabled>
                 </div>
-            </form>
+                <div class="check-in">
+                    <p class="fw-bold">Destinazione</p>
+                    <input type="text" placeholder="Venezia.." disabled>
+                </div>
+                <div class="check-out">
+                    <nav class="check-out1">
+                        <p class="fw-bold">Data</p>
+                        <input type="date" value="2022-01-22" min="2022-01-01" max="2023-01-01" disabled>
+                    </nav>
+                    <span>
+                        <a onclick="vear();">
+                            <h6> CAMBIO RICERCA</h6>
+                        </a>
+
+                    </span>
+                </div>
+
+            </div>
+
         </div>
 
         <div class="section"></div>
@@ -94,5 +103,3 @@
 </body>
 
 </html>
-<?php
-echo "da dove " . $_POST["fdove"];

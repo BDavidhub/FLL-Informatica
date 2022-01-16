@@ -12,15 +12,15 @@ body {
     .navbar {
         position: relative !important;
         z-index: 1 !important;
-        background-image: url(../assets/images/bg-1.svg);
-        background-size: 100%;
-        background-repeat: no-repeat;
+        background-color:rgba(34, 175, 255, 1)
+
     }
     .section {
         &:nth-of-type(1) {
-            background-image: url(../assets/images/bg-1.svg);
+            background-image: url(../assets/images/Grou3.svg);
             background-size: 100%;
             background-repeat: no-repeat;
+
         }
         &:nth-of-type(2) {
             background-image: url(../assets/images/bg-2.svg);
