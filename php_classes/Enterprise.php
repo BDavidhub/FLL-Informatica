@@ -4,7 +4,7 @@
         private $vat;
         private $accountingAdress;
 
-        public function Enterprise($mail, $password, $telephone, $companyName, $vat, $accountingAdress)
+        public function __construct($mail, $password, $telephone, $companyName, $vat, $accountingAdress)
         {
             $this->User($mail,$password,"enterprise",$telephone);
             $this->companyName=$companyName;

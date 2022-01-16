@@ -6,7 +6,7 @@
         private $timeStamp;
         private $partenza;
         
-        public function Spedition($arrayOfPath, $treno, $timeStamp, $partenza)
+        public function __construct($arrayOfPath, $treno, $timeStamp, $partenza)
         {
             $this->Utility("spedition");
             $this->arrayDiPath=$arrayOfPath;

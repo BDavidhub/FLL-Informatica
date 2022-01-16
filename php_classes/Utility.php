@@ -3,7 +3,7 @@
     {
         private $id;
         
-        public function Utility($string)
+        public function __construct($string)
         {
             switch($string)
             {

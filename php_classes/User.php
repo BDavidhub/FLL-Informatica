@@ -1,14 +1,15 @@
 <?php
+    require_once('Utility.php');
     abstract class User extends Utility{
         private $mail;
         private $password;
         private $telephone;
 
-        public function User($mail, $password,$string, $telephone)
+        public function __construct($mail, $password,$string, $telephone)
         {
             $this->mail=$mail;
             $this->password=$password;
-            $this->Utility($string);
+            parent::__construct($string);
             $this->telephone=$telephone;
         }
         
