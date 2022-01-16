@@ -3,7 +3,7 @@
     {
         private $arrayOfHub;
         
-        public function Path($arrayOfHub)
+        public function __construct($arrayOfHub)
         {
             $this->Utility("path");
             $this->arrayOfHub=$arrayOfHub;

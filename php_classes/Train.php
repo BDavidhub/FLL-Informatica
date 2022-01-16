@@ -3,7 +3,7 @@
         private $arrayOfWagon;
         private $limit;
 
-        public function Train($arrayOfWagon, $limit)
+        public function __construct($arrayOfWagon, $limit)
         {
             $this->arrayOfWagon=$arrayOfWagon;
             $this->limit=$limit;

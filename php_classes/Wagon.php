@@ -3,7 +3,7 @@
         private $arrayOfBox;
         private $capacity;
 
-        public function Wagon($arrayOfBox, $capacity)
+        public function __construct($arrayOfBox, $capacity)
         {
             $this->arrayOfBox=$arrayOfBox;
             $this->capacity=$capacity;
