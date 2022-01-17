@@ -4,7 +4,7 @@
         private $surname;
         private $accountingAdress;
 
-        public function _Private($mail, $password, $telephone, $name, $surname, $accountingAdress)
+        public function __construct($mail, $password, $telephone, $name, $surname, $accountingAdress)
         {
             $this->User($mail,$password,"private",$telephone);
             $this->name=$name;

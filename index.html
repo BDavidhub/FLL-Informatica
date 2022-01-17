@@ -26,7 +26,8 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgba(230, 230, 230,0) !important; ">
+
+     <nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
       <a class="navbar-brand" href="#">
         <!-- <img
           src="assets/images/logo.svg"
@@ -70,7 +71,8 @@
             </div>
             </a>
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./pages/registration.php">Sign-in</a>
+              <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
+              <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something1</a>
               <a class="dropdown-item" href="#">Something2</a>
@@ -81,10 +83,11 @@
     </nav>
 
     <div id="fullpage">
+
       <div class="section container-fluid">
-    
+       
         <div class="container-fluid scritta">
-          <h1 class="display-1 text-center fw-bold">SPEDIZIONI ULTRA VELOCI</h1>
+          <h1 class="display-1 text-center1 text-center fw-bold">SPEDIZIONI ULTRA VELOCI</h1>
           <div class="subtext">
           <p class="text-center fw-bolder text-center1">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
@@ -94,21 +97,21 @@
           </p>
         </div>
         </div>
-        <form action="pages/dbConnection.php" method="post">
+        <form action="pages/TreniRicerca.php" method="post">
         <div class="bar1 container-fluid">
           <div class="location">
             <p class="fw-bold">Dove</p>
-            <input type="text" name="fdove" placeholder="Milano..?">
+            <input type="text" name="fdove" placeholder="Milano..?" required>
           </div>
            <div class="check-in">
                 <p class="fw-bold">Destinazione</p>
-            <input type="text" placeholder="Venezia..">
+            <input type="text" name="fdestinazione" placeholder="Venezia.." required>
           </div>
           <div class="check-out">
             <nav class="check-out1">
                 <p class="fw-bold">Data</p>
-            <input type="date" value="2022-01-22"
-            min="2022-01-01" max="2023-01-01">
+            <input type="date" name="fdata" value="2022-01-22"
+            min="2022-01-01" max="2023-01-01" required>
             </nav>
             <span>
               <input type="submit" onclick="vear();"value=" "id="searchButton">

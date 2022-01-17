@@ -11984,6 +11984,7 @@ fieldset:disabled .btn {
 }
 
 .fa-bars {
+  margin-left: 0.5em;
   color: #747474;
 }
 
@@ -12009,12 +12010,26 @@ fieldset:disabled .btn {
 }
 
 .account-menu .outerUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 1.8em;
   height: 1.5em;
 }
 
 .account-menu:hover {
-  background-color: #e7e7e7;
+  -webkit-box-shadow: 0 0 9px #8b8b8b;
+          box-shadow: 0 0 9px #8b8b8b;
+}
+
+.text-center1 {
+  color: #f7f7f7;
 }
 
 .scritta {
@@ -12037,7 +12052,15 @@ fieldset:disabled .btn {
   width: 40%;
 }
 
+@media (max-width: 1200px) {
+  .scritta .subtext p {
+    font-size: 0.8em;
+  }
+}
+
 .bar1 {
+  position: relative;
+  margin-top: 8em;
   background-color: #fcfcfc;
   width: 700px;
   -webkit-box-shadow: 0 0 5px #cacaca;
@@ -12138,6 +12161,19 @@ fieldset:disabled .btn {
   position: absolute;
 }
 
+.dropdown-menu {
+  border-radius: 1rem;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: inherit;
+  border-radius: 2rem;
+  color: #a09e9e;
+  outline: none;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -12153,20 +12189,20 @@ body {
 body .navbar {
   position: relative !important;
   z-index: 1 !important;
-  background-image: url(../assets/images/bg-1.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-color: #22afff;
 }
 
 body .section:nth-of-type(1) {
-  background-image: url(../assets/images/bg-1.svg);
-  background-size: 100%;
+  width: 100%;
+  background-image: url(../assets/images/GroupFinal.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 body .section:nth-of-type(2) {
   background-image: url(../assets/images/bg-2.svg);
   background-size: 100%;
+  height: 90%;
   background-position: bottom;
   background-repeat: no-repeat;
 }

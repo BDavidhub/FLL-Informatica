@@ -3,14 +3,16 @@
     {
         private $arrayOfPath;
         private $treno;
-        private $timeStampPartenza;
+        private $timeStamp;
+        private $partenza;
         
-        public function Spedition($arrayOfPath, $treno, $timeStampPartenza)
+        public function __construct($arrayOfPath, $treno, $timeStamp, $partenza)
         {
             $this->Utility("spedition");
             $this->arrayDiPath=$arrayOfPath;
             $this->treno=$treno;
-            $this->timeStamp=$timeStampPartenza;
+            $this->timeStamp=$timeStamp;
+            $this->partenza=$partenza;
         }
 
         public function getArrayOfPath()
@@ -33,14 +35,24 @@
             $this->treno=$treno;
         }
 
-        public function getTimeStampPartenza()
+        public function getTimeStamp()
         {
-            return $this->timeStampPartenza;
+            return $this->timeStamp;
         }
 
-        public function setTimeStampPartenza($timeStampPartenza)
+        public function setTimeStamp($timeStamp)
         {
-            $this->timeStampPartenza=$timeStampPartenza;
+            $this->timeStamp=$timeStamp;
+        }
+
+        public function getPartenza()
+        {
+            return $this->partenza;
+        }
+
+        public function setPartenza($partenza)
+        {
+            $this->partenza=$partenza;
         }
 
     }

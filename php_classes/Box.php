@@ -4,7 +4,7 @@
         private $userArrive;
         private $dimension;
 
-        public function Box($userDeparture, $userArrive, $dimension)
+        public function __construct($userDeparture, $userArrive, $dimension)
         {
             $this->userDeparture=$userDeparture;
             $this->userArrive=$userArrive;

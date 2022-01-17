@@ -1,5 +1,5 @@
 @import "./custom";
-@import "./firstPage";
+@import "./firstPage1";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,11 +12,18 @@ body {
     .navbar {
         position: relative !important;
         z-index: 1 !important;
-        background-image: url(../assets/images/bg-1.svg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
+        background-color:rgba(34, 175, 255, 1)
 
+    }
+    .section {
+
+        &:nth-of-type(2) {
+            background-image: url(../assets/images/bg-2.svg);
+            background-size: 100%;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+    }
 }
 
 .box-class {

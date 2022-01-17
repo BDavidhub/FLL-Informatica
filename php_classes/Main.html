@@ -1,0 +1,388 @@
+Udine - Treviso - Padova - Bologna - Firenze: distance 17<pre>object(Doctrine\OrientDB\Graph\Graph)#15 (1) {
+  ["vertices":protected]=>
+  array(7) {
+    ["Udine"]=>
+    object(Doctrine\OrientDB\Graph\Vertex)#8 (5) {
+      ["id":protected]=>
+      string(5) "Udine"
+      ["potential":protected]=>
+      NULL
+      ["potentialFrom":protected]=>
+      NULL
+      ["connections":protected]=>
+      array(1) {
+        ["Treviso"]=>
+        int(5)
+      }
+      ["passed":protected]=>
+      bool(true)
+    }
+    ["Treviso"]=>
+    object(Doctrine\OrientDB\Graph\Vertex)#9 (5) {
+      ["id":protected]=>
+      string(7) "Treviso"
+      ["potential":protected]=>
+      int(5)
+      ["potentialFrom":protected]=>
+      object(Doctrine\OrientDB\Graph\Vertex)#8 (5) {
+        ["id":protected]=>
+        string(5) "Udine"
+        ["potential":protected]=>
+        NULL
+        ["potentialFrom":protected]=>
+        NULL
+        ["connections":protected]=>
+        array(1) {
+          ["Treviso"]=>
+          int(5)
+        }
+        ["passed":protected]=>
+        bool(true)
+      }
+      ["connections":protected]=>
+      array(1) {
+        ["Padova"]=>
+        int(4)
+      }
+      ["passed":protected]=>
+      bool(true)
+    }
+    ["Padova"]=>
+    object(Doctrine\OrientDB\Graph\Vertex)#10 (5) {
+      ["id":protected]=>
+      string(6) "Padova"
+      ["potential":protected]=>
+      int(9)
+      ["potentialFrom":protected]=>
+      object(Doctrine\OrientDB\Graph\Vertex)#9 (5) {
+        ["id":protected]=>
+        string(7) "Treviso"
+        ["potential":protected]=>
+        int(5)
+        ["potentialFrom":protected]=>
+        object(Doctrine\OrientDB\Graph\Vertex)#8 (5) {
+          ["id":protected]=>
+          string(5) "Udine"
+          ["potential":protected]=>
+          NULL
+          ["potentialFrom":protected]=>
+          NULL
+          ["connections":protected]=>
+          array(1) {
+            ["Treviso"]=>
+            int(5)
+          }
+          ["passed":protected]=>
+          bool(true)
+        }
+        ["connections":protected]=>
+        array(1) {
+          ["Padova"]=>
+          int(4)
+        }
+        ["passed":protected]=>
+        bool(true)
+      }
+      ["connections":protected]=>
+      array(1) {
+        ["Bologna"]=>
+        int(5)
+      }
+      ["passed":protected]=>
+      bool(true)
+    }
+    ["Bologna"]=>
+    object(Doctrine\OrientDB\Graph\Vertex)#11 (5) {
+      ["id":protected]=>
+      string(7) "Bologna"
+      ["potential":protected]=>
+      int(14)
+      ["potentialFrom":protected]=>
+      object(Doctrine\OrientDB\Graph\Vertex)#10 (5) {
+        ["id":protected]=>
+        string(6) "Padova"
+        ["potential":protected]=>
+        int(9)
+        ["potentialFrom":protected]=>
+        object(Doctrine\OrientDB\Graph\Vertex)#9 (5) {
+          ["id":protected]=>
+          string(7) "Treviso"
+          ["potential":protected]=>
+          int(5)
+          ["potentialFrom":protected]=>
+          object(Doctrine\OrientDB\Graph\Vertex)#8 (5) {
+            ["id":protected]=>
+            string(5) "Udine"
+            ["potential":protected]=>
+            NULL
+            ["potentialFrom":protected]=>
+            NULL
+            ["connections":protected]=>
+            array(1) {
+              ["Treviso"]=>
+              int(5)
+            }
+            ["passed":protected]=>
+            bool(true)
+          }
+          ["connections":protected]=>
+          array(1) {
+            ["Padova"]=>
+            int(4)
+          }
+          ["passed":protected]=>
+          bool(true)
+        }
+        ["connections":protected]=>
+        array(1) {
+          ["Bologna"]=>
+          int(5)
+        }
+        ["passed":protected]=>
+        bool(true)
+      }
+      ["connections":protected]=>
+      array(2) {
+        ["Firenze"]=>
+        int(3)
+        ["Milano"]=>
+        int(4)
+      }
+      ["passed":protected]=>
+      bool(true)
+    }
+    ["Firenze"]=>
+    object(Doctrine\OrientDB\Graph\Vertex)#12 (5) {
+      ["id":protected]=>
+      string(7) "Firenze"
+      ["potential":protected]=>
+      int(17)
+      ["potentialFrom":protected]=>
+      object(Doctrine\OrientDB\Graph\Vertex)#11 (5) {
+        ["id":protected]=>
+        string(7) "Bologna"
+        ["potential":protected]=>
+        int(14)
+        ["potentialFrom":protected]=>
+        object(Doctrine\OrientDB\Graph\Vertex)#10 (5) {
+          ["id":protected]=>
+          string(6) "Padova"
+          ["potential":protected]=>
+          int(9)
+          ["potentialFrom":protected]=>
+          object(Doctrine\OrientDB\Graph\Vertex)#9 (5) {
+            ["id":protected]=>
+            string(7) "Treviso"
+            ["potential":protected]=>
+            int(5)
+            ["potentialFrom":protected]=>
+            object(Doctrine\OrientDB\Graph\Vertex)#8 (5) {
+              ["id":protected]=>
+              string(5) "Udine"
+              ["potential":protected]=>
+              NULL
+              ["potentialFrom":protected]=>
+              NULL
+              ["connections":protected]=>
+              array(1) {
+                ["Treviso"]=>
+                int(5)
+              }
+              ["passed":protected]=>
+              bool(true)
+            }
+            ["connections":protected]=>
+            array(1) {
+              ["Padova"]=>
+              int(4)
+            }
+            ["passed":protected]=>
+            bool(true)
+          }
+          ["connections":protected]=>
+          array(1) {
+            ["Bologna"]=>
+            int(5)
+          }
+          ["passed":protected]=>
+          bool(true)
+        }
+        ["connections":protected]=>
+        array(2) {
+          ["Firenze"]=>
+          int(3)
+          ["Milano"]=>
+          int(4)
+        }
+        ["passed":protected]=>
+        bool(true)
+      }
+      ["connections":protected]=>
+      array(0) {
+      }
+      ["passed":protected]=>
+      bool(true)
+    }
+    ["Milano"]=>
+    object(Doctrine\OrientDB\Graph\Vertex)#13 (5) {
+      ["id":protected]=>
+      string(6) "Milano"
+      ["potential":protected]=>
+      int(18)
+      ["potentialFrom":protected]=>
+      object(Doctrine\OrientDB\Graph\Vertex)#11 (5) {
+        ["id":protected]=>
+        string(7) "Bologna"
+        ["potential":protected]=>
+        int(14)
+        ["potentialFrom":protected]=>
+        object(Doctrine\OrientDB\Graph\Vertex)#10 (5) {
+          ["id":protected]=>
+          string(6) "Padova"
+          ["potential":protected]=>
+          int(9)
+          ["potentialFrom":protected]=>
+          object(Doctrine\OrientDB\Graph\Vertex)#9 (5) {
+            ["id":protected]=>
+            string(7) "Treviso"
+            ["potential":protected]=>
+            int(5)
+            ["potentialFrom":protected]=>
+            object(Doctrine\OrientDB\Graph\Vertex)#8 (5) {
+              ["id":protected]=>
+              string(5) "Udine"
+              ["potential":protected]=>
+              NULL
+              ["potentialFrom":protected]=>
+              NULL
+              ["connections":protected]=>
+              array(1) {
+                ["Treviso"]=>
+                int(5)
+              }
+              ["passed":protected]=>
+              bool(true)
+            }
+            ["connections":protected]=>
+            array(1) {
+              ["Padova"]=>
+              int(4)
+            }
+            ["passed":protected]=>
+            bool(true)
+          }
+          ["connections":protected]=>
+          array(1) {
+            ["Bologna"]=>
+            int(5)
+          }
+          ["passed":protected]=>
+          bool(true)
+        }
+        ["connections":protected]=>
+        array(2) {
+          ["Firenze"]=>
+          int(3)
+          ["Milano"]=>
+          int(4)
+        }
+        ["passed":protected]=>
+        bool(true)
+      }
+      ["connections":protected]=>
+      array(1) {
+        ["Torino"]=>
+        int(3)
+      }
+      ["passed":protected]=>
+      bool(true)
+    }
+    ["Torino"]=>
+    object(Doctrine\OrientDB\Graph\Vertex)#14 (5) {
+      ["id":protected]=>
+      string(6) "Torino"
+      ["potential":protected]=>
+      int(21)
+      ["potentialFrom":protected]=>
+      object(Doctrine\OrientDB\Graph\Vertex)#13 (5) {
+        ["id":protected]=>
+        string(6) "Milano"
+        ["potential":protected]=>
+        int(18)
+        ["potentialFrom":protected]=>
+        object(Doctrine\OrientDB\Graph\Vertex)#11 (5) {
+          ["id":protected]=>
+          string(7) "Bologna"
+          ["potential":protected]=>
+          int(14)
+          ["potentialFrom":protected]=>
+          object(Doctrine\OrientDB\Graph\Vertex)#10 (5) {
+            ["id":protected]=>
+            string(6) "Padova"
+            ["potential":protected]=>
+            int(9)
+            ["potentialFrom":protected]=>
+            object(Doctrine\OrientDB\Graph\Vertex)#9 (5) {
+              ["id":protected]=>
+              string(7) "Treviso"
+              ["potential":protected]=>
+              int(5)
+              ["potentialFrom":protected]=>
+              object(Doctrine\OrientDB\Graph\Vertex)#8 (5) {
+                ["id":protected]=>
+                string(5) "Udine"
+                ["potential":protected]=>
+                NULL
+                ["potentialFrom":protected]=>
+                NULL
+                ["connections":protected]=>
+                array(1) {
+                  ["Treviso"]=>
+                  int(5)
+                }
+                ["passed":protected]=>
+                bool(true)
+              }
+              ["connections":protected]=>
+              array(1) {
+                ["Padova"]=>
+                int(4)
+              }
+              ["passed":protected]=>
+              bool(true)
+            }
+            ["connections":protected]=>
+            array(1) {
+              ["Bologna"]=>
+              int(5)
+            }
+            ["passed":protected]=>
+            bool(true)
+          }
+          ["connections":protected]=>
+          array(2) {
+            ["Firenze"]=>
+            int(3)
+            ["Milano"]=>
+            int(4)
+          }
+          ["passed":protected]=>
+          bool(true)
+        }
+        ["connections":protected]=>
+        array(1) {
+          ["Torino"]=>
+          int(3)
+        }
+        ["passed":protected]=>
+        bool(true)
+      }
+      ["connections":protected]=>
+      array(0) {
+      }
+      ["passed":protected]=>
+      bool(true)
+    }
+  }
+}
+</pre>

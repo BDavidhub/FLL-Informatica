@@ -14,12 +14,14 @@
     color:#424242 !important;
 }
 .fa-bars{
-
+    margin-left:0.5em;
     color:#747474;
 }
 .fa-bars:hover{
     color:#2c2c2c;
+    
 }
+
 .account-menu{
     width:4.5em;
     height: 2em;
@@ -29,13 +31,19 @@
     justify-content: space-around;
     align-items: center;
     .outerUser{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width:1.8em;
         height: 1.5em;
     }
     transition: background-color 150ms ease-in;
 }
 .account-menu:hover{
-    background-color: #e7e7e7;
+    box-shadow:0 0 9px rgb(139, 139, 139);
+}
+.text-center1{
+    color:#f7f7f7 ;
 }
 .scritta{
     position:absolute;
@@ -48,12 +56,17 @@
         justify-content: center;
         .text-center1{
             width:40%;
-
+        }
+        @media (max-width:1200px){
+            p{
+                font-size: 0.8em;
+            }
         }
     }
-
 }
 .bar1{
+    position: relative;
+    margin-top: 8em;
     background-color: rgb(252, 252, 252);
     width:700px;
     box-shadow:0 0 5px rgb(202, 202, 202);
@@ -130,3 +143,14 @@
       }
 }
 
+.dropdown-menu{
+    border-radius: 1rem ;
+    border:none;
+    .dropdown-item:hover,
+    .dropdown-item:focus{
+        background-color: inherit;
+        border-radius: 2rem;
+        color: rgb(160, 158, 158);
+        outline: none;
+    }
+}

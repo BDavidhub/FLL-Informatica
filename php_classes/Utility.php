@@ -3,7 +3,7 @@
     {
         private $id;
         
-        public function Utility($string)
+        public function __construct($string)
         {
             switch($string)
             {
@@ -39,6 +39,7 @@
                     break;
             }
             $this->id .=rand(100000,999999);
+            //check if id already exists
         }
 
         public function getId()
