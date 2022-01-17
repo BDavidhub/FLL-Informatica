@@ -67,6 +67,7 @@
     display:flex;
     justify-content:end;
     padding: 0;
+    margin-top: 8em;
 
     p{
         padding:0;
@@ -97,15 +98,16 @@
         box-shadow:0 0 10px rgb(201, 201, 201);
     }
     .check-in{
-        width:20%;
+        width:25%;
       }
       .check-out{
-        width:60%;
+        width:55%;
     }
       .check-out{
+          height: 100%;
         display:flex;
         justify-content:space-between;
-
+       
         .check-out1{
             input[type="date"]::-webkit-calendar-picker-indicator{
                 left     : 0;
@@ -114,23 +116,26 @@
 
         }
        
-        span{
+        a{
+            
         display:flex;
         justify-content:center;
-        align-items: center;    
+        align-items: center;
         position: absolute;
         background:#63b7e7;
         color:white;
-        margin-left: 13rem;
-        margin-top: 0.7rem;
-        height: 3rem;
-        width: 3rem;
-        border-radius:50%;
-        a{
+        margin-left: 9.5rem;
+        margin-top: 0.3rem;
+        width: 12em;
+        height:4em;
+        border-radius:10em;
+        text-decoration: none;
+        h6{
             white-space:nowrap;
-            padding: 5em;
+            padding:2em;
+            margin-top:0.4em;
             border-radius:inherit;
-            position:absolute;
+
         }
 
           }

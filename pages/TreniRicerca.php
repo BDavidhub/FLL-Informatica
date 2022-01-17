@@ -61,29 +61,26 @@
     </nav>
 
     <div id="fullpage">
-
+        <?php echo $_POST['fdove'] ?>
         <div class="section container-fluid">
 
             <div class="bar1 container-fluid">
                 <div class="location">
                     <p class="fw-bold">Dove</p>
-                    <input type="text" name="fdove" placeholder="Milano..? " disabled>
+                    <input type="text" value="<?php echo $_POST['fdove'] ?>" readonly>
                 </div>
                 <div class="check-in">
                     <p class="fw-bold">Destinazione</p>
-                    <input type="text" placeholder="Venezia.." disabled>
+                    <input type="text" value="<?php echo $_POST['fdestinazione'] ?>" readonly>
                 </div>
                 <div class="check-out">
                     <nav class="check-out1">
                         <p class="fw-bold">Data</p>
-                        <input type="date" value="2022-01-22" min="2022-01-01" max="2023-01-01" disabled>
+                        <input type="date" value="<?php echo date('Y-m-d', strtotime($_POST['fdata'])); ?>" min="2022-01-01" max="2023-01-01" disabled>
                     </nav>
-                    <span>
-                        <a onclick="vear();">
-                            <h6> CAMBIO RICERCA</h6>
-                        </a>
-
-                    </span>
+                    <a href="../index.html" onclick="vear();">
+                        <h6> CAMBIO RICERCA</h6>
+                    </a>
                 </div>
 
             </div>

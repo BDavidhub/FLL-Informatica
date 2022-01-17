@@ -57,9 +57,16 @@
         .text-center1{
             width:40%;
         }
+        @media (max-width:1200px){
+            p{
+                font-size: 0.8em;
+            }
+        }
     }
 }
 .bar1{
+    position: relative;
+    margin-top: 8em;
     background-color: rgb(252, 252, 252);
     width:700px;
     box-shadow:0 0 5px rgb(202, 202, 202);
