@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <!--style="background-color: rgba(230, 230, 230,0) !important; -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../index.html">
             <!-- <img
           src="assets/images/logo.svg"
           width="30"
@@ -61,7 +61,6 @@
     </nav>
 
     <div id="fullpage">
-        <?php echo $_POST['fdove'] ?>
         <div class="section container-fluid">
 
             <div class="bar1 container-fluid">
@@ -84,7 +83,25 @@
                 </div>
 
             </div>
+            <div class="biglietti-treni">
+                <div class="treno-rect">
+                    <div class="time">
 
+                    </div>
+                    <div class="ritiro">
+
+                    </div>
+                    <div class="consegna">
+
+                    </div>
+                    <a href="" class="btn-acquista">
+                        ACQUISTA
+                    </a>
+                </div>
+                <div class="treno-rect">
+                    s
+                </div>
+            </div>
         </div>
 
         <div class="section"></div>

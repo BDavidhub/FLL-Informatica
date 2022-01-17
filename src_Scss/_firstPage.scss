@@ -51,6 +51,7 @@
     top:10em;
 
     .subtext{
+        margin-top: 2em;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -96,6 +97,16 @@
         border-radius:5em;
         padding:0.1rem 1.5rem;
         transition:background-color 250ms ease;
+    }
+    div:before{
+        position:absolute;
+        content:"";
+        left:0;
+        top:50%;
+        transform:translateY(-50%);
+        width:1px;
+        height:55%;
+        background:gray;
     }
     div:hover{
         background-color:rgb(235, 235, 235);
