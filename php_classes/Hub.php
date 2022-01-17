@@ -7,8 +7,8 @@
         public function __construct($mail, $password, $telephone, $capacity, $name)
         {
             parent::__construct($mail,$password,"hub",$telephone);
-            $this->capacity=$capacity;
-            $this->name=$name;
+            $this->capacity = $capacity;
+            $this->name = $name;
         }
         
         public function getCapacity() {
@@ -40,6 +40,8 @@
             if(($this->getName() == 'Milano' && $hub->getName() == 'Torino') || ($this->getName() == 'Torino' && $hub->getName() == 'Milano'))
                 return 3;
             if(($this->getName() == 'Bologna' && $hub->getName() == 'Firenze') || ($this->getName() == 'Firenze' && $hub->getName() == 'Bologna'))
+                return 3;
+            if(($this->getName() == 'Trento' && $hub->getName() == 'Padova') || ($this->getName() == 'Padova' && $hub->getName() == 'Trento'))
                 return 3;
         }
     }
