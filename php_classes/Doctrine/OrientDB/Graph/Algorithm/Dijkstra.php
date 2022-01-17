@@ -80,10 +80,11 @@ class Dijkstra implements AlgorithmInterface
         $literal = '';
 
         foreach ($path as $p) {
-            $literal .= "{$p->getId()} - ";
+            $literal .= "{$p->getId()}#";
         }
 
-        return substr($literal, 0, strlen($literal) - 3);
+        //return substr($literal, 0, strlen($literal) - 3);
+        return substr($literal, 0, strlen($literal) - 1);
     }
 
     /**
