@@ -1,5 +1,4 @@
-
-
+//fullpage instance
 new fullpage('#fullpage', {
 	//options here
 	autoScrolling:true,
@@ -9,3 +8,7 @@ new fullpage('#fullpage', {
 	navigationPosition: 'right',
 	navigationTooltips: ['Home', 'Project'],
 });
+
+function vear(){
+	console.log("s");
+}

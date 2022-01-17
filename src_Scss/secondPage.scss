@@ -1,0 +1,28 @@
+@import "./custom";
+@import "./firstPage";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+
+    .navbar {
+        position: relative !important;
+        z-index: 1 !important;
+        background-image: url(../assets/images/bg-1.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+}
+
+.box-class {
+    width: 50% !important;
+}
+
+.dropdown-menu {
+    right: 1em;
+}
