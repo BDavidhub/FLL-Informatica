@@ -12096,18 +12096,6 @@ fieldset:disabled .btn {
   transition: background-color 250ms ease;
 }
 
-.bar1 div:before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 1px;
-  height: 55%;
-  background: gray;
-}
-
 .bar1 div:hover {
   background-color: #ebebeb;
 }
@@ -12152,7 +12140,7 @@ fieldset:disabled .btn {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  background: #63b7e7;
+  background-color: #69c3f7;
   color: white;
   margin-left: 9.5rem;
   margin-top: 0.3rem;
@@ -12160,6 +12148,8 @@ fieldset:disabled .btn {
   height: 4em;
   border-radius: 10em;
   text-decoration: none;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
 }
 
 .bar1 .check-out a h6, .bar1 .check-out a .h6 {
@@ -12167,6 +12157,10 @@ fieldset:disabled .btn {
   padding: 2em;
   margin-top: 0.4em;
   border-radius: inherit;
+}
+
+.bar1 .check-out a:hover {
+  background-color: #4d96c0;
 }
 
 .dropdown-menu {
@@ -12201,9 +12195,14 @@ fieldset:disabled .btn {
           flex-direction: column;
 }
 
+.biglietti-treni h1, .biglietti-treni .h1 {
+  color: #303030;
+}
+
 .biglietti-treni .treno-rect {
-  width: 45em;
+  width: 55em;
   height: 8em;
+  border-radius: 1em;
   -webkit-box-shadow: 0 0 15px #c9c9c9;
           box-shadow: 0 0 15px #c9c9c9;
   margin: 2em;
@@ -12219,14 +12218,111 @@ fieldset:disabled .btn {
 }
 
 .biglietti-treni .treno-rect div {
-  background-color: #2c2c2c;
-  width: 20%;
   height: 90%;
   margin: 1em;
 }
 
-.biglietti-treni .treno-rect a {
+.biglietti-treni .treno-rect .time {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 1em;
+}
+
+.biglietti-treni .treno-rect .time img {
+  width: 1.4em;
+  height: 1em;
+  background-color: #2c2c2c;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.biglietti-treni .treno-rect .ritiro {
+  width: 22.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.biglietti-treni .treno-rect .ritiro .left-side-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.biglietti-treni .treno-rect .ritiro .left-side-icon img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 3.3em;
+}
+
+.biglietti-treni .treno-rect .ritiro .right-side-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0;
+  margin-left: 0;
+}
+
+.biglietti-treni .treno-rect .ritiro .right-side-icon .title {
+  margin: 0;
+}
+
+.biglietti-treni .treno-rect .ritiro .right-side-icon .small-text {
+  font-size: 0.8em;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.biglietti-treni .treno-rect a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  height: 50%;
+  background-color: #69c3f7;
+  border-radius: 1em;
+  margin: 1em;
+  padding-top: 0.5em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+}
+
+.biglietti-treni .treno-rect a:hover {
+  background-color: #4d96c0;
 }
 
 * {

@@ -98,16 +98,8 @@
         padding:0.1rem 1.5rem;
         transition:background-color 250ms ease;
     }
-    div:before{
-        position:absolute;
-        content:"";
-        left:0;
-        top:50%;
-        transform:translateY(-50%);
-        width:1px;
-        height:55%;
-        background:gray;
-    }
+
+
     div:hover{
         background-color:rgb(235, 235, 235);
     }
@@ -137,7 +129,7 @@
         justify-content:center;
         align-items: center;    
         position: absolute;
-        background:#63b7e7;
+        background-color:#63b7e7;
         color:white;
         margin-left: 13rem;
         margin-top: 0.7rem;
@@ -150,7 +142,12 @@
             position:absolute;
         }
 
-          }
+        transition: background-color 150ms ease-in;
+        }
+        span:hover{
+            background-color:#4d96c0;
+
+        }
       }
 }
 

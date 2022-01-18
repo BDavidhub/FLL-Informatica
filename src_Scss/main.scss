@@ -18,16 +18,15 @@ body {
     .section {
         &:nth-of-type(1) {
             width: 100%;
-            height:100%;
             background-image: url(../assets/images/Group24.png);
-            background-size: cover;
+            background-size: 100%;
             background-repeat: no-repeat;
 
         }
         &:nth-of-type(2) {
             background-image: url(../assets/images/bg-2.svg);
-            background-size: 100%;
-            height: 90%;
+            background-size:100%;
+            height: 100%;
             background-position: bottom;
             background-repeat: no-repeat;
         }

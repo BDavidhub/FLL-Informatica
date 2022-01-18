@@ -84,23 +84,50 @@
 
             </div>
             <div class="biglietti-treni">
-                <div class="treno-rect">
-                    <div class="time">
 
+                <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
+                <?php
+                $i = 0;
+                while ($i < 3) {
+
+                    echo '<div class="treno-rect">
+                    <div class="time">
+                        <h4> 16:55</h4>
+                        <img src="../assets/images/Arrow87.png" alt="arrow">
+                        <h4> 18:55</h4>
                     </div>
                     <div class="ritiro">
-
+                        <div class="left-side-icon">
+                            <img src="../assets/images/homeIcon.png" alt="home icon">
+                            <p class="fw-bolder"> MILANO </p>
+                        </div>
+                        <div class="right-side-icon">
+                            <p class="title fw-bolder"> RITIRO </p>
+                            <p class="small-text">Punto di spedizione</p>
+                            <p class="data">16/02</p>
+                        </div>
                     </div>
-                    <div class="consegna">
-
+                    <div class="ritiro">
+                        <div class="left-side-icon">
+                            <img src="../assets/images/homeIcon.png" alt="home icon">
+                            <p class="fw-bolder"> VENEZIA </p>
+                        </div>
+                        <div class="right-side-icon">
+                            <p class="title fw-bolder"> CONSEGNA </p>
+                            <p class="small-text">Punto di consegna</p>
+                            <p class="data">17/02</p>
+                        </div>
                     </div>
                     <a href="" class="btn-acquista">
-                        ACQUISTA
+                        <h6>
+                            ACQUISTA
+                        </h6>
                     </a>
-                </div>
-                <div class="treno-rect">
-                    s
-                </div>
+                </div>';
+                    $i++;
+                }
+
+                ?>
             </div>
         </div>
 
