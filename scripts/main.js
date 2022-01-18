@@ -12,3 +12,5 @@ new fullpage('#fullpage', {
 function vear(){
 	console.log("s");
 }
+
+/// fa l
