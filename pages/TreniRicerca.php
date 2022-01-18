@@ -1,3 +1,9 @@
+<?php
+// require_once __WEBROOT__ . '/includes/safestring.class.php';
+session_start();
+require_once('../php_classes/Main.php');
+$main = unserialize(serialize($_SESSION['main']));
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,35 +93,40 @@
 
                 <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
                 <?php
-                $i = 0;
-                while ($i < 3) {
+
+
+
+                $arrayindex = $main->findingTrainsAlgo($_POST['fdove'], $_POST['fdestinazione'], $_POST['fdata']);
+
+
+                for ($i = 0; $i < count($arrayindex); $i++) {
 
                     echo '<div class="treno-rect">
                     <div class="time">
-                        <h4> 16:55</h4>
+                        <h4> ' . date('H:i', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</h4>
                         <img src="../assets/images/Arrow87.png" alt="arrow">
-                        <h4> 18:55</h4>
+                        <h4>' . date('H:i', strtotime('+1 hours', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp()))) . '</h4>
                     </div>
                     <div class="ritiro">
                         <div class="left-side-icon">
                             <img src="../assets/images/homeIcon.png" alt="home icon">
-                            <p class="fw-bolder"> MILANO </p>
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getDeparture() . ' </p>
                         </div>
                         <div class="right-side-icon">
                             <p class="title fw-bolder"> RITIRO </p>
                             <p class="small-text">Punto di spedizione</p>
-                            <p class="data">16/02</p>
+                            <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
                         </div>
                     </div>
                     <div class="ritiro">
                         <div class="left-side-icon">
                             <img src="../assets/images/homeIcon.png" alt="home icon">
-                            <p class="fw-bolder"> VENEZIA </p>
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getArrive() . '</p>
                         </div>
                         <div class="right-side-icon">
                             <p class="title fw-bolder"> CONSEGNA </p>
                             <p class="small-text">Punto di consegna</p>
-                            <p class="data">17/02</p>
+                            <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
                         </div>
                     </div>
                     <a href="" class="btn-acquista">
@@ -124,7 +135,6 @@
                         </h6>
                     </a>
                 </div>';
-                    $i++;
                 }
 
                 ?>
