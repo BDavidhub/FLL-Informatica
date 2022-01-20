@@ -51,6 +51,7 @@
     top:10em;
 
     .subtext{
+        margin-top: 2em;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -97,6 +98,8 @@
         padding:0.1rem 1.5rem;
         transition:background-color 250ms ease;
     }
+
+
     div:hover{
         background-color:rgb(235, 235, 235);
     }
@@ -126,7 +129,7 @@
         justify-content:center;
         align-items: center;    
         position: absolute;
-        background:#63b7e7;
+        background-color:#63b7e7;
         color:white;
         margin-left: 13rem;
         margin-top: 0.7rem;
@@ -139,7 +142,12 @@
             position:absolute;
         }
 
-          }
+        transition: background-color 150ms ease-in;
+        }
+        span:hover{
+            background-color:#4d96c0;
+
+        }
       }
 }
 

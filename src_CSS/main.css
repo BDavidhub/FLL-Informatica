@@ -12039,6 +12039,7 @@ fieldset:disabled .btn {
 }
 
 .scritta .subtext {
+  margin-top: 2em;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12146,19 +12147,25 @@ fieldset:disabled .btn {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  background: #63b7e7;
+  background-color: #63b7e7;
   color: white;
   margin-left: 13rem;
   margin-top: 0.7rem;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
 }
 
 .bar1 .check-out span input {
   padding: 1.2em;
   border-radius: inherit;
   position: absolute;
+}
+
+.bar1 .check-out span:hover {
+  background-color: #4d96c0;
 }
 
 .dropdown-menu {
@@ -12194,15 +12201,15 @@ body .navbar {
 
 body .section:nth-of-type(1) {
   width: 100%;
-  background-image: url(../assets/images/GroupFinal.jpg);
-  background-size: cover;
+  background-image: url(../assets/images/Group24.png);
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
 body .section:nth-of-type(2) {
   background-image: url(../assets/images/bg-2.svg);
   background-size: 100%;
-  height: 90%;
+  height: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
 }
