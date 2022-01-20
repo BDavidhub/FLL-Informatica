@@ -12093,6 +12093,16 @@ fieldset:disabled .btn {
   outline: none;
 }
 
+.bar1 select {
+  background: none;
+  border: none;
+  padding: 0.1rem 0 0 0;
+}
+
+.bar1 select:focus {
+  outline: none;
+}
+
 .bar1 .location {
   width: 30%;
 }

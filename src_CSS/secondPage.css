@@ -12325,6 +12325,115 @@ fieldset:disabled .btn {
   background-color: #4d96c0;
 }
 
+.container {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.progress__container {
+  width: 55rem;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.progress__container::before {
+  content: "";
+  width: 100%;
+  height: 0.8rem;
+  background-color: #ced6d5;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress__bar {
+  width: 0%;
+  height: 0.8rem;
+  background-color: #69c3f7;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.progress__circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #69c3f7;
+  background-color: #ced6d5;
+  border: 0.8rem solid #ced6d5;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.progress__circle.active {
+  color: #69c3f7;
+  border: 0.1rem solid #69c3f7;
+  background-color: #69c3f7;
+  -webkit-box-shadow: #69c3f7 0px 0px 0px 13px, #69c3f7 0px 0px 15px 12px;
+          box-shadow: #69c3f7 0px 0px 0px 13px, #69c3f7 0px 0px 15px 12px;
+}
+
+.progress__btn {
+  width: 15rem;
+  color: #333;
+  background-color: #69c3f7;
+  font-family: monospace;
+  border: 0;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.progress__btn:hover {
+  cursor: pointer;
+  background-color: rgba(105, 195, 247, 0.8);
+}
+
+.progress__btn:disabled {
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

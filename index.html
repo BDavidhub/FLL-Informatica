@@ -101,11 +101,23 @@
         <div class="bar1 container-fluid">
           <div class="location">
             <p class="fw-bold">Dove</p>
-            <input type="text" name="fdove" placeholder="Milano..?" required>
+            <!-- <input type="text" name="fdove" placeholder="Milano..?" required> -->
+           <select class="form-select" name="fdove" id="inputGroupSelect01">
+              <option value="Torino" selected>Torino</option>
+              <option value="Firenze">Firenze</option>
+              <option value="Trento">Trento</option>
+              <option value="Udine">Udine</option>
+            </select>
           </div>
            <div class="check-in">
                 <p class="fw-bold">Destinazione</p>
-            <input type="text" name="fdestinazione" placeholder="Venezia.." required>
+            <!-- <input type="text" name="fdestinazione" placeholder="Venezia.." required> -->
+            <select class="form-select" name="fdestinazione" id="inputGroupSelect01">
+              <option value="Torino" selected>Torino</option>
+              <option value="Firenze">Firenze</option>
+              <option value="Trento">Trento</option>
+              <option value="Udine">Udine</option>
+            </select>
           </div>
           <div class="check-out">
             <nav class="check-out1">
@@ -148,5 +160,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>

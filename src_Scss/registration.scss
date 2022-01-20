@@ -5,7 +5,7 @@ body{
   font-family: 'Mukta', sans-serif;
 	height:100vh;
 	min-height:550px;
-	background-image: url(../assets/images/bg-1.svg);
+	background-image: url(../assets/images/Group24.png);
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position:center;
@@ -26,9 +26,14 @@ a{
     margin:auto;
     height:400px;
     background-color: $darker;
+    border-radius: 0.5em;
 }
 .white-panel{
-    background-color: $lighter;
+    input{
+        border-radius: 0.5em;
+    }
+    background-color:rgb(83, 224, 255);
+    border-radius: 0.5em;
     height:500px;
     position:absolute;
     top:-50px;
@@ -36,7 +41,7 @@ a{
     right:calc(50% - 50px);
     transition:.3s ease-in-out;
     z-index:0;
-    box-shadow: 0 0 10px 5px #36363685;
+    box-shadow: 0 0 15px 5px #4e4e4ee1;
 }
 .login-reg-panel input[type="radio"]{
     position:relative;
@@ -86,6 +91,9 @@ a{
     text-align:left;
     padding:50px;
 }
+.register-show{
+
+}
 .show-log-panel{
     display:block;
     opacity:0.9;
@@ -115,7 +123,7 @@ a{
     padding:10px 0;
 }
 
-.register-show input[type="email"], .register-show input[type="password"]{
+.register-show input[type="email"], .register-show input[type="password"],.register-show input[type="tel"],.register-show input[type="text"]{
     width: 100%;
     display: block;
     margin:20px 0;
@@ -123,6 +131,7 @@ a{
     border: 0;
     outline: none;
 }
+
 .register-show input[type="submit"] {
     max-width: 150px;
     width: 100%;
