@@ -91,9 +91,7 @@ a{
     text-align:left;
     padding:50px;
 }
-.register-show{
 
-}
 .show-log-panel{
     display:block;
     opacity:0.9;
@@ -143,7 +141,7 @@ a{
         flex-direction: row;
         gap:1em;
         label{
-            padding-bottom: 0.1em;
+            margin-bottom: 0.2em;
         }
         input[type="radio"]{
             position:relative;

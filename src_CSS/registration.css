@@ -12136,7 +12136,7 @@ a {
 }
 
 .register-show .radio-buttons label {
-  padding-bottom: 0.1em;
+  margin-bottom: 0.2em;
 }
 
 .register-show .radio-buttons input[type="radio"] {
