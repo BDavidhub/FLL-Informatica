@@ -122,19 +122,41 @@ a{
     display:inline-block;
     padding:10px 0;
 }
-
+.flexBox{
+    display:flex;
+    flex-wrap: wrap;
+    gap:0.2em;
+    justify-content: flex-start;
+}
 .register-show input[type="email"], .register-show input[type="password"],.register-show input[type="tel"],.register-show input[type="text"]{
-    width: 100%;
+    width: 45%;
     display: block;
-    margin:20px 0;
+    margin:10px 0;
+    margin-left: 10px;
     padding: 15px;
     border: 0;
     outline: none;
 }
-
+.register-show{
+    .radio-buttons{
+        display: flex;
+        flex-direction: row;
+        gap:1em;
+        label{
+            padding-bottom: 0.1em;
+        }
+        input[type="radio"]{
+            position:relative;
+            display:flex;
+          
+        }
+       
+    }
+}
 .register-show input[type="submit"] {
     max-width: 150px;
     width: 100%;
+    margin-top: 25px;
     background: #444444;
     color: #f9f9f9;
     border: none;

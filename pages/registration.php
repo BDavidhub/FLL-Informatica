@@ -47,13 +47,24 @@
       <div class="register-show">
         <h2>REGISTRATI</h2>
         <form action="./reg_Controller.php" method="post">
-          div.flec
-          <input type="text" placeholder="Nome" name="nomeReg" class="nome">
-          <input type="text" placeholder="Cognome" name="cognomeReg" class="cognome">
-          <input type="tel" placeholder="2453423455" name="teleReg" class="telefono">
-          <input type="email" placeholder="Email" name="mailReg" class="email">
-          <input type="password" placeholder="Password" name="passwordReg">
-          <input type="password" placeholder="Confirm Password" name="passwordCheckReg">
+          <div class="flexBox">
+            <input type="text" placeholder="Nome" name="nomeReg" class="nome">
+            <input type="text" placeholder="Cognome" name="cognomeReg" class="cognome">
+            <input type="tel" placeholder="2453423455" name="teleReg" class="telefono">
+            <input type="email" placeholder="Email" name="mailReg" class="email">
+            <input type="password" placeholder="Password" name="passwordReg">
+            <input type="password" placeholder="Confirm Password" name="passwordCheckReg">
+
+          </div>
+          <p>Privato o Azienda?</p>
+          <div class="radio-buttons">
+
+            <input type="radio" id="Privato" name="privato" value="privato">
+            <label for="privato">Privato</label>
+
+            <input type="radio" id="Azienda" name="privato" value="Azienda">
+            <label for="azienda">Azienda</label>
+          </div>
           <input type="submit" value="Registrati">
         </form>
       </div>
