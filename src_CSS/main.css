@@ -12087,6 +12087,7 @@ fieldset:disabled .btn {
   background: none;
   border: none;
   padding: 0.1rem 0 0 0;
+  outline: none;
 }
 
 .bar1 input:focus {
@@ -12097,10 +12098,6 @@ fieldset:disabled .btn {
   background: none;
   border: none;
   padding: 0.1rem 0 0 0;
-}
-
-.bar1 select:focus {
-  outline: none;
 }
 
 .bar1 .location {

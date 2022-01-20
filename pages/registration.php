@@ -19,6 +19,9 @@
 </head>
 
 <body>
+  <a class="go-back-btn" href="../index.html">
+    <h6> GO BACK </h6>
+  </a>
   <div class="login-reg-panel">
     <div class="login-info-box">
       <h2>Hai un account?</h2>
@@ -28,7 +31,7 @@
     </div>
 
     <div class="register-info-box">
-      <h2>Non ha un account?</h2>
+      <h2>Non hai un account?</h2>
       <p>Clicca registrati per registrarsi</p>
       <label id="label-login" for="log-login-show">Registrati</label>
       <input type="radio" name="active-log-panel" id="log-login-show">
@@ -42,7 +45,7 @@
           <input type="password" placeholder="Password" name="passwordLog">
           <input type="submit" value="Accedi">
         </form>
-        <a href="">Dimenticato la password?</a>
+        <a href="#">Dimenticato la password?</a>
       </div>
       <div class="register-show">
         <h2>REGISTRATI</h2>

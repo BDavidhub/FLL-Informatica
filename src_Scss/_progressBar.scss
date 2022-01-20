@@ -68,25 +68,4 @@ $color-white: #fff;
     }
   }
 
-  &__btn {
-    width: 15rem;
-    color: #333;
-    background-color: $color-secondary;
-    font-family: monospace;
-    border: 0;
-    border-radius: 0.5rem;
-    text-transform: uppercase;
-    padding: 1rem;
-    transition: all 0.3s ease;
-
-    &:hover {
-      cursor: pointer;
-      background-color: rgba($color-secondary, 0.8);
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-      background-color: #e0e0e0;
-    }
-  }
 }

@@ -94,6 +94,7 @@
         background:none;
         border:none;
         padding:0.1rem 0 0 0;
+        outline: none;
     }
     input:focus{
         outline:none;
@@ -103,9 +104,7 @@
         border:none;
         padding:0.1rem 0 0 0;
     }
-    select:focus{
-        outline:none;
-    }
+
     .location{
         width:30%;
     }
@@ -114,7 +113,6 @@
         padding:0.1rem 1.5rem;
         transition:background-color 250ms ease;
     }
-
 
     div:hover{
         background-color:rgb(235, 235, 235);

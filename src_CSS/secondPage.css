@@ -12411,29 +12411,6 @@ fieldset:disabled .btn {
           box-shadow: #69c3f7 0px 0px 0px 13px, #69c3f7 0px 0px 15px 12px;
 }
 
-.progress__btn {
-  width: 15rem;
-  color: #333;
-  background-color: #69c3f7;
-  font-family: monospace;
-  border: 0;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-  padding: 1rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.progress__btn:hover {
-  cursor: pointer;
-  background-color: rgba(105, 195, 247, 0.8);
-}
-
-.progress__btn:disabled {
-  cursor: not-allowed;
-  background-color: #e0e0e0;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

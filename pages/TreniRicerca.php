@@ -3,6 +3,9 @@
     session_start();
     require_once('../php_classes/Main.php');
     $main = unserialize(serialize($_SESSION['main']));
+    $_SESSION['dove'] = $_POST['fdove'];
+    $_SESSION['destinazione'] = $_POST['fdestinazione'];
+    $_SESSION['data'] = $_POST['fdata'];
     ?>
  <!DOCTYPE html>
  <html lang="en">
@@ -83,7 +86,7 @@
                          <p class="fw-bold">Data</p>
                          <input type="date" value="<?php echo date('Y-m-d', strtotime($_POST['fdata'])); ?>" min="2022-01-01" max="2023-01-01" disabled>
                      </nav>
-                     <a href="../index.html" onclick="vear();">
+                     <a href="../index.html">
                          <h6> CAMBIO RICERCA</h6>
                      </a>
                  </div>
@@ -101,11 +104,6 @@
                        <div class="progress__circle js-circle">3</div>
                        <div class="progress__circle js-circle">4</div>
                        <div class="progress__circle js-circle">5</div>
-                     </div>
-                 
-                     <div class="progress__wrapper">
-                       <button class="progress__btn js-prev" disabled>Previous</button>
-                       <button class="progress__btn js-next">Next</button>
                      </div>
                    </div>';
                     $arrayindex = $main->findingTrainsAlgo($_POST['fdove'], $_POST['fdestinazione'], $_POST['fdata']);
@@ -147,7 +145,7 @@
                             <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
                         </div>
                     </div>
-                    <a href="" class="btn-acquista">
+                    <a href="acquista.php?n=2" class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>
