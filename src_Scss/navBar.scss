@@ -1,0 +1,17 @@
+@import "./custom";
+@import "./firstPage";
+
+.navbar{
+    position: relative !important;
+    z-index: 1 !important;
+    background-color:rgba(34, 175, 255, 1)
+
+}
+
+.box-class {
+    width: 50% !important;
+}
+
+.dropdown-menu {
+    right: 1em;
+}

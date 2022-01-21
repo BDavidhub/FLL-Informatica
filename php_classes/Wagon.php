@@ -22,7 +22,6 @@
         public function getHubArrive() {
             return $this->hubs[count($this->hubs)-1];
         }
-        
         public function getHubDeparture() {
             return $this->hubs[0];
         }

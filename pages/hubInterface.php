@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../src_CSS/hubStyle.css" />
+  <link rel="stylesheet" href="../src_CSS/navBar.css" />
+  <title>Hub</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="index.html">
+
+      <h3 class="trainNavbar fw-bold">TRAIN</h3>
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-end align-content-center m-2" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto p-1 mx-5">
+        <li class="nav-item active mx-2">
+          <a class="nav-link fw-bolder links-nav" href="#section1">HOME</a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a class="nav-link fw-bolder links-nav" href="#section2">PROJECTS</a>
+        </li>
+
+        <li class="nav-item dropdown mx-2">
+          <a class="nav-link fw-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="account-menu">
+              <i class="fas fa-bars"></i>
+              <div class="outerUser">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- <div class="info">
+    <article></article>
+    <article></article>
+  </div> -->
+  <div class="wrap">
+    <section class="top">
+      <div id="v0"></div>
+      <div class="wagon sw" id="v1"></div>
+      <div class="wagon sw" id="v2"></div>
+      <div class="wagon sw" id="v3"></div>
+      <div class="wagon sw" id="v4"></div>
+      <div class="wagon sw" id="v5"></div>
+      <div class="wagon sw" id="v6"></div>
+      <div class="wagon sw" id="v7"></div>
+      <div class="wagon sw" id="v8"></div>
+      <div class="wagon sw" id="v9"></div>
+      <div class="wagon sw" id="v10"></div>
+      <div id="v11"></div>
+      <div class="rail" id="rail1"></div>
+    </section>
+
+    <section class="bottom">
+      <div id="t0" class="head_sx"></div>
+      <div class="wagon tw" id="t1"></div>
+      <div class="wagon tw" id="t2"></div>
+      <div class="wagon tw" id="t3"></div>
+      <div class="wagon tw" id="t4"></div>
+      <div class="wagon tw" id="t5"></div>
+      <div class="wagon tw" id="t6"></div>
+      <div class="wagon tw" id="t7"></div>
+      <div class="wagon tw" id="t8"></div>
+      <div class="wagon tw" id="t9"></div>
+      <div class="wagon tw" id="t10"></div>
+      <div id="t11" class="head_dx"></div>
+      <div class="rail" id="rail2"></div>
+    </section>
+
+    <section class="bin">
+      <div class="rail" id="rail3"></div>
+    </section>
+
+
+
+  </div>
+  <div class="buttons">
+    <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
+    <button id="updateTrain" class="btn btn-primary" onclick="callUpdateTrain()">updateTrain</button><br />
+    <button id="removeWagons" class="btn btn-primary" onclick="callRemoveWagons()">removeWagons</button><br />
+    <button id="addWagons" class="btn btn-primary" onclick="callAddWagons()">addWagons</button><br />
+    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br />
+    <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">automatic</button><br />
+  </div>
+
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="../assets/libs/move.js/move.js"></script>
+  <script src="../scripts/hubController.js"></script>
+</body>
+
+</html>

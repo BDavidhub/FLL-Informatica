@@ -1,0 +1,100 @@
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrap {
+    position: relative;
+    width: 80%;
+    height: 300px;
+
+    display: grid;
+    /* grid-template-columns: 100%; */
+    grid-template-rows: 100px 100px 100px;
+    margin: 30vh auto;
+    background-color: aliceblue;
+}
+section {
+    width: 100%;
+    /* background: url("../assets/images/line.svg"); */
+    background-size: contain;
+    background-position-y: 60px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.head_sx {
+    position: relative;
+    z-index: 2;
+    height: 50px;
+    width: 200px;
+    margin: 0;
+    background: url("../assets/images/motrice_sx.png") no-repeat;
+    background-position: center;
+    background-size: 200px;
+}
+.head_dx {
+    position: relative;
+    z-index: 2;
+    margin: 0; /*start point */
+    height: 50px;
+    width: 200px;
+    background: url("../assets/images/motrice_dx.png") no-repeat;
+    background-position: center;
+    background-size: 200px;
+}
+
+.wagon {
+    width: 80px;
+    height: 50px;
+    position: relative;
+    z-index: 2;
+    margin-left: 0;
+    text-align: center;
+    background: url("../assets/images/vagone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px;
+    opacity: 0;
+}
+.sw {
+    display: none; /*start*/
+}
+.tw {
+    display: none; /*start*/
+}
+.buttons {
+    position: relative;
+    bottom: 15rem;
+    margin: 0 auto;
+    width: 70%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+    margin: 1rem;
+}
+
+.rail{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+    border-radius: 50px;
+}
+
+#rail1{
+    top:60px;
+}
+#rail2{
+    top:160px;
+}
+#rail3{
+    top:260px;
+}
