@@ -3,10 +3,7 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
-echo $_SESSION['idd'];
-if ($_POST['pacco']) {
-    echo 'pacco';
-} else echo 'vagone';
+// echo $_REQUEST['t'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +85,7 @@ if ($_POST['pacco']) {
                 <div class="check-out">
                     <nav class="check-out1">
                         <p class="fw-bold">Data</p>
-                        <input type="date" value="<?php echo date('Y-m-d', strtotime($_SESSION['data'])); ?>" min="2022-01-01" max="2023-01-01" disabled>
+                        <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d') ?>" disabled>
                     </nav>
                     <a href="../index.html">
                         <h6> CAMBIO RICERCA</h6>
@@ -116,14 +113,17 @@ if ($_POST['pacco']) {
         </div>
 
         <div class="section1 container-fluid">
+            <!-- <form action="acquistaNext.php" method="post"> -->
             <div class="left-side container-fluid">
-                <h2>TIPO DI SPEDIZIONE</h2>
+                <h2>SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
                 <h6>Scegli il tipo di spedizione pacchi o vagone</h6>
                 <div class="bottoni">
-                    <button class="pacco">PACCO</button>
-                    <button class="vagone">VAGONE</button>
+                    <button onclick="window.location.href='acquistaPacco.php?n=3&t=pacco'" type="submit" name="pacco">PACCO</button>
+                    <button onclick="window.location.href='acquistaPacco.php?n=3&t=vagone'" type="submit" name="vagone">VAGONE</button>
+
                 </div>
             </div>
+            <!-- </form> -->
 
         </div>
         <div class="section last-part">

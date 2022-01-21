@@ -18,12 +18,9 @@ class Train extends Utility
     private $wagons;
     private $limit;
     private $hubs;
-    private $timestampDeparture;
-    private $departure;
-    private $arrive;
-    private $cod;
-    private $id;
-    public function __construct($departure, $arrive, $timestampDeparture, $cod, $main, $wagons = null, $limit = 10)
+    private $dateDimeDeparture;
+
+    public function __construct($departure, $arrive, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
     {
         if ($wagons == null)
             $this->wagons = array();
@@ -31,10 +28,7 @@ class Train extends Utility
             $this->wagons = $wagons;
 
         $this->limit = $limit;
-        $this->timestampDeparture = $timestampDeparture;
-        $this->departure = $departure;
-        $this->arrive = $arrive;
-        $this->cod = $cod;
+        $this->dateDimeDeparture = $dateDimeDeparture;
         $this->hubs = $main->computeDistance($departure, $arrive);
         parent::__construct("train");
     }
@@ -45,7 +39,7 @@ class Train extends Utility
     }
     public function getDeparture()
     {
-        return $this->departure;
+        return $this->hubs[0];
     }
     public function getCod()
     {
@@ -53,7 +47,7 @@ class Train extends Utility
     }
     public function getArrive()
     {
-        return $this->arrive;
+        return $this->hubs[count($this->hubs) - 1];
     }
 
     public function getHubs()
@@ -77,9 +71,9 @@ class Train extends Utility
     {
         return $this->limit;
     }
-    public function getTimestamp()
+    public function getDateTimeDeparture()
     {
-        return $this->timestampDeparture;
+        return $this->dateDimeDeparture;
     }
 
     public function setLimit($limit)

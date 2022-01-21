@@ -5,7 +5,7 @@ require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];
-$_SESSION['data'] = $_POST['fdata'];
+$_SESSION['data'] = new DateTime($_POST['fdata']);
 
 ?>
 <!DOCTYPE html>
@@ -120,30 +120,30 @@ $_SESSION['data'] = $_POST['fdata'];
 
                     echo '<div class="treno-rect">
                     <div class="time">
-                        <h4> ' . date('H:i', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</h4>
+                        <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
                         <img src="../assets/images/Arrow87.png" alt="arrow">
-                        <h4>' . date('H:i', strtotime('+1 hours', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp()))) . '</h4>
+                        <h4>' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
                     </div>
                     <div class="ritiro">
                         <div class="left-side-icon">
                             <img src="../assets/images/homeIcon.png" alt="home icon">
-                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getDeparture() . ' </p>
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getDeparture()->getName() . ' </p>
                         </div>
                         <div class="right-side-icon">
                             <p class="title fw-bolder"> RITIRO </p>
                             <p class="small-text">Punto di spedizione</p>
-                            <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
                     <div class="ritiro">
                         <div class="left-side-icon">
                             <img src="../assets/images/homeIcon.png" alt="home icon">
-                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getArrive() . '</p>
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getArrive()->getName()  . '</p>
                         </div>
                         <div class="right-side-icon">
                             <p class="title fw-bolder"> CONSEGNA </p>
                             <p class="small-text">Punto di consegna</p>
-                            <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
                     <a href="acquista.php?n=2"  class="btn-acquista js-next">

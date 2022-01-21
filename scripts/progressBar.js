@@ -13,16 +13,6 @@ next1.forEach(next1 => next1.addEventListener('click',function(){
   console.log(next1.getAttribute('id'));
 }));
 
-function _vals(target, value){
-  console.log('value'+value);
-
-  
-  form1.all("target").value=target;
-  form1.all("value").value=value;
-  form1.submit();
-  window.location.href='acquistanext.php?n=3';
-}
-
 const update = function () {
   circles.forEach((circle, i) => {
     i < currentActive
