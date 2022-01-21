@@ -6,13 +6,13 @@ echo '<pre>';
 
 $main = new Main();
 
-$main->addTrain(new Train('Udine', 'Torino', "30-12-2022 22:55:33", $main->reset()));
-$main->addTrain(new Train('Trento', 'Firenze', "28-12-2022 18:25:33", $main->reset()));
-$main->addTrain(new Train('Torino', 'Udine', "22-2-2022 11:35:13", $main->reset()));
-$main->addTrain(new Train('Firenze', 'Trento', "10-06-2022 1:05:33", $main->reset()));
-$main->addTrain(new Train('Trento', 'Firenze', "28-12-2022 21:35:33", $main->reset()));
-$main->addTrain(new Train('Torino', 'Udine', "30-12-2022 06:35:33", $main->reset()));
-$main->addTrain(new Train('Firenze', 'Trento', "10-10-2022 10:15:33", $main->reset()));
+$main->addTrain(new Train('Udine', 'Torino', "30-12-2022 22:55:33", 123, $main->reset()));
+$main->addTrain(new Train('Trento', 'Firenze', "28-12-2022 18:25:33", 124, $main->reset()));
+$main->addTrain(new Train('Torino', 'Udine', "22-2-2022 11:35:13", 125, $main->reset()));
+$main->addTrain(new Train('Firenze', 'Trento', "10-06-2022 1:05:33", 126, $main->reset()));
+$main->addTrain(new Train('Trento', 'Firenze', "28-12-2022 21:35:33", 127, $main->reset()));
+$main->addTrain(new Train('Torino', 'Udine', "30-12-2022 06:35:33", 128, $main->reset()));
+$main->addTrain(new Train('Firenze', 'Trento', "10-10-2022 10:15:33", 129, $main->reset()));
 
 
 $boxes[] = new Box('Treviso', 'Bologna', $main->reset());

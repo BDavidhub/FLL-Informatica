@@ -11993,16 +11993,12 @@ fieldset:disabled .btn {
 }
 
 .section1 {
-  margin-top: 5em;
-  width: 100%;
+  margin-top: 2em;
+  width: 70em;
   height: 30em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .left-side {
@@ -12068,14 +12064,6 @@ fieldset:disabled .btn {
 
 .bottoni button:hover {
   background-color: #4d96c0;
-}
-
-.right-side {
-  width: 30%;
-  height: 100%;
-  -webkit-box-shadow: 0 0 15px #c9c9c9;
-          box-shadow: 0 0 15px #c9c9c9;
-  border-radius: 1em;
 }
 
 .account-menu {
@@ -12409,6 +12397,14 @@ fieldset:disabled .btn {
 
 .biglietti-treni .treno-rect a:hover {
   background-color: #4d96c0;
+}
+
+.last-part {
+  height: 25em;
+  background-image: url(../assets/images/bg-2.svg);
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .container {

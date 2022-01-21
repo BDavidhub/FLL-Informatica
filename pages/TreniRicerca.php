@@ -146,7 +146,7 @@ $_SESSION['data'] = $_POST['fdata'];
                             <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
                         </div>
                     </div>
-                    <a id="' . $i . '" href="acquista.php?n=2" class="btn-acquista js-next">
+                    <a href="acquista.php?n=2"  class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>
@@ -157,9 +157,9 @@ $_SESSION['data'] = $_POST['fdata'];
                 ?>
             </div>
         </div>
+        <!-- ' . $main->getTrains()[$arrayindex[$i]]->getCod() . '-->
+        <div class="section last-part">
 
-        <div class="section">
-            e
         </div>
     </div>
 

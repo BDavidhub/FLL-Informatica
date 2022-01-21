@@ -3,7 +3,10 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
-$_SESSION['idd'] = 3;
+echo $_SESSION['idd'];
+if ($_POST['pacco']) {
+    echo 'pacco';
+} else echo 'vagone';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,17 +116,14 @@ $_SESSION['idd'] = 3;
         </div>
 
         <div class="section1 container-fluid">
-            <form action="acquistaNext.php" method="post">
-                <div class="left-side container-fluid">
-                    <h2>TIPO DI SPEDIZIONE</h2>
-                    <h6>Scegli il tipo di spedizione pacchi o vagone</h6>
-                    <div class="bottoni">
-                        <button type="submit" name="pacco">PACCO</button>
-                        <button type="submit" name="vagone">VAGONE</button>
-
-                    </div>
+            <div class="left-side container-fluid">
+                <h2>TIPO DI SPEDIZIONE</h2>
+                <h6>Scegli il tipo di spedizione pacchi o vagone</h6>
+                <div class="bottoni">
+                    <button class="pacco">PACCO</button>
+                    <button class="vagone">VAGONE</button>
                 </div>
-            </form>
+            </div>
 
         </div>
         <div class="section last-part">

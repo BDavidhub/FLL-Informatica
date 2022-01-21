@@ -1,5 +1,5 @@
 // const prev = document.querySelector(".js-prev");
-const next = document.querySelector(".js-next");
+const next = document.querySelectorAll(".js-next");
 const progressBar = document.querySelector(".js-bar");
 const circles = document.querySelectorAll(".js-circle");
 const next1 = document.querySelectorAll(".btn-acquista");
@@ -7,13 +7,21 @@ var url_string = window.location.href;
 var url = new URL(url_string);
 var n = url.searchParams.get("n");
 
-console.log(next1);
 let currentActive = n;
-next1.addEventListener('click',function(){
+next1.forEach(next1 => next1.addEventListener('click',function(){
 
-  console.log(nex1.id);
-});
+  console.log(next1.getAttribute('id'));
+}));
 
+function _vals(target, value){
+  console.log('value'+value);
+
+  
+  form1.all("target").value=target;
+  form1.all("value").value=value;
+  form1.submit();
+  window.location.href='acquistanext.php?n=3';
+}
 
 const update = function () {
   circles.forEach((circle, i) => {
@@ -41,13 +49,13 @@ if(currentActive>0){
 
   update();
 }
-next.addEventListener("click", () => {
+next.forEach(next => next.addEventListener("click", () => {
   currentActive++;
 
   currentActive > circles.length && (currentActive = circles.length);
 
   update();
-});
+}));
 
 // prev.addEventListener("click", () => {
 //   currentActive--;

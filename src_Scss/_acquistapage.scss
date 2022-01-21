@@ -22,11 +22,11 @@
     
 }
 .section1{
-    margin-top:5em;
-    width: 100%;
+    margin-top:2em;
+    width: 70em;
     height: 30em;
     display:flex;
-    flex-direction: row;
+
 }
 .left-side{
     width: 60%;
@@ -37,6 +37,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
 }
 .bottoni{
     margin-top: 2.5em;
@@ -64,12 +65,12 @@
 
     }
 }
-.right-side{
-    width: 30%;
-    height: 100%;
-    box-shadow:0 0 15px rgb(201, 201, 201);
-    border-radius: 1em;
-}
+// .right-side{
+//     width: 30%;
+//     height: 100%;
+//     box-shadow:0 0 15px rgb(201, 201, 201);
+//     border-radius: 1em;
+// }
 .account-menu{
     width:4.5em;
     height: 2em;
@@ -310,4 +311,11 @@
 
         }
     }
+}
+.last-part{
+    height:25em;
+    background-image: url(../assets/images/bg-2.svg);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }

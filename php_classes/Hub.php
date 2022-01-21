@@ -27,7 +27,7 @@
              $this->name = $name;
         }
 
-        public function getDistanceForm($hub)
+        public function getDistanceFrom($hub)
         {
             if(($this->getName() == 'Treviso' && $hub->getName() == 'Udine') || ($this->getName() == 'Udine' && $hub->getName() == 'Treviso'))
                 return 5;
@@ -44,5 +44,6 @@
             if(($this->getName() == 'Trento' && $hub->getName() == 'Padova') || ($this->getName() == 'Padova' && $hub->getName() == 'Trento'))
                 return 3;
         }
+
     }
 ?>

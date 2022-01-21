@@ -12325,6 +12325,10 @@ fieldset:disabled .btn {
   background-color: #4d96c0;
 }
 
+.last-part {
+  height: 20em;
+}
+
 .container {
   margin-top: 5rem;
   display: -webkit-box;
