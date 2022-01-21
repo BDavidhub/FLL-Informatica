@@ -23,9 +23,46 @@
 }
 .section1{
     margin-top:5em;
-    width: 60%;
+    width: 100%;
     height: 30em;
-    box-shadow: 0 0 15px 10px #b4b4b4;
+    display:flex;
+    flex-direction: row;
+}
+.left-side{
+    width: 60%;
+    height:100%;
+    box-shadow:0 0 15px rgb(201, 201, 201);
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bottoni{
+    margin-top: 5em;
+    button{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:10em;
+        height: 50%;
+        background-color:#69c3f7;
+        border-radius: 1em;
+        margin:1em;
+        text-decoration: none;
+        color: white;
+        transition: background-color 150ms ease-in;
+        border:none;
+    }
+    button:hover{
+        background-color:#4d96c0;
+
+    }
+}
+.right-side{
+    width: 30%;
+    height: 100%;
+    box-shadow:0 0 15px rgb(201, 201, 201);
     border-radius: 1em;
 }
 .account-menu{

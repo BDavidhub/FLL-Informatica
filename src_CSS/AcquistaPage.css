@@ -11994,10 +11994,73 @@ fieldset:disabled .btn {
 
 .section1 {
   margin-top: 5em;
-  width: 60%;
+  width: 100%;
   height: 30em;
-  -webkit-box-shadow: 0 0 15px 10px #b4b4b4;
-          box-shadow: 0 0 15px 10px #b4b4b4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.left-side {
+  width: 60%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 15px #c9c9c9;
+          box-shadow: 0 0 15px #c9c9c9;
+  border-radius: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.bottoni {
+  margin-top: 5em;
+}
+
+.bottoni button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10em;
+  height: 50%;
+  background-color: #69c3f7;
+  border-radius: 1em;
+  margin: 1em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+  border: none;
+}
+
+.bottoni button:hover {
+  background-color: #4d96c0;
+}
+
+.right-side {
+  width: 30%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 15px #c9c9c9;
+          box-shadow: 0 0 15px #c9c9c9;
   border-radius: 1em;
 }
 
