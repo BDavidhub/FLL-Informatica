@@ -3,7 +3,7 @@
     {
         private $id;
         
-        public function __construct($string)
+        public function __construct($string, $cod = null)
         {
             switch($string)
             {
@@ -38,7 +38,8 @@
                     $this->id='S';
                     break;
             }
-            $this->id .=rand(100000,999999);
+            if($cod == null) $this->id .=rand(100000,999999);
+            else $this->id .= $cod;
             //check if id already exists
         }
 
