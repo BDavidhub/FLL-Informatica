@@ -11967,7 +11967,7 @@ body {
   font-family: 'Mukta', sans-serif;
   height: 100vh;
   min-height: 550px;
-  background-image: url(../assets/images/bg-1.svg);
+  background-image: url(../assets/images/Group24.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11977,7 +11977,45 @@ body {
 
 a {
   text-decoration: none;
-  color: #444444;
+}
+
+.go-back-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #53e0ff;
+  color: white;
+  margin-left: 7rem;
+  margin-top: 2.5rem;
+  width: 11em;
+  height: 3.5em;
+  border-radius: 1em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+}
+
+.go-back-btn h6, .go-back-btn .h6 {
+  text-decoration: none;
+  outline: none;
+  white-space: nowrap;
+  padding: 1em;
+  margin-top: 0.4em;
+  font-size: 1.3em;
+  border-radius: inherit;
+}
+
+.go-back-btn:hover {
+  background-color: #4d96c0 !important;
+  color: white !important;
+  text-decoration: none;
 }
 
 .login-reg-panel {
@@ -11992,10 +12030,12 @@ a {
   margin: auto;
   height: 400px;
   background-color: #05445E;
+  border-radius: 0.5em;
 }
 
 .white-panel {
-  background-color: #75E6DA;
+  background-color: #53e0ff;
+  border-radius: 0.5em;
   height: 500px;
   position: absolute;
   top: -50px;
@@ -12004,8 +12044,12 @@ a {
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   z-index: 0;
-  -webkit-box-shadow: 0 0 10px 5px #36363685;
-          box-shadow: 0 0 10px 5px #36363685;
+  -webkit-box-shadow: 0 0 15px 5px #4e4e4ee1;
+          box-shadow: 0 0 15px 5px #4e4e4ee1;
+}
+
+.white-panel input {
+  border-radius: 0.5em;
 }
 
 .login-reg-panel input[type="radio"] {
@@ -12096,18 +12140,54 @@ a {
   padding: 10px 0;
 }
 
-.register-show input[type="email"], .register-show input[type="password"] {
-  width: 100%;
+.flexBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.2em;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.register-show input[type="email"], .register-show input[type="password"], .register-show input[type="tel"], .register-show input[type="text"] {
+  width: 45%;
   display: block;
-  margin: 20px 0;
+  margin: 10px 0;
+  margin-left: 10px;
   padding: 15px;
   border: 0;
   outline: none;
 }
 
+.register-show .radio-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1em;
+}
+
+.register-show .radio-buttons label {
+  margin-bottom: 0.2em;
+}
+
+.register-show .radio-buttons input[type="radio"] {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .register-show input[type="submit"] {
   max-width: 150px;
   width: 100%;
+  margin-top: 25px;
   background: #444444;
   color: #f9f9f9;
   border: none;
@@ -12118,28 +12198,11 @@ a {
   cursor: pointer;
 }
 
-.credit {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: #3B3B25;
-  margin: 0;
-  padding: 0;
-  font-family: Arial,sans-serif;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  z-index: 99;
-}
-
 a {
-  text-decoration: none;
   color: #ff4136;
 }
 
 a:hover {
   color: darkred;
-  text-decoration: none;
 }
 /*# sourceMappingURL=registration.css.map */
