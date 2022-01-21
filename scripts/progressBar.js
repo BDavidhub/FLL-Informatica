@@ -2,12 +2,18 @@
 const next = document.querySelector(".js-next");
 const progressBar = document.querySelector(".js-bar");
 const circles = document.querySelectorAll(".js-circle");
-
+const next1 = document.querySelectorAll(".btn-acquista");
 var url_string = window.location.href;
 var url = new URL(url_string);
 var n = url.searchParams.get("n");
 
+console.log(next1);
 let currentActive = n;
+next1.addEventListener('click',function(){
+
+  console.log(nex1.id);
+});
+
 
 const update = function () {
   circles.forEach((circle, i) => {

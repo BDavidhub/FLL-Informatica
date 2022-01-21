@@ -6,6 +6,7 @@ $main = unserialize(serialize($_SESSION['main']));
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];
 $_SESSION['data'] = $_POST['fdata'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,7 +146,7 @@ $_SESSION['data'] = $_POST['fdata'];
                             <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
                         </div>
                     </div>
-                    <a href="acquista.php?n=2" class="btn-acquista js-next">
+                    <a id="' . $i . '" href="acquista.php?n=2" class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>
@@ -157,7 +158,9 @@ $_SESSION['data'] = $_POST['fdata'];
             </div>
         </div>
 
-        <div class="section"></div>
+        <div class="section">
+            e
+        </div>
     </div>
 
     <!-- main.js script  -->
