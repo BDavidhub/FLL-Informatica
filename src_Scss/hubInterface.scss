@@ -1,0 +1,61 @@
+@import "./custom";
+
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    background: url("../assets/images/Group24.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 100%;
+    height: 80%;
+    background-color: red;
+
+    .topLine {
+        height: 100%;
+        width: 100%;
+        background-color: blue;
+    }
+
+    .bottomLine {
+        height: 100%;
+        width: 100%;
+        background-color: green;
+        display: table;
+        // .train{
+        // display: table;
+        // width: inherit;
+        // height: 100%;
+        // background-color: red;
+
+        .head_sx {
+            position: relative;
+            display: table-cell;
+            background: url("../assets/images/motrice.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .head_dx {
+            position: relative;
+            display: table-cell;
+            transform: scale(-1, 1);
+            background: url("../assets/images/motrice.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .wagon {
+            position: relative;
+            display: table-cell;
+            background: url("../assets/images/vagone.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        // }
+    }
+}

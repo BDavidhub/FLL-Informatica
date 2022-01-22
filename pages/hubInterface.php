@@ -12,7 +12,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="../index.html">
 
       <h3 class="trainNavbar fw-bold">TRAIN</h3>
     </a>
@@ -20,22 +20,11 @@
     <div class="collapse navbar-collapse justify-content-end align-content-center m-2" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto p-1 mx-5">
         <li class="nav-item active mx-2">
-          <a class="nav-link fw-bolder links-nav" href="#section1">HOME</a>
+          <a class="nav-link fw-bolder links-nav" href="../index.html#section1">HOME</a>
         </li>
 
         <li class="nav-item mx-2">
-          <a class="nav-link fw-bolder links-nav" href="#section2">PROJECTS</a>
-        </li>
-
-        <li class="nav-item dropdown mx-2">
-          <a class="nav-link fw-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="account-menu">
-              <i class="fas fa-bars"></i>
-              <div class="outerUser">
-                <i class="fas fa-user"></i>
-              </div>
-            </div>
-          </a>
+          <a class="nav-link fw-bolder links-nav" href="../index.html#section2">PROJECTS</a>
         </li>
       </ul>
     </div>

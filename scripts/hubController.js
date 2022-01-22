@@ -5,25 +5,40 @@ let twArr = Array.from(tw);
 let arrTrain = [];
 let sw = document.querySelectorAll(".sw");
 let swArr = Array.from(sw);
-console.log(twArr);
-console.log(swArr);
-
-
-
+// console.log(twArr);
+// console.log(swArr);
 let wm = 80;
 let dist;
+let arrivingTrain;
+let leavingTrain;
+let removeFromT;
+let addToTrain;
+/////
+const xhr = new XMLHttpRequest();
 
-var arrivingTrain = ['VE', 'VE', 'MI', 'MI', 'TV', 'TO', 'PD', 'PD'];
-let leavingTrain = ['VE', 'VE', 'MI', 'MI', 'TV', 'TO', 'VI', 'VI', 'VI', 'VI'];
+console.log("xhr Obj: ");
+xhr.onload = function () {
+    if (this.status == 200) {
+        try {
+            const resObj = JSON.parse(this.responseText);
+            console.log(resObj.array[0].length);
 
-let removeFromT = ['PD', 'PD'];
+            
+           
+        } catch (e) {
+            console.warn("Error in Json did not Parse");
+        }
+        console.log(this.responseText)
+    } else {
+        console.warn("Did not receive 200 OK from response")
+    }
+};
 
-/*
-avviene sempre in cima al treno
-quindi dalla fine dell'array mi conto quanti vagono lasciano il treno
-li tolgo da arrTrain e poi viasualizzo
-*/
-let addToTrain = ['VI', 'VI', 'VI', 'VI'];
+
+xhr.open('get', 'test.json');
+xhr.send();
+
+
 
 
 function reset() {
@@ -38,7 +53,7 @@ function reset() {
     move(head_sx)
         .set('margin-left', 0)
         .end();
-        move(head_dx)
+    move(head_dx)
         .set('margin-left', 0)
         .end();
 }
@@ -221,5 +236,5 @@ function automatic() {
     setTimeout(callUpdateTrain, 1000);
     setTimeout(callRemoveWagons, 2000);
     setTimeout(callAddWagons, 4000);
-    setTimeout(trainDeparture,6500);
+    setTimeout(trainDeparture, 6500);
 }
