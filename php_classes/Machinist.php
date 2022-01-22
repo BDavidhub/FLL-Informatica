@@ -1,9 +1,9 @@
 <?php
-    class Machinist extends User{
+class Machinist extends User
+{
 
-        public function __construct($mail, $password, $telephone)
-        {
-            // $this->User($mail, $password, "machinist", $telephone);
-        }
-        
+    public function __construct($mail, $password, $telephone)
+    {
+        // $this->User($mail, $password, "machinist", $telephone);
     }
+}

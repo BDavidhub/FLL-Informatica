@@ -20,7 +20,7 @@ class Train extends Utility
     private $hubs;
     private $dateDimeDeparture;
 
-    public function __construct($departure, $arrive, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
+    public function __construct($departure, $arrive, $cod, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
     {
         if ($wagons == null)
             $this->wagons = array();
@@ -30,7 +30,7 @@ class Train extends Utility
         $this->limit = $limit;
         $this->dateDimeDeparture = $dateDimeDeparture;
         $this->hubs = $main->computeDistance($departure, $arrive);
-        parent::__construct("train");
+        parent::__construct("train", $cod);
     }
 
     public function getWagons()
@@ -41,16 +41,27 @@ class Train extends Utility
     {
         return $this->hubs[0];
     }
+    public function getCod()
+    {
+        return $this->cod;
+    }
     public function getArrive()
     {
-        return $this->hubs[count($this->hubs)-1];
+        return $this->hubs[count($this->hubs) - 1];
     }
 
     public function getHubs()
     {
         return $this->hubs;
     }
-
+    public function setId($id1)
+    {
+        $this->id = $id1;
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
     public function setWagons($wagons)
     {
         $this->wagons = $wagons;
@@ -110,7 +121,7 @@ class Train extends Utility
         }
         return false;
     }
-    public function getWagonsByHub($hub)
+    public function getWagonsByHub($hub) //spostare in hub
     { //TODO: Da sistemare
         $ws = array();
         $fin = array();
@@ -120,15 +131,12 @@ class Train extends Utility
                 $ws[] = $wagon;
             }
         }
-        for($tmp=0;$tmp<count($ws);$tmp++)
-        {
-            $fin[$tmp]=$ws[0];
-            for($tmp1=1;$tmp1<count($ws);$tmp1++)
-            {
-                if($hub->getDistanceFrom($fin[$tmp]->getHubArrive()) > $hub->getDistanceFrom($ws[$tmp1]->getHubArrive()))
-                {
-                    $fin[$tmp]=$ws[$tmp1];
-                    $tmp2=$tmp1;
+        for ($tmp = 0; $tmp < count($ws); $tmp++) {
+            $fin[$tmp] = $ws[0];
+            for ($tmp1 = 1; $tmp1 < count($ws); $tmp1++) {
+                if ($hub->getDistanceFrom($fin[$tmp]->getHubArrive()) > $hub->getDistanceFrom($ws[$tmp1]->getHubArrive())) {
+                    $fin[$tmp] = $ws[$tmp1];
+                    $tmp2 = $tmp1;
                 }
             }
             array_splice($ws, $tmp2, 1);
@@ -138,24 +146,24 @@ class Train extends Utility
 
     public function previousHub($hub)
     {
-        $tmp=-1;
-        for($tmp1=0;$this->hubs[$tmp1]!=$hub || $tmp1<count($this->hubs);$tmp1++)
-        {
-            if($this->hubs[$tmp1]!=$hub)
-            {
-                $tmp=$this->hubs[$tmp1];
+        $tmp = -1;
+        for ($tmp1 = 0; $this->hubs[$tmp1] != $hub || $tmp1 < count($this->hubs); $tmp1++) {
+            if ($this->hubs[$tmp1] != $hub) {
+                $tmp = $this->hubs[$tmp1];
             }
-        }   
+        }
         return $tmp;
     }
 
     public function twoHub($hub)
     {
         $ws = array();
-        if($this->getDeparture()==$hub) $ws[0]=null; $ws[1]=$this->getWagonsByHub($hub); 
-        if($this->getArrive()==$hub) $ws[0]=$this->getWagonsByHub($hub); $ws[1]=null;
-        $ws[0]=$this->getWagonsByHub($this->previousHub($hub));
-        $ws[1]=$this->getWagonsByHub($hub);
+        if ($this->getDeparture() == $hub) $ws[0] = null;
+        $ws[1] = $this->getWagonsByHub($hub);
+        if ($this->getArrive() == $hub) $ws[0] = $this->getWagonsByHub($hub);
+        $ws[1] = null;
+        $ws[0] = $this->getWagonsByHub($this->previousHub($hub));
+        $ws[1] = $this->getWagonsByHub($hub);
         return $ws;
     }
 
@@ -169,15 +177,12 @@ class Train extends Utility
                 $ws[] = $wagon;
             }
         }
-        for($tmp=0;$tmp<count($ws);$tmp++)
-        {
-            $fin[$tmp]=$ws[0];
-            for($tmp1=1;$tmp1<count($ws);$tmp1++)
-            {
-                if($hub->getDistanceFrom($fin[$tmp]->getHubArrive()) < $hub->getDistanceFrom($ws[$tmp1]->getHubArrive()))
-                {
-                    $fin[$tmp]=$ws[$tmp1];
-                    $tmp2=$tmp1;
+        for ($tmp = 0; $tmp < count($ws); $tmp++) {
+            $fin[$tmp] = $ws[0];
+            for ($tmp1 = 1; $tmp1 < count($ws); $tmp1++) {
+                if ($hub->getDistanceFrom($fin[$tmp]->getHubArrive()) < $hub->getDistanceFrom($ws[$tmp1]->getHubArrive())) {
+                    $fin[$tmp] = $ws[$tmp1];
+                    $tmp2 = $tmp1;
                 }
             }
             array_splice($ws, $tmp2, 1);
@@ -188,10 +193,12 @@ class Train extends Utility
     public function twoHubInverted($hub)
     {
         $ws = array();
-        if($this->getDeparture()==$hub) $ws[0]=null; $ws[1]=$this->getWagonsByHubInverted($hub); 
-        if($this->getArrive()==$hub) $ws[0]=$this->getWagonsByHubInverted($hub); $ws[1]=null;
-        $ws[0]=$this->getWagonsByHubInverted($this->previousHub($hub));
-        $ws[1]=$this->getWagonsByHubInverted($hub);
+        if ($this->getDeparture() == $hub) $ws[0] = null;
+        $ws[1] = $this->getWagonsByHubInverted($hub);
+        if ($this->getArrive() == $hub) $ws[0] = $this->getWagonsByHubInverted($hub);
+        $ws[1] = null;
+        $ws[0] = $this->getWagonsByHubInverted($this->previousHub($hub));
+        $ws[1] = $this->getWagonsByHubInverted($hub);
         return $ws;
     }
 
@@ -199,8 +206,7 @@ class Train extends Utility
     {
         $ws = array();
         $ws = $this->twoHub($hub);
-        if($ws[1]==null) return $ws[0];
+        if ($ws[1] == null) return $ws[0];
         return $ws[1];
     }
-
 }

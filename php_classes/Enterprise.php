@@ -6,7 +6,7 @@
 
         public function __construct($mail, $password, $telephone, $companyName, $vat, $accountingAdress)
         {
-            $this->User($mail,$password,"enterprise",$telephone);
+            parent::__construct($mail,$password,"enterprise",$telephone);
             $this->companyName=$companyName;
             $this->vat=$vat;
             $this->accountingAdress=$accountingAdress;
@@ -36,4 +36,3 @@
         }
 
     }
-?>

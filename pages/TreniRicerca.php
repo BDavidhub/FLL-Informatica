@@ -3,9 +3,9 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
-$_SESSION['dove'] = $_POST['fdove'];
-$_SESSION['destinazione'] = $_POST['fdestinazione'];
-$_SESSION['data'] = $_POST['fdata'];
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,20 +71,19 @@ $_SESSION['data'] = $_POST['fdata'];
 
     <div id="fullpage">
         <div class="section container-fluid">
-
             <div class="bar1 container-fluid">
                 <div class="location">
                     <p class="fw-bold">Dove</p>
-                    <input type="text" value="<?php echo $_POST['fdove'] ?>" readonly>
+                    <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
                 </div>
                 <div class="check-in">
                     <p class="fw-bold">Destinazione</p>
-                    <input type="text" value="<?php echo $_POST['fdestinazione'] ?>" readonly>
+                    <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
                 </div>
                 <div class="check-out">
                     <nav class="check-out1">
                         <p class="fw-bold">Data</p>
-                        <input type="date" value="<?php echo date('Y-m-d', strtotime($_POST['fdata'])); ?>" min="2022-01-01" max="2023-01-01" disabled>
+                        <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d'); ?>" min="2022-01-01" max="2023-01-01" disabled>
                     </nav>
                     <a href="../index.html">
                         <h6> CAMBIO RICERCA</h6>
@@ -106,7 +105,7 @@ $_SESSION['data'] = $_POST['fdata'];
                        <div class="progress__circle js-circle">5</div>
                      </div>
                    </div>';
-                $arrayindex = $main->findingTrainsAlgo($_POST['fdove'], $_POST['fdestinazione'], $_POST['fdata']);
+                $arrayindex = $main->findingTrainsAlgo($_SESSION['dove'], $_SESSION['destinazione'], $_SESSION['data']);
                 if (count($arrayindex) == 0) {
                     echo '<h4 class="mt-5"> NON CI SONO TRENI DISPONIBILI  </h4><h6> PROVA A CAMBIARE I DATI </h6>';
 
@@ -119,33 +118,33 @@ $_SESSION['data'] = $_POST['fdata'];
 
                     echo '<div class="treno-rect">
                     <div class="time">
-                        <h4> ' . date('H:i', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</h4>
+                        <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
                         <img src="../assets/images/Arrow87.png" alt="arrow">
-                        <h4>' . date('H:i', strtotime('+1 hours', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp()))) . '</h4>
+                        <h4>' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
                     </div>
                     <div class="ritiro">
                         <div class="left-side-icon">
                             <img src="../assets/images/homeIcon.png" alt="home icon">
-                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getDeparture() . ' </p>
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getDeparture()->getName() . ' </p>
                         </div>
                         <div class="right-side-icon">
                             <p class="title fw-bolder"> RITIRO </p>
                             <p class="small-text">Punto di spedizione</p>
-                            <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
                     <div class="ritiro">
                         <div class="left-side-icon">
                             <img src="../assets/images/homeIcon.png" alt="home icon">
-                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getArrive() . '</p>
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getArrive()->getName()  . '</p>
                         </div>
                         <div class="right-side-icon">
                             <p class="title fw-bolder"> CONSEGNA </p>
                             <p class="small-text">Punto di consegna</p>
-                            <p class="data">' . date('d/m/Y', strtotime($main->getTrains()[$arrayindex[$i]]->getTimestamp())) . '</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
-                    <a href="acquista.php?n=2" class="btn-acquista js-next">
+                    <a href="acquista.php?n=2"  class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>
@@ -156,8 +155,10 @@ $_SESSION['data'] = $_POST['fdata'];
                 ?>
             </div>
         </div>
+        <!-- ' . $main->getTrains()[$arrayindex[$i]]->getCod() . '-->
+        <div class="section last-part">
 
-        <div class="section"></div>
+        </div>
     </div>
 
     <!-- main.js script  -->
