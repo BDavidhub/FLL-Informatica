@@ -9,34 +9,10 @@ let swArr = Array.from(sw);
 // console.log(swArr);
 let wm = 80;
 let dist;
-let arrivingTrain;
-let leavingTrain;
-let removeFromT;
-let addToTrain;
-/////
-const xhr = new XMLHttpRequest();
-
-console.log("xhr Obj: ");
-xhr.onload = function () {
-    if (this.status == 200) {
-        try {
-            const resObj = JSON.parse(this.responseText);
-            console.log(resObj.array[0].length);
-
-            
-           
-        } catch (e) {
-            console.warn("Error in Json did not Parse");
-        }
-        console.log(this.responseText)
-    } else {
-        console.warn("Did not receive 200 OK from response")
-    }
-};
-
-
-xhr.open('get', 'test.json');
-xhr.send();
+let arrivingTrain = [];
+let leavingTrain = [];
+let removeFromT = [];
+let addToTrain = [];
 
 
 
@@ -131,21 +107,22 @@ function addWagons(arrLeave) {
     var dist = 0;
     var makeSpace = 0;
     firstTime = true;
+    var firstType;
 
-
-    console.log(arrLeave);
     for (var i = 0; i <= arrLeave.length; i++) {
-        if (arrTrain[i] != arrLeave[i] && typeof arrLeave[i] !== 'undefined') { // && typeof arrTrain[i] !== 'undefined'
-            console.log("ciao");
-            contP++;
+        if (arrTrain[i] != arrLeave[i] && typeof arrLeave[i] !== 'undefined' && typeof arrTrain[i] !== 'undefined') {
+            if (firstTime || arrLeave[i] == firstType) {
+                contP++;
+            }
             if (firstTime) {
                 fp = i;
+                firstType = arrLeave[i];
                 firstTime = false;
             }
         }
     }
     for (var i = 0; i < arrLeave.length; i++) {
-        if (arrTrain[i] != arrLeave[i] && typeof arrLeave[i] !== 'undefined') {
+        if (arrTrain[i] != arrLeave[i] && typeof arrLeave[i] !== 'undefined' && typeof arrTrain[i] !== 'undefined') {
             console.log(i);
             arrTrain.splice(i, 0, arrLeave[i]);
         }
@@ -238,3 +215,64 @@ function automatic() {
     setTimeout(callAddWagons, 4000);
     setTimeout(trainDeparture, 6500);
 }
+
+
+/////
+
+
+
+const xhr = new XMLHttpRequest();
+
+
+xhr.onload = function () {
+    if (this.status == 200) {
+
+        const resObj = JSON.parse(this.responseText);
+
+        //fill arrivingTrain
+        for (var i = 0; i < resObj.array[0].length; i++) {
+            arrivingTrain.push(resObj.array[0][i].arrAbb);
+        }
+        //fill leavingTrain
+        for (var i = 0; i < resObj.array[1].length; i++) {
+            leavingTrain.push(resObj.array[1][i].arrAbb);
+        }
+
+        //fill removeFromT
+        var find = arrivingTrain[arrivingTrain.length - 1];
+        console.log(find);
+        var stop = false;
+        for (var i = arrivingTrain.length - 1; i > 0 && !stop; i--) {
+            console.log(arrivingTrain[i])
+            if (arrivingTrain[i] != leavingTrain[i] && typeof arrivingTrain[i] !== 'undefined' && typeof leavingTrain[i] !== 'undefined') {
+                console.log(arrivingTrain[i])
+                removeFromT.push(arrivingTrain[i])
+            } else {
+                stop = true;
+            }
+        }
+
+        //fill addTotrain
+        // for(var i=0;i<leavingTrain.length;i++){
+        //     if()
+        // }
+
+
+
+        console.log(arrivingTrain)
+        console.log(leavingTrain)
+        console.log(removeFromT)
+
+        // console.log(this.responseText)
+    } else {
+        console.warn("Did not receive 200 OK from response")
+    }
+};
+
+xhr.open('get', 'test.json');
+xhr.send();
+/////////////
+
+
+
+

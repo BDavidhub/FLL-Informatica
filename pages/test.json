@@ -15,7 +15,9 @@
             {"id":"W4","arrive":"Venzia","arrAbb":"VE"},
             {"id":"W9","arrive":"Torino","arrAbb":"TO"},
             {"id":"W1","arrive":"Treviso","arrAbb":"TV"},
-            {"id":"W6","arrive":"Treviso","arrAbb":"TV"}
+            {"id":"W6","arrive":"Treviso","arrAbb":"TV"},
+            {"id":"W5","arrive":"Milano","arrAbb":"MI"},
+            {"id":"W7","arrive":"Milano","arrAbb":"MI"}
         ]
     ]
 }
