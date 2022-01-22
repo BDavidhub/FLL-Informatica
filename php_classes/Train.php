@@ -121,7 +121,7 @@ class Train extends Utility
         }
         return false;
     }
-    public function getWagonsByHub($hub)
+    public function getWagonsByHub($hub) //spostare in hub
     { //TODO: Da sistemare
         $ws = array();
         $fin = array();

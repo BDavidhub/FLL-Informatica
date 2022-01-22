@@ -63,5 +63,11 @@
             }
             return false;
         }
+
+        public function ciao()
+        {
+            $ws=null;
+            return $ws;
+        }
     }
 ?>
