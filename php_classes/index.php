@@ -5,13 +5,20 @@ require_once('Main.php');
 $main = new Main();
 
 
-$main->addTrain(new Train('Udine', 'Torino', new DateTime("30-12-2022 22:55:33"), $main->reset()));
-$main->addTrain(new Train('Trento', 'Firenze', new DateTime("28-12-2022 18:25:33"), $main->reset()));
-$main->addTrain(new Train('Torino', 'Udine', new DateTime("22-2-2022 11:35:13"), $main->reset()));
-$main->addTrain(new Train('Firenze', 'Trento', new DateTime("10-06-2022 1:05:33"), $main->reset()));
-$main->addTrain(new Train('Trento', 'Firenze', new DateTime("28-12-2022 21:35:33"), $main->reset()));
-$main->addTrain(new Train('Torino', 'Udine', new DateTime("30-12-2022 06:35:33"), $main->reset()));
-$main->addTrain(new Train('Firenze', 'Trento', new DateTime("10-10-2022 10:15:33"), $main->reset()));
+$main->addTrain(new Train('Udine', 'Torino', 1, new DateTime("30-12-2022 22:55:33"), $main->reset()));
+$main->addTrain(new Train('Trento', 'Firenze', 2, new DateTime("28-12-2022 18:25:33"), $main->reset()));
+$main->addTrain(new Train('Torino', 'Udine', 3, new DateTime("22-2-2022 11:35:13"), $main->reset()));
+$main->addTrain(new Train('Firenze', 'Trento', 4, new DateTime("10-06-2022 1:05:33"), $main->reset()));
+$main->addTrain(new Train('Trento', 'Firenze', 5, new DateTime("28-12-2022 21:35:33"), $main->reset()));
+$main->addTrain(new Train('Torino', 'Udine', 6, new DateTime("30-12-2022 06:35:33"), $main->reset()));
+$main->addTrain(new Train('Firenze', 'Trento', 7, new DateTime("10-10-2022 10:15:33"), $main->reset()));
+$main->addTrain(new Train('Torino', 'Trento', 8, new DateTime("11-11-2022 02:35:35"), $main->reset()));
+$main->addTrain(new Train('Firenze', 'Udine', 9, new DateTime("11-09-2022 10:12:22"), $main->reset()));
+$main->addTrain(new Train('Udine', 'Trento', 10, new DateTime("31-05-2022 12:26:30"), $main->reset()));
+$main->addTrain(new Train('Firenze', 'Trento', 11, new DateTime("25-04-2022 03:26:33"), $main->reset()));
+$main->addTrain(new Train('Udine', 'Firenze', 12, new DateTime("13-12-2022 09:12:32"), $main->reset()));
+$main->addTrain(new Train('Trento', 'Udine', 13, new DateTime("30-08-2022 11:26:12"), $main->reset()));
+
 
 
 $boxes[] = new Box('Treviso', 'Bologna', $main->reset());

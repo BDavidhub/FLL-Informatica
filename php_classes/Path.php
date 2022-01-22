@@ -5,7 +5,7 @@
         
         public function __construct($arrayOfHub)
         {
-            $this->Utility("path");
+            parent::__construct("path");
             $this->arrayOfHub=$arrayOfHub;
         }
 
@@ -19,4 +19,3 @@
             $this->arrayOfHub=$arrayOfHub;
         }
     }
-?>
