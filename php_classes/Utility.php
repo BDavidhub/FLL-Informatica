@@ -3,12 +3,42 @@
     {
         private $id;
         
-        public function __construct($string, $cod = null)
+        public function __construct($string, $cod = null, $sig = null)
         {
             switch($string)
             {
                 case "wagon":
                     $this->id='W';
+                    if($sig!=null)
+                    {
+                        switch($sig)
+                        {
+                            case 'udine':
+                                $sig='UD';
+                                break;
+                            case 'trento':
+                                $sig='TN';
+                                break;
+                            case 'torino':
+                                $sig='TO';
+                                break;
+                            case 'firenze':
+                                $sig='FI';
+                                break;
+                            case 'bologna':
+                                $sig='BO';
+                                break;
+                            case 'padova':
+                                $sig='PD';
+                                break;
+                            case 'milano':
+                                $sig='MI';
+                                break;
+                            case 'treviso':
+                                $sig='TV';
+                                break;
+                        }
+                    }
                     break;
                 case "train":
                     $this->id='T';
