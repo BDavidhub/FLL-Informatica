@@ -45,4 +45,50 @@
                 return 3;
         }
 
+    public function getWagonsByTrain($train) //spostare in hub
+    {
+        $ws = array();
+        $fin = array();
+        if (!in_array($this->hub, $train->getHubs())) return null;
+        foreach ($train->getWagons() as $key => $wagon) {
+            if (in_array($this->hub, $wagon->getHubs())) {
+                $ws[] = $wagon;
+            }
+        }
+        for ($tmp = 0; $tmp < count($ws); $tmp++) {
+            $fin[$tmp] = $ws[0];
+            for ($tmp1 = 1; $tmp1 < count($ws); $tmp1++) {
+                if ($this->getDistanceFrom($fin[$tmp]->getHubArrive()) > $this->getDistanceFrom($ws[$tmp1]->getHubArrive())) {
+                    $fin[$tmp] = $ws[$tmp1];
+                    $tmp2 = $tmp1;
+                }
+            }
+            array_splice($ws, $tmp2, 1);
+        }
+        return $fin;
+    }
+    
+    public function getWagonsByTrainInverted($train) //spostare in hub
+    {
+        $ws = array();
+        $fin = array();
+        if (!in_array($this->hub, $train->getHubs())) return null;
+        foreach ($train->getWagons() as $key => $wagon) {
+            if (in_array($this->hub, $wagon->getHubs())) {
+                $ws[] = $wagon;
+            }
+        }
+        for ($tmp = 0; $tmp > count($ws); $tmp++) {
+            $fin[$tmp] = $ws[0];
+            for ($tmp1 = 1; $tmp1 < count($ws); $tmp1++) {
+                if ($this->getDistanceFrom($fin[$tmp]->getHubArrive()) > $this->getDistanceFrom($ws[$tmp1]->getHubArrive())) {
+                    $fin[$tmp] = $ws[$tmp1];
+                    $tmp2 = $tmp1;
+                }
+            }
+            array_splice($ws, $tmp2, 1);
+        }
+        return $fin;
+    }
+
     }

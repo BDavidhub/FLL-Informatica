@@ -121,28 +121,6 @@ class Train extends Utility
         }
         return false;
     }
-    public function getWagonsByHub($hub) //spostare in hub
-    { //TODO: Da sistemare
-        $ws = array();
-        $fin = array();
-        if (!in_array($hub, $this->hubs)) return null;
-        foreach ($this->wagons as $key => $wagon) {
-            if (in_array($hub, $wagon->getHubs())) {
-                $ws[] = $wagon;
-            }
-        }
-        for ($tmp = 0; $tmp < count($ws); $tmp++) {
-            $fin[$tmp] = $ws[0];
-            for ($tmp1 = 1; $tmp1 < count($ws); $tmp1++) {
-                if ($hub->getDistanceFrom($fin[$tmp]->getHubArrive()) > $hub->getDistanceFrom($ws[$tmp1]->getHubArrive())) {
-                    $fin[$tmp] = $ws[$tmp1];
-                    $tmp2 = $tmp1;
-                }
-            }
-            array_splice($ws, $tmp2, 1);
-        }
-        return $fin;
-    }
 
     public function previousHub($hub)
     {
@@ -159,36 +137,15 @@ class Train extends Utility
     {
         $ws = array();
         if ($this->getDeparture() == $hub) $ws[0] = null;
-        $ws[1] = $this->getWagonsByHub($hub);
-        if ($this->getArrive() == $hub) $ws[0] = $this->getWagonsByHub($hub);
+        $ws[1] = $hub->getWagonsByHub($this->train);
+        if ($this->getArrive() == $hub) $ws[0] = $hub->getWagonsByHub($this->train);
         $ws[1] = null;
-        $ws[0] = $this->getWagonsByHub($this->previousHub($hub));
-        $ws[1] = $this->getWagonsByHub($hub);
+        $ws[0] = $hub->getWagonsByHub($this->previousHub($hub));
+        $ws[1] = $hub->getWagonsByHub($this->train);
         return $ws;
     }
 
-    public function getWagonsByHubInverted($hub)
-    { //TODO: Da sistemare
-        $ws = array();
-        $fin = array();
-        if (!in_array($hub, $this->hubs)) return null;
-        foreach ($this->wagons as $key => $wagon) {
-            if (in_array($hub, $wagon->getHubs())) {
-                $ws[] = $wagon;
-            }
-        }
-        for ($tmp = 0; $tmp < count($ws); $tmp++) {
-            $fin[$tmp] = $ws[0];
-            for ($tmp1 = 1; $tmp1 < count($ws); $tmp1++) {
-                if ($hub->getDistanceFrom($fin[$tmp]->getHubArrive()) < $hub->getDistanceFrom($ws[$tmp1]->getHubArrive())) {
-                    $fin[$tmp] = $ws[$tmp1];
-                    $tmp2 = $tmp1;
-                }
-            }
-            array_splice($ws, $tmp2, 1);
-        }
-        return $fin;
-    }
+    
 
     public function twoHubInverted($hub)
     {
