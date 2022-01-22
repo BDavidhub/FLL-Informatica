@@ -1,4 +1,21 @@
 <?php
-session_start(); 
-    echo json_encode($_SESSION["train"]->twoHubInverted($_SESSION["hub"]));
+    session_start(); 
+    $_SESSION = unserialize(serialize($_SESSION));
+    $main = $_SESSION['main'];
+    $hubs = $main->getHubs();
+    $trains = $main->getTrains();
+    $train = $hub = null;
+
+
+    foreach($trains as $key => $t){
+        if($t->getId() == $_REQUEST['train']){
+            $train = $t;
+        }
+    }
+    foreach($hubs as $key => $h){
+        if($h->getId() == $_REQUEST['hub']){
+            $hub = $h;
+        }
+    }
+    echo json_encode($train->twoHubInverted($hub));
 ?>

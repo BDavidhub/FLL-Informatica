@@ -16,11 +16,11 @@
         private $size;
         private $sig;
 
-        public function __construct($departure,$arrive,$sig,$main, $size = 5) {
+        public function __construct($departure,$arrive,$sig,$cod,$main, $size = 5) {
             $this->size = $size;
             $this->hubs = $main->computeDistance($departure,$arrive);
             $this->sig=$sig;
-            parent::__construct("box");
+            parent::__construct("box",$cod);
         }
 
         public function getHubArrive() {

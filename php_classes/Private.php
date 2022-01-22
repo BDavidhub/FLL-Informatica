@@ -4,9 +4,9 @@
         private $surname;
         private $accountingAdress;
 
-        public function __construct($mail, $password, $telephone, $name, $surname, $accountingAdress)
+        public function __construct($mail, $password, $telephone, $name, $surname, $accountingAdress,$cod)
         {
-            $this->User($mail,$password,"private",$telephone);
+            parent::__construct($mail,$password,"private",$telephone,$cod);
             $this->name=$name;
             $this->surname=$surname;
             $this->accountingAdress=$accountingAdress;
