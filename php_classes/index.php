@@ -23,6 +23,16 @@ $main->distributeWagonsInTrains();
 
 $_SESSION['main'] = $main;
 
+echo $_POST['fdove'];
+echo $_POST['fdestinazione'];
+echo $_POST['fdata'];
+
+$_SESSION['dove'] = $_POST['fdove'];
+$_SESSION['destinazione'] = $_POST['fdestinazione'];
+$_SESSION['data'] = new DateTime($_POST['fdata']);
+
+header('location: ../pages/TreniRicerca.php?n=1');
+exit;
 ?>
 
 <html>

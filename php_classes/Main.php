@@ -172,7 +172,7 @@ class Main
         $found = 0;
 
         for ($curr = 0; $curr < count($this->trains); $curr++) {
-            if (($this->trains[$curr]->getDeparture()->getName() == $depart) && ($this->trains[$curr]->getArrive()->getName() == $arriv) && ($timeStamp < $this->trains[$curr]->getDateTimeDeparture()->format('d-m-Y'))) {
+            if (($this->trains[$curr]->getDeparture()->getName() == $depart) && ($this->trains[$curr]->getArrive()->getName() == $arriv) && ($timeStamp < $this->trains[$curr]->getDateTimeDeparture())) {
                 $indexArray[$found] = $curr;
                 // echo $this->trains[$curr]->getDeparture() . $this->trains[$curr]->getTimestamp();
                 $found++;

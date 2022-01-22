@@ -115,7 +115,7 @@ $main = unserialize(serialize($_SESSION['main']));
         <div class="section1 container-fluid">
             <!-- <form action="acquistaNext.php" method="post"> -->
             <div class="left-side container-fluid">
-                <h2>SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
+                <h2 style="text-transform:uppercase;">SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
                 <h6>Scegli il tipo di spedizione pacchi o vagone</h6>
                 <div class="bottoni">
                     <button onclick="window.location.href='acquistaPacco.php?n=3&t=pacco'" type="submit" name="pacco">PACCO</button>

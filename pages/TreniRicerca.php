@@ -3,9 +3,8 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
-$_SESSION['dove'] = $_POST['fdove'];
-$_SESSION['destinazione'] = $_POST['fdestinazione'];
-$_SESSION['data'] = new DateTime($_POST['fdata']);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -72,20 +71,19 @@ $_SESSION['data'] = new DateTime($_POST['fdata']);
 
     <div id="fullpage">
         <div class="section container-fluid">
-
             <div class="bar1 container-fluid">
                 <div class="location">
                     <p class="fw-bold">Dove</p>
-                    <input type="text" value="<?php echo $_POST['fdove'] ?>" readonly>
+                    <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
                 </div>
                 <div class="check-in">
                     <p class="fw-bold">Destinazione</p>
-                    <input type="text" value="<?php echo $_POST['fdestinazione'] ?>" readonly>
+                    <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
                 </div>
                 <div class="check-out">
                     <nav class="check-out1">
                         <p class="fw-bold">Data</p>
-                        <input type="date" value="<?php echo date('Y-m-d', strtotime($_POST['fdata'])); ?>" min="2022-01-01" max="2023-01-01" disabled>
+                        <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d'); ?>" min="2022-01-01" max="2023-01-01" disabled>
                     </nav>
                     <a href="../index.html">
                         <h6> CAMBIO RICERCA</h6>
@@ -107,7 +105,7 @@ $_SESSION['data'] = new DateTime($_POST['fdata']);
                        <div class="progress__circle js-circle">5</div>
                      </div>
                    </div>';
-                $arrayindex = $main->findingTrainsAlgo($_POST['fdove'], $_POST['fdestinazione'], $_POST['fdata']);
+                $arrayindex = $main->findingTrainsAlgo($_SESSION['dove'], $_SESSION['destinazione'], $_SESSION['data']);
                 if (count($arrayindex) == 0) {
                     echo '<h4 class="mt-5"> NON CI SONO TRENI DISPONIBILI  </h4><h6> PROVA A CAMBIARE I DATI </h6>';
 
