@@ -8,7 +8,7 @@
         
         public function __construct($arrayOfPath, $treno, $timeStamp, $partenza)
         {
-            $this->Utility("spedition");
+            parent::__construct("spedition");
             $this->arrayDiPath=$arrayOfPath;
             $this->treno=$treno;
             $this->timeStamp=$timeStamp;
@@ -56,4 +56,3 @@
         }
 
     }
-?>
