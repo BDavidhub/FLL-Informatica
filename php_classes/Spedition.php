@@ -6,9 +6,9 @@
         private $timeStamp;
         private $partenza;
         
-        public function __construct($arrayOfPath, $treno, $timeStamp, $partenza,$cod)
+        public function __construct($arrayOfPath, $treno, $timeStamp, $partenza)
         {
-            parent::__construct("spedition",$cod);
+            $this->Utility("spedition");
             $this->arrayDiPath=$arrayOfPath;
             $this->treno=$treno;
             $this->timeStamp=$timeStamp;

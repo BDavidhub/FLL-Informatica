@@ -116,12 +116,23 @@ $main = unserialize(serialize($_SESSION['main']));
             <!-- <form action="acquistaNext.php" method="post"> -->
             <div class="left-side container-fluid">
                 <h2 style="text-transform:uppercase;">SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
-                <h6>Scegli il tipo di spedizione pacchi o vagone</h6>
-                <div class="bottoni">
-                    <button onclick="window.location.href='acquistaPacco.php?n=3&t=pacco'" type="submit" name="pacco">PACCO</button>
-                    <button onclick="window.location.href='acquistaPacco.php?n=3&t=vagone'" type="submit" name="vagone">VAGONE</button>
-
+                <h6>Vuoi noleggiarli o portarli tu?</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Default radio
+                    </label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Default checked radio
+                    </label>
+                </div>
+                <!-- <button onclick="window.location.href='acquistaPacco.php?n=3&t=pacco'" type="submit" name="pacco">PACCO</button>
+                    <button onclick="window.location.href='acquistaPacco.php?n=3&t=vagone'" type="submit" name="vagone">VAGONE</button> -->
+
+
             </div>
             <!-- </form> -->
 

@@ -5,11 +5,11 @@
         private $password;
         private $telephone;
 
-        public function __construct($mail, $password,$string, $telephone,$cod)
+        public function __construct($mail, $password,$string, $telephone)
         {
             $this->mail=$mail;
             $this->password=$password;
-            parent::__construct($string,$cod);
+            parent::__construct($string);
             $this->telephone=$telephone;
         }
         

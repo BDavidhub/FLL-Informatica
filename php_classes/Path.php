@@ -3,9 +3,9 @@
     {
         private $arrayOfHub;
         
-        public function __construct($arrayOfHub,$cod)
+        public function __construct($arrayOfHub)
         {
-            parent::__construct("path",$cod);
+            $this->Utility("path");
             $this->arrayOfHub=$arrayOfHub;
         }
 

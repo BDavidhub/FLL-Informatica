@@ -62,14 +62,14 @@ class Main
         unset($this->hubs);
         unset($this->graph);
         unset($this->vertices);
-        $this->hubs[] = new Hub('mailUdine', 'passwordUdine', 'telefonoUdine', 10, 'Udine',123);
-        $this->hubs[] = new Hub('mailTreviso', 'passwordTreviso', 'telefonoTreviso', 10, 'Treviso',234);
-        $this->hubs[] = new Hub('mailPadova', 'passwordPadova', 'telefonoPadova', 10, 'Padova',345);
-        $this->hubs[] = new Hub('mailBologna', 'passwordBologna', 'telefonoBologna', 10, 'Bologna',456);
-        $this->hubs[] = new Hub('mailFirenze', 'passwordFirenze', 'telefonoFirenze', 10, 'Firenze',567);
-        $this->hubs[] = new Hub('mailMilano', 'passwordMilano', 'telefonoMilano', 10, 'Milano',678);
-        $this->hubs[] = new Hub('mailTorino', 'passwordTorino', 'telefonoTorino', 10, 'Torino',789);
-        $this->hubs[] = new Hub('mailTrento', 'passwordTrento', 'telefonoTrento', 10, 'Trento',8910);
+        $this->hubs[] = new Hub('mailUdine', 'passwordUdine', 'telefonoUdine', 10, 'Udine');
+        $this->hubs[] = new Hub('mailTreviso', 'passwordTreviso', 'telefonoTreviso', 10, 'Treviso');
+        $this->hubs[] = new Hub('mailPadova', 'passwordPadova', 'telefonoPadova', 10, 'Padova');
+        $this->hubs[] = new Hub('mailBologna', 'passwordBologna', 'telefonoBologna', 10, 'Bologna');
+        $this->hubs[] = new Hub('mailFirenze', 'passwordFirenze', 'telefonoFirenze', 10, 'Firenze');
+        $this->hubs[] = new Hub('mailMilano', 'passwordMilano', 'telefonoMilano', 10, 'Milano');
+        $this->hubs[] = new Hub('mailTorino', 'passwordTorino', 'telefonoTorino', 10, 'Torino');
+        $this->hubs[] = new Hub('mailTrento', 'passwordTrento', 'telefonoTrento', 10, 'Trento');
 
         foreach ($this->hubs as $key => $value) {
             $this->hubs[$value->getName()] = $value;
@@ -122,7 +122,7 @@ class Main
                     }
                 }
             }
-            if ($flag) $this->wagons[] = new Wagon(array($box),$box->getSig());
+            if ($flag) $this->wagons[] = new Wagon(array($box));
         }
     }
     public function splitWagons()
