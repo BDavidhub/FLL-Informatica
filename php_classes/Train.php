@@ -137,11 +137,11 @@ class Train extends Utility
     {
         $ws = array();
         if ($this->getDeparture() == $hub) $ws[0] = null;
-        $ws[1] = $hub->getWagonsByHub($this->train);
-        if ($this->getArrive() == $hub) $ws[0] = $hub->getWagonsByHub($this->train);
+        $ws[1] = $hub->getWagonsByTrain($this->train);
+        if ($this->getArrive() == $hub) $ws[0] = $hub->getWagonsByTrain($this->train);
         $ws[1] = null;
-        $ws[0] = $hub->getWagonsByHub($this->previousHub($hub));
-        $ws[1] = $hub->getWagonsByHub($this->train);
+        $ws[0] = $hub->getWagonsByTrain($this->previousHub($hub));
+        $ws[1] = $hub->getWagonsByTrain($this->train);
         return $ws;
     }
 
@@ -151,11 +151,11 @@ class Train extends Utility
     {
         $ws = array();
         if ($this->getDeparture() == $hub) $ws[0] = null;
-        $ws[1] = $this->getWagonsByHubInverted($hub);
-        if ($this->getArrive() == $hub) $ws[0] = $this->getWagonsByHubInverted($hub);
+        $ws[1] = $hub->getWagonsByTrainInverted($this->train);
+        if ($this->getArrive() == $hub) $ws[0] = $hub->getWagonsByTrainInverted($this->train);
         $ws[1] = null;
-        $ws[0] = $this->getWagonsByHubInverted($this->previousHub($hub));
-        $ws[1] = $this->getWagonsByHubInverted($hub);
+        $ws[0] = $hub->getWagonsByTrainInverted($this->previousHub($hub));
+        $ws[1] = $hub->getWagonsByTrainInverted($this->train);
         return $ws;
     }
 
@@ -163,6 +163,14 @@ class Train extends Utility
     {
         $ws = array();
         $ws = $this->twoHub($hub);
+        if ($ws[1] == null) return $ws[0];
+        return $ws[1];
+    }
+
+    public function oneHubInverted($hub)
+    {
+        $ws = array();
+        $ws = $this->twoHubInverted($hub);
         if ($ws[1] == null) return $ws[0];
         return $ws[1];
     }
