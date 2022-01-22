@@ -20,7 +20,7 @@ class Train extends Utility
     private $hubs;
     private $dateDimeDeparture;
 
-    public function __construct($departure, $arrive, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
+    public function __construct($departure, $arrive,$cod, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
     {
         if ($wagons == null)
             $this->wagons = array();
@@ -30,7 +30,7 @@ class Train extends Utility
         $this->limit = $limit;
         $this->dateDimeDeparture = $dateDimeDeparture;
         $this->hubs = $main->computeDistance($departure, $arrive);
-        parent::__construct("train");
+        parent::__construct("train",$cod);
     }
 
     public function getWagons()
@@ -121,7 +121,7 @@ class Train extends Utility
         }
         return false;
     }
-    public function getWagonsByHub($hub)
+    public function getWagonsByHub($hub)//spostare in hub
     { //TODO: Da sistemare
         $ws = array();
         $fin = array();
@@ -148,8 +148,7 @@ class Train extends Utility
     {
         $tmp = -1;
         for ($tmp1 = 0; $this->hubs[$tmp1] != $hub || $tmp1 < count($this->hubs); $tmp1++) {
-            if ($this->hubs[$tmp1] != $hub) {
-                $tmp = $this->hubs[$tmp1];
+            if ($this->hubs[$tmp1] != $hub) {                 $tmp = $this->hubs[$tmp1];
             }
         }
         return $tmp;
