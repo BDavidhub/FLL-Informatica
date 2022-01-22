@@ -14,10 +14,12 @@
     class Box extends Utility{
         private $hubs;
         private $size;
+        private $sig;
 
-        public function __construct($departure,$arrive,$main, $size = 5) {
+        public function __construct($departure,$arrive,$sig,$main, $size = 5) {
             $this->size = $size;
             $this->hubs = $main->computeDistance($departure,$arrive);
+            $this->sig=$sig;
             parent::__construct("box");
         }
 
@@ -41,6 +43,14 @@
         
         public function setSize($size) {
              $this->size = $size;
+        }
+
+        public function getSig() {
+            return $this->sig;
+        }
+        
+        public function setSig($sig) {
+             $this->sig = $sig;
         }
     }
 ?>
