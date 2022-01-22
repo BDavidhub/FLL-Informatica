@@ -15,11 +15,9 @@ let dist;
 
 var arrivingTrain = ['VE', 'VE', 'MI', 'MI', 'TV', 'TO', 'PD', 'PD'];
 let leavingTrain = ['VE', 'VE', 'MI', 'MI', 'TV', 'TO', 'VI', 'VI', 'VI', 'VI'];
-/*
--MI MI
-+TO
- */
+
 let removeFromT = ['PD', 'PD'];
+
 /*
 avviene sempre in cima al treno
 quindi dalla fine dell'array mi conto quanti vagono lasciano il treno
