@@ -20,7 +20,6 @@ $main->addTrain(new Train('Udine', 'Firenze', 12, new DateTime("13-12-2022 09:12
 $main->addTrain(new Train('Trento', 'Udine', 13, new DateTime("30-08-2022 11:26:12"), $main->reset()));
 
 
-
 $boxes[] = new Box('Treviso', 'Bologna', $main->reset());
 $boxes[] = new Box('Padova', 'Milano', $main->reset());
 $boxes[] = new Box('Torino', 'Milano', $main->reset());
