@@ -212,10 +212,10 @@ function automatic() {
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
-    setTimeout(callRemoveWagons, 2000);
+    setTimeout(callRemoveWagons, 3000);
     console.log("arrTrain: " + arrTrain);
-    setTimeout(callAddWagons, 4000);
-    setTimeout(trainDeparture, 6500);
+    setTimeout(callAddWagons, 5000);
+    setTimeout(trainDeparture, 7500);
 }
 
 

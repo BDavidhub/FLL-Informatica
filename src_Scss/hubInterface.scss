@@ -31,10 +31,10 @@ html {
         }
 
         #aW::before {
-            content: "Arriving Wagons";
+            content: "+Wagons";
         }
         #lW::before {
-            content: "Leaving Wagons";
+            content: "-Wagons";
         }
     }
     .wrap {

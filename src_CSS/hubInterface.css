@@ -12000,12 +12000,12 @@ html .info article {
 
 body .info #aW::before,
 html .info #aW::before {
-  content: "Arriving Wagons";
+  content: "+Wagons";
 }
 
 body .info #lW::before,
 html .info #lW::before {
-  content: "Leaving Wagons";
+  content: "-Wagons";
 }
 
 body .wrap,
