@@ -11967,9 +11967,13 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-image: url("../assets/images/bg-2.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.info {
+body .info,
+html .info {
   position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -11982,7 +11986,8 @@ html {
       grid-template-rows: 1fr;
 }
 
-.info article {
+body .info article,
+html .info article {
   border-radius: 10px;
   width: 10rem;
   height: 10rem;
@@ -11993,15 +11998,18 @@ html {
   font-family: "Arial", Helvetica, sans-serif;
 }
 
-.info #aW::before {
-  content: 'Arriving Wagons';
+body .info #aW::before,
+html .info #aW::before {
+  content: "Arriving Wagons";
 }
 
-.info #lW::before {
-  content: 'Leaving Wagons';
+body .info #lW::before,
+html .info #lW::before {
+  content: "Leaving Wagons";
 }
 
-.wrap {
+body .wrap,
+html .wrap {
   position: relative;
   width: 80%;
   height: 300px;
@@ -12013,7 +12021,8 @@ html {
   margin: 30vh auto;
 }
 
-section {
+body section,
+html section {
   width: 100%;
   /* background: url("../assets/images/line.svg"); */
   background-size: contain;
@@ -12029,72 +12038,81 @@ section {
   font-weight: bold;
 }
 
-.top::before {
+body .top::before,
+html .top::before {
   content: "+Wagons";
   position: absolute;
   left: -100px;
 }
 
-.bottom::before {
+body .bottom::before,
+html .bottom::before {
   content: "Train";
   position: absolute;
   left: -100px;
 }
 
-.bin::before {
+body .bin::before,
+html .bin::before {
   content: "-Wagons";
   position: absolute;
   left: -100px;
 }
 
-.head_sx {
+body .head_sx,
+html .head_sx {
   position: relative;
   z-index: 2;
   height: 50px;
   width: 200px;
   margin: 0;
-  background: url("../assets/images/motrice_sx.png") no-repeat;
+  background: url("../assets/images/motrice_sx-red.png") no-repeat;
   background-position: center;
   background-size: 200px;
 }
 
-.head_dx {
+body .head_dx,
+html .head_dx {
   position: relative;
   z-index: 2;
   margin: 0;
   /*start point */
   height: 50px;
   width: 200px;
-  background: url("../assets/images/motrice_dx.png") no-repeat;
+  background: url("../assets/images/motrice_dx-red.png") no-repeat;
   background-position: center;
   background-size: 200px;
 }
 
-.wagon {
+body .wagon,
+html .wagon {
   width: 80px;
   height: 50px;
   position: relative;
   z-index: 2;
   margin-left: 0;
   text-align: center;
-  background: url("../assets/images/vagone.png");
+  background: url("../assets/images/vagone-red.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60px;
   opacity: 0;
 }
 
-.sw {
+body .sw,
+html .sw {
   display: none;
   /*start*/
 }
 
-.tw {
+body .tw,
+html .tw {
   display: none;
   /*start*/
 }
 
-.buttons {
+body .buttons,
+html .buttons {
   position: relative;
   bottom: 15rem;
   margin: 0 auto;
@@ -12111,11 +12129,13 @@ section {
           justify-content: center;
 }
 
-.btn {
+body .btn,
+html .btn {
   margin: 1rem;
 }
 
-.rail {
+body .rail,
+html .rail {
   position: absolute;
   z-index: 0;
   width: 100%;
@@ -12124,15 +12144,18 @@ section {
   border-radius: 50px;
 }
 
-#rail1 {
+body #rail1,
+html #rail1 {
   top: 60px;
 }
 
-#rail2 {
+body #rail2,
+html #rail2 {
   top: 160px;
 }
 
-#rail3 {
+body #rail3,
+html #rail3 {
   top: 260px;
 }
 /*# sourceMappingURL=hubInterface.css.map */

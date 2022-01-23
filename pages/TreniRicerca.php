@@ -45,7 +45,7 @@ $main = unserialize(serialize($_SESSION['main']));
                 </li>
 
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-bolder links-nav" href="#section2">PROJECTS</a>
+                    <a class="nav-link fw-bolder links-nav" href="#section2">ABOUT</a>
                 </li>
 
                 <li class="nav-item dropdown mx-2">

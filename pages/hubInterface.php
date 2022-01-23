@@ -25,7 +25,7 @@
         </li>
 
         <li class="nav-item mx-2">
-          <a class="nav-link fw-bolder links-nav" href="../index.html#section2">PROJECTS</a>
+          <a class="nav-link fw-bolder links-nav" href="../index.html#section2">ABOUT</a>
         </li>
       </ul>
     </div>
@@ -81,12 +81,12 @@
 
   </div>
   <div class="buttons">
-    <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
+    <!-- <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
     <button id="updateTrain" class="btn btn-primary" onclick="callUpdateTrain()">updateTrain</button><br />
     <button id="removeWagons" class="btn btn-primary" onclick="callRemoveWagons()">removeWagons</button><br />
     <button id="addWagons" class="btn btn-primary" onclick="callAddWagons()">addWagons</button><br />
-    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br />
-    <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">automatic</button><br />
+    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br /> -->
+    <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">-Start-</button><br />
   </div>
 
 
