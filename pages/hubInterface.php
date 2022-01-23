@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../src_CSS/hubStyle.css" />
+  <link rel="stylesheet" href="../src_CSS/hubInterface.css" />
   <link rel="stylesheet" href="../src_CSS/navBar.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <title>Hub</title>
 </head>
 
@@ -24,17 +25,21 @@
         </li>
 
         <li class="nav-item mx-2">
-          <a class="nav-link fw-bolder links-nav" href="../index.html#section2">PROJECTS</a>
+          <a class="nav-link fw-bolder links-nav" href="../index.html#section2">ABOUT</a>
         </li>
       </ul>
     </div>
   </nav>
 
 
-  <!-- <div class="info">
-    <article></article>
-    <article></article>
-  </div> -->
+  <div class="info">
+    <article id="aW">
+      
+    </article>
+    <article id="lW">
+      
+    </article>
+  </div>
   <div class="wrap">
     <section class="top">
       <div id="v0"></div>
@@ -76,12 +81,12 @@
 
   </div>
   <div class="buttons">
-    <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
+    <!-- <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
     <button id="updateTrain" class="btn btn-primary" onclick="callUpdateTrain()">updateTrain</button><br />
     <button id="removeWagons" class="btn btn-primary" onclick="callRemoveWagons()">removeWagons</button><br />
     <button id="addWagons" class="btn btn-primary" onclick="callAddWagons()">addWagons</button><br />
-    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br />
-    <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">automatic</button><br />
+    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br /> -->
+    <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">-Start-</button><br />
   </div>
 
 
