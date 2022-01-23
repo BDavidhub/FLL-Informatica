@@ -15,7 +15,7 @@ $main = unserialize(serialize($_SESSION['main']));
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <!-- main css  -->
-    <link rel="stylesheet" href="../src_CSS/AcquistaPage.css" />
+    <link rel="stylesheet" href="../src_CSS/acquistaPageP&V.css" />
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
@@ -70,34 +70,35 @@ $main = unserialize(serialize($_SESSION['main']));
         </div>
     </nav>
 
-    <div id="fullpage">
-        <div class="section container-fluid">
 
-            <div class="bar1 container-fluid">
-                <div class="location">
-                    <p class="fw-bold">Dove</p>
-                    <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
-                </div>
-                <div class="check-in">
-                    <p class="fw-bold">Destinazione</p>
-                    <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
-                </div>
-                <div class="check-out">
-                    <nav class="check-out1">
-                        <p class="fw-bold">Data</p>
-                        <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d') ?>" disabled>
-                    </nav>
-                    <a href="../index.html">
-                        <h6> CAMBIO RICERCA</h6>
-                    </a>
-                </div>
 
+    <div class="section container-fluid">
+
+        <div class="bar1 container-fluid">
+            <div class="location">
+                <p class="fw-bold">Dove</p>
+                <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
             </div>
-            <div class="biglietti-treni">
+            <div class="check-in">
+                <p class="fw-bold">Destinazione</p>
+                <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
+            </div>
+            <div class="check-out">
+                <nav class="check-out1">
+                    <p class="fw-bold">Data</p>
+                    <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d') ?>" disabled>
+                </nav>
+                <a href="../index.html">
+                    <h6> CAMBIO RICERCA</h6>
+                </a>
+            </div>
 
-                <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
-                <?php
-                echo '  <div class="container">
+        </div>
+        <div class="biglietti-treni">
+
+            <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
+            <?php
+            echo '  <div class="container">
                      <div class="progress__container">
                        <div class="progress__bar js-bar"></div>
                        <div class="progress__circle js-circle active">1</div>
@@ -108,39 +109,78 @@ $main = unserialize(serialize($_SESSION['main']));
                      </div>
                    </div>';
 
-                ?>
-            </div>
-        </div>
-
-        <div class="section1 container-fluid">
-            <!-- <form action="acquistaNext.php" method="post"> -->
-            <div class="left-side container-fluid">
-                <h2 style="text-transform:uppercase;">SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
-                <h6>Vuoi noleggiarli o portarli tu?</h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Default radio
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Default checked radio
-                    </label>
-                </div>
-                <!-- <button onclick="window.location.href='acquistaPacco.php?n=3&t=pacco'" type="submit" name="pacco">PACCO</button>
-                    <button onclick="window.location.href='acquistaPacco.php?n=3&t=vagone'" type="submit" name="vagone">VAGONE</button> -->
-
-
-            </div>
-            <!-- </form> -->
-
-        </div>
-        <div class="section last-part">
-
+            ?>
         </div>
     </div>
+    <form action="acquistaRiepilogo.php" method="post">
+        <div class="left-side container-fluid">
+
+            <h2>SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
+
+
+            <div class="form1">
+                <div class="standard-sizes">
+                    <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
+                        echo '    <h5>GRANDEZZA PACCO</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Grande max 100x70x40cm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Medio max 60x30x40cm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Piccolo max 20x10x10cm
+                            </label>
+                        </div>';
+                    }
+                    ?>
+
+                </div>
+
+                <div class="noleggio">
+                    <h5 style="margin-bottom:1em;">VUOI NOLEGGIARLO?</h5>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="noleggioFlex" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Noleggio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="noleggioFlex" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Non serve
+                        </label>
+                    </div>
+
+                </div>
+                <div class="textN">
+                    <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
+                        echo '<h5>NUMERO DI PACCHI </h5>';
+                    } else echo '<h5 style="position: relative; bottom: -0.7em; padding-bottom:1.5em;">NUMERO DI VAGONI </h5>';
+                    ?>
+                    <input type="number" placeholder="Ex:1" name="numReg" min="1" max="9" class="numo">
+                </div>
+
+            </div>
+            <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
+                echo  '<button onclick="window.location.href="acquistaRiepilogo.php?n=4&id=' . $_SESSION['idTrain'] . '&t=pacco"" type="submit" name="pacco">CONFERMA</button>';
+            } else echo '<button style="margin-bottom:5em;"onclick="window.location.href="acquistaRiepilogo.php?n=4&id=' . $_SESSION['idTrain'] . 't=vagone"" type="submit" name="pacco">CONFERMA</button>';
+            ?>
+        </div>
+    </form>
+    <div class="section last-part">
+
+    </div>
+
 
     <!-- main.js script  -->
     <script src="../Scripts/main.js"></script>

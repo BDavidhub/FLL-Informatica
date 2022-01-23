@@ -11992,18 +11992,10 @@ fieldset:disabled .btn {
   color: #2c2c2c;
 }
 
-.section1 {
-  margin-top: 2em;
-  width: 70em;
-  height: 30em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .left-side {
-  width: 60%;
-  height: 100%;
+  margin-top: 2em;
+  width: 50em;
+  height: 30em;
   -webkit-box-shadow: 0 0 15px #c9c9c9;
           box-shadow: 0 0 15px #c9c9c9;
   border-radius: 1em;
@@ -12022,24 +12014,19 @@ fieldset:disabled .btn {
           flex-direction: column;
 }
 
-.bottoni {
-  margin-top: 2.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+.left-side form {
+  height: 100%;
+  width: 100%;
 }
 
-.bottoni a {
+.left-side h2, .left-side .h2 {
+  padding-top: 1em;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.left-side button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12050,7 +12037,7 @@ fieldset:disabled .btn {
       -ms-flex-align: center;
           align-items: center;
   width: 10em;
-  height: 50%;
+  height: 8%;
   background-color: #69c3f7;
   border-radius: 1em;
   padding: 1.5em;
@@ -12060,11 +12047,63 @@ fieldset:disabled .btn {
   -webkit-transition: background-color 150ms ease-in;
   transition: background-color 150ms ease-in;
   border: none;
-  text-decoration: none;
 }
 
-.bottoni a:hover {
+.left-side button:hover {
   background-color: #4d96c0;
+}
+
+.left-side .textN h5, .left-side .textN .h5 {
+  text-transform: uppercase;
+}
+
+.left-side .textN input {
+  border-radius: 0.5em;
+  width: 5em;
+  border: 0;
+  outline: none;
+  margin: 20px 0;
+  padding: 5px;
+  background-color: #e7e7e7;
+}
+
+.left-side .textN input:hover {
+  background-color: #dddddd;
+}
+
+.form1 {
+  width: 80%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.standard-sizes {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.7em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.noleggio {
+  padding: 2em;
+}
+
+.noleggio h5, .noleggio .h5 {
+  position: relative;
+  bottom: 1em;
 }
 
 .account-menu {
@@ -12526,4 +12565,4 @@ body .section:nth-of-type(2) {
 .dropdown-menu {
   right: 1em;
 }
-/*# sourceMappingURL=AcquistaPage.css.map */
+/*# sourceMappingURL=acquistaPageP&V.css.map */

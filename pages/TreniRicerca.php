@@ -115,7 +115,8 @@ $main = unserialize(serialize($_SESSION['main']));
 
 
                 for ($i = 0; $i < count($arrayindex); $i++) {
-
+                    $_SESSION['idTrain'] = $main->getTrains()[$arrayindex[$i]]->getCod();
+                    echo  $_SESSION['idTrain'];
                     echo '<div class="treno-rect">
                     <div class="time">
                         <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
@@ -144,7 +145,7 @@ $main = unserialize(serialize($_SESSION['main']));
                             <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
-                    <a href="acquista.php?n=2"  class="btn-acquista js-next">
+                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>

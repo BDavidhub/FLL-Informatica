@@ -3,6 +3,7 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
+// echo $_REQUEST['t'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ $main = unserialize(serialize($_SESSION['main']));
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <!-- main css  -->
-    <link rel="stylesheet" href="../src_CSS/AcquistaPage.css" />
+    <link rel="stylesheet" href="../src_CSS/acquistaPageP&V.css" />
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
@@ -111,18 +112,69 @@ $main = unserialize(serialize($_SESSION['main']));
             </div>
         </div>
 
-        <div class="section1 container-fluid">
+        <div class="left-side container-fluid">
             <!-- <form action="acquistaNext.php" method="post"> -->
-            <div class="left-side container-fluid">
-                <h2>TIPO DI SPEDIZIONE</h2>
-                <h6>Scegli il tipo di spedizione pacchi o vagone</h6>
-                <div class="bottoni">
-                    <?php
-                    echo   '<a href="acquistaPa&Va.php?n=3&id=' . $_SESSION['idTrain'] . '&t=pacco"" name="pacco">PACCO</a>';
-                    echo '<a href="acquistaPa&Va.php?n=3&id=' . $_SESSION['idTrain'] . '&t=vagone"" name="vagone">VAGONE</a>';
+            <h2>SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
+
+
+            <div class="form1">
+                <div class="standard-sizes">
+                    <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
+                        echo '    <h5>GRANDEZZA PACCO</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Grande max 100x70x40cm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Medio max 60x30x40cm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Piccolo max 20x10x10cm
+                            </label>
+                        </div>';
+                    }
                     ?>
+
                 </div>
+
+                <div class="noleggio">
+                    <h5 style="margin-bottom:1em;">VUOI NOLEGGIARLO?</h5>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="noleggioFlex" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Noleggio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="noleggioFlex" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Non serve
+                        </label>
+                    </div>
+
+                </div>
+                <div class="textN">
+                    <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
+                        echo '<h5>NUMERO DI PACCHI </h5>';
+                    } else echo '<h5 style="position: relative; bottom: -0.7em; padding-bottom:1.5em;">NUMERO DI VAGONI </h5>';
+                    ?>
+                    <input type="number" placeholder="Ex:1" name="numReg" min="1" max="9" class="numo">
+                </div>
+
             </div>
+            <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
+                echo  '<button onclick="window.location.href="acquistaRiepilogo.php?n=4&t=pacco"" type="submit" name="pacco">CONFERMA</button>';
+            } else echo '<button style="margin-bottom:5em;"onclick="window.location.href="acquistaPacco.php?n=4&t=pacco"" type="submit" name="pacco">CONFERMA</button>';
+            ?>
+
             <!-- </form> -->
 
         </div>
