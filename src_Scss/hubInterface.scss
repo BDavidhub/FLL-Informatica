@@ -4,58 +4,144 @@ body,
 html {
     width: 100vw;
     height: 100vh;
-    background: url("../assets/images/Group24.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-.container {
+.info {
+    position: absolute;
+    left: 50%;
+
+    transform: translate(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    article {
+        border-radius: 10px;
+        width: 10rem;
+        height: 10rem;
+        background-color: $primary;
+        margin: 1rem;
+        margin-top: 3rem;
+        text-align: center;
+        font-family: "Arial", Helvetica, sans-serif;
+    }
+
+    #aW::before{
+        content: 'Arriving Wagons';
+    }
+    #lW::before{
+        content: 'Leaving Wagons';
+    }
+    
+}
+.wrap {
+    position: relative;
+    width: 80%;
+    height: 300px;
+
+    display: grid;
+    /* grid-template-columns: 100%; */
+    grid-template-rows: 100px 100px 100px;
+    margin: 30vh auto;
+}
+section {
     width: 100%;
-    height: 80%;
-    background-color: red;
+    /* background: url("../assets/images/line.svg"); */
+    background-size: contain;
+    background-position-y: 60px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    font-family: "Arial", Helvetica, sans-serif;
+    font-weight: bold;
+}
 
-    .topLine {
-        height: 100%;
-        width: 100%;
-        background-color: blue;
-    }
+.top::before {
+    content: "+Wagons";
+    position: absolute;
+    left: -100px;
+}
+.bottom::before {
+    content: "Train";
+    position: absolute;
+    left: -100px;
+}
+.bin::before {
+    content: "-Wagons";
+    position: absolute;
+    left: -100px;
+}
 
-    .bottomLine {
-        height: 100%;
-        width: 100%;
-        background-color: green;
-        display: table;
-        // .train{
-        // display: table;
-        // width: inherit;
-        // height: 100%;
-        // background-color: red;
+.head_sx {
+    position: relative;
+    z-index: 2;
+    height: 50px;
+    width: 200px;
+    margin: 0;
+    background: url("../assets/images/motrice_sx.png") no-repeat;
+    background-position: center;
+    background-size: 200px;
+}
+.head_dx {
+    position: relative;
+    z-index: 2;
+    margin: 0; /*start point */
+    height: 50px;
+    width: 200px;
+    background: url("../assets/images/motrice_dx.png") no-repeat;
+    background-position: center;
+    background-size: 200px;
+}
 
-        .head_sx {
-            position: relative;
-            display: table-cell;
-            background: url("../assets/images/motrice.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+.wagon {
+    width: 80px;
+    height: 50px;
+    position: relative;
+    z-index: 2;
+    margin-left: 0;
+    text-align: center;
+    background: url("../assets/images/vagone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px;
+    opacity: 0;
+}
+.sw {
+    display: none; /*start*/
+}
+.tw {
+    display: none; /*start*/
+}
+.buttons {
+    position: relative;
+    bottom: 15rem;
+    margin: 0 auto;
+    width: 70%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+    margin: 1rem;
+}
 
-        .head_dx {
-            position: relative;
-            display: table-cell;
-            transform: scale(-1, 1);
-            background: url("../assets/images/motrice.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+.rail {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+    border-radius: 50px;
+}
 
-        .wagon {
-            position: relative;
-            display: table-cell;
-            background: url("../assets/images/vagone.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        // }
-    }
+#rail1 {
+    top: 60px;
+}
+#rail2 {
+    top: 160px;
+}
+#rail3 {
+    top: 260px;
 }

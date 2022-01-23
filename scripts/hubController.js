@@ -5,6 +5,8 @@ let twArr = Array.from(tw);
 let arrTrain = [];
 let sw = document.querySelectorAll(".sw");
 let swArr = Array.from(sw);
+let aW = document.getElementById("aW");
+let lW = document.getElementById("lW");
 // console.log(twArr);
 // console.log(swArr);
 let wm = 80;
@@ -13,8 +15,6 @@ let arrivingTrain = [];
 let leavingTrain = [];
 let removeFromT = [];
 let addToTrain = [];
-
-
 
 
 function reset() {
@@ -230,31 +230,57 @@ xhr.onload = function () {
         const resObj = JSON.parse(this.responseText);
 
         //fill arrivingTrain
+
+        // if (resObj.array[0] == null) {
+        //     arrivingTrain = [];
+        //     removeFromT = [];
+        // }else{
         for (var i = 0; i < resObj.array[0].length; i++) {
             arrivingTrain.push(resObj.array[0][i].arrAbb);
         }
+        // }
+
+
+
+
+
         //fill leavingTrain
+
+        // if (resObj.array[1] == null) {
+        //     leavingTrain = [];
+        //     removeFromT = arrTrain;
+        // } else {
         for (var i = 0; i < resObj.array[1].length; i++) {
             leavingTrain.push(resObj.array[1][i].arrAbb);
         }
 
+
+
+
         //fill removeFromT
         var find = arrivingTrain[arrivingTrain.length - 1];
-        console.log(find);
-        var stop = false;
-        for (var i = arrivingTrain.length - 1; i > 0 && !stop; i--) {
-            console.log(arrivingTrain[i])
-            if (arrivingTrain[i] != leavingTrain[i] && typeof arrivingTrain[i] !== 'undefined' && typeof leavingTrain[i] !== 'undefined') {
-                console.log(arrivingTrain[i])
-                removeFromT.push(arrivingTrain[i])
-            } else {
-                stop = true;
+        // console.log(find);
+        var search = true;
+
+        for (var i = 0; i < leavingTrain.length; i++) {
+            console.log(leavingTrain[i])
+            if (leavingTrain[i] == find) {
+                search = false;
             }
         }
+        var stop = false;
+        console.log(search);
+        if (search) {
+            console.log("si");
+            for (var i = arrivingTrain.length - 1; i > 0 && !stop; i--) {
 
-        //fill addTotrain
-        // for(var i=0;i<leavingTrain.length;i++){
-        //     if()
+                if (arrivingTrain[i] == find) {
+                    // console.log(arrivingTrain[i])
+                    removeFromT.push(arrivingTrain[i])
+                }
+
+            }
+        }
         // }
 
 
