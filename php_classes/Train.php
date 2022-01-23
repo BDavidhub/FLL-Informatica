@@ -124,7 +124,7 @@ class Train extends Utility
 
     public function previousHub($hub)
     {
-        $tmp = -1;
+        $tmp = null;
         for ($tmp1 = 0; $this->hubs[$tmp1] != $hub || $tmp1 < count($this->hubs); $tmp1++) {
             if ($this->hubs[$tmp1] != $hub) {
                 $tmp = $this->hubs[$tmp1];
@@ -133,36 +133,14 @@ class Train extends Utility
         return $tmp;
     }
 
-    public function twoHub($hub)
+    //------------------------------------------------------------------------------------
+    //QUESTE NON TI SERVONO, LE HAI GIÀ FATTE IN Hub.php CON IL METODO getWagonsByTrain
+    //------------------------------------------------------------------------------------
+
+    /*public function oneHub($hub)
     {
         $ws = array();
-        if ($this->getDeparture() == $hub) $ws[0] = null;
-        $ws[1] = $hub->getWagonsByTrain($this->train);
-        if ($this->getArrive() == $hub) $ws[0] = $hub->getWagonsByTrain($this->train);
-        $ws[1] = null;
-        $ws[0] = $hub->getWagonsByTrain($this->previousHub($hub));
-        $ws[1] = $hub->getWagonsByTrain($this->train);
-        return $ws;
-    }
-
-    
-
-    public function twoHubInverted($hub)
-    {
-        $ws = array();
-        if ($this->getDeparture() == $hub) $ws[0] = null;
-        $ws[1] = $hub->getWagonsByTrainInverted($this->train);
-        if ($this->getArrive() == $hub) $ws[0] = $hub->getWagonsByTrainInverted($this->train);
-        $ws[1] = null;
-        $ws[0] = $hub->getWagonsByTrainInverted($this->previousHub($hub));
-        $ws[1] = $hub->getWagonsByTrainInverted($this->train);
-        return $ws;
-    }
-
-    public function oneHub($hub)
-    {
-        $ws = array();
-        $ws = $this->twoHub($hub);
+        $ws = $this->getInOutConfig($hub);
         if ($ws[1] == null) return $ws[0];
         return $ws[1];
     }
@@ -170,8 +148,8 @@ class Train extends Utility
     public function oneHubInverted($hub)
     {
         $ws = array();
-        $ws = $this->twoHubInverted($hub);
+        $ws = $this->getInOutConfigInverted($hub);
         if ($ws[1] == null) return $ws[0];
         return $ws[1];
-    }
+    }*/
 }

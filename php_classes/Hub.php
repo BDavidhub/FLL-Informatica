@@ -45,13 +45,13 @@
                 return 3;
         }
 
-    public function getWagonsByTrain($train) //spostare in hub
+    public function getWagonsByTrain($train)
     {
         $ws = array();
         $fin = array();
         if (!in_array($this->hub, $train->getHubs())) return null;
         foreach ($train->getWagons() as $key => $wagon) {
-            if (in_array($this->hub, $wagon->getHubs())) {
+            if (in_array($this->hub, $wagon->getHubs())) { // Non devi inserire il vagone nell'array se l'hub è l'ultimo del percorso del vagone
                 $ws[] = $wagon;
             }
         }
@@ -67,8 +67,15 @@
         }
         return $fin;
     }
-    
-    public function getWagonsByTrainInverted($train) //spostare in hub
+
+
+    //------------------------------------------------------------------------------------
+    //DEVE ESSERCI SONO getWagonsByTrain, non anche getWagonsByTrainInverted
+    //LA STESSA COSA VALE PER getTrainInOutConfig
+    //DEVI ANCHE PROVARE I METODI QUANDO LI HAI FATTI
+    //------------------------------------------------------------------------------------
+
+    public function getWagonsByTrainInverted($train)
     {
         $ws = array();
         $fin = array();
@@ -90,5 +97,19 @@
         }
         return $fin;
     }
+    public function getTrainInOutConfig($train){
+        $ws = array();
+        if($this == $train->getDeparture()){
+            $ws[0] = null;
+        } else {
+            $ws[0] = $train->previousHub($this)->getWagonsByTrain($train);
+        }
 
+        if($this == $train->getArrive()){
+            $ws[1] = null;
+        } else {
+            $ws[1] = $this->getWagonsByTrain($train);
+        }
+        return $ws;
     }
+}
