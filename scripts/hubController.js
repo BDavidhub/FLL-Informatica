@@ -229,52 +229,34 @@ const xhr = new XMLHttpRequest();
 
 
 xhr.onload = function () {
-    if (this.status == 200) {
+    // if (this.status == 200) {
 
         const resObj = JSON.parse(this.responseText);
 
         /*
         FILL ARRIVINGTRAIN ARRAY
         */
-
-        // if (resObj.array[0] == null) {
-        //     arrivingTrain = [];
-        //     removeFromT = [];
-        // }else{
+   
         for (var i = 0; i < resObj.array[0].length; i++) {
             arrivingTrain.push(resObj.array[0][i].arrAbb);
         }
-        // }
-
-
-
-
 
         /*
         FILL LEAVINGTRAIN ARRAY
         */
 
-        // if (resObj.array[1] == null) {
-        //     leavingTrain = [];
-        //     removeFromT = arrTrain;
-        // } else {
+        
         for (var i = 0; i < resObj.array[1].length; i++) {
             leavingTrain.push(resObj.array[1][i].arrAbb);
         }
-
-
-
-
         /*
         FILL REMOVEFROMT ARRAY
         */
 
-        var find = arrivingTrain[0]; //arrivingTrain.length-1
-        // console.log(find);
+        var find = arrivingTrain[0]; 
         var search = true;
 
         for (var i = 0; i < leavingTrain.length; i++) {
-            // console.log(leavingTrain[i])
             if (leavingTrain[i] == find) {
                 search = false;
             }
@@ -284,7 +266,6 @@ xhr.onload = function () {
         if (search) {
             console.log("si");
             for (var i = 0; i < arrivingTrain.length; i++) {
-                // for (var i = 0; i > arrivingTrain && !stop; i++) {
 
                 if (arrivingTrain[i] == find) {
                     console.log("--" + arrivingTrain[i])
@@ -293,7 +274,6 @@ xhr.onload = function () {
 
             }
         }
-        // }
 
         stazTit.innerHTML = " Stazione: " + removeFromT[0];
         /*
@@ -324,10 +304,10 @@ xhr.onload = function () {
 
 
 
-        console.log(this.responseText)
-    } else {
-        console.warn("Did not receive 200 OK from response")
-    }
+        // console.log(this.responseText)
+    // } else {
+        // console.warn("Did not receive 200 OK from response")
+    // }
 };
 
 xhr.open('get', 'test.json');
@@ -346,7 +326,7 @@ function printLeave(leave) {
 }
 
 function printAdd(add) {
-    if (add.leave > 0) {
+    if (add.length > 0) {
         for (var i = 0; i < add.length; i++) {
             aW.innerHTML = "<br>" + (i + 1) + "x " + add[i];
         }
