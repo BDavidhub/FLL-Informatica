@@ -12039,7 +12039,7 @@ fieldset:disabled .btn {
           flex-direction: row;
 }
 
-.bottoni button {
+.bottoni a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12060,9 +12060,10 @@ fieldset:disabled .btn {
   -webkit-transition: background-color 150ms ease-in;
   transition: background-color 150ms ease-in;
   border: none;
+  text-decoration: none;
 }
 
-.bottoni button:hover {
+.bottoni a:hover {
   background-color: #4d96c0;
 }
 

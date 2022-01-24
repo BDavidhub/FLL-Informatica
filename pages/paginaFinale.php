@@ -3,6 +3,13 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
+if ($_SESSION['loggedIn'] == 1) {
+    $_SESSION['loggedIn'] = 2;
+    $_SESSION['flexRadioDefault1'] = $_POST['flexRadioDefault'];
+    $_SESSION['noleggioFlex'] = $_POST['noleggioFlex'];
+    $_SESSION['numeroOrdinato'] = $_POST['numReg'];
+    header('location: acquistaRiepilogo.php?n=4');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +21,7 @@ $main = unserialize(serialize($_SESSION['main']));
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <!-- main css  -->
-    <link rel="stylesheet" href="../src_CSS/AcquistaPage.css" />
+    <link rel="stylesheet" href="../src_CSS/acquistaPageP&V.css" />
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
@@ -94,7 +101,8 @@ $main = unserialize(serialize($_SESSION['main']));
             </div>
             <div class="biglietti-treni">
 
-                <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
+                <h1 class="fw-bolder">SPEDIZIONE CONFERMATA</h1>
+                <h3 class="fw-bolder">SUCCESSO!</h3>
                 <?php
                 echo '  <div class="container">
                      <div class="progress__container">
@@ -110,25 +118,64 @@ $main = unserialize(serialize($_SESSION['main']));
                 ?>
             </div>
         </div>
+        <div class="biglietti-treni">
 
-        <div class="section1 container-fluid">
-            <!-- <form action="acquistaNext.php" method="post"> -->
-            <div class="left-side container-fluid">
-                <h2>TIPO DI SPEDIZIONE</h2>
-                <h6>Scegli il tipo di spedizione pacchi o vagone</h6>
-                <div class="bottoni">
-                    <?php
-                    echo   '<a href="acquistaPa&Va.php?n=3&id=' . $_SESSION['idTrain'] . '&t=pacco"" name="pacco">PACCO</a>';
-                    echo '<a href="acquistaPa&Va.php?n=3&id=' . $_SESSION['idTrain'] . '&t=vagone"" name="vagone">VAGONE</a>';
-                    ?>
-                </div>
-            </div>
-            <!-- </form> -->
+            <?php
+            $arrayindex = $_SESSION['arrayIndex'];
+            for ($i = 0; $i < count($arrayindex); $i++) {
+                if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
+                    echo '<div class="treno-rect">
+                    <div class="time">
+                        <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
+                        <img src="../assets/images/Arrow87.png" alt="arrow">
+                        <h4>' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->add(new DateInterval("PT1H"))->format("H:i") . '</h4>
+                    </div>
+                    <div class="ritiro">
+                        <div class="left-side-icon">
+                            <img src="../assets/images/homeIcon.png" alt="home icon">
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getDeparture()->getName() . ' </p>
+                        </div>
+                        <div class="right-side-icon">
+                            <p class="title fw-bolder"> RITIRO </p>
+                            <p class="small-text">Punto di spedizione</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
+                        </div>
+                    </div>
+                    <div class="ritiro">
+                        <div class="left-side-icon">
+                            <img src="../assets/images/homeIcon.png" alt="home icon">
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getArrive()->getName()  . '</p>
+                        </div>
+                        <div class="right-side-icon">
+                            <p class="title fw-bolder"> CONSEGNA </p>
+                            <p class="small-text">Punto di consegna</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
+                        </div>
+                    </div>
+                    </div>';
+                }
+            }
+            ?>
+        </div>
+
+        <div class="second-part container-fluid">
+            <?php
+            for ($i = 0; $i < count($arrayindex); $i++) {
+                if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
+                    echo ' <h5>ARRIVERA ALLE ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . ' DEL ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y")  . ' </h5>';
+                }
+            }
+            ?>
 
         </div>
-        <div class="section last-part">
 
-        </div>
+
+        <!-- </form> -->
+
+    </div>
+    <div class="section last-part">
+
+    </div>
     </div>
 
     <!-- main.js script  -->
