@@ -10,8 +10,8 @@
             $this->boxes = $boxes;
             $this->hubs = $boxes[0]->getHubs();
             $this->capacity = $capacity;
-            parent::__construct("wagon",$this->getHubArrive);
-            $this->sig=parent::getSig();
+        parent::__construct("wagon"/*,$this->getHubArrive*/);
+           // $this->sig=parent::getSig();
         }
 
         public function getBoxes() {
