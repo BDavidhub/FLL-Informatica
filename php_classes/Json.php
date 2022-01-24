@@ -18,3 +18,4 @@
         }
     }
     echo json_encode($hub->getTrainInOutConfig($train,1));
+?>

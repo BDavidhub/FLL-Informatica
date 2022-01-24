@@ -69,6 +69,7 @@
             $ws[0]=$this->getHubDeparture();
             $ws[1]=$this->getHubArrive();
             $ws[2]=$this->getHubs();
+            //$ws[3]=$this->getHubs();
             return $ws;
         }
     }
