@@ -31,7 +31,8 @@ echo $_POST['fdata'];
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];
 $_SESSION['data'] = new DateTime($_POST['fdata']);
-//header('location: ../pages/TreniRicerca.php?n=1');
+header('location: ../pages/TreniRicerca.php?n=1');
+exit;
 ?>
 
 <html>
