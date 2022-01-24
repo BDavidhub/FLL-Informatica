@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../src_CSS/hubInterface.css" />
@@ -32,15 +32,17 @@
   </nav>
 
 
+
   <div class="info">
     <article id="aW">
-      
     </article>
     <article id="lW">
-      
     </article>
+
   </div>
+  <h2 id="stazTit" class="yourStaz"></h2>
   <div class="wrap">
+    
     <section class="top">
       <div id="v0"></div>
       <div class="wagon sw" id="v1"></div>
@@ -81,11 +83,11 @@
 
   </div>
   <div class="buttons">
-    <!-- <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
+    <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
     <button id="updateTrain" class="btn btn-primary" onclick="callUpdateTrain()">updateTrain</button><br />
     <button id="removeWagons" class="btn btn-primary" onclick="callRemoveWagons()">removeWagons</button><br />
     <button id="addWagons" class="btn btn-primary" onclick="callAddWagons()">addWagons</button><br />
-    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br /> -->
+    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br />
     <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">-Start-</button><br />
   </div>
 
@@ -94,7 +96,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="../assets/libs/move.js/move.js"></script>
-  
+
 </body>
 
 </html>
