@@ -21,13 +21,11 @@ if ($_SESSION['loggedIn'] == 1) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <!-- main css  -->
-    <link rel="stylesheet" href="../src_CSS/acquistaPageP&V.css" />
+    <link rel="stylesheet" href="../src_CSS/PaginaFinale.css" />
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
-    <script>
-        // $("#avanti").trigger();
-    </script>
+
 </head>
 
 <body>
@@ -166,6 +164,19 @@ if ($_SESSION['loggedIn'] == 1) {
                 }
             }
             ?>
+            <?php
+            // echo '  <div class="container1">
+            //          <div class="progress__container1">
+            //            <div class="progress__bar1 js-bar"></div>
+            //            <div class="progress__circle1 js-circle1 active1">1</div>
+            //            <div class="progress__circle1 js-circle1">2</div>
+            //            <div class="progress__circle1 js-circle1">3</div>
+            //            <div class="progress__circle1 js-circle1">4</div>
+            //            <div class="progress__circle1 js-circle1">5</div>
+            //          </div>
+            //        </div>';
+
+            ?>
 
         </div>
 
@@ -179,8 +190,8 @@ if ($_SESSION['loggedIn'] == 1) {
     </div>
 
     <!-- main.js script  -->
-    <script src="../Scripts/main.js"></script>
-    <script src="../Scripts/progressBar.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/progressBar.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

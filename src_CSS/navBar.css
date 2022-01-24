@@ -11992,6 +11992,19 @@ fieldset:disabled .btn {
   color: #2c2c2c;
 }
 
+.dropdown-menu {
+  border-radius: 1rem;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: inherit;
+  border-radius: 2rem;
+  color: #a09e9e;
+  outline: none;
+}
+
 .account-menu {
   width: 4.5em;
   height: 2em;
@@ -12173,19 +12186,6 @@ fieldset:disabled .btn {
 
 .bar1 .check-out span:hover {
   background-color: #4d96c0;
-}
-
-.dropdown-menu {
-  border-radius: 1rem;
-  border: none;
-}
-
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
-  background-color: inherit;
-  border-radius: 2rem;
-  color: #a09e9e;
-  outline: none;
 }
 
 .linea {

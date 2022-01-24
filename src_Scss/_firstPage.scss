@@ -22,6 +22,17 @@
     
 }
 
+.dropdown-menu{
+    border-radius: 1rem ;
+    border:none;
+    .dropdown-item:hover,
+    .dropdown-item:focus{
+        background-color: inherit;
+        border-radius: 2rem;
+        color: rgb(160, 158, 158);
+        outline: none;
+    }
+}
 .account-menu{
     width:4.5em;
     height: 2em;
@@ -165,17 +176,6 @@
       }
 }
 
-.dropdown-menu{
-    border-radius: 1rem ;
-    border:none;
-    .dropdown-item:hover,
-    .dropdown-item:focus{
-        background-color: inherit;
-        border-radius: 2rem;
-        color: rgb(160, 158, 158);
-        outline: none;
-    }
-}
 .linea{
     width:100%;
     height: 0.7em;

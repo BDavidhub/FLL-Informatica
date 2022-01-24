@@ -1,0 +1,142 @@
+// nav bar
+.trainNavbar{
+    margin-left: 2em;
+    color:#f7f7f7;
+    transition: color 150ms ease-in;
+}
+.trainNavbar:hover{
+    color:#424242;
+}
+.links-nav{
+    color:#f7f7f7 !important;
+    transition: color 100ms ease-in;
+}
+.links-nav:hover{
+    color:#424242 !important;
+}
+.fa-bars{
+    margin-left:0.5em;
+    color:#747474;
+}
+.fa-bars:hover{
+    color:#2c2c2c;
+    
+}
+
+.account-menu{
+    width:4.5em;
+    height: 2em;
+    background-color: #f7f7f7;
+    border-radius:5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .outerUser{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:1.8em;
+        height: 1.5em;
+    }
+    transition: background-color 150ms ease-in;
+}
+.account-menu:hover{
+    box-shadow:0 0 9px rgb(139, 139, 139);
+}
+.text-center1{
+    color:#f7f7f7 ;
+}
+
+.dropdown-menu{
+    border-radius: 1rem ;
+    border:none;
+    .dropdown-item:hover,
+    .dropdown-item:focus{
+        background-color: inherit;
+        border-radius: 2rem;
+        color: rgb(160, 158, 158);
+        outline: none;
+    }
+}
+///////
+
+//////title
+.title1{
+    background:green;
+    text-align: center;
+    margin-top: 6em;
+}
+
+/// mappa
+
+.mappa1{
+
+    width:100%;
+    height:70%;
+    background: red;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    .percorso1{
+        height:1em;
+        border-radius:2em;
+        width:70%;
+        background:rgb(26, 192, 243);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        .stazione1{
+            height:3em;
+            width:3em;
+            border-radius:2em;
+            background:rgb(26, 192, 243);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            .rectB{
+                display: none;
+                position:absolute;
+                width:15em;
+                height: 15em;
+                margin-top: 20em;
+                border-radius:1em;
+                 background:rgb(26, 192, 243);
+                 display:flex;
+          
+                 flex-direction: column;
+                transition: all 300ms ease-in-out;
+                .vagoni{
+                    margin-top:3em;
+                    display:flex;
+                    align-items:center;
+                 justify-content:space-around;
+                 .lSide{
+                    display:flex;
+                    align-items:center;
+                 justify-content:center;
+                 flex-direction: column;
+                }
+                .rSide{
+                    display:flex;
+                    align-items:center;
+                 justify-content:center;
+                 flex-direction: column;
+                }
+                }
+                h4{
+                    background-color: rgb(32, 151, 219);
+                    margin: 0;
+                    padding: 15px;
+                    border-radius:0.8em 0.8em 0 0 ;
+                    text-align: center;
+
+                }
+            }
+            &:nth-child(1){
+
+            }
+        }
+
+    }
+}
