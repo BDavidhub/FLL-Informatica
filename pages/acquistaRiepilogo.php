@@ -76,35 +76,35 @@ if ($_SESSION['loggedIn'] == 1) {
         </div>
     </nav>
 
-    <div id="fullpage">
-        <div class="section container-fluid">
 
-            <div class="bar1 container-fluid">
-                <div class="location">
-                    <p class="fw-bold">Dove</p>
-                    <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
-                </div>
-                <div class="check-in">
-                    <p class="fw-bold">Destinazione</p>
-                    <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
-                </div>
-                <div class="check-out">
-                    <nav class="check-out1">
-                        <p class="fw-bold">Data</p>
-                        <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d') ?>" disabled>
-                    </nav>
-                    <a href="../index.html">
-                        <h6> CAMBIO RICERCA</h6>
-                    </a>
-                </div>
+    <div class="section container-fluid">
 
+        <div class="bar1 container-fluid">
+            <div class="location">
+                <p class="fw-bold">Dove</p>
+                <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
             </div>
-            <div class="biglietti-treni">
+            <div class="check-in">
+                <p class="fw-bold">Destinazione</p>
+                <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
+            </div>
+            <div class="check-out">
+                <nav class="check-out1">
+                    <p class="fw-bold">Data</p>
+                    <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d') ?>" disabled>
+                </nav>
+                <a href="../index.html">
+                    <h6> CAMBIO RICERCA</h6>
+                </a>
+            </div>
 
-                <h1 class="fw-bolder">SPEDIZIONE CONFERMA</h1>
+        </div>
+        <div class="biglietti-treni">
 
-                <?php
-                echo '  <div class="container">
+            <h1 class="fw-bolder">SPEDIZIONE CONFERMA</h1>
+
+            <?php
+            echo '  <div class="container">
                      <div class="progress__container">
                        <div class="progress__bar js-bar"></div>
                        <div class="progress__circle js-circle active">1</div>
@@ -115,16 +115,16 @@ if ($_SESSION['loggedIn'] == 1) {
                      </div>
                    </div>';
 
-                ?>
-            </div>
+            ?>
         </div>
-        <div class="biglietti-treni">
+    </div>
+    <div class="biglietti-treni">
 
-            <?php
-            $arrayindex = $_SESSION['arrayIndex'];
-            for ($i = 0; $i < count($arrayindex); $i++) {
-                if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
-                    echo '<div class="treno-rect">
+        <?php
+        $arrayindex = $_SESSION['arrayIndex'];
+        for ($i = 0; $i < count($arrayindex); $i++) {
+            if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
+                echo '<div class="treno-rect">
                     <div class="time">
                         <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
                         <img src="../assets/images/Arrow87.png" alt="arrow">
@@ -153,37 +153,39 @@ if ($_SESSION['loggedIn'] == 1) {
                         </div>
                     </div>
                     </div>';
-                }
             }
-            ?>
-        </div>
-
-        <div class="outerShell container-fluid">
-            <?php if (strcmp($_SESSION['t'], 'pacco') == 0) {
-                echo "<ul><h5> GRANDEZZA PACCO: " . $_SESSION['flexRadioDefault1'] . "</h5> </ul>";
-            } else {
-                echo "<ul><h5>VAGONE GRANDEZZA STANDARD </h5> </ul>";
-            } ?>
-
-            <ul><?php echo '<h5> ' . $_SESSION['noleggioFlex']  . '</h5>' ?></ul>
-            <ul><?php echo '<h5> NUMERO ORDINATO ' . $_SESSION['numeroOrdinato']  . '</h5>' ?></ul>
-            <?php
-            echo  '<a href="paginaFinale.php?n=5"">CONFERMA</a>';
-            ?>
-        </div>
-
-
-        <!-- </form> -->
-
+        }
+        ?>
     </div>
+
+
+    <div class="outerShell container-fluid">
+        <?php if (strcmp($_SESSION['t'], 'pacco') == 0) {
+            echo "<ul><h5> GRANDEZZA PACCO: " . $_SESSION['flexRadioDefault1'] . "</h5> </ul>";
+        } else {
+            echo "<ul><h5>VAGONE GRANDEZZA STANDARD </h5> </ul>";
+        } ?>
+
+        <ul><?php echo '<h5> ' . $_SESSION['noleggioFlex']  . '</h5>' ?></ul>
+        <ul><?php echo '<h5> NUMERO ORDINATO ' . $_SESSION['numeroOrdinato']  . '</h5>' ?></ul>
+        <?php
+        echo  '<a href="paginaFinale.php?n=5"">CONFERMA</a>';
+
+        ?>
+    </div>
+
+
+    <!-- </form> -->
+
+
     <div class="section last-part">
 
     </div>
     </div>
 
     <!-- main.js script  -->
-    <script src="../Scripts/main.js"></script>
-    <script src="../Scripts/progressBar.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/progressBar.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

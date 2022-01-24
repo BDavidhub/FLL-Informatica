@@ -12291,8 +12291,9 @@ fieldset:disabled .btn {
 }
 
 .biglietti-treni {
+  margin-top: 3em;
   width: 100%;
-  height: 30%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12309,7 +12310,6 @@ fieldset:disabled .btn {
 }
 
 .biglietti-treni h1, .biglietti-treni .h1 {
-  margin-top: 2.4em;
   color: #303030;
 }
 
@@ -12470,33 +12470,6 @@ fieldset:disabled .btn {
   text-align: center;
 }
 
-.outerShell a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 10em;
-  height: 8%;
-  background-color: #69c3f7;
-  border-radius: 1em;
-  padding: 1.5em;
-  margin: 1em;
-  text-decoration: none;
-  color: white;
-  -webkit-transition: background-color 150ms ease-in;
-  transition: background-color 150ms ease-in;
-  border: none;
-}
-
-.outerShell a:hover {
-  background-color: #4d96c0;
-}
-
 .container {
   margin-top: 5rem;
   display: -webkit-box;
@@ -12615,4 +12588,4 @@ body .section:nth-of-type(2) {
 .dropdown-menu {
   right: 1em;
 }
-/*# sourceMappingURL=acquistaPageP&V.css.map */
+/*# sourceMappingURL=AcquistaRiepilogo.css.map */
