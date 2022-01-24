@@ -55,10 +55,10 @@ function updateTrain(newTrain) {
             .ease('out')
             .duration('0.001s')
             .then()
-                .set('opacity', 1)
-                .duration('0.001s')
-                .ease('out')
-                .pop()
+            .set('opacity', 1)
+            .duration('0.001s')
+            .ease('out')
+            .pop()
             .end();
         tw[i].innerHTML = arrTrain[i];
         // }
@@ -96,7 +96,7 @@ function removeWagons(arrRem) {
         console.log("nothing to remove");
     }
     printLeave(removeFromT);
-    }
+}
 
 
 
@@ -110,10 +110,10 @@ function addWagons(arrLeave) {
 
 
     //trova fp
-    if(contP > 0){
-        for(var i=0;i<arrLeave.length;i++){
-            if(firstTime && arrLeave[i]==addToTrain[0]){
-                fp=i;
+    if (contP > 0) {
+        for (var i = 0; i < arrLeave.length; i++) {
+            if (firstTime && arrLeave[i] == addToTrain[0]) {
+                fp = i;
                 firstTime = false;
             }
         }
@@ -126,7 +126,7 @@ function addWagons(arrLeave) {
             arrTrain.splice(i, 0, arrLeave[i]);
         }
     }
-    
+
     console.log("arrLeave: " + arrLeave.length);
     console.log("contP:" + contP);
     console.log(twArr);
@@ -166,7 +166,7 @@ function addWagons(arrLeave) {
                 console.log("twARR");
                 console.log(i);
                 // console
-                move(twArr[fp+2])
+                move(twArr[fp + 2])
                     .add('margin-left', makeSpace)
                     .then()
                     .move(swArr[i])
@@ -267,7 +267,7 @@ xhr.onload = function () {
 
         /*
         FILL REMOVEFROMT ARRAY
-        */  
+        */
 
         var find = arrivingTrain[0]; //arrivingTrain.length-1
         // console.log(find);
@@ -284,10 +284,10 @@ xhr.onload = function () {
         if (search) {
             console.log("si");
             for (var i = 0; i < arrivingTrain.length; i++) {
-            // for (var i = 0; i > arrivingTrain && !stop; i++) {
+                // for (var i = 0; i > arrivingTrain && !stop; i++) {
 
                 if (arrivingTrain[i] == find) {
-                    console.log("--"+arrivingTrain[i])
+                    console.log("--" + arrivingTrain[i])
                     removeFromT.push(arrivingTrain[i])
                 }
 
@@ -295,7 +295,7 @@ xhr.onload = function () {
         }
         // }
 
-        stazTit.innerHTML = " Stazione: "+removeFromT[0];
+        stazTit.innerHTML = " Stazione: " + removeFromT[0];
         /*
         FILL ADDTOTRAIN ARRAY
         */
@@ -321,9 +321,9 @@ xhr.onload = function () {
         console.log(leavingTrain)
         console.log(removeFromT)
         console.log(addToTrain)
-        
-        
-        
+
+
+
         console.log(this.responseText)
     } else {
         console.warn("Did not receive 200 OK from response")
@@ -336,15 +336,22 @@ xhr.send();
 
 
 function printLeave(leave) {
-    for(var i=0;i<leave.length;i++){
-        lW.innerHTML = "<br>" + (i+1) + "x "+ leave[i];
+    if (leave.length > 0) {
+        for (var i = 0; i < leave.length; i++) {
+            lW.innerHTML = "<br>" + (i + 1) + "x " + leave[i];
+        }
+    } else {
+        lW.innerHTML = "<br>" + "0x";
     }
-    
 }
 
-function printAdd(add){
-    for(var i=0;i<add.length;i++){
-        aW.innerHTML = "<br>" + (i+1) + "x "+ add[i];
+function printAdd(add) {
+    if (add.leave > 0) {
+        for (var i = 0; i < add.length; i++) {
+            aW.innerHTML = "<br>" + (i + 1) + "x " + add[i];
+        }
+    } else {
+        aW.innerHTML = "<br>" + "0x";
     }
 }
 
