@@ -16,7 +16,6 @@ let leavingTrain = [];
 let removeFromT = [];
 let addToTrain = [];
 
-alert("ciaooo");
 function reset() {
     for (var i = 0; i < tw.length; i++) {
         tw[i].style = "display:none";
@@ -267,7 +266,7 @@ xhr.onload = function () {
         FILL REMOVEFROMT ARRAY
         */  
 
-        var find = arrivingTrain[arrivingTrain.length-1];
+        var find = arrivingTrain[0]; //arrivingTrain.length-1
         // console.log(find);
         var search = true;
 
@@ -277,15 +276,15 @@ xhr.onload = function () {
                 search = false;
             }
         }
-        var stop = false;
+
         console.log(search);
         if (search) {
             console.log("si");
-            for (var i = arrivingTrain.length; i < 0  && !stop; i--) {
+            for (var i = 0; i < arrivingTrain.length; i++) {
             // for (var i = 0; i > arrivingTrain && !stop; i++) {
 
                 if (arrivingTrain[i] == find) {
-                    console.log(arrivingTrain[i])
+                    console.log("--"+arrivingTrain[i])
                     removeFromT.push(arrivingTrain[i])
                 }
 
@@ -313,7 +312,7 @@ xhr.onload = function () {
             }
         }
 
-        console.log("--"+find);
+        console.log("ciao");
         console.log(arrivingTrain)
         console.log(leavingTrain)
         console.log(removeFromT)
