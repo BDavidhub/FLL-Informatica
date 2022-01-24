@@ -70,12 +70,12 @@
             else $this->id .= $cod;
             //check if id already exists
         }
-
+/*
         public function getSig()
         {
             return $this->sig;
         }
-
+*/
         public function getId()
         {
             return $this->id;
