@@ -12323,9 +12323,9 @@ fieldset:disabled .btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -12445,6 +12445,69 @@ fieldset:disabled .btn {
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
+}
+
+.outerShell {
+  margin-top: 2em;
+  width: 40em;
+  height: 20em;
+  -webkit-box-shadow: 0 0 15px #c9c9c9;
+          box-shadow: 0 0 15px #c9c9c9;
+  border-radius: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.outerShell a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10em;
+  height: 8%;
+  background-color: #69c3f7;
+  border-radius: 1em;
+  padding: 1.5em;
+  margin: 1em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+  border: none;
+}
+
+.outerShell a:hover {
+  background-color: #4d96c0;
+}
+
+.second-part {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container {

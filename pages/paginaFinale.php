@@ -101,8 +101,8 @@ if ($_SESSION['loggedIn'] == 1) {
             </div>
             <div class="biglietti-treni">
 
-                <h1 class="fw-bolder">SPEDIZIONE CONFERMA</h1>
-
+                <h1 class="fw-bolder">SPEDIZIONE CONFERMATA</h1>
+                <h3 class="fw-bolder">SUCCESSO!</h3>
                 <?php
                 echo '  <div class="container">
                      <div class="progress__container">
@@ -158,18 +158,15 @@ if ($_SESSION['loggedIn'] == 1) {
             ?>
         </div>
 
-        <div class="outerShell container-fluid">
-            <?php if (strcmp($_SESSION['t'], 'pacco') == 0) {
-                echo "<ul><h5> GRANDEZZA PACCO: " . $_SESSION['flexRadioDefault1'] . "</h5> </ul>";
-            } else {
-                echo "<ul><h5>VAGONE GRANDEZZA STANDARD </h5> </ul>";
-            } ?>
-
-            <ul><?php echo '<h5> ' . $_SESSION['noleggioFlex']  . '</h5>' ?></ul>
-            <ul><?php echo '<h5> NUMERO ORDINATO ' . $_SESSION['numeroOrdinato']  . '</h5>' ?></ul>
+        <div class="second-part container-fluid">
             <?php
-            echo  '<a href="paginaFinale.php?n=5"">CONFERMA</a>';
+            for ($i = 0; $i < count($arrayindex); $i++) {
+                if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
+                    echo ' <h5>ARRIVERA ALLE ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . ' DEL ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y")  . ' </h5>';
+                }
+            }
             ?>
+
         </div>
 
 
