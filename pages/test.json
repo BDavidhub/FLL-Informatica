@@ -4,8 +4,6 @@
             {"id":"W2","arrive":"Venezia","arrAbb":"VE"},
             {"id":"W3","arrive":"Venezia","arrAbb":"VE"},
             {"id":"W4","arrive":"Venezia","arrAbb":"VE"},
-            {"id":"W9","arrive":"Torino","arrAbb":"TO"},
-            {"id":"W9","arrive":"Torino","arrAbb":"TO"},
             {"id":"W1","arrive":"Treviso","arrAbb":"TV"},
             {"id":"W6","arrive":"Treviso","arrAbb":"TV"},
             {"id":"W5","arrive":"Milano","arrAbb":"MI"},
@@ -21,8 +19,6 @@
             {"id":"W9","arrive":"Vicenza","arrAbb":"VI"},
             {"id":"W1","arrive":"Treviso","arrAbb":"TV"},
             {"id":"W6","arrive":"Treviso","arrAbb":"TV"}
-            
-            
         ]
     ]
 }
