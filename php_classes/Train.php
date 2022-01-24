@@ -19,8 +19,8 @@ class Train extends Utility
     private $limit;
     private $hubs;
     private $dateDimeDeparture;
-
-    public function __construct($departure, $arrive, $cod, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
+    private $cod;
+    public function __construct($departure, $arrive, $cod1, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
     {
         if ($wagons == null)
             $this->wagons = array();
@@ -28,9 +28,10 @@ class Train extends Utility
             $this->wagons = $wagons;
 
         $this->limit = $limit;
+        $this->cod = $cod1;
         $this->dateDimeDeparture = $dateDimeDeparture;
         $this->hubs = $main->computeDistance($departure, $arrive);
-        parent::__construct("train", $cod);
+        parent::__construct("train", $cod1);
     }
 
     public function getWagons()
@@ -60,7 +61,7 @@ class Train extends Utility
     }
     public function getId()
     {
-        return $this->id;
+        return parent::getId();
     }
     public function setWagons($wagons)
     {

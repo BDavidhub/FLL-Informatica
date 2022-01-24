@@ -176,3 +176,57 @@
         outline: none;
     }
 }
+.linea{
+    width:100%;
+    height: 0.7em;
+    background-color: #b4b4b4;
+
+    img{
+        position:absolute;
+        top: -4.3em;      
+        height: 8em;
+        right:0;
+        width:auto;
+    }
+}
+.wrapper {
+    margin-top: 5%;
+    width:70%;
+    margin-left: 17%;
+    
+  }
+  
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cards li {
+    border: 2px solid rgba(35, 176, 255, 1);
+    border-radius:0.5em;
+    background-color: rgb(26, 192, 243);
+    color: #fff;
+    flex: 1 1 200px;
+  }
+  
+  .cards h2 {
+    background-color: rgba(35, 176, 255, 1);
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .cards p {
+    padding: 10px;
+  }
+  
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+  
+  .flex li {
+    flex: 1 1 200px;
+    margin: 10px;
+  }

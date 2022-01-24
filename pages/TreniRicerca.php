@@ -113,15 +113,16 @@ $main = unserialize(serialize($_SESSION['main']));
                 }
                 // echo $main->getTrains()[$arrayindex[0]]->getDeparture();
 
-
+                $_SESSION['arrayIndex'] = $arrayindex;
                 for ($i = 0; $i < count($arrayindex); $i++) {
-
+                    $_SESSION['idTrain'] = $main->getTrains()[$arrayindex[$i]]->getCod();
                     echo '<div class="treno-rect">
                     <div class="time">
                         <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
                         <img src="../assets/images/Arrow87.png" alt="arrow">
-                        <h4>' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
+                        <h4>' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->add(new DateInterval("PT1H"))->format("H:i") . '</h4>
                     </div>
+
                     <div class="ritiro">
                         <div class="left-side-icon">
                             <img src="../assets/images/homeIcon.png" alt="home icon">
@@ -144,7 +145,7 @@ $main = unserialize(serialize($_SESSION['main']));
                             <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
-                    <a href="acquista.php?n=2"  class="btn-acquista js-next">
+                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>

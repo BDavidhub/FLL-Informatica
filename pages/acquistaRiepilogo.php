@@ -3,7 +3,13 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
-$_SESSION['loggedIn'] = 1;
+if ($_SESSION['loggedIn'] == 1) {
+    $_SESSION['loggedIn'] = 2;
+    $_SESSION['flexRadioDefault1'] = $_POST['flexRadioDefault'];
+    $_SESSION['noleggioFlex'] = $_POST['noleggioFlex'];
+    $_SESSION['numeroOrdinato'] = $_POST['numReg'];
+    header('location: acquistaRiepilogo.php?n=4');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +25,9 @@ $_SESSION['loggedIn'] = 1;
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
-
+    <script>
+        // $("#avanti").trigger();
+    </script>
 </head>
 
 <body>
@@ -44,7 +52,7 @@ $_SESSION['loggedIn'] = 1;
                 </li>
 
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-bolder links-nav" href="#section2">ABOUT</a>
+                    <a class="nav-link fw-bolder links-nav" href="#section2">PROJECTS</a>
                 </li>
 
                 <li class="nav-item dropdown mx-2">
@@ -67,7 +75,6 @@ $_SESSION['loggedIn'] = 1;
             </ul>
         </div>
     </nav>
-
 
 
     <div class="section container-fluid">
@@ -94,9 +101,9 @@ $_SESSION['loggedIn'] = 1;
         </div>
         <div class="biglietti-treni">
 
-            <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
+            <h1 class="fw-bolder">SPEDIZIONE CONFERMA</h1>
+
             <?php
-            $_SESSION['t'] = $_REQUEST['t'];
             echo '  <div class="container">
                      <div class="progress__container">
                        <div class="progress__bar js-bar"></div>
@@ -111,80 +118,74 @@ $_SESSION['loggedIn'] = 1;
             ?>
         </div>
     </div>
-    <form action="acquistaRiepilogo.php" method="post">
-        <div class="left-side container-fluid">
+    <div class="biglietti-treni">
 
-            <h2>SPEDIZIONE <?php echo $_REQUEST['t'] ?></h2>
-
-
-            <div class="form1">
-                <div class="standard-sizes">
-                    <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
-                        echo '    <h5>GRANDEZZA PACCO</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Grande max 100x70x40cm" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Grande max 100x70x40cm
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"  value="Medio max 60x30x40cm" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Medio max 60x30x40cm
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Piccolo max 20x10x10cm" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Piccolo max 20x10x10cm
-                            </label>
-                        </div>';
-                    }
-                    ?>
-
-                </div>
-
-                <div class="noleggio">
-                    <h5 style="margin-bottom:1em;">VUOI NOLEGGIARLO?</h5>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="noleggioFlex" value="Si Noleggio" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Noleggio
-                        </label>
+        <?php
+        $arrayindex = $_SESSION['arrayIndex'];
+        for ($i = 0; $i < count($arrayindex); $i++) {
+            if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
+                echo '<div class="treno-rect">
+                    <div class="time">
+                        <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
+                        <img src="../assets/images/Arrow87.png" alt="arrow">
+                        <h4>' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->add(new DateInterval("PT1H"))->format("H:i") . '</h4>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="noleggioFlex" value="No Noleggio" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Non serve
-                        </label>
+                    <div class="ritiro">
+                        <div class="left-side-icon">
+                            <img src="../assets/images/homeIcon.png" alt="home icon">
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getDeparture()->getName() . ' </p>
+                        </div>
+                        <div class="right-side-icon">
+                            <p class="title fw-bolder"> RITIRO </p>
+                            <p class="small-text">Punto di spedizione</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
+                        </div>
                     </div>
-
-                </div>
-                <div class="textN">
-                    <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
-                        echo '<h5>NUMERO DI PACCHI </h5>';
-                    } else echo '<h5 style="position: relative; bottom: -0.7em; padding-bottom:1.5em;">NUMERO DI VAGONI </h5>';
-                    ?>
-                    <input type="number" placeholder="Ex:1" name="numReg" min="1" max="9" class="numo" required>
-                </div>
-
-            </div>
-
-            <?php if (strcmp($_REQUEST['t'], 'pacco') == 0) {
-                echo  '<button onclick="window.location.href="acquistaRiepilogo.php?n=4&id=' . $_SESSION['idTrain'] . '&t=pacco"" type="submit" name="pacco">CONFERMA</button>';
-            } else echo '<button style="margin-bottom:5em;"onclick="window.location.href="acquistaRiepilogo.php?n=4&id=' . $_SESSION['idTrain'] . 't=vagone"" type="submit" name="pacco">CONFERMA</button>';
-            ?>
-        </div>
-    </form>
-    <div class="section last-part">
-
+                    <div class="ritiro">
+                        <div class="left-side-icon">
+                            <img src="../assets/images/homeIcon.png" alt="home icon">
+                            <p class="fw-bolder text-uppercase"> ' . $main->getTrains()[$arrayindex[$i]]->getArrive()->getName()  . '</p>
+                        </div>
+                        <div class="right-side-icon">
+                            <p class="title fw-bolder"> CONSEGNA </p>
+                            <p class="small-text">Punto di consegna</p>
+                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
+                        </div>
+                    </div>
+                    </div>';
+            }
+        }
+        ?>
     </div>
 
 
+    <div class="outerShell container-fluid">
+        <?php if (strcmp($_SESSION['t'], 'pacco') == 0) {
+            echo "<ul><h5> GRANDEZZA PACCO: " . $_SESSION['flexRadioDefault1'] . "</h5> </ul>";
+        } else {
+            echo "<ul><h5>VAGONE GRANDEZZA STANDARD </h5> </ul>";
+        } ?>
+
+        <ul><?php echo '<h5> ' . $_SESSION['noleggioFlex']  . '</h5>' ?></ul>
+        <ul><?php echo '<h5> NUMERO ORDINATO ' . $_SESSION['numeroOrdinato']  . '</h5>' ?></ul>
+        <?php
+        echo  '<a href="paginaFinale.php?n=5"">CONFERMA</a>';
+
+        ?>
+    </div>
+
+
+    <!-- </form> -->
+
+
+    <div class="section last-part">
+
+    </div>
+    </div>
+
     <!-- main.js script  -->
-    <script src="../Scripts/main.js"></script>
-    <script src="../Scripts/progressBar.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/progressBar.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

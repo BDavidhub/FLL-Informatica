@@ -47,10 +47,3 @@ next.forEach(next => next.addEventListener("click", () => {
   update();
 }));
 
-// prev.addEventListener("click", () => {
-//   currentActive--;
-
-//   currentActive < 1 && (currentActive = 1);
-
-//   update();
-// });

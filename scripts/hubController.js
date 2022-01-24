@@ -267,7 +267,7 @@ xhr.onload = function () {
         FILL REMOVEFROMT ARRAY
         */  
 
-        var find = arrivingTrain[0];
+        var find = arrivingTrain[arrivingTrain.length-1];
         // console.log(find);
         var search = true;
 
@@ -281,10 +281,11 @@ xhr.onload = function () {
         console.log(search);
         if (search) {
             console.log("si");
-            for (var i = 0; i > arrivingTrain.length && !stop; i--) {
+            for (var i = arrivingTrain.length; i < 0  && !stop; i--) {
+            // for (var i = 0; i > arrivingTrain && !stop; i++) {
 
                 if (arrivingTrain[i] == find) {
-                    // console.log(arrivingTrain[i])
+                    console.log(arrivingTrain[i])
                     removeFromT.push(arrivingTrain[i])
                 }
 
@@ -312,7 +313,6 @@ xhr.onload = function () {
             }
         }
 
-        alert("ciaooo");
         console.log("--"+find);
         console.log(arrivingTrain)
         console.log(leavingTrain)
