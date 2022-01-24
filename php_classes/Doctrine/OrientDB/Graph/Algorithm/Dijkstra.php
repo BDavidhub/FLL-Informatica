@@ -77,6 +77,7 @@ class Dijkstra implements AlgorithmInterface
     public function getLiteralShortestPath()
     {
         $path = $this->solve();
+        echo "qui";
         $literal = '';
 
         foreach ($path as $p) {
@@ -97,12 +98,11 @@ class Dijkstra implements AlgorithmInterface
     {
         $path   = array();
         $vertex = $this->getEndingVertex();
-
         while ($vertex->getId() != $this->getStartingVertex()->getId()) {
             $path[] = $vertex;
             $vertex = $vertex->getPotentialFrom();
+            var_dump($vertex);
         }
-
         $path[] = $this->getStartingVertex();
 
         return array_reverse($path);

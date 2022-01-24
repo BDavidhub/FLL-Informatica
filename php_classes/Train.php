@@ -30,6 +30,7 @@ class Train extends Utility
         $this->limit = $limit;
         $this->cod = $cod1;
         $this->dateDimeDeparture = $dateDimeDeparture;
+        echo  $main->computeDistance($departure, $arrive);
         $this->hubs = $main->computeDistance($departure, $arrive);
         parent::__construct("train", $cod1);
     }
