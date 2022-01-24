@@ -274,18 +274,18 @@ xhr.onload = function () {
         for (var i = 0; i < leavingTrain.length; i++) {
             // console.log(leavingTrain[i])
             if (leavingTrain[i] == find) {
+                console.log("si")
                 search = false;
             }
         }
         var stop = false;
-        console.log(search);
         if (search) {
-            console.log("si");
-            for (var i = 0; i > arrivingTrain && !stop; i++) {
-
+            // console.log("si");
+            for (var i = 0; i < arrivingTrain.length; i++) {
                 if (arrivingTrain[i] == find) {
-                    console.log(arrivingTrain[i])
+                    // console.log(arrivingTrain[i])    
                     removeFromT.push(arrivingTrain[i])
+                    // console.log(removeFromT[i])
                 }
 
             }
@@ -307,7 +307,7 @@ xhr.onload = function () {
 
             if (cont == 0) {
 
-                console.log(leavingTrain[i])
+        //  console.log(leavingTrain[i])
                 addToTrain.push(leavingTrain[i]);
             }
         }
