@@ -20,18 +20,15 @@ class Train extends Utility
     private $hubs;
     private $dateDimeDeparture;
     private $cod;
-    public function __construct($departure, $arrive, $cod1, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
+    public function __construct($departure,$arrive, $cod1, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
     {
-        if ($wagons == null)
-            $this->wagons = array();
-        else
-            $this->wagons = $wagons;
+       
+        $this->wagons = $wagons;
 
         $this->limit = $limit;
         $this->cod = $cod1;
         $this->dateDimeDeparture = $dateDimeDeparture;
-        echo  $main->computeDistance($departure, $arrive);
-        $this->hubs = $main->computeDistance($departure, $arrive);
+        $this->hubs = $main->computeDistance($departure,$arrive);
         parent::__construct("train", $cod1);
     }
 
@@ -97,7 +94,7 @@ class Train extends Utility
         $arrive = $path[count($path) - 1]->getName();
         $posDeparture = $posArrive = -1;
         for ($i = 0; $i < count($this->hubs); $i++) {
-            /*echo $i.'<br/>';
+           /* echo $i.'<br/>';
                 echo 'partenza: '.$this->hubs[$i]->getName().' == '.$departure.'<br/>';
                 echo 'arrive: '.$this->hubs[$i]->getName().' == '.$arrive.'<br/>';*/
             if ($this->hubs[$i]->getName() == $departure) $posDeparture = $i;

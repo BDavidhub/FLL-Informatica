@@ -28,9 +28,9 @@ class Main
 
     public function __construct()
     {
-        $this->reset();
         $this->trains = array();
         $this->wagons = array();
+        $this->reset(true);
     }
 
     public function getHubs()
@@ -57,92 +57,51 @@ class Main
     {
         $this->trains[] = $train;
     }
-    public function reset()
+    public function reset($flag)
     {
         unset($this->hubs);
         unset($this->graph);
         unset($this->vertices);
+
         $this->hubs[] = new Hub('mailUdine', 'passwordUdine', 'telefonoUdine', 10, 'Udine');
-       // $this->hubs[] = new Hub('mailTreviso', 'passwordTreviso', 'telefonoTreviso', 10, 'Treviso');
-        $this->hubs[] = new Hub('mailPadova', 'passwordPadova', 'telefonoPadova', 10, 'Padova');
         $this->hubs[] = new Hub('mailVenezia', 'passwordVenezia', 'telefonoVenezia', 10, 'Venezia');
-        //$this->hubs[] = new Hub('mailBologna', 'passwordBologna', 'telefonoBologna', 10, 'Bologna');
-        //$this->hubs[] = new Hub('mailFirenze', 'passwordFirenze', 'telefonoFirenze', 10, 'Firenze');
+        $this->hubs[] = new Hub('mailPadova', 'passwordPadova', 'telefonoPadova', 10, 'Padova');
         $this->hubs[] = new Hub('mailMilano', 'passwordMilano', 'telefonoMilano', 10, 'Milano');
         $this->hubs[] = new Hub('mailTorino', 'passwordTorino', 'telefonoTorino', 10, 'Torino');
-        //$this->hubs[] = new Hub('mailTrento', 'passwordTrento', 'telefonoTrento', 10, 'Trento');
 
         foreach ($this->hubs as $key => $value) {
             $this->hubs[$value->getName()] = $value;
             $this->vertices[$value->getName()] = new Vertex($value->getName());
             unset($this->hubs[$key]);
         }
+
         $this->graph = new Graph();
-
-        foreach ($this->vertices as $key => $value) {
-            $this->graph->add($value);
+        if($flag){
+            $this->vertices['Udine']->connect($this->vertices['Venezia']);
+            $this->vertices['Venezia']->connect($this->vertices['Padova']);
+            $this->vertices['Padova']->connect($this->vertices['Milano']);
+            $this->vertices['Milano']->connect($this->vertices['Torino']);
+        }else{
+            $this->vertices['Torino']->connect($this->vertices['Milano']);
+            $this->vertices['Milano']->connect($this->vertices['Padova']);
+            $this->vertices['Padova']->connect($this->vertices['Venezia']);
+            $this->vertices['Venezia']->connect($this->vertices['Udine']);
         }
-        
-     /*   $this->vertices['Udine']->connect($this->vertices['Treviso'], $this->hubs['Udine']->getDistanceFrom($this->hubs['Treviso']));
-        $this->vertices['Treviso']->connect($this->vertices['Padova'], $this->hubs['Treviso']->getDistanceFrom($this->hubs['Padova']));
-        $this->vertices['Padova']->connect($this->vertices['Bologna'], $this->hubs['Padova']->getDistanceFrom($this->hubs['Bologna']));
-        $this->vertices['Bologna']->connect($this->vertices['Firenze'], $this->hubs['Bologna']->getDistanceFrom($this->hubs['Firenze']));
-        $this->vertices['Bologna']->connect($this->vertices['Milano'], $this->hubs['Bologna']->getDistanceFrom($this->hubs['Milano']));
-        $this->vertices['Milano']->connect($this->vertices['Torino'], $this->hubs['Milano']->getDistanceFrom($this->hubs['Torino']));
-        $this->vertices['Padova']->connect($this->vertices['Trento'], $this->hubs['Trento']->getDistanceFrom($this->hubs['Padova']));
 
-        $this->vertices['Treviso']->connect($this->vertices['Udine'], $this->hubs['Udine']->getDistanceFrom($this->hubs['Treviso']));
-        $this->vertices['Padova']->connect($this->vertices['Treviso'], $this->hubs['Treviso']->getDistanceFrom($this->hubs['Padova']));
-        $this->vertices['Bologna']->connect($this->vertices['Padova'], $this->hubs['Padova']->getDistanceFrom($this->hubs['Bologna']));
-        $this->vertices['Firenze']->connect($this->vertices['Bologna'], $this->hubs['Bologna']->getDistanceFrom($this->hubs['Firenze']));
-        $this->vertices['Milano']->connect($this->vertices['Bologna'], $this->hubs['Bologna']->getDistanceFrom($this->hubs['Milano']));
-        $this->vertices['Torino']->connect($this->vertices['Milano'], $this->hubs['Milano']->getDistanceFrom($this->hubs['Torino']));
-        $this->vertices['Trento']->connect($this->vertices['Padova'], $this->hubs['Trento']->getDistanceFrom($this->hubs['Padova']));
-        */
+        $this->graph->add($this->vertices['Udine']);
+        $this->graph->add($this->vertices['Venezia']);
+        $this->graph->add($this->vertices['Padova']);
+        $this->graph->add($this->vertices['Milano']);
+        $this->graph->add($this->vertices['Torino']);
 
-        $this->vertices['Udine']->connect($this->vertices['Venezia']);// $this->hubs['Udine']->getDistanceFrom($this->hubs['Venezia']));
-        $this->vertices['Venezia']->connect($this->vertices['Padova']);// $this->hubs['Venezia']->getDistanceFrom($this->hubs['Padova']));
-        $this->vertices['Padova']->connect($this->vertices['Milano']);// $this->hubs['Padova']->getDistanceFrom($this->hubs['Milano']));
-        $this->vertices['Milano']->connect($this->vertices['Torino']);// $this->hubs['Milano']->getDistanceFrom($this->hubs['Torino']));
-
-        $this->vertices['Venezia']->connect($this->vertices['Udine']);// $this->hubs['Venezia']->getDistanceFrom($this->hubs['Udine']));
-        $this->vertices['Padova']->connect($this->vertices['Venezia']);// $this->hubs['Padova']->getDistanceFrom($this->hubs['Venezia']));
-        $this->vertices['Milano']->connect($this->vertices['Padova']);// $this->hubs['Milano']->getDistanceFrom($this->hubs['Padova']));
-        $this->vertices['Torino']->connect($this->vertices['Milano']);// $this->hubs['Torino']->getDistanceFrom($this->hubs['Milano']));
-
-        var_dump($this->vertices);
-        /*
-        $this->vertices['Padova']->connect($this->vertices['Verona'], $this->hubs['Padova']->getDistanceFrom($this->hubs['Verona']));
-        $this->vertices['Verona']->connect($this->vertices['Brescia'], $this->hubs['Verona']->getDistanceFrom($this->hubs['Brescia']));
-        $this->vertices['Brescia']->connect($this->vertices['Milano'], $this->hubs['Brescia']->getDistanceFrom($this->hubs['Milano']));
-        $this->vertices['Milano']->connect($this->vertices['Torino'], $this->hubs['Milano']->getDistanceFrom($this->hubs['Torino']));
-        $this->vertices['Bolzano']->connect($this->vertices['Trento'], $this->hubs['Bolzano']->getDistanceFrom($this->hubs['Trento']));
-        $this->vertices['Trento']->connect($this->vertices['Verona'], $this->hubs['Trento']->getDistanceFrom($this->hubs['Verona']));
-        $this->vertices['Verona']->connect($this->vertices['Bologna'], $this->hubs['Verona']->getDistanceFrom($this->hubs['Bologna']));
-        $this->vertices['Bologna']->connect($this->vertices['Firenze'], $this->hubs['Bologna']->getDistanceFrom($this->hubs['Firenze']));
-
-        $this->vertices['Venezia']->connect($this->vertices['Udine'], $this->hubs['Venzia']->getDistanceFrom($this->hubs['Udine']));
-        $this->vertices['Padova']->connect($this->vertices['Venezia'], $this->hubs['Padova']->getDistanceFrom($this->hubs['Venezia']));
-        $this->vertices['Verona']->connect($this->vertices['Padova'], $this->hubs['Verona']->getDistanceFrom($this->hubs['Padova']));
-        $this->vertices['Brescia']->connect($this->vertices['Verona'], $this->hubs['Brescia']->getDistanceFrom($this->hubs['Verona']));
-        $this->vertices['Milano']->connect($this->vertices['Brescia'], $this->hubs['Milano']->getDistanceFrom($this->hubs['Brescia']));
-        $this->vertices['Torino']->connect($this->vertices['Milano'], $this->hubs['Torino']->getDistanceFrom($this->hubs['Milano']));
-        $this->vertices['Trento']->connect($this->vertices['Bolzano'], $this->hubs['Trento']->getDistanceFrom($this->hubs['Bolzano']));
-        $this->vertices['Verona']->connect($this->vertices['Trento'], $this->hubs['Verona']->getDistanceFrom($this->hubs['Trento']));
-        $this->vertices['Bologna']->connect($this->vertices['Verona'], $this->hubs['Bologna']->getDistanceFrom($this->hubs['Verona']));
-        $this->vertices['Firenze']->connect($this->vertices['Bologna'], $this->hubs['Firenze']->getDistanceFrom($this->hubs['Bologna']));
-        */
-        echo "<pre>";
-        //var_dump($this->vertices);
-        echo "</pre>";
         return $this;
     }
     public function computeDistance($departure, $arrive)
     {
         $algorithm = new Dijkstra($this->graph);
+
         $algorithm->setStartingVertex($this->graph->getVertex($departure));
         $algorithm->setEndingVertex($this->graph->getVertex($arrive));
-        var_dump($this->graph);
         $hubsCode = explode('#', $algorithm->getLiteralShortestPath());
         $path = array();
         foreach ($hubsCode as $key => $hubCode) {
