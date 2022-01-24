@@ -3,13 +3,15 @@
         private $hubs;
         private $boxes;
         private $capacity;
+        private $sig;
 
         public function __construct($boxes, $capacity = 10)
         {
             $this->boxes = $boxes;
             $this->hubs = $boxes[0]->getHubs();
             $this->capacity = $capacity;
-            parent::__construct("wagon");
+            parent::__construct("wagon",$this->getHubArrive);
+            $this->sig=parent::getSig();
         }
 
         public function getBoxes() {
