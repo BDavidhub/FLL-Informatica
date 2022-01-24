@@ -63,9 +63,12 @@
             return false;
         }
 
-        public function ciao()
+        public function getShortWagon()
         {
-            $ws=null;
+            $ws=array();
+            $ws[0]=$this->getHubDeparture();
+            $ws[1]=$this->getHubArrive();
+            $ws[2]=$this->getHubs();
             return $ws;
         }
     }

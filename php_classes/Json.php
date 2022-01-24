@@ -17,4 +17,4 @@
             $hub = $h;
         }
     }
-    echo json_encode($train->twoHub($hub));
+    echo json_encode($hub->getTrainInOutConfig($train,1));
