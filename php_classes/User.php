@@ -31,10 +31,10 @@
              $this->password = $password;
         }
 
-        public function getId() {
+        /*public function getId() {
             return $this->id;
         }
-        
+        */
 
         //??
         public function setId($id) {
