@@ -23,11 +23,14 @@ foreach ($main->getPrivates() as $private)
     {
         $_SESSION['mail'] = $_POST['mailLog'];
         $_SESSION['password'] = $_POST['passwordLog'];
+        $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
+        $_SESSION['logged'] = 1;
         $trovato = true;
     }
 }
 if($trovato==false)
 {
+    echo '<h5>Credenziali sbagliate o inesistenti</h5>';
     header('location: ../pages/registration.php?n=1');
 exit;
 }
@@ -37,7 +40,7 @@ exit;
 //$ws=$hubs['Torino']->getTrainInOutConfig($trains[0]);
 //echo $ws;
 
-header('location: ../index.html?n=1');
+header('location: ../index.php?n=1');
 exit;
 ?>
 

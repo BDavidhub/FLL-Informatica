@@ -13,7 +13,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../index.php">
 
       <h3 class="trainNavbar fw-bold">TRAIN</h3>
     </a>
@@ -21,11 +21,11 @@
     <div class="collapse navbar-collapse justify-content-end align-content-center m-2" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto p-1 mx-5">
         <li class="nav-item active mx-2">
-          <a class="nav-link fw-bolder links-nav" href="../index.html#section1">HOME</a>
+          <a class="nav-link fw-bolder links-nav" href="../index.php#section1">HOME</a>
         </li>
 
         <li class="nav-item mx-2">
-          <a class="nav-link fw-bolder links-nav" href="../index.html#section2">ABOUT</a>
+          <a class="nav-link fw-bolder links-nav" href="../index.php#section2">ABOUT</a>
         </li>
       </ul>
     </div>

@@ -26,7 +26,7 @@ $main = unserialize(serialize($_SESSION['main']));
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <!--style="background-color: rgba(230, 230, 230,0) !important; -->
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="../index.php">
             <!-- <img
           src="assets/images/logo.svg"
           width="30"
@@ -41,13 +41,11 @@ $main = unserialize(serialize($_SESSION['main']));
         <div class="collapse navbar-collapse justify-content-end align-content-center m-2" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto p-1 mx-5">
                 <li class="nav-item active mx-2">
-                    <a class="nav-link fw-bolder links-nav" href="#section1">HOME</a>
+                    <a class="nav-link fw-bolder links-nav" href="../index.php#section1">HOME</a>
                 </li>
-
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-bolder links-nav" href="#section2">PROJECTS</a>
-                </li>
-
+          <a class="nav-link fw-bolder links-nav" href="../index.php#section2">ABOUT</a>
+        </li>
                 <li class="nav-item dropdown mx-2">
                     <a class="nav-link fw-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="account-menu">

@@ -194,4 +194,13 @@ class Main
 
         return $indexArray;
     }
+
+    public function getUser($mail){
+
+        for ($i=0; $i < 5; $i++) { 
+          if($this->privates[$i]->getMail()==$mail){
+              return $this->privates[$i];
+          }
+        }
+    }
 }

@@ -10,15 +10,14 @@
   <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+  
   <link rel="stylesheet" href="../src_CSS/registration.css" />
 
   <title>Log-in/Register Page</title>
 </head>
 
 <body>
-  <a class="go-back-btn" href="../index.html">
+  <a class="go-back-btn" href="../index.php">
     <h6> GO BACK </h6>
   </a>
   <div class="login-reg-panel">
@@ -48,7 +47,7 @@
       </div>
       <div class="register-show">
         <h2>REGISTRATI</h2>
-        <form action="./reg_Controller.php" method="post">
+        <form action="../php_classes/indexLogin.php" method="post">
           <div class="flexBox">
             <input type="text" placeholder="Nome" name="nomeReg" class="nome">
             <input type="text" placeholder="Cognome" name="cognomeReg" class="cognome">
@@ -72,8 +71,11 @@
       </div>
     </div>
   </div>
-
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../scripts/registration.js"></script>
+
+
 </body>
 
 </html>

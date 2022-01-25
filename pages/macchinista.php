@@ -22,7 +22,7 @@ session_start();
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
-      <a class="navbar-brand" href="../index.html">
+      <a class="navbar-brand" href="../index.php">
         <h3 class="trainNavbar fw-bold">TRAIN</h3>
       </a>
 
@@ -32,11 +32,7 @@ session_start();
       >
         <ul class="navbar-nav mr-auto p-1 mx-5">
           <li class="nav-item active mx-2">
-            <a class="nav-link fw-bolder links-nav" href="#section1">HOME</a>
-          </li>
-
-          <li class="nav-item mx-2">
-            <a class="nav-link fw-bolder links-nav" href="#section2">ABOUT</a>
+            <a class="nav-link fw-bolder links-nav" href="../index.php">HOME</a>
           </li>
 
           <li class="nav-item dropdown mx-2">
@@ -57,11 +53,11 @@ session_start();
             </div>
             </a>
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
-              <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
+              <a class="dropdown-item" href="registration.php">Registrati</a>
+              <a class="dropdown-item" href="registration.php">Accedi</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>
-              <a class="dropdown-item" href="./pages/macchinista.php">Macchinista</a>
+              <a class="dropdown-item" href="hubInterface.php">HUB</a>
+              <a class="dropdown-item" href="macchinista.php">Macchinista</a>
             </div>
           </li>
         </ul>
