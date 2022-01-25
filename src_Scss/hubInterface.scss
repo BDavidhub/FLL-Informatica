@@ -1,4 +1,4 @@
-@import "./custom";
+    @import "./custom";
 
 body,
 html {
@@ -10,6 +10,13 @@ html {
     // background-position: bottom;
     background-repeat: no-repeat;
 
+    .yourStaz{
+        width: 500px;
+        background-color: $primary;
+        text-align: center;
+        padding: 0.1em;
+
+    }
     .info {
         position: absolute;
         left: 50%;
@@ -115,6 +122,7 @@ html {
     .tw {
         display: none; /*start*/
     }
+
     .buttons {
         position: relative;
         bottom: 15rem;

@@ -12098,7 +12098,7 @@ fieldset:disabled .btn {
   color: white;
 }
 
-.mappa1 .percorso1 .stazione1 .rectB {
+.mappa1 .percorso1 .stazione1 div {
   display: none;
   position: absolute;
   width: 12em;
@@ -12117,7 +12117,7 @@ fieldset:disabled .btn {
   transition: all 300ms ease-in-out;
 }
 
-.mappa1 .percorso1 .stazione1 .rectB .vagoni {
+.mappa1 .percorso1 .stazione1 div .vagoni {
   margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12129,7 +12129,7 @@ fieldset:disabled .btn {
       justify-content: space-around;
 }
 
-.mappa1 .percorso1 .stazione1 .rectB .vagoni .lSide {
+.mappa1 .percorso1 .stazione1 div .vagoni .lSide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12145,7 +12145,7 @@ fieldset:disabled .btn {
           flex-direction: column;
 }
 
-.mappa1 .percorso1 .stazione1 .rectB .vagoni .rSide {
+.mappa1 .percorso1 .stazione1 div .vagoni .rSide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12161,7 +12161,7 @@ fieldset:disabled .btn {
           flex-direction: column;
 }
 
-.mappa1 .percorso1 .stazione1 .rectB h4, .mappa1 .percorso1 .stazione1 .rectB .h4 {
+.mappa1 .percorso1 .stazione1 div h4, .mappa1 .percorso1 .stazione1 div .h4 {
   background-color: #2097db;
   margin: 0;
   padding: 15px;

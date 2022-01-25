@@ -22,7 +22,7 @@ session_start();
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="../index.html">
         <h3 class="trainNavbar fw-bold">TRAIN</h3>
       </a>
 
@@ -78,20 +78,18 @@ session_start();
             <div class="stazione1" id="LI">
                 UD
                 <div class="rectB">
-                <h4>VENEZIA</h4>
+                <h4>UDINE</h4>
             <div class="vagoni">
                 <div class="lSide">
-                <h6>+1 UD</h6>
-                <h6>+1 UD</h6>
+            
                 </div>
                 <div class="rSide">
-                <h6>-1 MI</h6>
-                <h6>-1 MI</h6>
+
                 </div>
             </div>
             </div>
         </div>
-            <div class="stazione1" id="VE">VE<div class="rectB">
+            <div class="stazione1" id="VE">VE<div class="rectB1">
             <h4>VENEZIA</h4>
             <div class="vagoni">
                 <div class="lSide">
@@ -104,7 +102,7 @@ session_start();
                 </div>
             </div>
             </div></div>
-            <div class="stazione1" id="MI">PD<div class="rectB">
+            <div class="stazione1" id="MI">PD<div class="rectB2">
             <h4>VENEZIA</h4>
             <div class="vagoni">
                 <div class="lSide">
@@ -117,7 +115,7 @@ session_start();
                 </div>
             </div>
             </div></div>
-            <div class="stazione1" id="PD">MI<div class="rectB">
+            <div class="stazione1" id="PD">MI<div class="rectB3">
             <h4>VENEZIA</h4>
             <div class="vagoni">
                 <div class="lSide">
@@ -130,7 +128,7 @@ session_start();
                 </div>
             </div>
             </div></div>
-            <div class="stazione1" id="PD">TO<div class="rectB">
+            <div class="stazione1" id="PD">TO<div class="rectB4">
             <h4>VENEZIA</h4>
             <div class="vagoni">
                 <div class="lSide">
@@ -150,6 +148,7 @@ session_start();
     </div>
  <!-- main.js script  -->
  <script src="../scripts/main.js"></script>
+ <script src="../assets/libs/move.js/move.js"></script>
     <script src="../scripts/progressBar.js"></script>
     <script src="../scripts/macchinistaJs.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

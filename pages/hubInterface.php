@@ -94,7 +94,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="../assets/libs/move.js/move.js"></script>
-  <script src="../scripts/hubController.js"></script>
+  <script type="mo" src="../scripts/hubController.js"></script>
 </body>
 
 </html>

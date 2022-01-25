@@ -120,6 +120,7 @@ $_SESSION['navbar']  = $navBar;
 
                 $_SESSION['arrayIndex'] = $arrayindex;
                 for ($i = 0; $i < count($arrayindex); $i++) {
+                 
                     $_SESSION['idTrain'] = $main->getTrains()[$arrayindex[$i]]->getCod();
                     echo '<div class="treno-rect">
                     <div class="time">

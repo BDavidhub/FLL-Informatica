@@ -95,47 +95,46 @@
             align-items:center;
             justify-content:center;
             color:white;
-            .rectB{
-                display: none;
-                position:absolute;
-                width:12em;
-                height: 12em;
-                margin-top: 18em;
-                border-radius:0.7em;
-                 background:rgb(26, 192, 243);
-                 display:flex;
-          
-                 flex-direction: column;
-                transition: all 300ms ease-in-out;
-                .vagoni{
-                    margin-top:1em;
-                    display:flex;
-                    align-items:center;
-                 justify-content:space-around;
-                 .lSide{
-                    display:flex;
-                    align-items:center;
-                 justify-content:center;
-                 flex-direction: column;
-                }
-                .rSide{
-                    display:flex;
-                    align-items:center;
-                 justify-content:center;
-                 flex-direction: column;
-                }
-                }
-                h4{
-                    background-color: rgb(32, 151, 219);
-                    margin: 0;
-                    padding: 15px;
-                    border-radius:0.8em 0.8em 0 0 ;
-                    text-align: center;
-
-                }
-            }
-            &:nth-child(1){
-
+       
+                div{
+                    display: none;
+                    position:absolute;
+                    width:12em;
+                    height: 12em;
+                    margin-top: 18em;
+                    border-radius:0.7em;
+                     background:rgb(26, 192, 243);
+                     display:flex;
+              
+                     flex-direction: column;
+                    transition: all 300ms ease-in-out;
+                    .vagoni{
+                        margin-top:1em;
+                        display:flex;
+                        align-items:center;
+                     justify-content:space-around;
+                     .lSide{
+                        display:flex;
+                        align-items:center;
+                     justify-content:center;
+                     flex-direction: column;
+                    }
+                    .rSide{
+                        display:flex;
+                        align-items:center;
+                     justify-content:center;
+                     flex-direction: column;
+                    }
+                    }
+                    h4{
+                        background-color: rgb(32, 151, 219);
+                        margin: 0;
+                        padding: 15px;
+                        border-radius:0.8em 0.8em 0 0 ;
+                        text-align: center;
+    
+                    }
+                
             }
         }
 

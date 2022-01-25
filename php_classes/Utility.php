@@ -3,40 +3,12 @@
     {
         private $id;
         
-        public function __construct($string, $cod = null,$sig = null)
+        public function __construct($string, $cod = null)
         {
             switch ($string) 
             {
                 case "wagon":
                     $this->id = 'W';
-                    if ($sig != null) {
-                        switch ($sig) {
-                            case 'Udine':
-                                $sig = 'UD';
-                                break;
-                            case 'Trento':
-                                $sig = 'TN';
-                                break;
-                            case 'Torino':
-                                $sig = 'TO';
-                                break;
-                            case 'Firenze':
-                                $sig = 'FI';
-                                break;
-                            case 'Bologna':
-                                $sig = 'BO';
-                                break;
-                            case 'Padova':
-                                $sig = 'PD';
-                                break;
-                            case 'Milano':
-                                $sig = 'MI';
-                                break;
-                            case 'Treviso':
-                                $sig = 'TV';
-                                break;
-                        }
-                    }
                     break;
                 case "train":
                     $this->id = 'T';
@@ -70,12 +42,7 @@
             else $this->id .= $cod;
             //check if id already exists
         }
-/*
-        public function getSig()
-        {
-            return $this->sig;
-        }
-*/
+
         public function getId()
         {
             return $this->id;

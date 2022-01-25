@@ -155,12 +155,12 @@ if ($_SESSION['loggedIn'] == 1) {
             }
             ?>
         </div>
-
+            <h4 class="container">SPEDITO!</h4>
         <div class="second-part container-fluid">
             <?php
             for ($i = 0; $i < count($arrayindex); $i++) {
                 if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
-                    echo ' <h5>ARRIVERA ALLE ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . ' DEL ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y")  . ' </h5>';
+                    echo ' <h5> ARRIVERA ALLE ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . ' DEL ' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y")  . ' </h5>';
                 }
             }
             ?>

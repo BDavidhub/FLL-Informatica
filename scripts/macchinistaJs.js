@@ -1,7 +1,11 @@
-$('.rectB').toggle();
+
+var aperto = false;
   $('.stazione1').click(function(){
-    $(this).children().toggle();
- 
+
+        $(this).children().toggle();
+        
+
+    
   });    
 // var stazione1 =  document.querySelectorAll('.stazione1');
 // stazione1.forEach(stazione1 => {

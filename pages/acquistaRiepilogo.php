@@ -122,7 +122,9 @@ if ($_SESSION['loggedIn'] == 1) {
 
         <?php
         $arrayindex = $_SESSION['arrayIndex'];
+        
         for ($i = 0; $i < count($arrayindex); $i++) {
+
             if ($_SESSION['idTrain'] ==  $main->getTrains()[$arrayindex[$i]]->getCod()) {
                 echo '<div class="treno-rect">
                     <div class="time">

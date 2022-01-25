@@ -65,7 +65,7 @@
             <input type="radio" id="Privato" name="privato" value="privato">
             <label for="privato">Privato</label>
 
-            <input type="radio" id="Azienda" name="privato" value="Azienda">
+            <input type="radio" id="Azienda" name="azienda" value="Azienda">
             <label for="azienda">Azienda</label>
           </div>
           <input type="submit" value="Registrati">
