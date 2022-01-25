@@ -17,6 +17,7 @@ use Doctrine\OrientDB\Graph\Algorithm\Dijkstra;
 require_once('Box.php');
 require_once('Train.php');
 require_once('Hub.php');
+require_once('_Private.php');
 
 class Main
 {
@@ -25,6 +26,7 @@ class Main
     private $wagons;
     private $graph;
     private $vertices;
+    private $privates;
 
     public function __construct()
     {
@@ -53,9 +55,17 @@ class Main
     {
         return $this->vertices;
     }
+    public function getPrivates()
+    {
+        return $this->privates;
+    }
     public function addTrain($train)
     {
         $this->trains[] = $train;
+    }
+    public function addPrivates($private)
+    {
+        $this->privates[]=$private;
     }
     public function reset($flag)
     {

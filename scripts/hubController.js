@@ -226,10 +226,9 @@ export function automatic() {
 
 // const xhr = new XMLHttpRequest();
 
-$.ajax('test.json',  
+$.ajax('../php_classes/Json.php?train=T1&hub=H1',  
     {
         success: function (data, status, xhr) {
-            console.log("CIAO");
             console.log(data);
 
         var resObj= data;

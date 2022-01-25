@@ -133,7 +133,7 @@ class Train extends Utility
                 return $this->hubs[$tmp2];
             }
         }
-        return -1;
+        return false;
     }
 
     //------------------------------------------------------------------------------------
