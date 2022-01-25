@@ -4,9 +4,9 @@
         private $vat;
         private $accountingAdress;
 
-        public function __construct($mail, $password, $telephone, $companyName, $vat, $accountingAdress)
+        public function __construct($mail, $password, $telephone, $companyName, $vat, $accountingAdress,$id)
         {
-            parent::__construct($mail,$password,"enterprise",$telephone);
+            parent::__construct($mail,$password,"enterprise",$telephone,$id);
             $this->companyName=$companyName;
             $this->vat=$vat;
             $this->accountingAdress=$accountingAdress;

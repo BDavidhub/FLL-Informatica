@@ -20,16 +20,16 @@ class Train extends Utility
     private $hubs;
     private $dateDimeDeparture;
     private $cod;
-    public function __construct($departure,$arrive, $cod1, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
+    public function __construct($departure,$arrive, $id, $dateDimeDeparture, $main, $wagons = null, $limit = 10)
     {
        
         $this->wagons = $wagons;
 
         $this->limit = $limit;
-        $this->cod = $cod1;
+        $this->cod = $id;
         $this->dateDimeDeparture = $dateDimeDeparture;
         $this->hubs = $main->computeDistance($departure,$arrive);
-        parent::__construct("train", $cod1);
+        parent::__construct("train", $id);
     }
 
     public function getWagons()
@@ -122,14 +122,18 @@ class Train extends Utility
     }
 
     public function previousHub($hub)
-    {
-        $tmp = null;
-        for ($tmp1 = 0; $this->hubs[$tmp1] != $hub || $tmp1 < count($this->hubs); $tmp1++) {
-            if ($this->hubs[$tmp1] != $hub) {
-                $tmp = $this->hubs[$tmp1];
+    { 
+        $tmp1=null;
+        $tmp2=null;
+        foreach ($this->hubs as $key => $hubs){
+            $tmp2=$tmp1;
+            $tmp1=$key;
+            if($this->hubs[$tmp1]==$hub)
+            {
+                return $this->hubs[$tmp2];
             }
         }
-        return $tmp;
+        return -1;
     }
 
     //------------------------------------------------------------------------------------
