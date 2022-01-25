@@ -296,7 +296,6 @@ xhr.onload = function () {
             }
         }
 
-        console.log("ciao");
         console.log(arrivingTrain)
         console.log(leavingTrain)
         console.log(removeFromT)
@@ -304,7 +303,7 @@ xhr.onload = function () {
 
 
 
-        // console.log(this.responseText)
+        console.log(this.responseText)
     // } else {
         // console.warn("Did not receive 200 OK from response")
     // }
@@ -336,19 +335,3 @@ function printAdd(add) {
 }
 
 
-function writeFile(){
-
-    var ret = 
-    {
-        "stazione": removeFromT[0],
-        "array": [
-            addToTrain,removeFromT
-        ]
-    }
-
-    var retStrig = JSON.stringify(ret);
-    var fs = require('fs');
-    fs.writeFile("thing.json", retString, function(err, result) {
-        if(err) console.log('error', err);
-    });
-}
