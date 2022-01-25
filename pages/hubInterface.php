@@ -83,11 +83,11 @@
 
   </div>
   <div class="buttons">
-    <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
+    <!-- <button id="reset" class="btn btn-primary" onclick="reset()">RESET</button><br />
     <button id="updateTrain" class="btn btn-primary" onclick="callUpdateTrain()">updateTrain</button><br />
     <button id="removeWagons" class="btn btn-primary" onclick="callRemoveWagons()">removeWagons</button><br />
     <button id="addWagons" class="btn btn-primary" onclick="callAddWagons()">addWagons</button><br />
-    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br />
+    <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br /> -->
     <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">-Start-</button><br />
   </div>
 

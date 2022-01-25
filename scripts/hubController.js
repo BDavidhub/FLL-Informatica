@@ -215,9 +215,9 @@ function automatic() {
     resetArr();
     setTimeout(callUpdateTrain, 1000);
     setTimeout(callRemoveWagons, 3000);
-    console.log("arrTrain: " + arrTrain);
     setTimeout(callAddWagons, 6000);
     setTimeout(trainDeparture, 9500);
+    writeFile();
 }
 
 
@@ -336,3 +336,19 @@ function printAdd(add) {
 }
 
 
+function writeFile(){
+
+    var ret = 
+    {
+        "stazione": removeFromT[0],
+        "array": [
+            addToTrain,removeFromT
+        ]
+    }
+
+    var retStrig = JSON.stringify(ret);
+    var fs = require('fs');
+    fs.writeFile("thing.json", retString, function(err, result) {
+        if(err) console.log('error', err);
+    });
+}
