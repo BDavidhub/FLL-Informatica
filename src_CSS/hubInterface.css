@@ -11972,6 +11972,14 @@ html {
   background-repeat: no-repeat;
 }
 
+body .yourStaz,
+html .yourStaz {
+  width: 500px;
+  background-color: #D4F1F4;
+  text-align: center;
+  padding: 0.1em;
+}
+
 body .info,
 html .info {
   position: absolute;

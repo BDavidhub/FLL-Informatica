@@ -5,13 +5,13 @@
         private $capacity;
         private $sig;
 
-        public function __construct($boxes, $capacity = 10)
+        public function __construct($boxes,$id, $capacity = 10)
         {
             $this->boxes = $boxes;
             $this->hubs = $boxes[0]->getHubs();
             $this->capacity = $capacity;
-        parent::__construct("wagon"/*,$this->getHubArrive*/);
-           // $this->sig=parent::getSig();
+            parent::__construct("wagon",$id);
+
         }
 
         public function getBoxes() {
@@ -65,13 +65,41 @@
             return false;
         }
 
+        public function getSig($hubArrive)
+        {
+            switch ($hubArrive->getName()) {
+                case 'Udine':
+                    $this->sig = 'UD';
+                    break;
+                case 'Trento':
+                    $this->sig = 'TN';
+                    break;
+                case 'Torino':
+                    $this->sig = 'TO';
+                    break;
+                case 'Firenze':
+                    $this->sig = 'FI';
+                    break;
+                case 'Bologna':
+                    $this->sig = 'BO';
+                    break;
+                case 'Padova':
+                    $this->sig = 'PD';
+                    break;
+                case 'Milano':
+                    $this->sig = 'MI';
+                    break;
+                case 'Treviso':
+                    $this->sig = 'TV';
+                    break;
+            }
+        }
+
         public function getShortWagon()
         {
-            $ws=array();
-            $ws[0]=$this->getHubDeparture();
-            $ws[1]=$this->getHubArrive();
-            $ws[2]=$this->getHubs();
-            //$ws[3]=$this->getHubs();
+            $ws['id'] = $this->getId();
+            $ws['arrive'] = $this->getHubArrive();
+            $ws['arrAbb'] = $this->getSig($this->getHubArrive());
             return $ws;
         }
     }

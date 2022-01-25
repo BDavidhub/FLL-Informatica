@@ -29,6 +29,7 @@
 
         public function getDistanceFrom($hub)
         {
+            /*
             if(($this->getName() == 'Treviso' && $hub->getName() == 'Udine') || ($this->getName() == 'Udine' && $hub->getName() == 'Treviso'))
                 return 5;
             if(($this->getName() == 'Treviso' && $hub->getName() == 'Padova') || ($this->getName() == 'Padova' && $hub->getName() == 'Treviso'))
@@ -43,6 +44,15 @@
                 return 3;
             if(($this->getName() == 'Trento' && $hub->getName() == 'Padova') || ($this->getName() == 'Padova' && $hub->getName() == 'Trento'))
                 return 3;
+            */
+           /* if(($this->getName() == 'Venezia' && $hub->getName() == 'Udine') || ($this->getName() == 'Udine' && $hub->getName() == 'Venezia'))
+                return 1;
+            if(($this->getName() == 'Venezia' && $hub->getName() == 'Padova') || ($this->getName() == 'Padova' && $hub->getName() == 'Venezia'))
+                return 1;
+            if(($this->getName() == 'Padova' && $hub->getName() == 'Milano') || ($this->getName() == 'Milano' && $hub->getName() == 'Padova'))
+                return 1;
+            if(($this->getName() == 'Milano' && $hub->getName() == 'Torino') || ($this->getName() == 'Torino' && $hub->getName() == 'Milano'))*/
+                return 1;
         }
 
     public function getWagonsByTrain($train, $short = null)
@@ -60,7 +70,7 @@
                     }
                     else
                     {
-                        $ws[] = $wagon->getShortWagon;
+                        $ws[] = $wagon->getShortWagon();
                     }
                 }
             }

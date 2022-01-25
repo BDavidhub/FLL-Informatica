@@ -97,12 +97,10 @@ class Dijkstra implements AlgorithmInterface
     {
         $path   = array();
         $vertex = $this->getEndingVertex();
-
         while ($vertex->getId() != $this->getStartingVertex()->getId()) {
             $path[] = $vertex;
             $vertex = $vertex->getPotentialFrom();
         }
-
         $path[] = $this->getStartingVertex();
 
         return array_reverse($path);
