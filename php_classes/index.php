@@ -31,12 +31,13 @@ echo $_POST['fdata'];
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];
 $_SESSION['data'] = new DateTime($_POST['fdata']);
-
 //$hubs=$main->getHubs();
 //var_dump($hubs);
 //$trains=$main->getTrainS();
 //$ws=$hubs['Torino']->getTrainInOutConfig($trains[0]);
 //echo $ws;
+$privates=array();
+
  header('location: ../pages/TreniRicerca.php?n=1');
  exit;
 ?>

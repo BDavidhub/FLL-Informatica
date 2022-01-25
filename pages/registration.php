@@ -39,7 +39,7 @@
     <div class="white-panel">
       <div class="login-show">
         <h2>ACCEDI</h2>
-        <form action="./log_Controller.php" method="post">
+        <form action="../php_classes/indexLogin.php" method="post">
           <input type="email" placeholder="Email" name="mailLog" class="email">
           <input type="password" placeholder="Password" name="passwordLog">
           <input type="submit" value="Accedi">
