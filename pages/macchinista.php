@@ -75,15 +75,20 @@ session_start();
     </div>
     <div class="mappa1">
         <div class="percorso1">
-            <div class="stazione1" value="UDINE" id="UD">UD</div>
-            <div class="stazione1" value="VENEZIA" id="VE">VE</div>
-            <div class="stazione1" value="PADOVA" id="PD">PD</div>
-            <div class="stazione1" value="MILANO" id="MI">MI</div>
-            <div class="stazione1" value="TORINO" id="TO">TO</div>
+            <div class="stazione1" name="UDINE" id="UD">UD</div>
+            <div class="stazione1" name="VENEZIA" id="VE">VE</div>
+            <div class="stazione1" name="PADOVA" id="PD">PD</div>
+            <div class="stazione1" name="MILANO" id="MI">MI</div>
+            <div class="stazione1" name="TORINO" id="TO">TO</div>
         </div>
         <div class="rectBlue">
             <h3>UDINE</h3>
-
+            <div class="entrata">
+                <h5>Treno entrata</h5>
+            </div>
+            <div class="uscita">
+                <h5>Treno uscita</h5>
+            </div>
         </div>
     </div>
     <div class="last-part">
