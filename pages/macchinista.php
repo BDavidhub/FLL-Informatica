@@ -75,72 +75,11 @@ session_start();
     </div>
     <div class="mappa1">
         <div class="percorso1">
-            <div class="stazione1" id="LI">
-                UD
-                <div class="rectB">
-                <h4>UDINE</h4>
-            <div class="vagoni">
-                <div class="lSide">
-            
-                </div>
-                <div class="rSide">
-
-                </div>
-            </div>
-            </div>
-        </div>
-            <div class="stazione1" id="VE">VE<div class="rectB1">
-            <h4>VENEZIA</h4>
-            <div class="vagoni">
-                <div class="lSide">
-                <h6>+1 UD</h6>
-                <h6>+1 UD</h6>
-                </div>
-                <div class="rSide">
-                <h6>-1 MI</h6>
-                <h6>-1 MI</h6>
-                </div>
-            </div>
-            </div></div>
-            <div class="stazione1" id="MI">PD<div class="rectB2">
-            <h4>VENEZIA</h4>
-            <div class="vagoni">
-                <div class="lSide">
-                <h6>+1 UD</h6>
-                <h6>+1 UD</h6>
-                </div>
-                <div class="rSide">
-                <h6>-1 MI</h6>
-                <h6>-1 MI</h6>
-                </div>
-            </div>
-            </div></div>
-            <div class="stazione1" id="PD">MI<div class="rectB3">
-            <h4>VENEZIA</h4>
-            <div class="vagoni">
-                <div class="lSide">
-                <h6>+1 UD</h6>
-                <h6>+1 UD</h6>
-                </div>
-                <div class="rSide">
-                <h6>-1 MI</h6>
-                <h6>-1 MI</h6>
-                </div>
-            </div>
-            </div></div>
-            <div class="stazione1" id="PD">TO<div class="rectB4">
-            <h4>VENEZIA</h4>
-            <div class="vagoni">
-                <div class="lSide">
-                <h6>+1 UD</h6>
-                <h6>+1 UD</h6>
-                </div>
-                <div class="rSide">
-                <h6>-1 MI</h6>
-                <h6>-1 MI</h6>
-                </div>
-            </div>
-            </div></div>
+            <div class="stazione1" id="UD">UD</div>
+            <div class="stazione1" id="VE">VE</div>
+            <div class="stazione1" id="MI">PD</div>
+            <div class="stazione1" id="PD">MI</div>
+            <div class="stazione1" id="PD">TO</div>
         </div>
     </div>
     <div class="last-part">
