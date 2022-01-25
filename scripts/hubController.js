@@ -39,7 +39,7 @@ function resetArr() {
     arrTrain = [];
 }
 
-function updateTrain(newTrain) {
+ function updateTrain(newTrain) {
     dist = 0;
     //aggiorno arrTrain
     for (var i = 0; i < newTrain.length; i++) {
@@ -191,7 +191,7 @@ function addWagons(arrLeave) {
 function upArrTrain() {
     updateTrain(arrTrain);
 }
-function callUpdateTrain() {
+export function callUpdateTrain() {
     updateTrain(arrivingTrain);
 }
 function callRemoveWagons() {
@@ -210,7 +210,7 @@ function trainDeparture() {
 
 }
 
-function automatic() {
+export function automatic() {
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
