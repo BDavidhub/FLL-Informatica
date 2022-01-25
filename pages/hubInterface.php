@@ -40,6 +40,7 @@
       
     </article>
   </div>
+  <div class="yourStaz" id="stazTit"></div>
   <div class="wrap">
     <section class="top">
       <div id="v0"></div>

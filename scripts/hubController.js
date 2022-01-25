@@ -191,7 +191,7 @@ function addWagons(arrLeave) {
 function upArrTrain() {
     updateTrain(arrTrain);
 }
-export function callUpdateTrain() {
+function callUpdateTrain() { //export 
     updateTrain(arrivingTrain);
 }
 function callRemoveWagons() {
@@ -210,7 +210,7 @@ function trainDeparture() {
 
 }
 
-export function automatic() {
+function automatic() { //export
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
@@ -226,7 +226,7 @@ export function automatic() {
 
 // const xhr = new XMLHttpRequest();
 
-$.ajax('../php_classes/Json.php?train=T1&hub=H1',  
+$.ajax('test.json',  
     {
         success: function (data, status, xhr) {
             console.log(data);
