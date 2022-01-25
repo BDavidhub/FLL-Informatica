@@ -18,8 +18,5 @@ new fullpage('#fullpage', {
 });
 
 
-$('.stazione1').click(function(){
-	console.log('2');
-})
 
 /// fa l

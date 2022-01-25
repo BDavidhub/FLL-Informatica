@@ -39,7 +39,7 @@ function resetArr() {
     arrTrain = [];
 }
 
- function updateTrain(newTrain) {
+function updateTrain(newTrain) {
     dist = 0;
     //aggiorno arrTrain
     for (var i = 0; i < newTrain.length; i++) {
