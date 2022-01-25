@@ -1,11 +1,8 @@
 
 var aperto = false;
   $('.stazione1').click(function(){
-
-        $(this).children().toggle();
+        console.log($('.stazione1').val());
         
-
-    
   });    
 // var stazione1 =  document.querySelectorAll('.stazione1');
 // stazione1.forEach(stazione1 => {

@@ -70,13 +70,12 @@
 /// mappa
 
 .mappa1{
-   
     width:100%;
     height:70%;
-
     display:flex;
-    align-items:start;
+    align-items:center;
     justify-content:center;
+    flex-direction: column;
     .percorso1{
         margin-top:10em;
         height:1em;
@@ -96,47 +95,22 @@
             justify-content:center;
             color:white;
        
-                div{
-                    display: none;
-                    position:absolute;
-                    width:12em;
-                    height: 12em;
-                    margin-top: 18em;
-                    border-radius:0.7em;
-                     background:rgb(26, 192, 243);
-                     display:flex;
-              
-                     flex-direction: column;
-                    transition: all 300ms ease-in-out;
-                    .vagoni{
-                        margin-top:1em;
-                        display:flex;
-                        align-items:center;
-                     justify-content:space-around;
-                     .lSide{
-                        display:flex;
-                        align-items:center;
-                     justify-content:center;
-                     flex-direction: column;
-                    }
-                    .rSide{
-                        display:flex;
-                        align-items:center;
-                     justify-content:center;
-                     flex-direction: column;
-                    }
-                    }
-                    h4{
-                        background-color: rgb(32, 151, 219);
-                        margin: 0;
-                        padding: 15px;
-                        border-radius:0.8em 0.8em 0 0 ;
-                        text-align: center;
-    
-                    }
-                
-            }
         }
 
+    }
+
+    .rectBlue{
+        h3{
+            background: rgb(17, 134, 170);
+            color:white;
+            padding:10px;
+            border-radius: 0.6em 0.6em 0 0;
+            text-align: center;
+        }
+        width:80%;
+        height:18em;
+        margin-top:6em;
+        background-color: rgb(26, 192, 243);
+        border-radius:1em;
     }
 }
