@@ -217,7 +217,6 @@ function automatic() {
     setTimeout(callRemoveWagons, 3000);
     setTimeout(callAddWagons, 6000);
     setTimeout(trainDeparture, 9500);
-    writeFile();
 }
 
 
@@ -225,18 +224,19 @@ function automatic() {
 
 
 
-const xhr = new XMLHttpRequest();
+// const xhr = new XMLHttpRequest();
 
+$.ajax('../php_classes/Json.php',  
+    {
+        success: function (data, status, xhr) {
+            console.log("CIAO");
+            console.log(data);
 
-xhr.onload = function () {
-    // if (this.status == 200) {
-
-        const resObj = JSON.parse(this.responseText);
-
+        var resObj = data;
+            
         /*
         FILL ARRIVINGTRAIN ARRAY
         */
-   
         for (var i = 0; i < resObj.array[0].length; i++) {
             arrivingTrain.push(resObj.array[0][i].arrAbb);
         }
@@ -244,8 +244,6 @@ xhr.onload = function () {
         /*
         FILL LEAVINGTRAIN ARRAY
         */
-
-        
         for (var i = 0; i < resObj.array[1].length; i++) {
             leavingTrain.push(resObj.array[1][i].arrAbb);
         }
@@ -302,15 +300,22 @@ xhr.onload = function () {
         console.log(addToTrain)
 
 
+        }
+});
 
-        console.log(this.responseText)
+// xhr.onload = function () {
+    // if (this.status == 200) {
+        // const resObj = JSON.parse(this.responseText);
+
+
+        // console.log(this.responseText)
     // } else {
         // console.warn("Did not receive 200 OK from response")
     // }
-};
-
-xhr.open('get', 'test.json');
-xhr.send();
+// };
+// xhr.open('get', '../php_classes/Json.php');
+// xhr.send();
+// console.log("fjdsahk");
 /////////////
 
 
