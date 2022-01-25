@@ -12046,7 +12046,6 @@ fieldset:disabled .btn {
 }
 
 .title1 {
-  background: green;
   text-align: center;
   margin-top: 6em;
 }
@@ -12054,19 +12053,19 @@ fieldset:disabled .btn {
 .mappa1 {
   width: 100%;
   height: 70%;
-  background: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .mappa1 .percorso1 {
+  margin-top: 10em;
   height: 1em;
   border-radius: 2em;
   width: 70%;
@@ -12102,10 +12101,10 @@ fieldset:disabled .btn {
 .mappa1 .percorso1 .stazione1 .rectB {
   display: none;
   position: absolute;
-  width: 15em;
-  height: 15em;
-  margin-top: 20em;
-  border-radius: 1em;
+  width: 12em;
+  height: 12em;
+  margin-top: 18em;
+  border-radius: 0.7em;
   background: #1ac0f3;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12119,7 +12118,7 @@ fieldset:disabled .btn {
 }
 
 .mappa1 .percorso1 .stazione1 .rectB .vagoni {
-  margin-top: 3em;
+  margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12166,7 +12165,7 @@ fieldset:disabled .btn {
   background-color: #2097db;
   margin: 0;
   padding: 15px;
-  border-radius: 0.9em 0.9em 0 0;
+  border-radius: 0.8em 0.8em 0 0;
   text-align: center;
 }
 

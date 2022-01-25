@@ -21,19 +21,77 @@ session_start();
 
 </head>
 <body>
-    <?php
-        echo $_SESSION['navbar'];
-    ?>
+<nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
+      <a class="navbar-brand" href="index.html">
+        <h3 class="trainNavbar fw-bold">TRAIN</h3>
+      </a>
+
+      <div
+        class="collapse navbar-collapse justify-content-end align-content-center m-2"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mr-auto p-1 mx-5">
+          <li class="nav-item active mx-2">
+            <a class="nav-link fw-bolder links-nav" href="#section1">HOME</a>
+          </li>
+
+          <li class="nav-item mx-2">
+            <a class="nav-link fw-bolder links-nav" href="#section2">ABOUT</a>
+          </li>
+
+          <li class="nav-item dropdown mx-2">
+            <a
+              class="nav-link fw-bold"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+            <div class="account-menu">
+            <i class="fas fa-bars"></i>
+            <div class="outerUser">
+            <i class="fas fa-user"></i>
+          </div>
+            </div>
+            </a>
+            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
+              <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>
+              <a class="dropdown-item" href="./pages/macchinista.php">Macchinista</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="title1">
     <h1>MACCHINISTA</h1>
+
+    <h4 style="margin-top:2em;">Clicca sulle stazione oer vedere i vagoni da caricare </h4>
     </div>
     <div class="mappa1">
         <div class="percorso1">
-            <div class="stazione1
-            ">VE<div class="rectB">
-
-            </div></div>
-            <div class="stazione1">VE<div class="rectB">
+            <div class="stazione1" id="LI">
+                UD
+                <div class="rectB">
+                <h4>VENEZIA</h4>
+            <div class="vagoni">
+                <div class="lSide">
+                <h6>+1 UD</h6>
+                <h6>+1 UD</h6>
+                </div>
+                <div class="rSide">
+                <h6>-1 MI</h6>
+                <h6>-1 MI</h6>
+                </div>
+            </div>
+            </div>
+        </div>
+            <div class="stazione1" id="VE">VE<div class="rectB">
             <h4>VENEZIA</h4>
             <div class="vagoni">
                 <div class="lSide">
@@ -46,11 +104,44 @@ session_start();
                 </div>
             </div>
             </div></div>
-            <div class="stazione1">VE<div class="rectB">
-
+            <div class="stazione1" id="MI">PD<div class="rectB">
+            <h4>VENEZIA</h4>
+            <div class="vagoni">
+                <div class="lSide">
+                <h6>+1 UD</h6>
+                <h6>+1 UD</h6>
+                </div>
+                <div class="rSide">
+                <h6>-1 MI</h6>
+                <h6>-1 MI</h6>
+                </div>
+            </div>
             </div></div>
-            <div class="stazione1">VE<div class="rectB">
-
+            <div class="stazione1" id="PD">MI<div class="rectB">
+            <h4>VENEZIA</h4>
+            <div class="vagoni">
+                <div class="lSide">
+                <h6>+1 UD</h6>
+                <h6>+1 UD</h6>
+                </div>
+                <div class="rSide">
+                <h6>-1 MI</h6>
+                <h6>-1 MI</h6>
+                </div>
+            </div>
+            </div></div>
+            <div class="stazione1" id="PD">TO<div class="rectB">
+            <h4>VENEZIA</h4>
+            <div class="vagoni">
+                <div class="lSide">
+                <h6>+1 UD</h6>
+                <h6>+1 UD</h6>
+                </div>
+                <div class="rSide">
+                <h6>-1 MI</h6>
+                <h6>-1 MI</h6>
+                </div>
+            </div>
             </div></div>
         </div>
     </div>
