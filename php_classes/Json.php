@@ -6,11 +6,9 @@ require_once "User.php";
 session_start();
 $_SESSION = unserialize(serialize($_SESSION));
 $main = $_SESSION['main'];
- $hubs = $main->getHubs();
- $trains = $main->getTrains();
+$hubs = $main->getHubs();
+$trains = $main->getTrains();
 
- //var_dump($trains);
- //  $train = $hub = null;
 foreach ($trains as $key => $t) {
     if ($t->getId() == $_REQUEST['train']) {
         $train = $t;

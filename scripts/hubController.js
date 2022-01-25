@@ -191,7 +191,11 @@ function addWagons(arrLeave) {
 function upArrTrain() {
     updateTrain(arrTrain);
 }
+<<<<<<< Updated upstream
 function callUpdateTrain() { //export 
+=======
+ function callUpdateTrain() {
+>>>>>>> Stashed changes
     updateTrain(arrivingTrain);
 }
 function callRemoveWagons() {
@@ -210,7 +214,11 @@ function trainDeparture() {
 
 }
 
+<<<<<<< Updated upstream
 function automatic() { //export
+=======
+ function automatic() {
+>>>>>>> Stashed changes
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
@@ -225,8 +233,13 @@ function automatic() { //export
 
 
 // const xhr = new XMLHttpRequest();
+<<<<<<< Updated upstream
 
 $.ajax('test.json',  
+=======
+//?train=T1&hub=H1
+$.ajax('../php_classes/Json.php',  
+>>>>>>> Stashed changes
     {
         success: function (data, status, xhr) {
             console.log(data);
