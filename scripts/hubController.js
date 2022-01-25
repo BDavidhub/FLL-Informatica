@@ -226,14 +226,15 @@ function automatic() {
 
 // const xhr = new XMLHttpRequest();
 
-$.ajax('../php_classes/Json.php',  
+$.ajax('test.json',  
     {
         success: function (data, status, xhr) {
             console.log("CIAO");
             console.log(data);
 
-        var resObj = data;
+        var resObj= data;
             
+        
         /*
         FILL ARRIVINGTRAIN ARRAY
         */
