@@ -42,7 +42,7 @@ class Main
         return $this->graph;
     }
     public function getWagons()
-    {
+    { 
         return $this->wagons;
     }
     public function getTrains()
@@ -63,11 +63,11 @@ class Main
         unset($this->graph);
         unset($this->vertices);
 
-        $this->hubs[] = new Hub('mailUdine', 'passwordUdine', 'telefonoUdine', 10, 'Udine');
-        $this->hubs[] = new Hub('mailVenezia', 'passwordVenezia', 'telefonoVenezia', 10, 'Venezia');
-        $this->hubs[] = new Hub('mailPadova', 'passwordPadova', 'telefonoPadova', 10, 'Padova');
-        $this->hubs[] = new Hub('mailMilano', 'passwordMilano', 'telefonoMilano', 10, 'Milano');
-        $this->hubs[] = new Hub('mailTorino', 'passwordTorino', 'telefonoTorino', 10, 'Torino');
+        $this->hubs[] = new Hub('mailUdine', 'passwordUdine', 'telefonoUdine', 10, 'Udine',1);
+        $this->hubs[] = new Hub('mailVenezia', 'passwordVenezia', 'telefonoVenezia', 10, 'Venezia',2);
+        $this->hubs[] = new Hub('mailPadova', 'passwordPadova', 'telefonoPadova', 10, 'Padova',3);
+        $this->hubs[] = new Hub('mailMilano', 'passwordMilano', 'telefonoMilano', 10, 'Milano',4);
+        $this->hubs[] = new Hub('mailTorino', 'passwordTorino', 'telefonoTorino', 10, 'Torino',5);
 
         foreach ($this->hubs as $key => $value) {
             $this->hubs[$value->getName()] = $value;

@@ -16,9 +16,9 @@ $main->addTrain(new Train('Torino', 'Udine', 1, new DateTime("30-12-2022 22:00:0
 
 echo "</pre>";
 
-$boxes[] = new Box('Udine', 'Milano', $main->reset(true));
-$boxes[] = new Box('Torino', 'Udine', $main->reset(false));
-$boxes[] = new Box('Torino', 'Udine', $main->reset(false));
+$boxes[] = new Box('Udine', 'Milano', $main->reset(true),1);
+$boxes[] = new Box('Torino', 'Udine', $main->reset(false),2);
+$boxes[] = new Box('Torino', 'Udine', $main->reset(false),3);
 
 $main->distributeBoxesInWagons($boxes);
 $main->distributeWagonsInTrains();
@@ -31,8 +31,14 @@ echo $_POST['fdata'];
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];
 $_SESSION['data'] = new DateTime($_POST['fdata']);
-header('location: ../pages/TreniRicerca.php?n=1');
-exit;
+
+//$hubs=$main->getHubs();
+//var_dump($hubs);
+//$trains=$main->getTrainS();
+//$ws=$hubs['Torino']->getTrainInOutConfig($trains[0]);
+//echo $ws;
+ header('location: ../pages/TreniRicerca.php?n=1');
+ exit;
 ?>
 
 <html>
@@ -41,13 +47,15 @@ exit;
     <title>INDEX DI PROVA</title>
 </head>
 
-<body>
+<body> 
         <a href="infoHub.php">
             info hub
         </a>
     <pre>
         <?php
+
 var_dump($main);
+        
         //echo "<br/><br/><br/>";
         // $main->splitWagons();
         ?>

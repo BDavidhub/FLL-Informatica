@@ -4,9 +4,9 @@
         private $capacity;
         private $name;
 
-        public function __construct($mail, $password, $telephone, $capacity, $name)
+        public function __construct($mail, $password, $telephone, $capacity, $name,$id)
         {
-            parent::__construct($mail,$password,"hub",$telephone);
+            parent::__construct($mail,$password,"hub",$telephone,$id);
             $this->capacity = $capacity;
             $this->name = $name;
         }
@@ -59,10 +59,10 @@
     {
         $ws = array();
         $fin = array();
-        if (!in_array($this->hub, $train->getHubs())) return null;
+        if (!in_array($this, $train->getHubs())) return null;
         foreach ($train->getWagons() as $key => $wagon) {
-            if (in_array($this->hub, $wagon->getHubs())) { // Non devi inserire il vagone nell'array se l'hub è l'ultimo del percorso del vagone
-                if($wagon->getHubArrive()!=$this->hub)
+            if (in_array($this, $wagon->getHubs())) { // Non devi inserire il vagone nell'array se l'hub è l'ultimo del percorso del vagone
+                if($wagon->getHubArrive()!=$this)
                 {
                     if($short==null)
                     {
@@ -97,7 +97,7 @@
 
     public function getTrainInOutConfig($train, $short = null){
         $ws = array();
-        if($this->hub == $train->getDeparture()){
+        if($this == $train->getDeparture()){
             $ws[0] = null;
         } else {
             if($short==null)
@@ -110,7 +110,7 @@
             }
         }
 
-        if($this->hub == $train->getArrive()){
+        if($this == $train->getArrive()){
             $ws[1] = null;
         } else {
             if($short==null)
