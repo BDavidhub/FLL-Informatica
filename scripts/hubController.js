@@ -8,6 +8,8 @@ let swArr = Array.from(sw);
 let aW = document.getElementById("aW");
 let lW = document.getElementById("lW");
 let stazTit = document.getElementById("stazTit");
+let start = document.getElementById("start123");
+console.log(start);
 // console.log(twArr);
 // console.log(swArr);
 let wm = 80;
@@ -106,7 +108,7 @@ function addWagons(arrLeave) {
     var contP = addToTrain.length;
     var dist = 0;
     var makeSpace = 0;
-    firstTime = true;
+    var firstTime = true;
 
 
     //trova fp
@@ -191,7 +193,7 @@ function addWagons(arrLeave) {
 function upArrTrain() {
     updateTrain(arrTrain);
 }
-function callUpdateTrain() {
+ function callUpdateTrain() {
     updateTrain(arrivingTrain);
 }
 function callRemoveWagons() {
@@ -210,7 +212,7 @@ function trainDeparture() {
 
 }
 
-function automatic() {
+ function automatic() {
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
@@ -256,6 +258,7 @@ $.ajax('test.json',
 
         for (var i = 0; i < leavingTrain.length; i++) {
             if (leavingTrain[i] == find) {
+                console.log("si")
                 search = false;
             }
         }
@@ -268,6 +271,7 @@ $.ajax('test.json',
                 if (arrivingTrain[i] == find) {
                     console.log("--" + arrivingTrain[i])
                     removeFromT.push(arrivingTrain[i])
+                    // console.log(removeFromT[i])
                 }
 
             }
@@ -289,7 +293,7 @@ $.ajax('test.json',
 
             if (cont == 0) {
 
-                console.log(leavingTrain[i])
+        //  console.log(leavingTrain[i])
                 addToTrain.push(leavingTrain[i]);
             }
         }
@@ -303,6 +307,7 @@ $.ajax('test.json',
         }
 });
 
+start.addEventListener("click", automatic)
 // xhr.onload = function () {
     // if (this.status == 200) {
         // const resObj = JSON.parse(this.responseText);

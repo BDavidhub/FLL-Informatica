@@ -97,22 +97,9 @@
 
     public function getTrainInOutConfig($train, $short = null){
         $ws = array();
+        
         if($this == $train->getDeparture()){
             $ws[0] = null;
-        } else {
-            if($short==null)
-            {
-                $ws[0] = $train->previousHub($this)->getWagonsByTrain($train);
-            }
-            else
-            {
-                $ws[0] = $train->previousHub($this)->getWagonsByTrain($train,1);
-            }
-        }
-
-        if($this == $train->getArrive()){
-            $ws[1] = null;
-        } else {
             if($short==null)
             {
                 $ws[1] = $this->getWagonsByTrain($train);
@@ -121,7 +108,34 @@
             {
                 $ws[1] = $this->getWagonsByTrain($train,1);
             }
+        } 
+
+        if($this == $train->getArrive()){
+            $ws[1] = null;
+            if($short==null)
+            {
+                $ws[0] = $train->previousHub($this)->getWagonsByTrain($train);
+            }
+            else
+            {
+                $ws[0] = $train->previousHub($this)->getWagonsByTrain($train,1);
+            }
+        } 
+        
+        if($this != $train->getArrive() && $this != $train->getDeparture())
+        {
+            if($short==null)
+            {
+                $ws[0] = $train->previousHub($this)->getWagonsByTrain($train);
+                $ws[1] = $this->getWagonsByTrain($train);
+            }
+            else
+            {
+                $ws[0] = $train->previousHub($this)->getWagonsByTrain($train,1);
+                $ws[1] = $this->getWagonsByTrain($train,1);
+            }
         }
+
         return $ws;
     }
 

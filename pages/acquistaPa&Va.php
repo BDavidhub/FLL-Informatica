@@ -25,7 +25,7 @@ $_SESSION['loggedIn'] = 1;
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <!--style="background-color: rgba(230, 230, 230,0) !important; -->
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="../index.php">
             <!-- <img
           src="assets/images/logo.svg"
           width="30"
@@ -40,13 +40,11 @@ $_SESSION['loggedIn'] = 1;
         <div class="collapse navbar-collapse justify-content-end align-content-center m-2" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto p-1 mx-5">
                 <li class="nav-item active mx-2">
-                    <a class="nav-link fw-bolder links-nav" href="#section1">HOME</a>
+                    <a class="nav-link fw-bolder links-nav" href="../index.php#section1">HOME</a>
                 </li>
-
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-bolder links-nav" href="#section2">ABOUT</a>
-                </li>
-
+          <a class="nav-link fw-bolder links-nav" href="../index.php#section2">ABOUT</a>
+        </li>
                 <li class="nav-item dropdown mx-2">
                     <a class="nav-link fw-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="account-menu">
@@ -86,7 +84,7 @@ $_SESSION['loggedIn'] = 1;
                     <p class="fw-bold">Data</p>
                     <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d') ?>" disabled>
                 </nav>
-                <a href="../index.html">
+                <a href="../index.php">
                     <h6> CAMBIO RICERCA</h6>
                 </a>
             </div>
@@ -183,8 +181,8 @@ $_SESSION['loggedIn'] = 1;
 
 
     <!-- main.js script  -->
-    <script src="../Scripts/main.js"></script>
-    <script src="../Scripts/progressBar.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/progressBar.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

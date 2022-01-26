@@ -1,11 +1,10 @@
 <?php
-class Path extends Utility
+class Path
 {
     private $arrayOfHub;
 
-    public function __construct($arrayOfHub,$id)
+    public function __construct($arrayOfHub)
     {
-        parent::__construct("path",$id);
         $this->arrayOfHub = $arrayOfHub;
     }
 

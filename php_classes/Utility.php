@@ -19,9 +19,6 @@
                 case "private":
                     $this->id = 'P';
                     break;
-                case "path":
-                    $this->id = 'p';
-                    break;
                 case "machinist":
                     $this->id = 'M';
                     break;

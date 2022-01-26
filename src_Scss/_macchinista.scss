@@ -1,0 +1,178 @@
+// nav bar
+.trainNavbar{
+    margin-left: 2em;
+    color:#f7f7f7;
+    transition: color 150ms ease-in;
+}
+.trainNavbar:hover{
+    color:#424242;
+}
+.links-nav{
+    color:#f7f7f7 !important;
+    transition: color 100ms ease-in;
+}
+.links-nav:hover{
+    color:#424242 !important;
+}
+.fa-bars{
+    margin-left:0.5em;
+    color:#747474;
+}
+.fa-bars:hover{
+    color:#2c2c2c;
+    
+}
+
+.account-menu{
+    width:4.5em;
+    height: 2em;
+    background-color: #f7f7f7;
+    border-radius:5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .outerUser{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:1.8em;
+        height: 1.5em;
+    }
+    transition: background-color 150ms ease-in;
+}
+.account-menu:hover{
+    box-shadow:0 0 9px rgb(139, 139, 139);
+}
+.text-center1{
+    color:#f7f7f7 ;
+}
+
+.dropdown-menu{
+    border-radius: 1rem ;
+    border:none;
+    .dropdown-item:hover,
+    .dropdown-item:focus{
+        background-color: inherit;
+        border-radius: 2rem;
+        color: rgb(160, 158, 158);
+        outline: none;
+    }
+}
+///////
+
+//////title
+.title1{
+
+    text-align: center;
+    margin-top: 6em;
+}
+
+/// mappa
+
+.mappa1{
+    width:100%;
+    height:70%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    .percorso1{
+        margin-top:10em;
+        height:1em;
+        border-radius:2em;
+        width:70%;
+        background:rgb(26, 192, 243);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        .stazione1{
+            height:3em;
+            width:3em;
+            border-radius:2em;
+            background:rgb(26, 192, 243);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+       
+        }
+
+    }
+
+    .rectBlue{
+        h3{
+            background: rgb(17, 134, 170);
+            color:white;
+            padding:10px;
+            border-radius: 0.6em 0.6em 0 0;
+            text-align: center;
+        }
+        width:80%;
+        height:18em;
+        margin-top:6em;
+        background-color: rgb(26, 192, 243);
+        border-radius:1em;
+        .trennno{
+            margin-top:2em;
+         
+        .entrata{
+            color: white;
+            padding: 15px;
+            background-color:rgb(22, 147, 185);
+            display:flex;
+            flex-direction: row;
+            .trenoImg{
+                margin-left:2em;
+                display:flex;
+                justify-content:flex-start;
+                flex-direction: row;
+                .head_sx {
+                    position: relative;
+                    z-index: 2;
+                    height: 50px;
+                    width: 200px;
+                    margin: 0;
+                    background: url("../assets/images/motrice_sx-red.png") no-repeat;
+                    background-position: center;
+                    background-size: 200px;
+                }
+                .head_dx {
+                    position: relative;
+                    z-index: 2;
+                    margin: 0; /*start point */
+                    height: 50px;
+                    width: 200px;
+                    background: url("../assets/images/motrice_dx-red.png") no-repeat;
+                    background-position: center;
+                    background-size: 200px;
+                }
+            
+                .wagon {
+                    width: 80px;
+                    height: 50px;
+                    position: relative;
+                    z-index: 2;
+                    margin-left: 0;
+                    text-align: center;
+                    background: url("../assets/images/vagone-red.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 60px;
+                    opacity: 0;
+                }
+                .sw {
+                    display: none; /*start*/
+                }
+                .tw {
+                    display: none; /*start*/
+                }
+            
+            }
+        }
+        .uscita{
+            color: white;
+            padding: 15px;
+        }
+        }
+    }
+}

@@ -5,12 +5,12 @@ class _Private extends User
     private $surname;
     private $accountingAdress;
 
-    public function __construct($mail, $password, $telephone, $name, $surname, $accountingAdress,$id)
+    public function __construct($mail, $password, $telephone, $name, $surname,$id, $accountingAdress=null)
     {
         parent::__construct($mail, $password, "private", $telephone,$id);
         $this->name = $name;
         $this->surname = $surname;
-        $this->accountingAdress = $accountingAdress;
+        if($accountingAdress!=null) $this->accountingAdress = $accountingAdress;
     }
 
     public function getName()
@@ -27,7 +27,6 @@ class _Private extends User
     {
         return $this->surname;
     }
-
     public function setSurname($surname)
     {
         $this->surname = $surname;
@@ -41,4 +40,5 @@ class _Private extends User
     {
         $this->accountingAdress = $accountingAdress;
     }
+
 }

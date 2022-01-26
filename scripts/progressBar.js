@@ -8,11 +8,6 @@ var url = new URL(url_string);
 var n = url.searchParams.get("n");
 
 let currentActive = n;
-next1.forEach(next1 => next1.addEventListener('click',function(){
-
-  console.log(next1.getAttribute('id'));
-}));
-
 const update = function () {
   circles.forEach((circle, i) => {
     i < currentActive

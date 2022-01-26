@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+$_SESSION['logged']=0;
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +32,7 @@
   <body>
 
      <nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <h3 class="trainNavbar fw-bold">TRAIN</h3>
       </a>
 
@@ -77,7 +80,12 @@
     <div id="fullpage">
 
       <div class="section container-fluid">
-       
+      <?php  
+      if($_SESSION['logged']==1){
+         echo  '<h5>Bentornato!'. $_SESSION['nome'] .'</h5>';
+      }
+      
+       ?>
         <div class="container-fluid scritta">
           <h1 class="display-1 text-center1 text-center fw-bold">SPEDIZIONI ULTRA VELOCI</h1>
           <div class="subtext">
@@ -103,16 +111,16 @@
                 <p class="fw-bold">Destinazione</p>
             <!-- <input type="text" name="fdestinazione" placeholder="Venezia.." required> -->
             <select class="form-select" name="fdestinazione" id="inputGroupSelect01">
-              <option value="Torino" selected>Torino</option>
+              <option value="Torino">Torino</option>
               <option value="Firenze">Firenze</option>
               <option value="Trento">Trento</option>
-              <option value="Udine">Udine</option>
+              <option value="Udine" selected>Udine</option>
             </select>
           </div>
           <div class="check-out">
             <nav class="check-out1">
                 <p class="fw-bold">Data</p>
-            <input type="date" name="fdata" value="2022-01-22"
+            <input type="date" name="fdata" value="<?php  $td = new DateTime(); echo $td->format('Y-m-d'); ?>"
             min="2022-01-01" max="2023-01-01" required>
             </nav>
             <span>

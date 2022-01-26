@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../src_CSS/hubInterface.css" />
@@ -13,7 +13,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../index.php">
 
       <h3 class="trainNavbar fw-bold">TRAIN</h3>
     </a>
@@ -21,28 +21,27 @@
     <div class="collapse navbar-collapse justify-content-end align-content-center m-2" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto p-1 mx-5">
         <li class="nav-item active mx-2">
-          <a class="nav-link fw-bolder links-nav" href="../index.html#section1">HOME</a>
+          <a class="nav-link fw-bolder links-nav" href="../index.php#section1">HOME</a>
         </li>
 
         <li class="nav-item mx-2">
-          <a class="nav-link fw-bolder links-nav" href="../index.html#section2">ABOUT</a>
+          <a class="nav-link fw-bolder links-nav" href="../index.php#section2">ABOUT</a>
         </li>
       </ul>
     </div>
   </nav>
 
 
-
   <div class="info">
     <article id="aW">
+      
     </article>
     <article id="lW">
+      
     </article>
-
   </div>
-  <h2 id="stazTit" class="yourStaz"></h2>
+  <div class="yourStaz" id="stazTit"></div>
   <div class="wrap">
-    
     <section class="top">
       <div id="v0"></div>
       <div class="wagon sw" id="v1"></div>
@@ -88,12 +87,12 @@
     <button id="removeWagons" class="btn btn-primary" onclick="callRemoveWagons()">removeWagons</button><br />
     <button id="addWagons" class="btn btn-primary" onclick="callAddWagons()">addWagons</button><br />
     <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br /> -->
-    <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">-Start-</button><br />
+    <button id="start123" class="btn btn-primary">-Start-</button><br />
   </div>
 
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../scripts/hubController.js"></script>
+  <script type="module" src="../scripts/hubController.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="../assets/libs/move.js/move.js"></script>
   
