@@ -308,6 +308,7 @@ $.ajax('test.json',
 });
 
 start.addEventListener("click", automatic)
+
 // xhr.onload = function () {
     // if (this.status == 200) {
         // const resObj = JSON.parse(this.responseText);
