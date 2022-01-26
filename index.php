@@ -111,10 +111,10 @@ $_SESSION['logged']=0;
                 <p class="fw-bold">Destinazione</p>
             <!-- <input type="text" name="fdestinazione" placeholder="Venezia.." required> -->
             <select class="form-select" name="fdestinazione" id="inputGroupSelect01">
-              <option value="Torino" selected>Torino</option>
+              <option value="Torino">Torino</option>
               <option value="Firenze">Firenze</option>
               <option value="Trento">Trento</option>
-              <option value="Udine">Udine</option>
+              <option value="Udine" selected>Udine</option>
             </select>
           </div>
           <div class="check-out">

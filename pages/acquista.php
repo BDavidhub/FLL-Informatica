@@ -84,7 +84,7 @@ $main = unserialize(serialize($_SESSION['main']));
                         <p class="fw-bold">Data</p>
                         <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d') ?>" disabled>
                     </nav>
-                    <a href="../index.html">
+                    <a href="../index.php">
                         <h6> CAMBIO RICERCA</h6>
                     </a>
                 </div>

@@ -93,6 +93,7 @@
                     $this->sig = 'TV';
                     break;
             }
+            return $this->sig;
         }
 
         public function getShortWagon()

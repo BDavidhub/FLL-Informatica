@@ -32,9 +32,11 @@ session_start();
       >
         <ul class="navbar-nav mr-auto p-1 mx-5">
           <li class="nav-item active mx-2">
-            <a class="nav-link fw-bolder links-nav" href="../index.php">HOME</a>
+            <a class="nav-link fw-bolder links-nav" href="../index.php#section1">HOME</a>
           </li>
-
+          <li class="nav-item active mx-2">
+            <a class="nav-link fw-bolder links-nav" href="../index.php#section2">ABOUT</a>
+          </li>
           <li class="nav-item dropdown mx-2">
             <a
               class="nav-link fw-bold"
