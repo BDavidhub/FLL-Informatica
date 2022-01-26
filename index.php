@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['logged']=0;
+$_SESSION['logged']=false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,7 @@ $_SESSION['logged']=0;
 
       <div class="section container-fluid">
       <?php  
-      if($_SESSION['logged']==1){
+      if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
          echo  '<h5>Bentornato!'. $_SESSION['nome'] .'</h5>';
       }
       
@@ -102,18 +102,20 @@ $_SESSION['logged']=0;
             <!-- <input type="text" name="fdove" placeholder="Milano..?" required> -->
            <select class="form-select" name="fdove" id="inputGroupSelect01">
               <option value="Torino" selected>Torino</option>
-              <option value="Firenze">Firenze</option>
-              <option value="Trento">Trento</option>
-              <option value="Udine">Udine</option>
+              <option value="Firenze">Udine</option>
+              <option value="Trento">Milano</option>
+              <option value="Udine">Padova</option>
+              <option value="Trento">Venezia</option>
             </select>
           </div>
            <div class="check-in">
                 <p class="fw-bold">Destinazione</p>
             <!-- <input type="text" name="fdestinazione" placeholder="Venezia.." required> -->
             <select class="form-select" name="fdestinazione" id="inputGroupSelect01">
-              <option value="Torino">Torino</option>
-              <option value="Firenze">Firenze</option>
-              <option value="Trento">Trento</option>
+              <option value="Trento">Milano</option>
+              <option value="Udine">Padova</option>
+              <option value="Trento">Venezia</option>
+              <option value="Trento">Torino</option>
               <option value="Udine" selected>Udine</option>
             </select>
           </div>

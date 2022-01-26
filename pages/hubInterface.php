@@ -87,7 +87,7 @@
     <button id="removeWagons" class="btn btn-primary" onclick="callRemoveWagons()">removeWagons</button><br />
     <button id="addWagons" class="btn btn-primary" onclick="callAddWagons()">addWagons</button><br />
     <button id="trainDeparture" class="btn btn-primary" onclick="trainDeparture()">trainDeparture</button><br /> -->
-    <button id="trainDeparture" class="btn btn-primary" onclick="automatic();">-Start-</button><br />
+    <button id="trainDeparture" class="btn btn-primary" onclick="automatic()">-Start-</button><br />
   </div>
 
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>

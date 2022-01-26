@@ -12,6 +12,12 @@ $main = new Main();
 $main->addTrain(new Train('Udine', 'Torino', 1, new DateTime("30-12-2022 02:00:00"), $main->reset(true)));
 $main->addTrain(new Train('Udine', 'Torino', 2, new DateTime("30-12-2022 12:00:00"), $main->reset(true)));
 $main->addTrain(new Train('Torino', 'Udine', 3, new DateTime("30-12-2022 12:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Milano', 'Udine', 4, new DateTime("2-03-2022 11:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Udine', 'Torino', 2, new DateTime("30-12-2022 12:00:00"), $main->reset(true)));
+$main->addTrain(new Train('Padova', 'Venezia', 4, new DateTime("2-03-2022 11:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Venezia', 'Padova', 4, new DateTime("16-05-2022 17:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Venezia', 'Udine', 4, new DateTime("16-05-2022 17:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Torino', 'Udine', 3, new DateTime("30-12-2022 12:00:00"), $main->reset(false)));
 $main->addTrain(new Train('Torino', 'Udine', 4, new DateTime("30-12-2022 22:00:00"), $main->reset(false)));
 //var_dump($main->getTrains());
 echo "</pre>";
@@ -36,9 +42,6 @@ foreach($main->getHubs() as $hub)
     }
     $tmp++;
 }
-echo $_POST['fdove'];
-echo $_POST['fdestinazione'];
-echo $_POST['fdata'];
 
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];

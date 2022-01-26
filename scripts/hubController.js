@@ -226,7 +226,7 @@ function trainDeparture() {
 
 // const xhr = new XMLHttpRequest();
 //?train=T1&hub=H1
-$.ajax('../php_classes/Json.php',  
+$.ajax('test.json',  
     {
         success: function (data, status, xhr) {
             console.log(data);

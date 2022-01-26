@@ -24,7 +24,7 @@ foreach ($main->getPrivates() as $private)
         $_SESSION['mail'] = $_POST['mailLog'];
         $_SESSION['password'] = $_POST['passwordLog'];
         $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
-        $_SESSION['logged'] = 1;
+        $_SESSION['logged'] = true;
         $trovato = true;
     }
 }
@@ -57,7 +57,7 @@ exit;
     <pre>
         <?php
 
-var_dump($main);
+
         
         //echo "<br/><br/><br/>";
         // $main->splitWagons();
