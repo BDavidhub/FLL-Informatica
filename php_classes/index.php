@@ -48,8 +48,8 @@ $_SESSION['data'] = new DateTime($_POST['fdata']);
 //$trains=$main->getTrainS();
 //$ws=$hubs['Torino']->getTrainInOutConfig($trains[0]);
 //echo $ws;
- header('location: ../pages/TreniRicerca.php?n=1');
- exit;
+//  header('location: ../pages/TreniRicerca.php?n=1');
+//  exit;
 ?>
 
 <html>

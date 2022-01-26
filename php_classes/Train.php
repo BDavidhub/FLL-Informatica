@@ -121,7 +121,7 @@ class Train extends Utility
         return false;
     }
 
-    public function previousHub($hub)
+    public function getPreviousHub($hub)
     { 
         $tmp1=null;
         $tmp2=null;

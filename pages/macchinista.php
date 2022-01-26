@@ -1,4 +1,3 @@
-
 <?php
 // require_once __WEBROOT__ . '/includes/safestring.class.php';
 session_start();

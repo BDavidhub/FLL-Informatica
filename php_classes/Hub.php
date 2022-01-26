@@ -55,37 +55,31 @@
                 return 1;
         }
 
-    public function getWagonsByTrain($train, $short = null)
+    public function getWagonsByTrain($train)
     {
-        $ws = array();
-        $fin = array();
+        $in = array();
+        $out = array();
         if (!in_array($this, $train->getHubs())) return null;
-        foreach ($train->getWagons() as $key => $wagon) {
-            if (in_array($this, $wagon->getHubs())) { // Non devi inserire il vagone nell'array se l'hub è l'ultimo del percorso del vagone
-                if($wagon->getHubArrive()!=$this)
-                {
-                    if($short==null)
-                    {
-                        $ws[] = $wagon;
-                    }
-                    else
-                    {
-                        $ws[] = $wagon->getShortWagon();
-                    }
+        if ($this == $train->getDeparture()) $in = null;
+        else{
+            $prec = $train->getPreviousHub($this);
+            foreach($train->getWagons() as $key => $wagon){
+                if(in_array($prec,$wagon->getHubs())){
+                    $in[] = $wagon;
                 }
             }
         }
-        for ($tmp = 0; $tmp < count($ws); $tmp++) {
-            $fin[$tmp] = $ws[0];
-            for ($tmp1 = 1; $tmp1 < count($ws); $tmp1++) {
-                if ($this->getDistanceFrom($fin[$tmp]->getHubArrive()) > $this->getDistanceFrom($ws[$tmp1]->getHubArrive())) {
-                    $fin[$tmp] = $ws[$tmp1];
-                    $tmp2 = $tmp1;
+        if ($this == $train->getArrive()) $out = null;
+        else{
+            foreach($train->getWagons() as $key => $wagon){
+                if(in_array($this,$wagon->getHubs())){
+                    $out[] = $wagon;
                 }
             }
-            array_splice($ws, $tmp2, 1);
         }
-        return $fin;
+
+        
+        return array($in,$out);
     }
 
 
