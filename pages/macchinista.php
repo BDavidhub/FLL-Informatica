@@ -16,6 +16,8 @@ session_start();
     <!-- main css  -->
     <link rel="stylesheet" href="../src_CSS/paginaMacchinista.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- fullpage css nodeModule -->
     <title>TrainProject</title>
 
@@ -101,6 +103,20 @@ session_start();
                 </div>
                 <div class="uscita">
                     <h5>Treno uscita</h5>
+                    <div class="trenoImg">
+                    <div id="t0" class="head_sx"></div>
+                        <div class="wagon tw" id="t1"></div>
+                        <div class="wagon tw" id="t2"></div>
+                        <div class="wagon tw" id="t3"></div>
+                        <div class="wagon tw" id="t4"></div>
+                        <div class="wagon tw" id="t5"></div>
+                        <div class="wagon tw" id="t6"></div>
+                        <div class="wagon tw" id="t7"></div>
+                        <div class="wagon tw" id="t8"></div>
+                        <div class="wagon tw" id="t9"></div>
+                        <div class="wagon tw" id="t10"></div>
+                        <div id="t11" class="head_dx"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,8 +129,8 @@ session_start();
  <script src="../assets/libs/move.js/move.js"></script>
     <script src="../scripts/progressBar.js"></script>
     <script  type="module"src="../scripts/macchinistaJs.js"></script>
-    <script  type="module" src="../scripts/hubController.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <!--<script  type="module" src="../scripts/hubController.js"></script>-->
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 

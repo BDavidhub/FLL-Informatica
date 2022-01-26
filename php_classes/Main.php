@@ -197,9 +197,9 @@ class Main
 
     public function getUser($mail){
 
-        for ($i=0; $i < 5; $i++) { 
+        for ($i=0; $i < count($this->privates); $i++) { 
           if($this->privates[$i]->getMail()==$mail){
-              return $this->privates[$i];
+              return $this->privates[$i]->getName();
           }
         }
     }

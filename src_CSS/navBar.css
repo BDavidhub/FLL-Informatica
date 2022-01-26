@@ -11992,6 +11992,14 @@ fieldset:disabled .btn {
   color: #2c2c2c;
 }
 
+h5, .h5 {
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2rem;
+}
+
 .dropdown-menu {
   border-radius: 1rem;
   border: none;

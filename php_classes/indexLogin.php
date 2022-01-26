@@ -12,6 +12,9 @@ $main->addPrivates(new _Private('Filippo.Parovel@FLL.it','Admin','2222222222','F
 $main->addPrivates(new _Private('Lorenzo.Lashkiba@FLL.it','Admin','3333333333','Lorenzo','Lashkiba',3));
 $main->addPrivates(new _Private('Marco.Mattiuz@FLL.it','Admin','4444444444','Marco','Mattiuz',4));
 $main->addPrivates(new _Private('Damiano.Gobbo@FLL.it','Admin','5555555555','Damiano','Gobbo',5));
+$main->addPrivates(new _Private('Macchinista@FLL.it','Macchinista','6666666666','Alberto il macchinista','Macchinista',6));
+$main->addPrivates(new _Private('Venezia@FLL.it','Venezia','777777777','Stazione venezia','venezia',7));
+
 
 $_SESSION['main'] = $main;
 $mail=$_POST['mailLog'];
@@ -23,8 +26,13 @@ foreach ($main->getPrivates() as $private)
     {
         $_SESSION['mail'] = $_POST['mailLog'];
         $_SESSION['password'] = $_POST['passwordLog'];
+        echo $mail;
         $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
         $_SESSION['logged'] = true;
+       $_SESSION['macchinista'] = $_SESSION['password']=='Macchinista'? true : false;  
+       if( $_SESSION['macchinista']==false){
+       $_SESSION['stazione'] = $_SESSION['password']=='Venezia'? true : false;
+       }    
         $trovato = true;
     }
 }

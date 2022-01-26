@@ -8,6 +8,8 @@ let swArr = Array.from(sw);
 let aW = document.getElementById("aW");
 let lW = document.getElementById("lW");
 let stazTit = document.getElementById("stazTit");
+let start = document.getElementById("start123");
+console.log(start);
 // console.log(twArr);
 // console.log(swArr);
 let wm = 80;
@@ -106,7 +108,7 @@ function addWagons(arrLeave) {
     var contP = addToTrain.length;
     var dist = 0;
     var makeSpace = 0;
-    firstTime = true;
+    var firstTime = true;
 
 
     //trova fp
@@ -119,9 +121,9 @@ function addWagons(arrLeave) {
         }
     }
     console.log("fp:" + fp);
-    //aggiorno arrTrain
+
     for (var i = 0; i < arrLeave.length; i++) {
-        if (arrTrain[i] != arrLeave[i]) { //&& typeof arrLeave[i] !== 'undefined' && typeof arrTrain[i] !== 'undefined'
+        if (arrTrain[i] != arrLeave[i]) { 
             console.log(i);
             arrTrain.splice(i, 0, arrLeave[i]);
         }
@@ -225,7 +227,6 @@ function trainDeparture() {
 
 
 // const xhr = new XMLHttpRequest();
-//?train=T1&hub=H1
 $.ajax('test.json',  
     {
         success: function (data, status, xhr) {
@@ -304,6 +305,8 @@ $.ajax('test.json',
 
         }
 });
+
+start.addEventListener("click", automatic)
 
 // xhr.onload = function () {
     // if (this.status == 200) {

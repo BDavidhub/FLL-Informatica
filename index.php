@@ -1,6 +1,9 @@
 <?php
 session_start();
-$_SESSION['logged']=false;
+if(is_null(isset($_SESSION['logged']))){
+  $_SESSION['logged'] = false;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,9 +71,21 @@ $_SESSION['logged']=false;
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
               <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>
-              <a class="dropdown-item" href="./pages/macchinista.php">Macchinista</a>
+              <?php 
+            
+               if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
+                echo '<div class="dropdown-divider"></div>';
+                if(isset($_SESSION['macchinista']) &&   $_SESSION['macchinista'] == true){
+                  echo '<a class="dropdown-item" href="./pages/macchinista.php">Macchinista</a>';
+                    
+                   }
+                if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true){
+                  echo '<a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>';
+                   }
+               
+                }
+              ?>
+              
             </div>
           </li>
         </ul>
@@ -82,7 +97,7 @@ $_SESSION['logged']=false;
       <div class="section container-fluid">
       <?php  
       if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
-         echo  '<h5>Bentornato!'. $_SESSION['nome'] .'</h5>';
+         echo  '<h5>Bentornato/a '. $_SESSION['nome'].'!</h5>';
       }
       
        ?>

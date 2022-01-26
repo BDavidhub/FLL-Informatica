@@ -4,7 +4,7 @@
     transition: color 150ms ease-in;
 }
 .trainNavbar:hover{
-    color:#424242;
+    color:#424242
 }
 .links-nav{
     color:#f7f7f7 !important;
@@ -20,6 +20,14 @@
 .fa-bars:hover{
     color:#2c2c2c;
     
+}
+
+h5{
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2rem;
 }
 
 .dropdown-menu{
