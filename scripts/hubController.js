@@ -226,7 +226,7 @@ function automatic() {
 
 // const xhr = new XMLHttpRequest();
 
-$.ajax('../php_classes/Json.php?train=T1&hub=H1',  
+$.ajax('test.json',  
     {
         success: function (data, status, xhr) {
             console.log(data);
