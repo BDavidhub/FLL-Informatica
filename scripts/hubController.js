@@ -102,7 +102,7 @@ function removeWagons(arrRem) {
 
 
 
-
+//aggiungimento vagoni
 function addWagons(arrLeave) {
     var fp = 0;
     var contP = addToTrain.length;
@@ -236,20 +236,20 @@ $.ajax('test.json',
             
         
         /*
-        FILL ARRIVINGTRAIN ARRAY
+        Riempimento treno in entrata
         */
         for (var i = 0; i < resObj.array[0].length; i++) {
             arrivingTrain.push(resObj.array[0][i].arrAbb);
         }
 
         /*
-        FILL LEAVINGTRAIN ARRAY
+          Riempimento treno in uscita
         */
         for (var i = 0; i < resObj.array[1].length; i++) {
             leavingTrain.push(resObj.array[1][i].arrAbb);
         }
         /*
-        FILL REMOVEFROMT ARRAY
+        Rimozione treno
         */
 
         var find = arrivingTrain[0]; 
@@ -277,9 +277,7 @@ $.ajax('test.json',
         }
 
         stazTit.innerHTML = " Stazione: " + removeFromT[0];
-        /*
-        FILL ADDTOTRAIN ARRAY
-        */
+
         var cont = 0;
         for (var i = 0; i < leavingTrain.length; i++) {
             cont = 0;
@@ -307,21 +305,6 @@ $.ajax('test.json',
 });
 
 start.addEventListener("click", automatic)
-
-// xhr.onload = function () {
-    // if (this.status == 200) {
-        // const resObj = JSON.parse(this.responseText);
-
-
-        // console.log(this.responseText)
-    // } else {
-        // console.warn("Did not receive 200 OK from response")
-    // }
-// };
-// xhr.open('get', '../php_classes/Json.php');
-// xhr.send();
-// console.log("fjdsahk");
-/////////////
 
 
 function printLeave(leave) {

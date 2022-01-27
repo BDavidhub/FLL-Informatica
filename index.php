@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(is_null(isset($_SESSION['logged']))){
   $_SESSION['logged'] = false;
 }
@@ -23,7 +24,7 @@ if(is_null(isset($_SESSION['logged']))){
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
         <!-- main css  -->
         <link rel="stylesheet" href="src_CSS/main.css" />
-        <!-- fullpage css nodeModule -->
+
         <link
           rel="stylesheet"
           type="text/css"
@@ -34,7 +35,7 @@ if(is_null(isset($_SESSION['logged']))){
 
   <body>
 
-     <nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
+     <nav class="navbar navbar-expand-lg navbar-light " >
       <a class="navbar-brand" href="index.php">
         <h3 class="trainNavbar fw-bold">TRAIN</h3>
       </a>
@@ -79,7 +80,7 @@ if(is_null(isset($_SESSION['logged']))){
                   echo '<a class="dropdown-item" href="./pages/macchinista.php">Macchinista</a>';
                     
                    }
-                if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true){
+                if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true&&$_SESSION['macchinista'] == false){
                   echo '<a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>';
                    }
                
@@ -114,7 +115,7 @@ if(is_null(isset($_SESSION['logged']))){
         <div class="bar1 container-fluid">
           <div class="location">
             <p class="fw-bold">Da dove</p>
-            <!-- <input type="text" name="fdove" placeholder="Milano..?" required> -->
+
            <select class="form-select" name="fdove" id="inputGroupSelect01">
               <option value="Torino" selected>Torino</option>
               <option value="Firenze">Udine</option>
@@ -125,7 +126,7 @@ if(is_null(isset($_SESSION['logged']))){
           </div>
            <div class="check-in">
                 <p class="fw-bold">Destinazione</p>
-            <!-- <input type="text" name="fdestinazione" placeholder="Venezia.." required> -->
+
             <select class="form-select" name="fdestinazione" id="inputGroupSelect01">
               <option value="Trento">Milano</option>
               <option value="Udine">Padova</option>
@@ -152,9 +153,7 @@ if(is_null(isset($_SESSION['logged']))){
 
 
       <div class="section container-fluid">
-        <!-- <div class="linea">
-        <img class="train" src="./assets/images/vector-tgv-train-background.png" alt="treno" >
-        </div> -->
+
         <div class="wrapper">
           <h1>Scopri di più </h1>
         <ul class="flex cards">
@@ -172,12 +171,12 @@ if(is_null(isset($_SESSION['logged']))){
       </div>
     </div>
 
-    <!-- fullpage js nodeModules -->
+
     <script
       type="text/javascript"
       src="node_modules/fullpage.js/dist/fullpage.js"
     ></script>
-    <!-- main.js script  -->
+
     <script src="scripts/main.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

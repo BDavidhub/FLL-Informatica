@@ -167,7 +167,7 @@ if ($_SESSION['loggedIn'] == 1) {
         } ?>
 
         <ul><?php echo '<h5> ' . $_SESSION['noleggioFlex']  . '</h5>' ?></ul>
-        <ul><?php echo '<h5> NUMERO ORDINATO ' . $_SESSION['numeroOrdinato']  . '</h5>' ?></ul>
+        <ul><?php echo '<h5> NUMERO DI ORDINAZIONI ' . $_SESSION['numeroOrdinato']  . '</h5>' ?></ul>
         <?php
         echo  '<a href="paginaFinale.php?n=5"">CONFERMA</a>';
 

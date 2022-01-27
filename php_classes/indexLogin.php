@@ -14,6 +14,7 @@ $main->addPrivates(new _Private('Marco.Mattiuz@FLL.it','Admin','4444444444','Mar
 $main->addPrivates(new _Private('Damiano.Gobbo@FLL.it','Admin','5555555555','Damiano','Gobbo',5));
 $main->addPrivates(new _Private('Macchinista@FLL.it','Macchinista','6666666666','Alberto il macchinista','Macchinista',6));
 $main->addPrivates(new _Private('Venezia@FLL.it','Venezia','777777777','Stazione venezia','venezia',7));
+$main->addPrivates(new _Private('MarioRossi@gmail.com','Admin','888888888','Mario Rossi','Mario',8));
 
 
 $_SESSION['main'] = $main;
@@ -29,10 +30,13 @@ foreach ($main->getPrivates() as $private)
         echo $mail;
         $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
         $_SESSION['logged'] = true;
+
+
        $_SESSION['macchinista'] = $_SESSION['password']=='Macchinista'? true : false;  
        if( $_SESSION['macchinista']==false){
        $_SESSION['stazione'] = $_SESSION['password']=='Venezia'? true : false;
        }    
+
         $trovato = true;
     }
 }

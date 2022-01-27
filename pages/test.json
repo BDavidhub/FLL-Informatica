@@ -15,10 +15,10 @@
             {"id":"W3","arrive":"Padova","arrAbb":"PD"},
             {"id":"W4","arrive":"Padova","arrAbb":"PD"},
             {"id":"W5","arrive":"Padova","arrAbb":"PD"},
-            {"id":"W9","arrive":"Torino","arrAbb":"TO"},
-            {"id":"W8","arrive":"Torino","arrAbb":"TO"},
+            {"id":"W6","arrive":"Milano","arrAbb":"MI"},
             {"id":"W7","arrive":"Milano","arrAbb":"MI"},
-            {"id":"W6","arrive":"Milano","arrAbb":"MI"}
+            {"id":"W8","arrive":"Torino","arrAbb":"TO"},
+            {"id":"W9","arrive":"Torino","arrAbb":"TO"}
             
         ]
     ]
