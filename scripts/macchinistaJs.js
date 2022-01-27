@@ -1,4 +1,4 @@
-// import {callUpdateTrain} from './hubController.js';
+// import { ciao } from './hubController.js';
 var aperto = false;
   $('.stazione1').click(function(){
       //  console.log($('.stazione1').attr('name'));

@@ -21,13 +21,19 @@ echo "</pre>";
 $boxes[] = new Box('Udine', 'Milano', $main->reset(true),1);
 $boxes[] = new Box('Torino', 'Udine', $main->reset(false),2);
 $boxes[] = new Box('Torino', 'Udine', $main->reset(false),3);
+$boxes[] = new Box('Udine', 'Milano', $main->reset(true),4);
+$boxes[] = new Box('Torino', 'Udine', $main->reset(false),5);
+$boxes[] = new Box('Torino', 'Udine', $main->reset(false),6);
+$boxes[] = new Box('Udine', 'Milano', $main->reset(true),7);
+$boxes[] = new Box('Torino', 'Udine', $main->reset(false),8);
+$boxes[] = new Box('Torino', 'Udine', $main->reset(false),9);
 
 $main->distributeBoxesInWagons($boxes);
 $main->distributeWagonsInTrains();
 $_SESSION['main'] = $main;
 //$hub=$main->getHubs();
 $tmp=0;
-foreach($main->getHubs() as $hub)
+/*foreach($main->getHubs() as $hub)
 {
     foreach($main->getTrains() as $train)
     {
@@ -37,7 +43,7 @@ foreach($main->getHubs() as $hub)
         }
     }
     $tmp++;
-}
+}*/
 
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];
@@ -47,8 +53,8 @@ $_SESSION['data'] = new DateTime($_POST['fdata']);
 //$trains=$main->getTrainS();
 //$ws=$hubs['Torino']->getTrainInOutConfig($trains[0]);
 //echo $ws;
- header('location: ../pages/TreniRicerca.php?n=1');
- exit;
+  header('location: ../pages/TreniRicerca.php?n=1');
+  exit;
 ?>
 
 <html>

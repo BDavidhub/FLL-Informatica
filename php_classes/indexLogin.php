@@ -17,6 +17,7 @@ $main->addPrivates(new _Private('Venezia@FLL.it','Venezia','777777777','Stazione
 $main->addPrivates(new _Private('MarioRossi@gmail.com','Admin','888888888','Mario Rossi','Mario',8));
 
 
+
 $_SESSION['main'] = $main;
 $mail=$_POST['mailLog'];
 $password=$_POST['passwordLog'];

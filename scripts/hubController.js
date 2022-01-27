@@ -9,7 +9,6 @@ let aW = document.getElementById("aW");
 let lW = document.getElementById("lW");
 let stazTit = document.getElementById("stazTit");
 let start = document.getElementById("start123");
-console.log(start);
 // console.log(twArr);
 // console.log(swArr);
 let wm = 80;
@@ -19,6 +18,9 @@ let leavingTrain = [];
 let removeFromT = [];
 let addToTrain = [];
 
+export function ciao(){
+    console.log(ciao);
+}
 
 function reset() {
     for (var i = 0; i < tw.length; i++) {
@@ -227,7 +229,9 @@ function trainDeparture() {
 
 
 // const xhr = new XMLHttpRequest();
-$.ajax('test.json',  
+// $.ajax('test.json',  
+
+$.ajax('../php_classes/Json.php?train=T1&hub=H2',  
     {
         success: function (data, status, xhr) {
             console.log(data);

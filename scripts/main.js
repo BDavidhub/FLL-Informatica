@@ -1,6 +1,6 @@
 //fullpage instance
 var train = document.querySelector(".train");
-console.log(train);
+console.log("ciao");
 
 // window.addEventListener('scroll',a=> {
 // 	console.log("s");

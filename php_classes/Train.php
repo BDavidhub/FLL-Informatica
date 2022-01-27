@@ -121,7 +121,7 @@ class Train extends Utility
         return false;
     }
 
-    public function previousHub($hub)
+    public function getPreviousHub($hub)
     { 
         $tmp1=null;
         $tmp2=null;
@@ -155,4 +155,9 @@ class Train extends Utility
         if ($ws[1] == null) return $ws[0];
         return $ws[1];
     }*/
+    
+    public function getOrdinatedWagons($hub){
+
+        var_dump($hub);
+    }
 }
