@@ -8,7 +8,7 @@ $_SESSION = unserialize(serialize($_SESSION));
 $main = $_SESSION['main'];
 $hubs = $main->getHubs();
 $trains = $main->getTrains();
-var_dump($_REQUEST);
+// var_dump($_REQUEST);
 foreach ($trains as $key => $t) {
     if ($t->getId() == $_REQUEST['train']) {
         $train = $t;
