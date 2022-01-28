@@ -24,7 +24,7 @@ let removeFromT = [];
 let addToTrain = [];
 
 // const xhr = new XMLHttpRequest();
-$.ajax('Json.php',  
+$.ajax('test.json',  
     {
         success: function (data, status, xhr) {
             console.log(data);

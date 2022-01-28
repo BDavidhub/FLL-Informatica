@@ -51,7 +51,7 @@ $_SESSION['main'] = $main;
 $hubs=$main->getHubs();
 $trains=$main->getTrains();
 // echo '<pre>';
-// var_dump($hubs['Torino']->getWagonsByTrain($trains[0]));
+// var_dump($hubs['Padova']->getWagonsByTrain($trains[0]));
 // echo '</pre>';
 $_SESSION['dove'] = $_POST['fdove'];
 $_SESSION['destinazione'] = $_POST['fdestinazione'];
@@ -61,8 +61,8 @@ $_SESSION['data'] = new DateTime($_POST['fdata']);
 //$trains=$main->getTrainS();
 //$ws=$hubs['Torino']->getTrainInOutConfig($trains[0]);
 //echo $ws;
- header('location: ../pages/TreniRicerca.php?n=1');
- exit;
+header('location: ../pages/TreniRicerca.php?n=1');
+exit;
 ?>
 
 <html>
