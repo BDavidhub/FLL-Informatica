@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(is_null(isset($_SESSION['logged']))){
   $_SESSION['logged'] = false;
 }

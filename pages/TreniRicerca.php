@@ -66,6 +66,10 @@ $_SESSION['navbar']  = $navBar;
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
+    <script type='text/javascript'>
+  var userName = "<?php echo $_SESSION['logged'] ?>"; //dont forget to place the PHP code block inside the quotation 
+  console.log(userName);
+</script>
 </head>
 
 <body>
@@ -151,7 +155,7 @@ $_SESSION['navbar']  = $navBar;
                         </div>
                     </div>
                     
-                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next" disabled>
+                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>
@@ -170,8 +174,6 @@ $_SESSION['navbar']  = $navBar;
 
     <!-- main.js script  -->
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/logged.js"></script>
-
     <script src="../scripts/progressBar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
