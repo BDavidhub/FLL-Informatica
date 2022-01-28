@@ -4,7 +4,7 @@ session_start();
 if(is_null(isset($_SESSION['logged']))){
   $_SESSION['logged'] = false;
 }
-
+//unset($_SESSION['logged']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +83,7 @@ if(is_null(isset($_SESSION['logged']))){
                 if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true&&$_SESSION['macchinista'] == false){
                   echo '<a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>';
                    }
-               
+                   echo '<a class="dropdown-item" href="./pages/logout.php">ESCI</a>';
                 }
               ?>
               

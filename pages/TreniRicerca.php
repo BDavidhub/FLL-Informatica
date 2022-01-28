@@ -55,50 +55,52 @@ $_SESSION['navbar']  = $navBar;
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <!-- main css  -->
-    <link rel="stylesheet" href="../src_CSS/secondPage.css" />
-    <!-- fullpage css nodeModule -->
-    <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
-    <title>TrainProject</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+  <!-- main css  -->
+  <link rel="stylesheet" href="../src_CSS/secondPage.css" />
+  <!-- fullpage css nodeModule -->
+  <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
+  <title>TrainProject</title>
 </head>
 
 <body>
-    <?php
-    echo $_SESSION['navbar'];
-    ?>
+  <?php
+  echo $_SESSION['navbar'];
+  ?>
 
-    <div id="fullpage">
-        <div class="section container-fluid">
-            <div class="bar1 container-fluid">
-                <div class="location">
-                    <p class="fw-bold">Dove</p>
-                    <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
-                </div>
-                <div class="check-in">
-                    <p class="fw-bold">Destinazione</p>
-                    <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
-                </div>
-                <div class="check-out">
-                    <nav class="check-out1">
-                        <p class="fw-bold">Data</p>
-                        <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d'); ?>" min="2022-01-01" max="2023-01-01" disabled>
-                    </nav>
-                    <a href="../index.html">
-                        <h6> CAMBIO RICERCA</h6>
-                    </a>
-                </div>
+  <div id="fullpage">
+    <br><br><br>
+    <div class="section container-fluid">
+      <h1 class="fw-bolder">RICERCA ATTUALE</h1>
+      <div class="bar1 container-fluid">
+        <div class="location">
+          <p class="fw-bold">Dove</p>
+          <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
+        </div>
+        <div class="check-in">
+          <p class="fw-bold">Destinazione</p>
+          <input type="text" value="<?php echo $_SESSION['destinazione'] ?>" readonly>
+        </div>
+        <div class="check-out">
+          <nav class="check-out1">
+            <p class="fw-bold">Data</p>
+            <input type="date" value="<?php echo $_SESSION['data']->format('Y-m-d'); ?>" min="2022-01-01" max="2023-01-01" disabled>
+          </nav>
+          <a href="../index.php">
+            <h6> CAMBIO RICERCA</h6>
+          </a>
+        </div>
 
-            </div>
-            <div class="biglietti-treni">
+      </div>
+      <div class="biglietti-treni">
 
-                <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
-                <?php
-                echo '  <div class="container">
+        <h1 class="fw-bolder">BIGLIETTI TRENI</h1>
+        <?php
+        echo '  <div class="container">
                      <div class="progress__container">
                        <div class="progress__bar js-bar"></div>
                        <div class="progress__circle js-circle active">1</div>
@@ -108,19 +110,17 @@ $_SESSION['navbar']  = $navBar;
                        <div class="progress__circle js-circle">5</div>
                      </div>
                    </div>';
-                $arrayindex = $main->findingTrainsAlgo($_SESSION['dove'], $_SESSION['destinazione'], $_SESSION['data']);
-                if (count($arrayindex) == 0) {
-                    echo '<h4 class="mt-5"> NON CI SONO TRENI DISPONIBILI  </h4><h6> PROVA A CAMBIARE I DATI </h6>';
+        $arrayindex = $main->findingTrainsAlgo($_SESSION['dove'], $_SESSION['destinazione'], $_SESSION['data']);
+        if (count($arrayindex) == 0) {
+          echo '<h4 class="mt-5"> NON CI SONO TRENI DISPONIBILI  </h4><h6> PROVA A CAMBIARE I DATI </h6>';
 
-                    echo '<img src="../assets/images/sadFace.png" alt="sad face" style="width:300px; height:240px; margin-top:10em;">';
-                }
-                // echo $main->getTrains()[$arrayindex[0]]->getDeparture();
+          echo '<img src="../assets/images/sadFace.png" alt="sad face" style="width:300px; height:240px; margin-top:10em;">';
+        }
+        // echo $main->getTrains()[$arrayindex[0]]->getDeparture();
 
-                $_SESSION['arrayIndex'] = $arrayindex;
-                for ($i = 0; $i < count($arrayindex); $i++) {
-
-                 
-                    echo '<div class="treno-rect">
+        $_SESSION['arrayIndex'] = $arrayindex;
+        for ($i = 0; $i < count($arrayindex); $i++) {
+          echo '<div class="treno-rect">
                     <div class="time">
                         <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
                         <img src="../assets/images/Arrow87.png" alt="arrow">
@@ -146,32 +146,36 @@ $_SESSION['navbar']  = $navBar;
                         <div class="right-side-icon">
                             <p class="title fw-bolder"> CONSEGNA </p>
                             <p class="small-text">Punto di consegna</p>
-                            <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
+                            <p class="data">' . ($main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y")) . '</p>
                         </div>
-                    </div>
-                    <a href="acquista.php?n=2&id=' .$main->getTrains()[$arrayindex[$i]]->getCod() . '"  class="btn-acquista js-next">
-                        <h6>
+                    </div>';
+                    if(isset($_SESSION['logged'])){
+                      echo '<a href="acquista.php?n=2&id=' . $main->getTrains()[$arrayindex[$i]]->getCod() . '"  class="btn-acquista js-next">';
+                    } else {
+                      echo '<a href="#"  class="btn-acquista js-next">';
+                    }
+                       echo ' <h6>
                             ACQUISTA
                         </h6>
                     </a>
                 </div>';
-                }
+        }
 
-                ?>
-            </div>
-        </div>
-        <!-- ' . $main->getTrains()[$arrayindex[$i]]->getCod() . '-->
-        <div class="section last-part">
-
-        </div>
+        ?>
+      </div>
     </div>
+    <!-- ' . $main->getTrains()[$arrayindex[$i]]->getCod() . '-->
+    <div class="section last-part">
 
-    <!-- main.js script  -->
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/progressBar.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </div>
+  </div>
+
+  <!-- main.js script  -->
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/progressBar.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
