@@ -90,7 +90,7 @@
 		return $arrayAss;
 	}
 
-	$ch = curl_init("127.0.0.1/php/test.json"); //pag web che devo collegare per leggere
+	$ch = curl_init("127.0.0.1/php/Json.php"); //pag web che devo collegare per leggere
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

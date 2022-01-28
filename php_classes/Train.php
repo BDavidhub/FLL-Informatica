@@ -125,6 +125,7 @@ class Train extends Utility
     { 
         $tmp1=null;
         $tmp2=null;
+        if($hub==$this->getDeparture()) return false;
         foreach ($this->hubs as $key => $hubs){
             $tmp2=$tmp1;
             $tmp1=$key;
@@ -135,6 +136,24 @@ class Train extends Utility
         }
         return false;
     }
+
+    public function getDistanceFrom($hub1,$hub2)
+    {
+        $hubs=$this->getHubs();
+        $hubArrive=$hubs[count($hubs)-1];
+        $hubDeparture=$hubs[0];
+        $counter = null;
+        $definitiveCounter=null;
+        if($hub1 == $hubArrive || $hub2 == $hubDeparture) return null;
+        foreach($hubs as $hub)
+        {
+            if($hub == $hub1) $counter = 1;
+            if($hub == $hub2) $definitiveCounter=$counter;
+            if($counter!=null) $counter++;
+        }
+        return $definitiveCounter-1;
+    }
+
 
     //------------------------------------------------------------------------------------
     //QUESTE NON TI SERVONO, LE HAI GIÀ FATTE IN Hub.php CON IL METODO getWagonsByTrain
@@ -155,9 +174,52 @@ class Train extends Utility
         if ($ws[1] == null) return $ws[0];
         return $ws[1];
     }*/
-    
-    public function getOrdinatedWagons($hub){
+    // UD-VE-PD-MI-TO
 
-        var_dump($hub);
+    public function swap_positions($ws, $left, $right) {
+        $backup_old_ws_right_value = $ws[$right];
+        $ws[$right] = $ws[$left];
+        $ws[$left] = $backup_old_ws_right_value;
+        return $ws;
     }
+
+    public function getOrdinatedWagons($hub,$ws)
+    {
+        /*
+        $ws=array();
+        if($this->getWagons()==null) return null;
+        foreach($this->getWagons() as $wagon)
+        {
+            $hubs=$wagon->getHubs();
+            $counter=0;
+           // array_splice($this->wagons, $i, 1);
+            for($i=0;$i<count($wagon->getHubs());$i++)
+            {
+                if($hub == $hubs[$i] && $hubs[$i]!=$wagon->getHubArrive())
+                {
+                    $counter=1;
+                }
+            }
+            if($counter==1)
+            {
+                $ws[]=$wagon;
+            }   
+        }
+        */
+        for($i=0; $i<count($ws)-1; $i++) {
+            $min = $i;
+            for($j=$i+1; $j<count($ws); $j++) 
+            {
+                if ($this->getDistanceFrom($hub,$ws[$j]->getHubArrive())<$this->getDistanceFrom($hub,$ws[$min]->getHubArrive())) 
+                {
+                    $min = $j;
+                }
+            }
+            $ws = $this->swap_positions($ws, $i, $min);
+        }
+        return $ws;
+    }
+
+    
+
 }
