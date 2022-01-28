@@ -3,6 +3,7 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
+$_SESSION['idTrain'] = $_REQUEST['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -9,11 +9,11 @@ echo "<pre>";
 
 $main = new Main();
 
-$main->addTrain(new Train('Udine', 'Torino', 1, new DateTime("30-12-2022 04:00:00"), $main->reset(true)));
-$main->addTrain(new Train('Udine', 'Torino', 2, new DateTime("30-12-2022 15:00:00"), $main->reset(true)));
-$main->addTrain(new Train('Torino', 'Udine', 3, new DateTime("10-2-2022 12:00:00"), $main->reset(false)));
-$main->addTrain(new Train('Torino', 'Udine', 4, new DateTime("30-12-2022 19:00:00"), $main->reset(false)));
-$main->addTrain(new Train('Torino', 'Udine', 5, new DateTime("30-12-2022 2:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Udine', 'Torino', 1, new DateTime("20-12-2022 04:00:00"), $main->reset(true)));
+$main->addTrain(new Train('Udine', 'Torino', 2, new DateTime("20-12-2022 15:00:00"), $main->reset(true)));
+$main->addTrain(new Train('Torino', 'Udine', 3, new DateTime("15-2-2022 12:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Torino', 'Udine', 4, new DateTime("20-12-2022 19:00:00"), $main->reset(false)));
+$main->addTrain(new Train('Torino', 'Udine', 5, new DateTime("11-12-2022 06:00:00"), $main->reset(false)));
 
 //var_dump($main->getTrains());
 echo "</pre>";

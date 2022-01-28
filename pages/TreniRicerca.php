@@ -118,8 +118,8 @@ $_SESSION['navbar']  = $navBar;
 
                 $_SESSION['arrayIndex'] = $arrayindex;
                 for ($i = 0; $i < count($arrayindex); $i++) {
+
                  
-                    $_SESSION['idTrain'] = $main->getTrains()[$arrayindex[$i]]->getCod();
                     echo '<div class="treno-rect">
                     <div class="time">
                         <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
@@ -149,7 +149,7 @@ $_SESSION['navbar']  = $navBar;
                             <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
-                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next">
+                    <a href="acquista.php?n=2&id=' .$main->getTrains()[$arrayindex[$i]]->getCod() . '"  class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>
