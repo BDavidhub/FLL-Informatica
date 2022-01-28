@@ -18,10 +18,10 @@ var aperto = false;
 
 //  });
 
-let arrivingTrain = [,MI,MI,MI,];
-let leavingTrain = [];
-let removeFromT = [];
-let addToTrain = [];
+// let arrivingTrain = [MI,MI,MI,];
+// let leavingTrain = [];
+// let removeFromT = [];
+// let addToTrain = [];
 
 // const xhr = new XMLHttpRequest();
 $.ajax('test.json',  
