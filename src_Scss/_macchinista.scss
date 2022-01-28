@@ -116,6 +116,7 @@
             margin-top:2em;
          
         .entrata{
+            margin-bottom:0.3em;
             color: white;
             padding: 15px;
             background-color:rgb(22, 147, 185);
@@ -126,27 +127,6 @@
                 display:flex;
                 justify-content:flex-start;
                 flex-direction: row;
-                .head_sx {
-                    position: relative;
-                    z-index: 2;
-                    height: 50px;
-                    width: 200px;
-                    margin: 0;
-                    background: url("../assets/images/motrice_sx-red.png") no-repeat;
-                    background-position: center;
-                    background-size: 200px;
-                }
-                .head_dx {
-                    position: relative;
-                    z-index: 2;
-                    margin: 0; /*start point */
-                    height: 50px;
-                    width: 200px;
-                    background: url("../assets/images/motrice_dx-red.png") no-repeat;
-                    background-position: center;
-                    background-size: 200px;
-                }
-            
                 .wagon {
                     width: 80px;
                     height: 50px;
@@ -158,46 +138,26 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: 60px;
-                    opacity: 0;
+
                 }
-                .sw {
-                    display: none; /*start*/
-                }
-                .tw {
-                    display: none; /*start*/
-                }
+
             
             }
         }
         .uscita{
+
             color: white;
             padding: 15px;
+            background-color:rgb(22, 147, 185);
+            display:flex;
+            flex-direction: row;
+            border-radius: 0 0 1em 1em;
             .trenoImg{
                 margin-left:2em;
                 display:flex;
                 justify-content:flex-start;
                 flex-direction: row;
-                .head_sx {
-                    position: relative;
-                    z-index: 2;
-                    height: 50px;
-                    width: 200px;
-                    margin: 0;
-                    background: url("../assets/images/motrice_sx-red.png") no-repeat;
-                    background-position: center;
-                    background-size: 200px;
-                }
-                .head_dx {
-                    position: relative;
-                    z-index: 2;
-                    margin: 0; /*start point */
-                    height: 50px;
-                    width: 200px;
-                    background: url("../assets/images/motrice_dx-red.png") no-repeat;
-                    background-position: center;
-                    background-size: 200px;
-                }
-            
+
                 .wagon {
                     width: 80px;
                     height: 50px;
@@ -209,14 +169,10 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: 60px;
-                    opacity: 0;
+
                 }
-                .sw {
-                    display: none; /*start*/
-                }
-                .tw {
-                    display: none; /*start*/
-                }
+            }
+
         }
         }
     }

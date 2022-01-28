@@ -62,6 +62,7 @@ $_SESSION['navbar']  = $navBar;
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <!-- main css  -->
     <link rel="stylesheet" href="../src_CSS/secondPage.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- fullpage css nodeModule -->
     <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
     <title>TrainProject</title>
@@ -149,7 +150,8 @@ $_SESSION['navbar']  = $navBar;
                             <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
-                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next">
+                    
+                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next" disabled>
                         <h6>
                             ACQUISTA
                         </h6>
@@ -168,8 +170,9 @@ $_SESSION['navbar']  = $navBar;
 
     <!-- main.js script  -->
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/logged.js"></script>
+
     <script src="../scripts/progressBar.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>

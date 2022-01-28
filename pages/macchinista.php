@@ -86,36 +86,35 @@ session_start();
                 <div class="entrata">
                     <h5>Treno entrata</h5>
                     <div class="trenoImg">
-                    <div id="t0" class="head_sx"></div>
-                        <div class="wagon tw" id="t1"></div>
-                        <div class="wagon tw" id="t2"></div>
-                        <div class="wagon tw" id="t3"></div>
-                        <div class="wagon tw" id="t4"></div>
-                        <div class="wagon tw" id="t5"></div>
-                        <div class="wagon tw" id="t6"></div>
-                        <div class="wagon tw" id="t7"></div>
-                        <div class="wagon tw" id="t8"></div>
-                        <div class="wagon tw" id="t9"></div>
-                        <div class="wagon tw" id="t10"></div>
-                        <div id="t11" class="head_dx"></div>
+
+                        <div class="wagon" id="t1">UD</div>
+                        <div class="wagon" id="t2">UD</div>
+                        <div class="wagon" id="t3">UD</div>
+                        <div class="wagon" id="t4">VE</div>
+                        <div class="wagon" id="t5">VE</div>
+                        <div class="wagon" id="t6">PD</div>
+                        <div class="wagon" id="t7">MI</div>
+                        <div class="wagon" id="t8">MI</div>
+                        <div class="wagon" id="t9">TO</div>
+                        <div class="wagon" id="t10">TO</div>
+
                     </div>
                 </div>
                 <div class="uscita">
                     <h5>Treno uscita</h5>
                     <div class="trenoImg">
-                    <div id="t0" class="head_sx"></div>
-                        <div class="wagon tw" id="t1"></div>
-                        <div class="wagon tw" id="t2"></div>
-                        <div class="wagon tw" id="t3"></div>
-                        <div class="wagon tw" id="t4"></div>
-                        <div class="wagon tw" id="t5"></div>
-                        <div class="wagon tw" id="t6"></div>
-                        <div class="wagon tw" id="t7"></div>
-                        <div class="wagon tw" id="t8"></div>
-                        <div class="wagon tw" id="t9"></div>
-                        <div class="wagon tw" id="t10"></div>
-                        <div id="t11" class="head_dx"></div>
-                    </div>
+                        <div class="wagon" id="t1">VE</div>
+                        <div class="wagon" id="t2">VE</div>
+                        <div class="wagon" id="t3">PD</div>
+                        <div class="wagon" id="t4">PD</div>
+                        <div class="wagon" id="t5">MI</div>
+                        <div class="wagon" id="t6">MI</div>
+                        <div class="wagon" id="t7">MI</div>
+                        <div class="wagon" id="t8">TO</div>
+                        <div class="wagon" id="t9">TO</div>
+                        <div class="wagon" id="t10">TO</div>
+                  </div>
+
                 </div>
             </div>
         </div>

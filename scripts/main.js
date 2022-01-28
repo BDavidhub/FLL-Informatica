@@ -1,6 +1,9 @@
+
+
+
+
+
 //fullpage instance
-var train = document.querySelector(".train");
-console.log("ciao");
 
 // window.addEventListener('scroll',a=> {
 // 	console.log("s");
@@ -16,7 +19,6 @@ new fullpage('#fullpage', {
 	navigationPosition: 'right',
 	navigationTooltips: ['Home', 'Project'],
 });
-
 
 
 /// fa l
