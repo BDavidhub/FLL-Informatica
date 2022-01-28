@@ -15,7 +15,7 @@
         private $hubs;
         private $size;
 
-        public function __construct($departure,$arrive,$main, $id,$size = 5) {
+        public function __construct($departure,$arrive,$main, $id,$size = 10) {
             $this->size = $size;
             $this->hubs = $main->computeDistance($departure,$arrive);
             parent::__construct("box",$id);
