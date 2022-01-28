@@ -231,7 +231,7 @@ function trainDeparture() {
 // const xhr = new XMLHttpRequest();
 // $.ajax('test.json',  
 
-$.ajax('../php_classes/Json.php?train=T1&hub=H2',  
+$.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2  
     {
         success: function (data, status, xhr) {
             console.log(data);
@@ -309,7 +309,6 @@ $.ajax('../php_classes/Json.php?train=T1&hub=H2',
 });
 
 start.addEventListener("click", automatic)
-
 
 function printLeave(leave) {
     if (leave.length > 0) {
