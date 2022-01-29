@@ -65,9 +65,19 @@ if ($_SESSION['loggedIn'] == 1) {
                     <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="registration.php">Registrati</a>
                         <a class="dropdown-item" href="registration.php">Accedi</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something1</a>
-                        <a class="dropdown-item" href="#">Something2</a>
+                        <?php    
+                            if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
+                            echo '<div class="dropdown-divider"></div>';
+                            if(isset($_SESSION['macchinista']) && $_SESSION['macchinista'] == true){
+                            echo '<a class="dropdown-item" href="macchinista.php">Macchinista</a>';
+                                
+                                }
+                            if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true&&$_SESSION['macchinista'] == false){
+                                echo '<a class="dropdown-item" href="hubInterface.php">HUB</a>';
+                            }
+                            
+                            }
+                        ?>
                     </div>
                 </li>
             </ul>

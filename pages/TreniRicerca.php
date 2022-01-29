@@ -4,7 +4,27 @@ session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
 
-$navBar = ' <nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <!-- main css  -->
+    <link rel="stylesheet" href="../src_CSS/secondPage.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- fullpage css nodeModule -->
+    <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
+    <title>TrainProject</title>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light " ><!--style="background-color: rgba(230, 230, 230,0) !important; -->
 <a class="navbar-brand" href="../index.php">
   <h3 class="trainNavbar fw-bold">TRAIN</h3>
 </a>
@@ -40,42 +60,25 @@ $navBar = ' <nav class="navbar navbar-expand-lg navbar-light " ><!--style="backg
       <div class="dropdown-menu " aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="registration.php">Registrati</a>
         <a class="dropdown-item" href="registration.php">Accedi</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="hubInterface.php">HUB</a>
-        <a class="dropdown-item" href="macchinista.php">Macchinista</a>
+        
+        <?php    
+         if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
+          echo '<div class="dropdown-divider"></div>';
+         if(isset($_SESSION['macchinista']) && $_SESSION['macchinista'] == true){
+           echo '<a class="dropdown-item" href="macchinista.php">Macchinista</a>';
+             
+            }
+         if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true&&$_SESSION['macchinista'] == false){
+            echo '<a class="dropdown-item" href="hubInterface.php">HUB</a>';
+          }
+        
+         }
+       ?>
       </div>
     </li>
   </ul>
 </div>
-</nav>';
-$_SESSION['navbar']  = $navBar;
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <!-- main css  -->
-    <link rel="stylesheet" href="../src_CSS/secondPage.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- fullpage css nodeModule -->
-    <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
-    <title>TrainProject</title>
-    <script type='text/javascript'>
-  var userName = "<?php echo $_SESSION['logged'] ?>"; //dont forget to place the PHP code block inside the quotation 
-  console.log(userName);
-</script>
-</head>
-
-<body>
-    <?php
-    echo $_SESSION['navbar'];
-    ?>
+</nav>
 
     <div id="fullpage">
         <div class="section container-fluid">
@@ -123,8 +126,8 @@ $_SESSION['navbar']  = $navBar;
 
                 $_SESSION['arrayIndex'] = $arrayindex;
                 for ($i = 0; $i < count($arrayindex); $i++) {
+
                  
-                    $_SESSION['idTrain'] = $main->getTrains()[$arrayindex[$i]]->getCod();
                     echo '<div class="treno-rect">
                     <div class="time">
                         <h4> ' .  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") . '</h4>
@@ -154,8 +157,7 @@ $_SESSION['navbar']  = $navBar;
                             <p class="data">' . $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("d-m-Y") . '</p>
                         </div>
                     </div>
-                    
-                    <a href="acquista.php?n=2&id=' . $_SESSION['idTrain'] . '"  class="btn-acquista js-next">
+                    <a href="acquista.php?n=2&id=' .$main->getTrains()[$arrayindex[$i]]->getCod() . '"  class="btn-acquista js-next">
                         <h6>
                             ACQUISTA
                         </h6>

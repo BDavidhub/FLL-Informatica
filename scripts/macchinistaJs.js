@@ -18,13 +18,13 @@ var aperto = false;
 
 //  });
 
-let arrivingTrain = [,MI,MI,MI,];
-let leavingTrain = [];
-let removeFromT = [];
-let addToTrain = [];
+// let arrivingTrain = [MI,MI,MI,];
+// let leavingTrain = [];
+// let removeFromT = [];
+// let addToTrain = [];
 
 // const xhr = new XMLHttpRequest();
-$.ajax('Json.php',  
+$.ajax('test.json',  
     {
         success: function (data, status, xhr) {
             console.log(data);
