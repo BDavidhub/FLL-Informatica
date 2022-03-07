@@ -3,6 +3,7 @@
     session_start();
     @include_once("./includes/navbar.php");
     require_once('../php_classes/Main.php');
+    $_SESSION['loggedIn'] =1;
     $main = unserialize(serialize($_SESSION['main']));
     // preparing array of train ticketes 
     $arrayindex = $main->findingTrainsAlgo($_SESSION['dove'], $_SESSION['destinazione'], $_SESSION['data']);
