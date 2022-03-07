@@ -11962,36 +11962,6 @@ fieldset:disabled .btn {
   padding-right: 5rem !important;
 }
 
-.trainNavbar {
-  margin-left: 2em;
-  color: #f7f7f7;
-  -webkit-transition: color 150ms ease-in;
-  transition: color 150ms ease-in;
-}
-
-.trainNavbar:hover {
-  color: #424242;
-}
-
-.links-nav {
-  color: #f7f7f7 !important;
-  -webkit-transition: color 100ms ease-in;
-  transition: color 100ms ease-in;
-}
-
-.links-nav:hover {
-  color: #424242 !important;
-}
-
-.fa-bars {
-  margin-left: 0.5em;
-  color: #747474;
-}
-
-.fa-bars:hover {
-  color: #2c2c2c;
-}
-
 .left-side {
   margin-top: 2em;
   width: 50em;
@@ -12024,6 +11994,7 @@ fieldset:disabled .btn {
   text-transform: uppercase;
   margin-bottom: 2em;
   text-align: center;
+  color: black;
 }
 
 .left-side button {
@@ -12095,199 +12066,6 @@ fieldset:disabled .btn {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.noleggio {
-  padding: 2em;
-}
-
-.noleggio h5, .noleggio .h5 {
-  position: relative;
-  bottom: 1em;
-}
-
-.account-menu {
-  width: 4.5em;
-  height: 2em;
-  background-color: #f7f7f7;
-  border-radius: 5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: background-color 150ms ease-in;
-  transition: background-color 150ms ease-in;
-}
-
-.account-menu .outerUser {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 1.8em;
-  height: 1.5em;
-}
-
-.account-menu:hover {
-  -webkit-box-shadow: 0 0 9px #8b8b8b;
-          box-shadow: 0 0 9px #8b8b8b;
-}
-
-.text-center1 {
-  color: #f7f7f7;
-}
-
-.scritta {
-  position: absolute;
-  margin: 0 0 5em 0;
-  top: 10em;
-}
-
-.scritta .subtext {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.scritta .subtext .text-center1 {
-  width: 40%;
-}
-
-.bar1 {
-  background-color: #fcfcfc;
-  width: 800px;
-  -webkit-box-shadow: 0 0 5px #cacaca;
-          box-shadow: 0 0 5px #cacaca;
-  height: 75px;
-  border-radius: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  padding: 0;
-  margin-top: 8em;
-}
-
-.bar1 p {
-  padding: 0;
-  margin: 1rem 0 0 0;
-  font-size: 0.8rem;
-}
-
-.bar1 input {
-  background: none;
-  border: none;
-  padding: 0.1rem 0 0 0;
-}
-
-.bar1 input:focus {
-  outline: none;
-}
-
-.bar1 .location {
-  width: 30%;
-}
-
-.bar1 div {
-  border-radius: 5em;
-  padding: 0.1rem 1.5rem;
-  -webkit-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
-}
-
-.bar1 div:hover {
-  background-color: #ebebeb;
-}
-
-.bar1 div:target, .bar1 div:focus {
-  background-color: #f8f8f8;
-  -webkit-box-shadow: 0 0 10px #c9c9c9;
-          box-shadow: 0 0 10px #c9c9c9;
-}
-
-.bar1 .check-in {
-  width: 25%;
-}
-
-.bar1 .check-out {
-  width: 55%;
-}
-
-.bar1 .check-out {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.bar1 .check-out .check-out1 input[type="date"]::-webkit-calendar-picker-indicator {
-  left: 0;
-  margin: 0;
-}
-
-.bar1 .check-out a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  background-color: #69c3f7;
-  color: white;
-  margin-left: 9.5rem;
-  margin-top: 0.3rem;
-  width: 12em;
-  height: 4em;
-  border-radius: 10em;
-  text-decoration: none;
-  -webkit-transition: background-color 150ms ease-in;
-  transition: background-color 150ms ease-in;
-}
-
-.bar1 .check-out a h6, .bar1 .check-out a .h6 {
-  white-space: nowrap;
-  padding: 2em;
-  margin-top: 0.4em;
-  border-radius: inherit;
-}
-
-.bar1 .check-out a:hover {
-  background-color: #4d96c0;
-}
-
-.dropdown-menu {
-  border-radius: 1rem;
-  border: none;
-}
-
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
-  background-color: inherit;
-  border-radius: 2rem;
-  color: #a09e9e;
-  outline: none;
 }
 
 .biglietti-treni {
@@ -12468,6 +12246,391 @@ fieldset:disabled .btn {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+}
+
+.outerShell a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10em;
+  height: 8%;
+  background-color: #69c3f7;
+  border-radius: 1em;
+  padding: 1.5em;
+  margin: 1em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+  border: none;
+}
+
+.outerShell h5, .outerShell .h5 {
+  position: relative;
+  padding: 1em;
+  margin: 0;
+  color: black;
+}
+
+.outerShell a:hover {
+  background-color: #4d96c0;
+}
+
+.trainNavbar {
+  margin-left: 2em;
+  color: #f7f7f7;
+  -webkit-transition: color 150ms ease-in;
+  transition: color 150ms ease-in;
+}
+
+.trainNavbar:hover {
+  color: #424242;
+}
+
+.links-nav {
+  color: #f7f7f7 !important;
+  -webkit-transition: color 100ms ease-in;
+  transition: color 100ms ease-in;
+}
+
+.links-nav:hover {
+  color: #424242 !important;
+}
+
+.fa-bars {
+  margin-left: 0.5em;
+  color: #747474;
+}
+
+.fa-bars:hover {
+  color: #2c2c2c;
+}
+
+h5, .h5 {
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2rem;
+}
+
+.dropdown-menu {
+  border-radius: 1rem;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: inherit;
+  border-radius: 2rem;
+  color: #a09e9e;
+  outline: none;
+}
+
+.account-menu {
+  width: 4.5em;
+  height: 2em;
+  background-color: #f7f7f7;
+  border-radius: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+}
+
+.account-menu .outerUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1.8em;
+  height: 1.5em;
+}
+
+.account-menu:hover {
+  -webkit-box-shadow: 0 0 9px #8b8b8b;
+          box-shadow: 0 0 9px #8b8b8b;
+}
+
+.text-center1 {
+  color: #f7f7f7;
+}
+
+.bar1 {
+  background-color: #fcfcfc;
+  width: 800px;
+  -webkit-box-shadow: 0 0 5px #cacaca;
+          box-shadow: 0 0 5px #cacaca;
+  height: 75px;
+  border-radius: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 0;
+  margin-top: 8em;
+}
+
+.bar1 p {
+  padding: 0;
+  margin: 1rem 0 0 0;
+  font-size: 0.8rem;
+}
+
+.bar1 input {
+  background: none;
+  border: none;
+  padding: 0.1rem 0 0 0;
+}
+
+.bar1 input:focus {
+  outline: none;
+}
+
+.bar1 .location {
+  width: 30%;
+}
+
+.bar1 div {
+  border-radius: 5em;
+  padding: 0.1rem 1.5rem;
+  -webkit-transition: background-color 250ms ease;
+  transition: background-color 250ms ease;
+}
+
+.bar1 div:hover {
+  background-color: #ebebeb;
+}
+
+.bar1 div:target, .bar1 div:focus {
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 0 0 10px #c9c9c9;
+          box-shadow: 0 0 10px #c9c9c9;
+}
+
+.bar1 .check-in {
+  width: 25%;
+}
+
+.bar1 .check-out {
+  width: 55%;
+}
+
+.bar1 .check-out {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bar1 .check-out .check-out1 input[type="date"]::-webkit-calendar-picker-indicator {
+  left: 0;
+  margin: 0;
+}
+
+.bar1 .check-out a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #69c3f7;
+  color: white;
+  margin-left: 9.5rem;
+  margin-top: 0.3rem;
+  width: 12em;
+  height: 4em;
+  border-radius: 10em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+}
+
+.bar1 .check-out a h6, .bar1 .check-out a .h6 {
+  white-space: nowrap;
+  padding: 2em;
+  margin-top: 0.4em;
+  border-radius: inherit;
+}
+
+.bar1 .check-out a:hover {
+  background-color: #4d96c0;
+}
+
+.biglietti-treni {
+  margin-top: 3em;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.biglietti-treni h1, .biglietti-treni .h1 {
+  color: #303030;
+}
+
+.biglietti-treni .treno-rect {
+  width: 55em;
+  height: 8em;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 15px #c9c9c9;
+          box-shadow: 0 0 15px #c9c9c9;
+  margin: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.biglietti-treni .treno-rect div {
+  height: 90%;
+  margin: 1em;
+}
+
+.biglietti-treni .treno-rect .time {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em;
+}
+
+.biglietti-treni .treno-rect .time img {
+  width: 1.4em;
+  height: 1em;
+  background-color: #2c2c2c;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.biglietti-treni .treno-rect .ritiro {
+  width: 22.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.biglietti-treni .treno-rect .ritiro .left-side-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.biglietti-treni .treno-rect .ritiro .left-side-icon img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 3.3em;
+}
+
+.biglietti-treni .treno-rect .ritiro .right-side-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0;
+  margin-left: 0;
+}
+
+.biglietti-treni .treno-rect .ritiro .right-side-icon .title {
+  margin: 0;
+}
+
+.biglietti-treni .treno-rect .ritiro .right-side-icon .small-text {
+  font-size: 0.8em;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.biglietti-treni .treno-rect a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  height: 50%;
+  background-color: #69c3f7;
+  border-radius: 1em;
+  margin: 1em;
+  padding-top: 0.5em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+}
+
+.biglietti-treni .treno-rect a:hover {
+  background-color: #4d96c0;
 }
 
 .container {

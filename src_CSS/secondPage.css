@@ -11992,6 +11992,27 @@ fieldset:disabled .btn {
   color: #2c2c2c;
 }
 
+h5, .h5 {
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2rem;
+}
+
+.dropdown-menu {
+  border-radius: 1rem;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: inherit;
+  border-radius: 2rem;
+  color: #a09e9e;
+  outline: none;
+}
+
 .account-menu {
   width: 4.5em;
   height: 2em;
@@ -12030,26 +12051,6 @@ fieldset:disabled .btn {
 
 .text-center1 {
   color: #f7f7f7;
-}
-
-.scritta {
-  position: absolute;
-  margin: 0 0 5em 0;
-  top: 10em;
-}
-
-.scritta .subtext {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.scritta .subtext .text-center1 {
-  width: 40%;
 }
 
 .bar1 {
@@ -12161,19 +12162,6 @@ fieldset:disabled .btn {
 
 .bar1 .check-out a:hover {
   background-color: #4d96c0;
-}
-
-.dropdown-menu {
-  border-radius: 1rem;
-  border: none;
-}
-
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
-  background-color: inherit;
-  border-radius: 2rem;
-  color: #a09e9e;
-  outline: none;
 }
 
 .biglietti-treni {
@@ -12325,10 +12313,6 @@ fieldset:disabled .btn {
   background-color: #4d96c0;
 }
 
-.last-part {
-  height: 20em;
-}
-
 .container {
   margin-top: 5rem;
   display: -webkit-box;
@@ -12438,6 +12422,10 @@ body .section:nth-of-type(2) {
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
+}
+
+.last-part {
+  height: 20em;
 }
 
 .box-class {

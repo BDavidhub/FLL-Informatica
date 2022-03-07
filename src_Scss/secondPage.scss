@@ -1,6 +1,8 @@
 
 @import "./custom";
-@import "./firstPage1";
+@import "./navbar";
+@import "./bar";
+@import "./bigliettiTreni";
 @import "./progressBar";
 * {
     box-sizing: border-box;
@@ -15,7 +17,6 @@ body {
         position: relative !important;
         z-index: 1 !important;
         background-color:rgba(34, 175, 255, 1)
-
     }
     .section {
 
@@ -27,7 +28,9 @@ body {
         }
     }
 }
-
+.last-part{
+    height:20em;
+}
 .box-class {
     width: 50% !important;
 }

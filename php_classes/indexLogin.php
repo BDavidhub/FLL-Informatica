@@ -12,7 +12,7 @@ $main->addPrivates(new _Private('Filippo.Parovel@FLL.it','Admin','2222222222','F
 $main->addPrivates(new _Private('Lorenzo.Lashkiba@FLL.it','Admin','3333333333','Lorenzo','Lashkiba',3));
 $main->addPrivates(new _Private('Marco.Mattiuz@FLL.it','Admin','4444444444','Marco','Mattiuz',4));
 $main->addPrivates(new _Private('Damiano.Gobbo@FLL.it','Admin','5555555555','Damiano','Gobbo',5));
-$main->addPrivates(new _Private('Macchinista@FLL.it','Macchinista','6666666666','Alberto il macchinista','Macchinista',6));
+$main->addPrivates(new _Private('Macchinista@FLL.it','Macchinista','6666666666','Giacomo il macchinista','Macchinista',6));
 $main->addPrivates(new _Private('Venezia@FLL.it','Venezia','777777777','Stazione venezia','venezia',7));
 $main->addPrivates(new _Private('MarioRossi@gmail.com','Admin','888888888','Mario Rossi','Mario',8));
 

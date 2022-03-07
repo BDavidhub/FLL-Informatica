@@ -1,69 +1,4 @@
-.trainNavbar{
-    margin-left: 2em;
-    color:#f7f7f7;
-    transition: color 150ms ease-in;
-}
-.trainNavbar:hover{
-    color:#424242
-}
-.links-nav{
-    color:#f7f7f7 !important;
-    transition: color 100ms ease-in;
-}
-.links-nav:hover{
-    color:#424242 !important;
-}
-.fa-bars{
-    margin-left:0.5em;
-    color:#747474;
-}
-.fa-bars:hover{
-    color:#2c2c2c;
-    
-}
 
-h5{
-    color: white;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 2rem;
-}
-
-.dropdown-menu{
-    border-radius: 1rem ;
-    border:none;
-    .dropdown-item:hover,
-    .dropdown-item:focus{
-        background-color: inherit;
-        border-radius: 2rem;
-        color: rgb(160, 158, 158);
-        outline: none;
-    }
-}
-.account-menu{
-    width:4.5em;
-    height: 2em;
-    background-color: #f7f7f7;
-    border-radius:5em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .outerUser{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width:1.8em;
-        height: 1.5em;
-    }
-    transition: background-color 150ms ease-in;
-}
-.account-menu:hover{
-    box-shadow:0 0 9px rgb(139, 139, 139);
-}
-.text-center1{
-    color:#f7f7f7 ;
-}
 .scritta{
     position:absolute;
     margin:0 0 5em 0;
@@ -84,6 +19,9 @@ h5{
         }
     }
 }
+
+
+
 .bar1{
     position: relative;
     margin-top: 8em;

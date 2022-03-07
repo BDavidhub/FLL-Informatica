@@ -1,26 +1,4 @@
-.trainNavbar{
-    margin-left: 2em;
-    color:#f7f7f7;
-    transition: color 150ms ease-in;
-}
-.trainNavbar:hover{
-    color:#424242;
-}
-.links-nav{
-    color:#f7f7f7 !important;
-    transition: color 100ms ease-in;
-}
-.links-nav:hover{
-    color:#424242 !important;
-}
-.fa-bars{
-    margin-left:0.5em;
-    color:#747474;
-}
-.fa-bars:hover{
-    color:#2c2c2c;
-    
-}
+
 .left-side{
     margin-top:2em;
     width: 50em;
@@ -41,6 +19,7 @@
         text-transform:uppercase;
          margin-bottom:2em;
         text-align:center;
+        color:black;
     }
     button{
         display:flex;
@@ -96,168 +75,12 @@
     flex-direction: column;
 
 }
-.noleggio{
-    h5{
-        position: relative;
-       bottom: 1em;
-    }
-    padding:2em;
-}
 // .right-side{
 //     width: 30%;
 //     height: 100%;
 //     box-shadow:0 0 15px rgb(201, 201, 201);
 //     border-radius: 1em;
 // }
-.account-menu{
-    width:4.5em;
-    height: 2em;
-    background-color: #f7f7f7;
-    border-radius:5em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .outerUser{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width:1.8em;
-        height: 1.5em;
-    }
-    transition: background-color 150ms ease-in;
-}
-.account-menu:hover{
-    box-shadow:0 0 9px rgb(139, 139, 139);
-}
-.text-center1{
-    color:#f7f7f7 ;
-}
-.scritta{
-    position:absolute;
-    margin:0 0 5em 0;
-    top:10em;
-
-    .subtext{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        .text-center1{
-            width:40%;
-        }
-    }
-}
-.bar1{
-    background-color: rgb(252, 252, 252);
-    width:800px;
-    box-shadow:0 0 5px rgb(202, 202, 202);
-    height:75px;
-    border-radius:100vw;
-    display:flex;
-    justify-content:end;
-    padding: 0;
-    margin-top: 8em;
-
-    p{
-        padding:0;
-        margin:1rem 0 0 0;
-        font-size: 0.8rem;
-    }
-    input{
-        background:none;
-        border:none;
-        padding:0.1rem 0 0 0;
-    }
-    input:focus{
-        outline:none;
-      }
-    .location{
-        width:30%;
-    }
-    div{
-        border-radius:5em;
-        padding:0.1rem 1.5rem;
-        transition:background-color 250ms ease;
-    }
-    // div:after{
-    //     position:absolute;
-    //     content:"";
-    //     left:0;
-    //     top:50%;
-    //     transform:translateY(-50%);
-    //     width:1px;
-    //     height:55%;
-    //     background:gray;
-    // }
-    div:hover{
-        background-color:rgb(235, 235, 235);
-    }
-
-    div:target,div:focus{
-        background-color:rgb(248, 248, 248);
-        box-shadow:0 0 10px rgb(201, 201, 201);
-    }
-    .check-in{
-        width:25%;
-      }
-      .check-out{
-        width:55%;
-    }
-      .check-out{
-          height: 100%;
-        display:flex;
-        justify-content:space-between;
-       
-        .check-out1{
-            input[type="date"]::-webkit-calendar-picker-indicator{
-                left     : 0;
-                margin   : 0;
-            }
-
-        }
-       
-        a{
-            
-        display:flex;
-        justify-content:center;
-        align-items: center;
-        position: absolute;
-        background-color:#69c3f7;
-        color:white;
-        margin-left: 9.5rem;
-        margin-top: 0.3rem;
-        width: 12em;
-        height:4em;
-        border-radius:10em;
-        text-decoration: none;
-        h6{
-            white-space:nowrap;
-            padding:2em;
-            margin-top:0.4em;
-            border-radius:inherit;
-
-        }
-
-        transition: background-color 150ms ease-in;
-    }
-    a:hover{
-        background-color:#4d96c0;
-
-    }
-      }
-}
-
-.dropdown-menu{
-    border-radius: 1rem ;
-    border:none;
-    .dropdown-item:hover,
-    .dropdown-item:focus{
-        background-color: inherit;
-        border-radius: 2rem;
-        color: rgb(160, 158, 158);
-        outline: none;
-    }
-}
-
 
 .biglietti-treni{
 
@@ -368,5 +191,31 @@
     justify-content:center;
     flex-direction: column;
     text-align:center;
-}
 
+    a{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:10em;
+        height: 8%;
+        background-color:#69c3f7;
+        border-radius: 1em;
+        padding:1.5em;
+        margin:1em;
+        text-decoration: none;
+        color: white;
+        transition: background-color 150ms ease-in;
+        border:none;
+    }
+    h5{
+        position: relative;
+       padding: 1em;
+       margin:0;
+       color:black;
+    }
+    a:hover{
+        background-color:#4d96c0;
+
+    }
+
+}

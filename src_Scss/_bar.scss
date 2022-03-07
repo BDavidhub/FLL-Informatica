@@ -1,0 +1,99 @@
+.bar1{
+    background-color: rgb(252, 252, 252);
+    width:800px;
+    box-shadow:0 0 5px rgb(202, 202, 202);
+    height:75px;
+    border-radius:100vw;
+    display:flex;
+    justify-content:end;
+    padding: 0;
+    margin-top: 8em;
+
+    p{
+        padding:0;
+        margin:1rem 0 0 0;
+        font-size: 0.8rem;
+    }
+    input{
+        background:none;
+        border:none;
+        padding:0.1rem 0 0 0;
+    }
+    input:focus{
+        outline:none;
+      }
+    .location{
+        width:30%;
+    }
+    div{
+        border-radius:5em;
+        padding:0.1rem 1.5rem;
+        transition:background-color 250ms ease;
+    }
+    // div:after{
+    //     position:absolute;
+    //     content:"";
+    //     left:0;
+    //     top:50%;
+    //     transform:translateY(-50%);
+    //     width:1px;
+    //     height:55%;
+    //     background:gray;
+    // }
+    div:hover{
+        background-color:rgb(235, 235, 235);
+    }
+
+    div:target,div:focus{
+        background-color:rgb(248, 248, 248);
+        box-shadow:0 0 10px rgb(201, 201, 201);
+    }
+    .check-in{
+        width:25%;
+      }
+      .check-out{
+        width:55%;
+    }
+      .check-out{
+          height: 100%;
+        display:flex;
+        justify-content:space-between;
+       
+        .check-out1{
+            input[type="date"]::-webkit-calendar-picker-indicator{
+                left     : 0;
+                margin   : 0;
+            }
+
+        }
+       
+        a{
+            
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        position: absolute;
+        background-color:#69c3f7;
+        color:white;
+        margin-left: 9.5rem;
+        margin-top: 0.3rem;
+        width: 12em;
+        height:4em;
+        border-radius:10em;
+        text-decoration: none;
+        h6{
+            white-space:nowrap;
+            padding:2em;
+            margin-top:0.4em;
+            border-radius:inherit;
+
+        }
+
+        transition: background-color 150ms ease-in;
+    }
+    a:hover{
+        background-color:#4d96c0;
+
+    }
+      }
+}
