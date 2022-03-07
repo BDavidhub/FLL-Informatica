@@ -56,14 +56,7 @@
         //     return 1;
         // }
 
-    public function getWagonsByTrain($train)
-    {
-        if($train->getPreviousHub($this)!=false ) $in = $train->getPreviousHub($this)->getTrainInOutConfig($train);
-        else $in=null;
-        $out = $this->getTrainInOutConfig($train);
-       
-        return array($in,$out);
-    }
+   
 
 
     //------------------------------------------------------------------------------------
@@ -72,17 +65,6 @@
     //DEVI ANCHE PROVARE I METODI QUANDO LI HAI FATTI
     //------------------------------------------------------------------------------------
 
-    public function getTrainInOutConfig($train){
-       $wagons = array();
-        if (!in_array($this, $train->getHubs())) return null;
-        foreach($train->getWagons() as $key => $wagon){
-            if(in_array($this,$wagon->getHubs()) && $wagon->getHubArrive() != $this){
-                $wagons[] = $wagon;
-            }
-        }
-        $wagons=$train->getOrdinatedWagons($this,$wagons);
-        if(count($wagons)==0) return null;
-        return $wagons;
-    }
+    
 
 }

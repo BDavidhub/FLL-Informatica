@@ -157,8 +157,64 @@ class Train extends Utility
     }*/
 
     /// UD-VE-PD-MI-TO
-    public function getOrdinatedWagons($hub){
-        
-        var_dump($hub);
+    public function getDistanceFrom($hub1,$hub2)
+    {
+        $hubs=$this->getHubs();
+        $hubArrive=$hubs[count($hubs)-1];
+        $hubDeparture=$hubs[0];
+        $counter = null;
+        $definitiveCounter=null;
+        if($hub1 == $hubArrive || $hub2 == $hubDeparture) return null;
+        foreach($hubs as $hub)
+        {
+            if($hub == $hub1) $counter = 1;
+            if($hub == $hub2) $definitiveCounter=$counter;
+            if($counter!=null) $counter++;
+        }
+        return $definitiveCounter-1;
+    }
+
+    public function swap_positions($ws, $left, $right) {
+        $backup_old_ws_right_value = $ws[$right];
+        $ws[$right] = $ws[$left];
+        $ws[$left] = $backup_old_ws_right_value;
+        return $ws;
+    }
+
+    public function getOrdinatedWagons($hub,$ws)
+    {
+        /*
+        $ws=array();
+        if($this->getWagons()==null) return null;
+        foreach($this->getWagons() as $wagon)
+        {
+            $hubs=$wagon->getHubs();
+            $counter=0;
+           // array_splice($this->wagons, $i, 1);
+            for($i=0;$i<count($wagon->getHubs());$i++)
+            {
+                if($hub == $hubs[$i] && $hubs[$i]!=$wagon->getHubArrive())
+                {
+                    $counter=1;
+                }
+            }
+            if($counter==1)
+            {
+                $ws[]=$wagon;
+            }   
+        }
+        */
+        for($i=0; $i<count($ws)-1; $i++) {
+            $min = $i;
+            for($j=$i+1; $j<count($ws); $j++) 
+            {
+                if ($this->getDistanceFrom($hub,$ws[$j]->getHubArrive())<$this->getDistanceFrom($hub,$ws[$min]->getHubArrive())) 
+                {
+                    $min = $j;
+                }
+            }
+            $ws = $this->swap_positions($ws, $i, $min);
+        }
+        return $ws;
     }
 }
