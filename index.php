@@ -71,9 +71,10 @@ if(is_null(isset($_SESSION['logged']))){
                 if(isset($_SESSION['macchinista']) &&   $_SESSION['macchinista'] == true){
                   echo '<a class="dropdown-item" href="./pages/macchinista.php">Macchinista</a>';
                     
-                   }
-                if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true&&$_SESSION['macchinista'] == false){
+                   }else if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true&&$_SESSION['macchinista'] == false){
                   echo '<a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>';
+                   }else{
+                    echo '<p class="dropdown-item">Logged</p>';
                    }
                
                 }
