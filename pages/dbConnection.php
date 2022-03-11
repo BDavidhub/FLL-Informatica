@@ -8,7 +8,7 @@ $dbname = "sql11465630";
 
 
 $connent = mysqli_connect($host, $datausername, $datapassword, $dbname);
-
+$_SESSION['db'] = $connent;
 if (mysqli_connect_errno()) {
     echo "1 : error connection failed";
     exit();
@@ -30,8 +30,7 @@ echo "fatto";
 //     echo "3; name already exist "; // error #3, name already exist cannot register
 //     exit();
 // }
-// // create random ID
-// //$id = random_int(10908709,76999877589);
+
 
 
 // $insertuserquery = "INSERT INTO `user`(`id`, `username`, `email`, `hash`, `salt`) VALUES (899888989,'$username','llsssssssss','ssddssdsd','sdcsdcsdcsdc');";
