@@ -1,15 +1,18 @@
 {
     "array": [
         [
-            {"id":"W5","arrive":"Padova","arrAbb":"4"},
-            {"id":"W6","arrive":"Milano","arrAbb":"3"}   
+            {"id":"W5","arrive":"Venezia","arrAbb":"VE"},
+            {"id":"W5","arrive":"Venezia","arrAbb":"VE"},
+            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
+            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
+            {"id":"W5","arrive":"Venezia","arrAbb":"MI"}   
         ],
         [
-           
-            {"id":"W5","arrive":"Padova","arrAbb":"3"},
-            {"id":"W6","arrive":"Milano","arrAbb":"1"}
-            
-            
+            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
+            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
+            {"id":"W5","arrive":"Venezia","arrAbb":"MI"},
+            {"id":"W5","arrive":"Venezia","arrAbb":"TO"}
+                 
         ]
     ]
 }
