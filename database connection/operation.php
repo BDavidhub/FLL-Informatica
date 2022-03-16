@@ -5,9 +5,9 @@
       //inserire utente privato  (nome, cognome, tel, mail, password, indirizzodifatturazione)
       function sign_up($name, $surn, $tel, $mail, $psw, $accadress){
         $GLOBALS['connection']->query("insert into users (Mail,Password,Telephone) values('$mail','$psw','$tel');");
-        $ris= $GLOBALS['connection']->query("select `ID-U` from users where(Mail='$mail' AND Password='$psw' AND Telephone='$tel');");
+        $ris= $GLOBALS['connection']->query("select 'ID_U' from users where(Mail='$mail' AND Password='$psw' AND Telephone='$tel');");
         $row= $ris->fetch(PDO::FETCH_ASSOC);
-        $GLOBALS['connection']->query("insert into privates values('".$row['ID-U']."','$name','$surn','$accadress');");
+        $GLOBALS['connection']->query("insert into privates values('".$row['ID_U']."','$name','$surn','$accadress');");
       }
 
       //data mail e password ritornare true se presente nel database, flase se non presente
@@ -19,11 +19,9 @@
         }else {
           return 1;
         }
-
-
       }
 
-
+      
       try {
         //instaurazione della connessione
         $hostname = "localhost";
