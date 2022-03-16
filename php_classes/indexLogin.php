@@ -22,25 +22,26 @@ $_SESSION['main'] = $main;
 $mail=$_POST['mailLog'];
 $password=$_POST['passwordLog'];
 $trovato=false;
-foreach ($main->getPrivates() as $private)
-{
-    if($private->getPassword() == $password && $private->getMail() == $mail)
-    {
-        $_SESSION['mail'] = $_POST['mailLog'];
-        $_SESSION['password'] = $_POST['passwordLog'];
-        echo $mail;
-        $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
-        $_SESSION['logged'] = true;
+
+// foreach ($main->getPrivates() as $private)
+// {
+//     if($private->getPassword() == $password && $private->getMail() == $mail)
+//     {
+//         $_SESSION['mail'] = $_POST['mailLog'];
+//         $_SESSION['password'] = $_POST['passwordLog'];
+//         echo $mail;
+//         $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
+//         $_SESSION['logged'] = true;
 
 
-       $_SESSION['macchinista'] = $_SESSION['password']=='Macchinista'? true : false;  
-       if( $_SESSION['macchinista']==false){
-       $_SESSION['stazione'] = $_SESSION['password']=='Venezia'? true : false;
-       }    
+//        $_SESSION['macchinista'] = $_SESSION['password']=='Macchinista'? true : false;  
+//        if( $_SESSION['macchinista']==false){
+//        $_SESSION['stazione'] = $_SESSION['password']=='Venezia'? true : false;
+//        }    
 
-        $trovato = true;
-    }
-}
+//         $trovato = true;
+//     }
+// }
 if($trovato==false)
 {
     echo '<h5>Credenziali sbagliate o inesistenti</h5>';

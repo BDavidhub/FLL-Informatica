@@ -1,15 +1,15 @@
 <?php
 session_start();
-
-$_SESSION["nomeReg"] = $_POST["nomeReg"];
-$_SESSION["cognomeReg"] = $_POST["cognomeReg"];
-$_SESSION["nomeReg"] = $_POST["nomeReg"];   
-$_SESSION["teleReg"] = $_POST["teleReg"];
-$_SESSION["mailReg"] = $_POST["mailReg"];
-$_SESSION["passwordReg"] = $_POST["passwordReg"];
-$_SESSION["passwordCheckReg"] = $_POST["passwordCheckReg"];
-$_SESSION["privato"] = $_POST["privato"];
-$_SESSION["azienda"] = $_POST["azienda"];
+require_once('../databaseFiles/databaseConnection/operation.php');
+echo $_POST["nomeReg"];
+$nomeReg = $_POST["nomeReg"];
+$cognomeReg = $_POST["cognomeReg"]; 
+$teleReg = $_POST["teleReg"];
+$mailReg = $_POST["mailReg"];
+$passwordReg = $_POST["passwordReg"];
+$passwordCheckReg = $_POST["passwordCheckReg"];
+$isPrivato = $_POST["privato"];
+sign_up($nomeReg,$cognomeReg,$teleReg,$mailReg,$passwordReg,"via gigi1");
 
 //check password
 //  if ($passwordReg == $passwordCheckReg) {

@@ -47,7 +47,7 @@
       </div>
       <div class="register-show">
         <h2>REGISTRATI</h2>
-        <form action="../php_classes/indexLogin.php" method="post">
+        <form action="reg_Controller.php" method="post">
           <div class="flexBox">
             <input type="text" placeholder="Nome" name="nomeReg" class="nome">
             <input type="text" placeholder="Cognome" name="cognomeReg" class="cognome">
