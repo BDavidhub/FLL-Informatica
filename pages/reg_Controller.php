@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../databaseFiles/databaseConnection/operation.php');
+require_once('../database connection/operation.php');
 echo $_POST["nomeReg"];
 $nomeReg = $_POST["nomeReg"];
 $cognomeReg = $_POST["cognomeReg"]; 
@@ -9,7 +9,8 @@ $mailReg = $_POST["mailReg"];
 $passwordReg = $_POST["passwordReg"];
 $passwordCheckReg = $_POST["passwordCheckReg"];
 $isPrivato = $_POST["privato"];
-sign_up($nomeReg,$cognomeReg,$teleReg,$mailReg,$passwordReg,"via gigi1");
+sign_up($nomeReg,$cognomeReg,$teleReg,$mailReg,$passwordReg,2345);
+
 
 //check password
 //  if ($passwordReg == $passwordCheckReg) {

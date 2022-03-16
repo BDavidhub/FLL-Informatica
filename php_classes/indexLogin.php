@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once('Main.php');
-
+require_once('../database connection/operation.php');
 $main = new Main();
 
 $main->addPrivates(new _Private('Monica.Disaro@FLL.it','Admin','1111111111','Monica','Disaro',1));
@@ -21,7 +21,10 @@ $main->addPrivates(new _Private('MarioRossi@gmail.com','Admin','888888888','Mari
 $_SESSION['main'] = $main;
 $mail=$_POST['mailLog'];
 $password=$_POST['passwordLog'];
-$trovato=false;
+if(login($mail,$password)==1){
+    $_SESSION['logged'] = true;
+}else  $_SESSION['logged'] = false;   
+
 
 // foreach ($main->getPrivates() as $private)
 // {
@@ -42,9 +45,9 @@ $trovato=false;
 //         $trovato = true;
 //     }
 // }
-if($trovato==false)
+if($_SESSION['logged']==false)
 {
-    echo '<h5>Credenziali sbagliate o inesistenti</h5>';
+   // echo '<h5>Credenziali sbagliate o inesistenti</h5>';
     header('location: ../pages/registration.php?n=1');
 exit;
 }

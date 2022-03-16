@@ -27,6 +27,12 @@
       <label id="label-register" for="log-reg-show">Accedi</label>
       <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
     </div>
+    
+    <?php 
+  if($_SESSION['logged']==false){
+      echo "<script type='text/javascript'>alert('non sei loggato');</script>"; 
+  }
+    ?>
 
     <div class="register-info-box">
       <h2>Non hai un account?</h2>
