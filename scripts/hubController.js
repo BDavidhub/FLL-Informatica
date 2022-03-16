@@ -218,8 +218,8 @@ function trainDeparture() {
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
-    setTimeout(callRemoveWagons, 3000);
     setTimeout(callAddWagons, 6000);
+    setTimeout(callRemoveWagons, 3000);
     setTimeout(trainDeparture, 9500);
 }
 
@@ -229,7 +229,7 @@ function trainDeparture() {
 
 
 // const xhr = new XMLHttpRequest();
-//$.ajax('test.json',  
+//$.ajax('test.json',
 
 $.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2  
     {
@@ -237,7 +237,6 @@ $.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2
             console.log(data);
 
         var resObj= data;
-            
         
         /*
         Riempimento treno in entrata
@@ -303,7 +302,6 @@ $.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2
         console.log(leavingTrain)
         console.log(removeFromT)
         console.log(addToTrain)
-
 
         }
 });

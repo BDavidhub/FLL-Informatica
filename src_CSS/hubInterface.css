@@ -11969,6 +11969,7 @@ html {
   overflow: hidden;
   background-image: url("../assets/images/bg-2.svg");
   background-size: 100%;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
@@ -12072,6 +12073,7 @@ html .bin::before {
 body .head_sx,
 html .head_sx {
   position: relative;
+  display: none;
   z-index: 2;
   height: 50px;
   width: 200px;
