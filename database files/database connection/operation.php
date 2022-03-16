@@ -1,6 +1,6 @@
 <?php
       //cararattere cancer  ``
-      $GLOBALS['connection']= null;
+      $GLOBALS['connection'] = null;
 
       //inserire utente privato  (nome, cognome, tel, mail, password, indirizzodifatturazione)
       function sign_up($name, $surn, $tel, $mail, $psw, $accadress){
