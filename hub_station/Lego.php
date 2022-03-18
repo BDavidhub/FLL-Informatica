@@ -103,8 +103,8 @@
 
 	curl_close($ch);
 
-	$first_codes;
-	$second_codes;
+	$first_codes=[];
+	$second_codes=[];
 
 	foreach ($first as $key ) {
 		$first_codes[]=$key["id"];
@@ -112,6 +112,16 @@
 	foreach ($second as $key ) {
 		$second_codes[]=$key["id"];
 	}
+	
+	$last=end($second_codes);
+	if($last!=false)
+		$int=filter_var($last, FILTER_SANITIZE_NUMBER_INT)+1;
+	else
+		$int=1;
+	$first_codes[]="W$int";
+	$second_codes[]="W$int";
+	array_reverse($first_codes);
+	array_reverse($second_codes);
 
 	$table=gestioneVagoni($first_codes,$second_codes);
 
