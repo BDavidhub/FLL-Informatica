@@ -29,9 +29,11 @@
     </div>
     
     <?php 
-  if($_SESSION['logged']==false){
-      echo "<script type='text/javascript'>alert('non sei loggato');</script>"; 
-  }
+    if(isset($_SESSION['logged'])){
+      if($_SESSION['logged']==false){
+          echo "<script type='text/javascript'>alert('non sei loggato');</script>"; 
+      }
+    }
     ?>
 
     <div class="register-info-box">
