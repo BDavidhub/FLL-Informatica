@@ -19,7 +19,7 @@
       }
 
       //data mail e password ritornare true se presente nel database, flase se non presente
-      function login($mail,$psw){
+      function login($mail, $psw){
         $ris=$GLOBALS['connection']->query("select ID_U from users where(Mail='$mail' AND Password='$psw');");
         $row= $ris->fetch(PDO::FETCH_ASSOC);
         if (empty($row["ID_U"])) {
@@ -28,6 +28,12 @@
           return 1;
         }
       }
+
+      //inserise dati dei treni
+      function insert_train($limit, $departure){
+
+      }
+
 
       try {
         //instaurazione della connessione
