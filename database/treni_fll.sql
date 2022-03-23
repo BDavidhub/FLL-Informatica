@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 04, 2022 alle 16:51
+-- Creato il: Mar 16, 2022 alle 14:27
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.0.13
 
@@ -28,20 +28,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `boxes` (
-  `ID-B` char(10) NOT NULL,
-  `Size` int(5) UNSIGNED NOT NULL,
-  `ID-U` char(10) NOT NULL,
-  `ID-W` char(10) NOT NULL
+  `ID_B` int(10) UNSIGNED NOT NULL,
+  `Size` int(5) NOT NULL,
+  `ID_U` int(10) UNSIGNED NOT NULL,
+  `ID_W` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `enterprises`
+-- Struttura della tabella `entersprises`
 --
 
-CREATE TABLE `enterprises` (
-  `ID-U` char(10) NOT NULL,
+CREATE TABLE `entersprises` (
+  `ID_U` int(10) UNSIGNED NOT NULL,
   `VAT` char(11) NOT NULL,
   `CompanyName` varchar(50) NOT NULL,
   `AccountingAddressE` varchar(50) NOT NULL
@@ -54,8 +54,8 @@ CREATE TABLE `enterprises` (
 --
 
 CREATE TABLE `has` (
-  `ID-T` char(10) NOT NULL,
-  `ID-W` char(10) NOT NULL,
+  `ID_T` int(10) UNSIGNED NOT NULL,
+  `ID_W` int(10) UNSIGNED NOT NULL,
   `Entra` int(10) UNSIGNED NOT NULL,
   `Esce` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -67,7 +67,7 @@ CREATE TABLE `has` (
 --
 
 CREATE TABLE `hubs` (
-  `ID-H` char(10) NOT NULL,
+  `ID_H` int(10) UNSIGNED NOT NULL,
   `NameH` varchar(50) NOT NULL,
   `CapacityH` int(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -79,8 +79,8 @@ CREATE TABLE `hubs` (
 --
 
 CREATE TABLE `passes_by` (
-  `ID-T` char(10) NOT NULL,
-  `ID-H` char(10) NOT NULL,
+  `ID_T` int(10) UNSIGNED NOT NULL,
+  `ID_H` int(10) UNSIGNED NOT NULL,
   `PassageNumber` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -91,7 +91,7 @@ CREATE TABLE `passes_by` (
 --
 
 CREATE TABLE `privates` (
-  `ID-U` char(10) NOT NULL,
+  `ID_U` int(10) UNSIGNED NOT NULL,
   `NameP` varchar(50) NOT NULL,
   `SurnameP` varchar(50) NOT NULL,
   `AccountingAddressP` varchar(50) NOT NULL
@@ -104,10 +104,10 @@ CREATE TABLE `privates` (
 --
 
 CREATE TABLE `trains` (
-  `ID-T` char(10) NOT NULL,
+  `ID_T` int(10) UNSIGNED NOT NULL,
   `LimitT` int(5) UNSIGNED NOT NULL,
   `DataTimeDeparture` datetime NOT NULL,
-  `SerialNumberT` int(10) NOT NULL
+  `SerialNumberT` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -117,7 +117,7 @@ CREATE TABLE `trains` (
 --
 
 CREATE TABLE `users` (
-  `ID-U` char(10) NOT NULL,
+  `ID_U` int(10) UNSIGNED NOT NULL,
   `Mail` varchar(50) NOT NULL,
   `Telephone` char(15) DEFAULT NULL,
   `Password` varchar(50) NOT NULL
@@ -130,8 +130,8 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE `usrhubs` (
-  `ID-U` char(10) NOT NULL,
-  `ID-H` char(10) NOT NULL
+  `ID_U` int(10) UNSIGNED NOT NULL,
+  `ID_H` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -141,9 +141,9 @@ CREATE TABLE `usrhubs` (
 --
 
 CREATE TABLE `wagons` (
-  `ID-W` char(10) NOT NULL,
+  `ID_W` int(10) UNSIGNED NOT NULL,
   `CapacityW` int(5) UNSIGNED NOT NULL,
-  `SerialNumberW` int(10) NOT NULL
+  `SerialNumberW` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -154,70 +154,116 @@ CREATE TABLE `wagons` (
 -- Indici per le tabelle `boxes`
 --
 ALTER TABLE `boxes`
-  ADD PRIMARY KEY (`ID-B`),
-  ADD KEY `box_use` (`ID-U`),
-  ADD KEY `box_wag` (`ID-W`);
+  ADD PRIMARY KEY (`ID_B`),
+  ADD KEY `Box_Use` (`ID_U`),
+  ADD KEY `Box_Wag` (`ID_W`);
 
 --
--- Indici per le tabelle `enterprises`
+-- Indici per le tabelle `entersprises`
 --
-ALTER TABLE `enterprises`
-  ADD PRIMARY KEY (`ID-U`),
-  ADD UNIQUE KEY `UNIQUE` (`VAT`,`CompanyName`,`AccountingAddressE`);
+ALTER TABLE `entersprises`
+  ADD PRIMARY KEY (`ID_U`),
+  ADD UNIQUE KEY `UNIQUE` (`CompanyName`,`AccountingAddressE`);
 
 --
 -- Indici per le tabelle `has`
 --
 ALTER TABLE `has`
-  ADD PRIMARY KEY (`ID-T`,`ID-W`),
-  ADD KEY `has_wag` (`ID-W`);
+  ADD PRIMARY KEY (`ID_T`,`ID_W`),
+  ADD KEY `Has_Wag` (`ID_W`);
 
 --
 -- Indici per le tabelle `hubs`
 --
 ALTER TABLE `hubs`
-  ADD PRIMARY KEY (`ID-H`),
+  ADD PRIMARY KEY (`ID_H`),
   ADD UNIQUE KEY `UNIQUE` (`NameH`);
 
 --
 -- Indici per le tabelle `passes_by`
 --
 ALTER TABLE `passes_by`
-  ADD PRIMARY KEY (`ID-T`,`ID-H`),
-  ADD KEY `pas_hub` (`ID-H`);
+  ADD PRIMARY KEY (`ID_T`,`ID_H`),
+  ADD KEY `Pas_Hub` (`ID_H`);
 
 --
 -- Indici per le tabelle `privates`
 --
 ALTER TABLE `privates`
-  ADD PRIMARY KEY (`ID-U`),
+  ADD PRIMARY KEY (`ID_U`),
   ADD UNIQUE KEY `UNIQUE` (`AccountingAddressP`);
 
 --
 -- Indici per le tabelle `trains`
 --
 ALTER TABLE `trains`
-  ADD PRIMARY KEY (`ID-T`);
+  ADD PRIMARY KEY (`ID_T`);
 
 --
 -- Indici per le tabelle `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID-U`),
+  ADD PRIMARY KEY (`ID_U`),
   ADD UNIQUE KEY `UNIQUE` (`Mail`,`Telephone`);
 
 --
 -- Indici per le tabelle `usrhubs`
 --
 ALTER TABLE `usrhubs`
-  ADD PRIMARY KEY (`ID-U`),
-  ADD KEY `usr_hub` (`ID-H`);
+  ADD PRIMARY KEY (`ID_U`),
+  ADD KEY `Usr_Hub` (`ID_H`);
 
 --
 -- Indici per le tabelle `wagons`
 --
 ALTER TABLE `wagons`
-  ADD PRIMARY KEY (`ID-W`);
+  ADD PRIMARY KEY (`ID_W`);
+
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
+
+--
+-- AUTO_INCREMENT per la tabella `boxes`
+--
+ALTER TABLE `boxes`
+  MODIFY `ID_B` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `entersprises`
+--
+ALTER TABLE `entersprises`
+  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `hubs`
+--
+ALTER TABLE `hubs`
+  MODIFY `ID_H` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `privates`
+--
+ALTER TABLE `privates`
+  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT per la tabella `trains`
+--
+ALTER TABLE `trains`
+  MODIFY `ID_T` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `users`
+--
+ALTER TABLE `users`
+  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT per la tabella `wagons`
+--
+ALTER TABLE `wagons`
+  MODIFY `ID_W` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Limiti per le tabelle scaricate
@@ -227,41 +273,41 @@ ALTER TABLE `wagons`
 -- Limiti per la tabella `boxes`
 --
 ALTER TABLE `boxes`
-  ADD CONSTRAINT `box_use` FOREIGN KEY (`ID-U`) REFERENCES `users` (`ID-U`),
-  ADD CONSTRAINT `box_wag` FOREIGN KEY (`ID-W`) REFERENCES `wagons` (`ID-W`);
+  ADD CONSTRAINT `Box_Use` FOREIGN KEY (`ID_U`) REFERENCES `users` (`ID_U`),
+  ADD CONSTRAINT `Box_Wag` FOREIGN KEY (`ID_W`) REFERENCES `wagons` (`ID_W`);
 
 --
--- Limiti per la tabella `enterprises`
+-- Limiti per la tabella `entersprises`
 --
-ALTER TABLE `enterprises`
-  ADD CONSTRAINT `ent_use` FOREIGN KEY (`ID-U`) REFERENCES `users` (`ID-U`);
+ALTER TABLE `entersprises`
+  ADD CONSTRAINT `Ent_Use` FOREIGN KEY (`ID_U`) REFERENCES `users` (`ID_U`);
 
 --
 -- Limiti per la tabella `has`
 --
 ALTER TABLE `has`
-  ADD CONSTRAINT `has_tra` FOREIGN KEY (`ID-T`) REFERENCES `trains` (`ID-T`),
-  ADD CONSTRAINT `has_wag` FOREIGN KEY (`ID-W`) REFERENCES `wagons` (`ID-W`);
+  ADD CONSTRAINT `Has_Tra` FOREIGN KEY (`ID_T`) REFERENCES `trains` (`ID_T`),
+  ADD CONSTRAINT `Has_Wag` FOREIGN KEY (`ID_W`) REFERENCES `wagons` (`ID_W`);
 
 --
 -- Limiti per la tabella `passes_by`
 --
 ALTER TABLE `passes_by`
-  ADD CONSTRAINT `pas_hub` FOREIGN KEY (`ID-H`) REFERENCES `hubs` (`ID-H`),
-  ADD CONSTRAINT `pas_tra` FOREIGN KEY (`ID-T`) REFERENCES `trains` (`ID-T`);
+  ADD CONSTRAINT `Pas_Hub` FOREIGN KEY (`ID_H`) REFERENCES `hubs` (`ID_H`),
+  ADD CONSTRAINT `Pas_Tra` FOREIGN KEY (`ID_T`) REFERENCES `trains` (`ID_T`);
 
 --
 -- Limiti per la tabella `privates`
 --
 ALTER TABLE `privates`
-  ADD CONSTRAINT `pri_use` FOREIGN KEY (`ID-U`) REFERENCES `users` (`ID-U`);
+  ADD CONSTRAINT `Pri_Use` FOREIGN KEY (`ID_U`) REFERENCES `users` (`ID_U`);
 
 --
 -- Limiti per la tabella `usrhubs`
 --
 ALTER TABLE `usrhubs`
-  ADD CONSTRAINT `usr_hub` FOREIGN KEY (`ID-H`) REFERENCES `hubs` (`ID-H`),
-  ADD CONSTRAINT `usr_use` FOREIGN KEY (`ID-U`) REFERENCES `users` (`ID-U`);
+  ADD CONSTRAINT `Usr_Hub` FOREIGN KEY (`ID_H`) REFERENCES `hubs` (`ID_H`),
+  ADD CONSTRAINT `Usr_Use` FOREIGN KEY (`ID_U`) REFERENCES `users` (`ID_U`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

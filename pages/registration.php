@@ -10,7 +10,7 @@
   <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  
+
   <link rel="stylesheet" href="../src_CSS/registration.css" />
 
   <title>Log-in/Register Page</title>
@@ -27,6 +27,14 @@
       <label id="label-register" for="log-reg-show">Accedi</label>
       <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
     </div>
+
+    <?php
+    if (isset($_SESSION['logged'])) {
+      if ($_SESSION['logged'] == false) {
+        echo "<script type='text/javascript'>alert('non sei loggato');</script>";
+      }
+    }
+    ?>
 
     <div class="register-info-box">
       <h2>Non hai un account?</h2>
@@ -47,7 +55,7 @@
       </div>
       <div class="register-show">
         <h2>REGISTRATI</h2>
-        <form action="../php_classes/indexLogin.php" method="post">
+        <form action="reg_Controller.php" method="post">
           <div class="flexBox">
             <input type="text" placeholder="Nome" name="nomeReg" class="nome">
             <input type="text" placeholder="Cognome" name="cognomeReg" class="cognome">

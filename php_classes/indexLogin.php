@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once('Main.php');
-
+require_once('../database connection/operation.php');
 $main = new Main();
 
 $main->addPrivates(new _Private('Monica.Disaro@FLL.it','Admin','1111111111','Monica','Disaro',1));
@@ -21,29 +21,33 @@ $main->addPrivates(new _Private('MarioRossi@gmail.com','Admin','888888888','Mari
 $_SESSION['main'] = $main;
 $mail=$_POST['mailLog'];
 $password=$_POST['passwordLog'];
-$trovato=false;
-foreach ($main->getPrivates() as $private)
+if(login($mail,$password)==1){
+    $_SESSION['logged'] = true;
+}else  $_SESSION['logged'] = false;   
+
+
+// foreach ($main->getPrivates() as $private)
+// {
+//     if($private->getPassword() == $password && $private->getMail() == $mail)
+//     {
+//         $_SESSION['mail'] = $_POST['mailLog'];
+//         $_SESSION['password'] = $_POST['passwordLog'];
+//         echo $mail;
+//         $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
+//         $_SESSION['logged'] = true;
+
+
+//        $_SESSION['macchinista'] = $_SESSION['password']=='Macchinista'? true : false;  
+//        if( $_SESSION['macchinista']==false){
+//        $_SESSION['stazione'] = $_SESSION['password']=='Venezia'? true : false;
+//        }    
+
+//         $trovato = true;
+//     }
+// }
+if($_SESSION['logged']==false)
 {
-    if($private->getPassword() == $password && $private->getMail() == $mail)
-    {
-        $_SESSION['mail'] = $_POST['mailLog'];
-        $_SESSION['password'] = $_POST['passwordLog'];
-        echo $mail;
-        $_SESSION['nome'] = $main->getUser($_SESSION['mail']);
-        $_SESSION['logged'] = true;
-
-
-       $_SESSION['macchinista'] = $_SESSION['password']=='Macchinista'? true : false;  
-       if( $_SESSION['macchinista']==false){
-       $_SESSION['stazione'] = $_SESSION['password']=='Venezia'? true : false;
-       }    
-
-        $trovato = true;
-    }
-}
-if($trovato==false)
-{
-    echo '<h5>Credenziali sbagliate o inesistenti</h5>';
+   // echo '<h5>Credenziali sbagliate o inesistenti</h5>';
     header('location: ../pages/registration.php?n=1');
 exit;
 }
