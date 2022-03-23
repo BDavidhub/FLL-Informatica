@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 23, 2022 at 01:36 PM
+-- Generation Time: Mar 23, 2022 at 02:59 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -102,7 +102,8 @@ CREATE TABLE `privates` (
 --
 
 INSERT INTO `privates` (`ID_U`, `NameP`, `SurnameP`, `AccountingAddressP`) VALUES
-(62, 'Venezia', 've', 'Venezia@FLL.it');
+(62, 'Venezia', 've', 'Venezia@FLL.it'),
+(68, 'Giacomo', 'Castellan', 'macchinista@FLL.it');
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID_U`, `Mail`, `Telephone`, `Password`) VALUES
-(62, 'Venezia@FLL.it', '123456789', 'Venezia');
+(62, 'Venezia@FLL.it', '123456789', 'Venezia'),
+(68, 'macchinista@FLL.it', '123456556', 'Macchinista');
 
 -- --------------------------------------------------------
 
@@ -259,7 +261,7 @@ ALTER TABLE `hubs`
 -- AUTO_INCREMENT for table `privates`
 --
 ALTER TABLE `privates`
-  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `trains`
@@ -271,7 +273,7 @@ ALTER TABLE `trains`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `wagons`
