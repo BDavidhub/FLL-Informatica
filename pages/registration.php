@@ -27,11 +27,11 @@
       <label id="label-register" for="log-reg-show">Accedi</label>
       <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
     </div>
-
-    <?php
-    if (isset($_SESSION['logged'])) {
-      if ($_SESSION['logged'] == false) {
-        echo "<script type='text/javascript'>alert('non sei loggato');</script>";
+    
+    <?php 
+    if(isset($_SESSION['logged'])){
+      if($_SESSION['logged']==false){
+          echo "<script type='text/javascript'>alert('non sei loggato');</script>"; 
       }
     }
     ?>

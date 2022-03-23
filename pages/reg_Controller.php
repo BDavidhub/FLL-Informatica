@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('../database connection/operation.php');
-echo $_POST["nomeReg"];
 $nomeReg = $_POST["nomeReg"];
 $cognomeReg = $_POST["cognomeReg"]; 
 $teleReg = $_POST["teleReg"];
@@ -9,9 +8,11 @@ $mailReg = $_POST["mailReg"];
 $passwordReg = $_POST["passwordReg"];
 $passwordCheckReg = $_POST["passwordCheckReg"];
 $isPrivato = $_POST["privato"];
-sign_up($nomeReg,$cognomeReg,$teleReg,$mailReg,$passwordReg,2345);
-
-
+sign_up($nomeReg,$cognomeReg,$teleReg,$mailReg,$passwordReg,$mailReg);
+$_SESSION['logged']=true;
+header('location: ../index.php?n=1');
+exit;
+//exit;
 //check password
 //  if ($passwordReg == $passwordCheckReg) {
 //      echo "<br>" . "YES";

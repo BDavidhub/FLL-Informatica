@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Creato il: Mar 16, 2022 alle 14:27
--- Versione del server: 10.4.22-MariaDB
--- Versione PHP: 8.0.13
+-- Host: localhost:8889
+-- Generation Time: Mar 23, 2022 at 01:36 PM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `boxes`
+-- Table structure for table `boxes`
 --
 
 CREATE TABLE `boxes` (
@@ -37,7 +37,7 @@ CREATE TABLE `boxes` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `entersprises`
+-- Table structure for table `entersprises`
 --
 
 CREATE TABLE `entersprises` (
@@ -50,7 +50,7 @@ CREATE TABLE `entersprises` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `has`
+-- Table structure for table `has`
 --
 
 CREATE TABLE `has` (
@@ -63,7 +63,7 @@ CREATE TABLE `has` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `hubs`
+-- Table structure for table `hubs`
 --
 
 CREATE TABLE `hubs` (
@@ -75,7 +75,7 @@ CREATE TABLE `hubs` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `passes_by`
+-- Table structure for table `passes_by`
 --
 
 CREATE TABLE `passes_by` (
@@ -87,7 +87,7 @@ CREATE TABLE `passes_by` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `privates`
+-- Table structure for table `privates`
 --
 
 CREATE TABLE `privates` (
@@ -97,10 +97,17 @@ CREATE TABLE `privates` (
   `AccountingAddressP` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `privates`
+--
+
+INSERT INTO `privates` (`ID_U`, `NameP`, `SurnameP`, `AccountingAddressP`) VALUES
+(62, 'Venezia', 've', 'Venezia@FLL.it');
+
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `trains`
+-- Table structure for table `trains`
 --
 
 CREATE TABLE `trains` (
@@ -113,7 +120,7 @@ CREATE TABLE `trains` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -123,10 +130,17 @@ CREATE TABLE `users` (
   `Password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`ID_U`, `Mail`, `Telephone`, `Password`) VALUES
+(62, 'Venezia@FLL.it', '123456789', 'Venezia');
+
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `usrhubs`
+-- Table structure for table `usrhubs`
 --
 
 CREATE TABLE `usrhubs` (
@@ -137,7 +151,7 @@ CREATE TABLE `usrhubs` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `wagons`
+-- Table structure for table `wagons`
 --
 
 CREATE TABLE `wagons` (
@@ -147,11 +161,11 @@ CREATE TABLE `wagons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `boxes`
+-- Indexes for table `boxes`
 --
 ALTER TABLE `boxes`
   ADD PRIMARY KEY (`ID_B`),
@@ -159,151 +173,151 @@ ALTER TABLE `boxes`
   ADD KEY `Box_Wag` (`ID_W`);
 
 --
--- Indici per le tabelle `entersprises`
+-- Indexes for table `entersprises`
 --
 ALTER TABLE `entersprises`
   ADD PRIMARY KEY (`ID_U`),
   ADD UNIQUE KEY `UNIQUE` (`CompanyName`,`AccountingAddressE`);
 
 --
--- Indici per le tabelle `has`
+-- Indexes for table `has`
 --
 ALTER TABLE `has`
   ADD PRIMARY KEY (`ID_T`,`ID_W`),
   ADD KEY `Has_Wag` (`ID_W`);
 
 --
--- Indici per le tabelle `hubs`
+-- Indexes for table `hubs`
 --
 ALTER TABLE `hubs`
   ADD PRIMARY KEY (`ID_H`),
   ADD UNIQUE KEY `UNIQUE` (`NameH`);
 
 --
--- Indici per le tabelle `passes_by`
+-- Indexes for table `passes_by`
 --
 ALTER TABLE `passes_by`
   ADD PRIMARY KEY (`ID_T`,`ID_H`),
   ADD KEY `Pas_Hub` (`ID_H`);
 
 --
--- Indici per le tabelle `privates`
+-- Indexes for table `privates`
 --
 ALTER TABLE `privates`
   ADD PRIMARY KEY (`ID_U`),
   ADD UNIQUE KEY `UNIQUE` (`AccountingAddressP`);
 
 --
--- Indici per le tabelle `trains`
+-- Indexes for table `trains`
 --
 ALTER TABLE `trains`
   ADD PRIMARY KEY (`ID_T`);
 
 --
--- Indici per le tabelle `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID_U`),
   ADD UNIQUE KEY `UNIQUE` (`Mail`,`Telephone`);
 
 --
--- Indici per le tabelle `usrhubs`
+-- Indexes for table `usrhubs`
 --
 ALTER TABLE `usrhubs`
   ADD PRIMARY KEY (`ID_U`),
   ADD KEY `Usr_Hub` (`ID_H`);
 
 --
--- Indici per le tabelle `wagons`
+-- Indexes for table `wagons`
 --
 ALTER TABLE `wagons`
   ADD PRIMARY KEY (`ID_W`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `boxes`
+-- AUTO_INCREMENT for table `boxes`
 --
 ALTER TABLE `boxes`
   MODIFY `ID_B` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `entersprises`
+-- AUTO_INCREMENT for table `entersprises`
 --
 ALTER TABLE `entersprises`
   MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `hubs`
+-- AUTO_INCREMENT for table `hubs`
 --
 ALTER TABLE `hubs`
   MODIFY `ID_H` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `privates`
+-- AUTO_INCREMENT for table `privates`
 --
 ALTER TABLE `privates`
-  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
--- AUTO_INCREMENT per la tabella `trains`
+-- AUTO_INCREMENT for table `trains`
 --
 ALTER TABLE `trains`
   MODIFY `ID_T` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `ID_U` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
--- AUTO_INCREMENT per la tabella `wagons`
+-- AUTO_INCREMENT for table `wagons`
 --
 ALTER TABLE `wagons`
   MODIFY `ID_W` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `boxes`
+-- Constraints for table `boxes`
 --
 ALTER TABLE `boxes`
   ADD CONSTRAINT `Box_Use` FOREIGN KEY (`ID_U`) REFERENCES `users` (`ID_U`),
   ADD CONSTRAINT `Box_Wag` FOREIGN KEY (`ID_W`) REFERENCES `wagons` (`ID_W`);
 
 --
--- Limiti per la tabella `entersprises`
+-- Constraints for table `entersprises`
 --
 ALTER TABLE `entersprises`
   ADD CONSTRAINT `Ent_Use` FOREIGN KEY (`ID_U`) REFERENCES `users` (`ID_U`);
 
 --
--- Limiti per la tabella `has`
+-- Constraints for table `has`
 --
 ALTER TABLE `has`
   ADD CONSTRAINT `Has_Tra` FOREIGN KEY (`ID_T`) REFERENCES `trains` (`ID_T`),
   ADD CONSTRAINT `Has_Wag` FOREIGN KEY (`ID_W`) REFERENCES `wagons` (`ID_W`);
 
 --
--- Limiti per la tabella `passes_by`
+-- Constraints for table `passes_by`
 --
 ALTER TABLE `passes_by`
   ADD CONSTRAINT `Pas_Hub` FOREIGN KEY (`ID_H`) REFERENCES `hubs` (`ID_H`),
   ADD CONSTRAINT `Pas_Tra` FOREIGN KEY (`ID_T`) REFERENCES `trains` (`ID_T`);
 
 --
--- Limiti per la tabella `privates`
+-- Constraints for table `privates`
 --
 ALTER TABLE `privates`
   ADD CONSTRAINT `Pri_Use` FOREIGN KEY (`ID_U`) REFERENCES `users` (`ID_U`);
 
 --
--- Limiti per la tabella `usrhubs`
+-- Constraints for table `usrhubs`
 --
 ALTER TABLE `usrhubs`
   ADD CONSTRAINT `Usr_Hub` FOREIGN KEY (`ID_H`) REFERENCES `hubs` (`ID_H`),

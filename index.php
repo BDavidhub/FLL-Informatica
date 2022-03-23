@@ -1,10 +1,17 @@
 <?php
+
+//ALL CREATED BY GIACOMO CASTELLAN
+
 session_start();
+echo $_SESSION['logged'];
 if(is_null(isset($_SESSION['logged']))){
   $_SESSION['logged'] = false;
 }
 
+function log_out(){
+  $_SESSION['logged'] = false;
 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +35,7 @@ if(is_null(isset($_SESSION['logged']))){
 
   <body>
   <nav class="navbar navbar-expand-lg navbar-light " >
-      <a class="navbar-brand" href="../index.php">
+      <a class="navbar-brand" href="index.php">
         <h3 class="trainNavbar fw-bold">TRAIN</h3>
       </a>
 
@@ -64,6 +71,8 @@ if(is_null(isset($_SESSION['logged']))){
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
               <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
+              <a class="dropdown-item" href="./pages/destroy_session.php">log-out</a>
+              
               <?php 
             
                if(isset($_SESSION['logged']) && $_SESSION['logged']==true){

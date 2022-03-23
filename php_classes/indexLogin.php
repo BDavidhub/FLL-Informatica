@@ -51,6 +51,11 @@ if($_SESSION['logged']==false)
     header('location: ../pages/registration.php?n=1');
 exit;
 }
+$_SESSION['macchinista'] = $password =='Macchinista'? true : false;  
+    if( $_SESSION['macchinista']==false){
+        $_SESSION['stazione'] = $password =='Venezia'? true : false;
+    }    
+$_SESSION['nome']=$mail;
  // $hubs=$main->getHubs();
 //var_dump($hubs);
 //$trains=$main->getTrainS();

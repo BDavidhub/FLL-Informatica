@@ -33,8 +33,9 @@
             </div>
             </a>
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
-              <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
+              <a class="dropdown-item" href="../registration.php">Registrati</a>
+              <a class="dropdown-item" href="../registration.php">Accedi</a>
+              
               <?php 
             
             if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
