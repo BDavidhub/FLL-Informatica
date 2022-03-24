@@ -32,10 +32,10 @@
       //inserise treni nel database e relativi dati
       function insert_train($limit, $departure, $arrival){
         $dated= new DateTime($departure);
-        $dated->format('Y-m-d H:i:s');
+        $dated= $dated->format('Y-m-d H:i:s');
         $datea= new DateTime($arrival);
-        $datea->format('Y-m-d H:i:s');
-        $GLOBALS['connection']->query("insert into trains(Limit,DateTimeDeparture,DateTimeArrival) values('$limit','$dated','$datea');");
+        $datea= $datea->format('Y-m-d H:i:s');
+        $GLOBALS['connection']->query("insert into trains (LimitT,DateTimeDeparture,DateTimeArrival) values($limit,'$dated','$datea');");
       }
 
       //inserire hub e relativi dati
@@ -54,7 +54,9 @@
       }
 
       //tutti i treni che passano per un hub
-
+      function train_passe_by_hub($codhub){
+        $GLOBALS['connection']->query("select distinct ID_T,SerialNumberT from trains,passes_by,hubs where(trains.ID_T=passes_by.ID_T and passes_by.ID_H=hubs.ID_H and trains.ID_T='$codhub');");
+      }
 
 
       try {
@@ -81,6 +83,6 @@
          //echo $row['']."<br />\n";
       }
     */
-    insert_train(10,'11-09-2001 13:30:50','11-09-2003 14:25:45');
-    insert_hub('Venezia',16);
+    //insert_train(10,'11-09-2001 13:30:50','11-09-2003 14:25:45');
+    //insert_hub('Venezia',16);
 ?>
