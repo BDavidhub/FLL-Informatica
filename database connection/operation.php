@@ -11,11 +11,11 @@
       }
 
       //inserire utente azienda (mail, password, telephone, vat, companyname, indirizzodifatturazione)
-      function sign_up_e($tel, $mail, $psw, $vat, $companyname, $accadresse){
+      function sign_up_e($tel, $mail, $psw, $vat, $companyname, $accadress){
         $GLOBALS['connection']->query("insert into users (Mail,Password,Telephone) values('$mail','$psw','$tel');");
         $ris= $GLOBALS['connection']->query("select ID_U from users where(Mail='$mail' AND Password='$psw' AND Telephone='$tel');");
         $row= $ris->fetch(PDO::FETCH_ASSOC);
-        $GLOBALS['connection']->query("insert into enterprises values('".$row["ID_U"]."','$vat','$companyname','$accadresse');");
+        $GLOBALS['connection']->query("insert into enterprises values('".$row["ID_U"]."','$vat','$companyname','$accadress');");
       }
 
       //data mail e password ritornare true se presente nel database, flase se non presente
@@ -29,10 +29,32 @@
         }
       }
 
-      //inserise dati dei treni
-      function insert_train($limit, $departure){
-
+      //inserise treni nel database e relativi dati
+      function insert_train($limit, $departure, $arrival){
+        $dated= new DateTime($departure);
+        $dated->format('Y-m-d H:i:s');
+        $datea= new DateTime($arrival);
+        $datea->format('Y-m-d H:i:s');
+        $GLOBALS['connection']->query("insert into trains(Limit,DateTimeDeparture,DateTimeArrival) values('$limit','$dated','$datea');");
       }
+
+      //inserire hub e relativi dati
+      function insert_hub($name,$capacity){
+        $GLOBALS['connection']->query("insert into hubs(NameH,CapacityH) values('$name','$capacity');");
+      }
+
+      //inserire numero di passaggio
+      function insert_passage($value,$codtrain,$codhub){
+        $GLOBALS['connection']->query("insert into passes_by values('$codtrain','$codhub','$value');");
+      }
+
+      //tutti gli hub che attraversa un treno
+      function hub_passes_by_train($codtrain){
+        $GLOBALS['connection']->query("select distinct ID_H,NameH from trains,passes_by,hubs where(trains.ID_T=passes_by.ID_T and passes_by.ID_H=hubs.ID_H and trains.ID_T='$codtrain');");
+      }
+
+      //tutti i treni che passano per un hub
+
 
 
       try {
@@ -40,7 +62,7 @@
         $hostname = "localhost";
         $dbname = "mysql";
         $user = "root";
-        $pass = "root";
+        $pass = "";
         $GLOBALS['connection'] = new PDO ("mysql:host=$hostname;dbname=$dbname", $user, $pass);
         $GLOBALS['connection']->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $GLOBALS['connection']->query("use treni_fll;");
@@ -58,6 +80,7 @@
          echo "<br>";
          //echo $row['']."<br />\n";
       }
-
     */
+    insert_train(10,'11-09-2001 13:30:50','11-09-2003 14:25:45');
+    insert_hub('Venezia',16);
 ?>
