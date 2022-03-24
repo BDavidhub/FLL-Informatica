@@ -68,10 +68,17 @@ function log_out(){
             </div>
             </a>
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./pages/registration.php">Registrati</a>
-              <a class="dropdown-item" href="./pages/registration.php">Accedi</a>
-              <a class="dropdown-item" href="./pages/destroy_session.php">log-out</a>
-              
+              <?php
+              if(!isset($_SESSION['logged']) || $_SESSION['logged']==false){ 
+                echo '<a class="dropdown-item" href="./pages/registration.php">Registrati</a>';
+                echo '<a class="dropdown-item" href="./pages/registration.php">Accedi</a>';
+              }
+              if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
+                  echo  '<a class="dropdown-item" href="./pages/destroy_session.php">log-out</a>';
+              }
+              ?>
+             
+
               <?php 
             
                if(isset($_SESSION['logged']) && $_SESSION['logged']==true){

@@ -12307,4 +12307,9 @@ body .section:nth-of-type(2) {
 .dropdown-menu {
   right: 1em;
 }
+
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
+}
 /*# sourceMappingURL=main.css.map */

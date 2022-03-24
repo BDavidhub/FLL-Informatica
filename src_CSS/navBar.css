@@ -12180,4 +12180,9 @@ fieldset:disabled .btn {
 .dropdown-menu {
   right: 1em;
 }
+
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
+}
 /*# sourceMappingURL=navBar.css.map */
