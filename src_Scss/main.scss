@@ -44,3 +44,7 @@ body {
 .dropdown-menu {
     right: 1em;
 }
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+ }
