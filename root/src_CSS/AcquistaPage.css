@@ -11962,6 +11962,103 @@ fieldset:disabled .btn {
   padding-right: 5rem !important;
 }
 
+
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  width: 800px !important;
+}
+
+.section1 {
+  margin-top: 2em;
+  width: 70em;
+  height: 30em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.biglietti-treni h1, .biglietti-treni .h1 {
+  margin-top: 2em;
+}
+
+.left-side {
+  width: 60%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 15px #c9c9c9;
+          box-shadow: 0 0 15px #c9c9c9;
+  border-radius: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.bottoni {
+  margin-top: 2.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.bottoni a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10em;
+  height: 50%;
+  background-color: #69c3f7;
+  border-radius: 1em;
+  padding: 1.5em;
+  margin: 1em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
+  border: none;
+  text-decoration: none;
+}
+
+.bottoni a:hover {
+  background-color: #4d96c0;
+}
+
+.last-part {
+  height: 25em;
+  background-image: url(../assets/images/bg-2.svg);
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
 .trainNavbar {
   margin-left: 2em;
   color: #f7f7f7;
@@ -12053,38 +12150,9 @@ h5, .h5 {
   color: #f7f7f7;
 }
 
-.scritta {
-  position: absolute;
-  margin: 0 0 5em 0;
-  top: 10em;
-}
-
-.scritta .subtext {
-  margin-top: 2em;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.scritta .subtext .text-center1 {
-  width: 40%;
-}
-
-@media (max-width: 1200px) {
-  .scritta .subtext p {
-    font-size: 0.8em;
-  }
-}
-
 .bar1 {
-  position: relative;
-  margin-top: 8em;
   background-color: #fcfcfc;
-  width: 700px;
+  width: 800px;
   -webkit-box-shadow: 0 0 5px #cacaca;
           box-shadow: 0 0 5px #cacaca;
   height: 75px;
@@ -12096,6 +12164,7 @@ h5, .h5 {
       -ms-flex-pack: end;
           justify-content: end;
   padding: 0;
+  margin-top: 8em;
 }
 
 .bar1 p {
@@ -12108,17 +12177,10 @@ h5, .h5 {
   background: none;
   border: none;
   padding: 0.1rem 0 0 0;
-  outline: none;
 }
 
 .bar1 input:focus {
   outline: none;
-}
-
-.bar1 select {
-  background: none;
-  border: none;
-  padding: 0.1rem 0 0 0;
 }
 
 .bar1 .location {
@@ -12143,20 +12205,21 @@ h5, .h5 {
 }
 
 .bar1 .check-in {
-  width: 30%;
+  width: 25%;
 }
 
 .bar1 .check-out {
-  width: 40%;
+  width: 55%;
 }
 
 .bar1 .check-out {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .bar1 .check-out .check-out1 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -12164,7 +12227,7 @@ h5, .h5 {
   margin: 0;
 }
 
-.bar1 .check-out span {
+.bar1 .check-out a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12175,87 +12238,113 @@ h5, .h5 {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  background-color: #63b7e7;
+  background-color: #69c3f7;
   color: white;
-  margin-left: 13rem;
-  margin-top: 0.7rem;
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
+  margin-left: 9.5rem;
+  margin-top: 0.3rem;
+  width: 12em;
+  height: 4em;
+  border-radius: 10em;
+  text-decoration: none;
   -webkit-transition: background-color 150ms ease-in;
   transition: background-color 150ms ease-in;
 }
 
-.bar1 .check-out span input {
-  padding: 1.2em;
+.bar1 .check-out a h6, .bar1 .check-out a .h6 {
+  white-space: nowrap;
+  padding: 2em;
+  margin-top: 0.4em;
   border-radius: inherit;
-  position: absolute;
 }
 
-.bar1 .check-out span:hover {
+.bar1 .check-out a:hover {
   background-color: #4d96c0;
 }
 
-.linea {
-  width: 100%;
-  height: 0.7em;
-  background-color: #b4b4b4;
-}
-
-.linea img {
-  position: absolute;
-  top: -4.3em;
-  height: 8em;
-  right: 0;
-  width: auto;
-}
-
-.wrapper {
-  margin-top: 5%;
-  width: 70%;
-  margin-left: 17%;
-}
-
-.cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cards li {
-  border: 2px solid #23b0ff;
-  border-radius: 0.5em;
-  background-color: #1ac0f3;
-  color: #fff;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 200px;
-          flex: 1 1 200px;
-}
-
-.cards h2, .cards .h2 {
-  background-color: #23b0ff;
-  margin: 0;
-  padding: 10px;
-}
-
-.cards p {
-  padding: 10px;
-}
-
-.flex {
+.container {
+  margin-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0 -10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.flex li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 200px;
-          flex: 1 1 200px;
-  margin: 10px;
+.progress__container {
+  width: 55rem;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.progress__container::before {
+  content: "";
+  width: 100%;
+  height: 0.8rem;
+  background-color: #ced6d5;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress__bar {
+  width: 0%;
+  height: 0.8rem;
+  background-color: #69c3f7;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.progress__circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #69c3f7;
+  background-color: #ced6d5;
+  border: 0.8rem solid #ced6d5;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.progress__circle.active {
+  color: #69c3f7;
+  border: 0.1rem solid #69c3f7;
+  background-color: #69c3f7;
+  -webkit-box-shadow: #69c3f7 0px 0px 0px 13px, #69c3f7 0px 0px 15px 12px;
+          box-shadow: #69c3f7 0px 0px 0px 13px, #69c3f7 0px 0px 15px 12px;
 }
 
 * {
@@ -12276,26 +12365,9 @@ body .navbar {
   background-color: #22afff;
 }
 
-body .section:nth-of-type(1) {
-  width: 100%;
-  background-image: url("../assets/images/Group24.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
 body .section:nth-of-type(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-image: url("../assets/images/bg-2.svg");
+  background-image: url(../assets/images/bg-2.svg);
   background-size: 100%;
-  height: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
 }
@@ -12307,9 +12379,4 @@ body .section:nth-of-type(2) {
 .dropdown-menu {
   right: 1em;
 }
-
-.inactiveLink {
-  pointer-events: none;
-  cursor: default;
-}
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=AcquistaPage.css.map */

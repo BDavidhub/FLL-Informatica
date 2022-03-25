@@ -3,7 +3,7 @@
 session_start();
 require_once('../php_classes/Main.php');
 $main = unserialize(serialize($_SESSION['main']));
-
+$_SESSION['loggedIn'] =1;
 $_SESSION['t'] = $_REQUEST['t'];
 
 ?>

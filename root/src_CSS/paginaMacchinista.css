@@ -11992,27 +11992,6 @@ fieldset:disabled .btn {
   color: #2c2c2c;
 }
 
-h5, .h5 {
-  color: white;
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 2rem;
-}
-
-.dropdown-menu {
-  border-radius: 1rem;
-  border: none;
-}
-
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
-  background-color: inherit;
-  border-radius: 2rem;
-  color: #a09e9e;
-  outline: none;
-}
-
 .account-menu {
   width: 4.5em;
   height: 2em;
@@ -12053,118 +12032,243 @@ h5, .h5 {
   color: #f7f7f7;
 }
 
-.scritta {
-  position: absolute;
-  margin: 0 0 5em 0;
-  top: 10em;
+.dropdown-menu {
+  border-radius: 1rem;
+  border: none;
 }
 
-.scritta .subtext {
-  margin-top: 2em;
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: inherit;
+  border-radius: 2rem;
+  color: #a09e9e;
+  outline: none;
+}
+
+.title1 {
+  text-align: center;
+  margin-top: 6em;
+}
+
+.mappa1 {
   width: 100%;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.scritta .subtext .text-center1 {
-  width: 40%;
+.mappa1 .percorso1 {
+  margin-top: 10em;
+  height: 1em;
+  border-radius: 2em;
+  width: 70%;
+  background: #1ac0f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-@media (max-width: 1200px) {
-  .scritta .subtext p {
-    font-size: 0.8em;
-  }
+.mappa1 .percorso1 .stazione1 {
+  height: 3em;
+  width: 3em;
+  border-radius: 2em;
+  background: #1ac0f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
 }
 
-.bar1 {
+.mappa1 .rectBlue {
+  width: 80%;
+  height: 18em;
+  margin-top: 6em;
+  background-color: #1ac0f3;
+  border-radius: 1em;
+}
+
+.mappa1 .rectBlue h3, .mappa1 .rectBlue .h3 {
+  background: #1186aa;
+  color: white;
+  padding: 10px;
+  border-radius: 0.6em 0.6em 0 0;
+  text-align: center;
+}
+
+.mappa1 .rectBlue .trennno {
+  margin-top: 2em;
+}
+
+.mappa1 .rectBlue .trennno .entrata {
+  margin-bottom: 0.3em;
+  color: white;
+  padding: 15px;
+  background-color: #1693b9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mappa1 .rectBlue .trennno .entrata .trenoImg {
+  margin-left: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mappa1 .rectBlue .trennno .entrata .trenoImg .wagon {
+  width: 80px;
+  height: 50px;
   position: relative;
-  margin-top: 8em;
-  background-color: #fcfcfc;
-  width: 700px;
-  -webkit-box-shadow: 0 0 5px #cacaca;
-          box-shadow: 0 0 5px #cacaca;
-  height: 75px;
-  border-radius: 100vw;
+  z-index: 2;
+  margin-left: 0;
+  text-align: center;
+  background: url("../assets/images/vagone-red.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px;
+}
+
+.mappa1 .rectBlue .trennno .uscita {
+  color: white;
+  padding: 15px;
+  background-color: #1693b9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  padding: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 0 0 1em 1em;
 }
 
-.bar1 p {
-  padding: 0;
-  margin: 1rem 0 0 0;
-  font-size: 0.8rem;
-}
-
-.bar1 input {
-  background: none;
-  border: none;
-  padding: 0.1rem 0 0 0;
-  outline: none;
-}
-
-.bar1 input:focus {
-  outline: none;
-}
-
-.bar1 select {
-  background: none;
-  border: none;
-  padding: 0.1rem 0 0 0;
-}
-
-.bar1 .location {
-  width: 30%;
-}
-
-.bar1 div {
-  border-radius: 5em;
-  padding: 0.1rem 1.5rem;
-  -webkit-transition: background-color 250ms ease;
-  transition: background-color 250ms ease;
-}
-
-.bar1 div:hover {
-  background-color: #ebebeb;
-}
-
-.bar1 div:target, .bar1 div:focus {
-  background-color: #f8f8f8;
-  -webkit-box-shadow: 0 0 10px #c9c9c9;
-          box-shadow: 0 0 10px #c9c9c9;
-}
-
-.bar1 .check-in {
-  width: 30%;
-}
-
-.bar1 .check-out {
-  width: 40%;
-}
-
-.bar1 .check-out {
+.mappa1 .rectBlue .trennno .uscita .trenoImg {
+  margin-left: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mappa1 .rectBlue .trennno .uscita .trenoImg .wagon {
+  width: 80px;
+  height: 50px;
+  position: relative;
+  z-index: 2;
+  margin-left: 0;
+  text-align: center;
+  background: url("../assets/images/vagone-red.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px;
+}
+
+.container {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.bar1 .check-out .check-out1 input[type="date"]::-webkit-calendar-picker-indicator {
+.progress__container {
+  width: 55rem;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.progress__container::before {
+  content: "";
+  width: 100%;
+  height: 0.8rem;
+  background-color: #ced6d5;
+  position: absolute;
+  top: 50%;
   left: 0;
-  margin: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
 }
 
-.bar1 .check-out span {
+.progress__bar {
+  width: 0%;
+  height: 0.8rem;
+  background-color: #69c3f7;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.progress__circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #69c3f7;
+  background-color: #ced6d5;
+  border: 0.8rem solid #ced6d5;
+  border-radius: 50%;
+  font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12174,88 +12278,16 @@ h5, .h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  background-color: #63b7e7;
-  color: white;
-  margin-left: 13rem;
-  margin-top: 0.7rem;
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-  -webkit-transition: background-color 150ms ease-in;
-  transition: background-color 150ms ease-in;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
-.bar1 .check-out span input {
-  padding: 1.2em;
-  border-radius: inherit;
-  position: absolute;
-}
-
-.bar1 .check-out span:hover {
-  background-color: #4d96c0;
-}
-
-.linea {
-  width: 100%;
-  height: 0.7em;
-  background-color: #b4b4b4;
-}
-
-.linea img {
-  position: absolute;
-  top: -4.3em;
-  height: 8em;
-  right: 0;
-  width: auto;
-}
-
-.wrapper {
-  margin-top: 5%;
-  width: 70%;
-  margin-left: 17%;
-}
-
-.cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cards li {
-  border: 2px solid #23b0ff;
-  border-radius: 0.5em;
-  background-color: #1ac0f3;
-  color: #fff;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 200px;
-          flex: 1 1 200px;
-}
-
-.cards h2, .cards .h2 {
-  background-color: #23b0ff;
-  margin: 0;
-  padding: 10px;
-}
-
-.cards p {
-  padding: 10px;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0 -10px;
-}
-
-.flex li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 200px;
-          flex: 1 1 200px;
-  margin: 10px;
+.progress__circle.active {
+  color: #69c3f7;
+  border: 0.1rem solid #69c3f7;
+  background-color: #69c3f7;
+  -webkit-box-shadow: #69c3f7 0px 0px 0px 13px, #69c3f7 0px 0px 15px 12px;
+          box-shadow: #69c3f7 0px 0px 0px 13px, #69c3f7 0px 0px 15px 12px;
 }
 
 * {
@@ -12276,26 +12308,11 @@ body .navbar {
   background-color: #22afff;
 }
 
-body .section:nth-of-type(1) {
-  width: 100%;
-  background-image: url("../assets/images/Group24.png");
+.last-part {
+  position: relative;
+  height: 25em;
+  background-image: url(../assets/images/bg-2.svg);
   background-size: 100%;
-  background-repeat: no-repeat;
-}
-
-body .section:nth-of-type(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-image: url("../assets/images/bg-2.svg");
-  background-size: 100%;
-  height: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
 }
@@ -12307,9 +12324,4 @@ body .section:nth-of-type(2) {
 .dropdown-menu {
   right: 1em;
 }
-
-.inactiveLink {
-  pointer-events: none;
-  cursor: default;
-}
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=paginaMacchinista.css.map */

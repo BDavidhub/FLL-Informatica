@@ -10,7 +10,7 @@
   <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
+  
   <link rel="stylesheet" href="../src_CSS/registration.css" />
 
   <title>Log-in/Register Page</title>
@@ -59,7 +59,7 @@
           <div class="flexBox">
             <input type="text" placeholder="Nome" name="nomeReg" class="nome">
             <input type="text" placeholder="Cognome" name="cognomeReg" class="cognome">
-            <input type="tel" placeholder="2453423455" name="teleReg" class="telefono">
+            <input type="tel" placeholder="numero di telefono" name="teleReg" class="telefono">
             <input type="email" placeholder="Email" name="mailReg" class="email">
             <input type="password" placeholder="Password" name="passwordReg">
             <input type="password" placeholder="Confirm Password" name="passwordCheckReg">

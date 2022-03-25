@@ -181,18 +181,27 @@ class Main
 
     public function findingTrainsAlgo($depart, $arriv, $timeStamp)
     {
+        
         $indexArray = array();
         $found = 0;
-
+        //  echo"<pre>";
+        //  var_dump($this->trains);
+        
+        //  echo"</pre>";
         for ($curr = 0; $curr < count($this->trains); $curr++) {
             if (($this->trains[$curr]->getDeparture()->getName() == $depart) && ($this->trains[$curr]->getArrive()->getName() == $arriv) && ($timeStamp < $this->trains[$curr]->getDateTimeDeparture())) {
                 $indexArray[$found] = $curr;
-                // echo $this->trains[$curr]->getDeparture() . $this->trains[$curr]->getTimestamp();
+                 echo $this->trains[$curr]->getDeparture() . $this->trains[$curr]->getTimestamp();
                 $found++;
             }
         }
 
         return $indexArray;
+    }
+    public function hubsArray(){
+
+        
+
     }
 
     public function getUser($mail){

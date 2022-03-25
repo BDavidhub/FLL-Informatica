@@ -33,18 +33,25 @@
             </div>
             </a>
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../registration.php">Registrati</a>
-              <a class="dropdown-item" href="../registration.php">Accedi</a>
-              
+            <?php
+              if(!isset($_SESSION['logged']) || $_SESSION['logged']==false){ 
+                echo '<a class="dropdown-item" href="../registration.php">Registrati</a>';
+                echo '<a class="dropdown-item" href="../registration.php">Accedi</a>';
+              }
+              if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
+                  echo  '<a class="dropdown-item" href="../destroy_session.php">log-out</a>';
+              }
+            ?>
+             
               <?php 
             
             if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
              echo '<div class="dropdown-divider"></div>';
              if(isset($_SESSION['macchinista']) &&   $_SESSION['macchinista'] == true){
-               echo '<a class="dropdown-item" href="./pages/macchinista.php">Macchinista</a>';
+               echo '<a class="dropdown-item" href="../macchinista.php">Macchinista</a>';
                  
                 }else if(isset($_SESSION['stazione']) && $_SESSION['stazione'] == true&&$_SESSION['macchinista'] == false){
-               echo '<a class="dropdown-item" href="./pages/hubInterface.php">HUB</a>';
+               echo '<a class="dropdown-item" href="../hubInterface.php">HUB</a>';
                 }else{
                  echo '<p class="dropdown-item">Logged</p>';
                 }
