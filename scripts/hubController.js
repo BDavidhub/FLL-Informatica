@@ -104,7 +104,7 @@ function removeWagons(arrRem) {
 
 
 
-//aggiungimento vagoni
+//aggiungi vagoni
 function addWagons(arrLeave) {
     var fp = 0;
     var contP = addToTrain.length;
@@ -140,7 +140,7 @@ function addWagons(arrLeave) {
 
         //
         if (i >= fp && i < fp + contP) {
-            dist = (i * wm) + 200;
+            dist = (i * wm) + 200;  //+ 200 se c'è la motrice
             makeSpace = contP * wm;
             swArr[i].style = 'display: block';
             swArr[i].innerHTML = arrLeave[fp];
@@ -218,8 +218,8 @@ function trainDeparture() {
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
-    setTimeout(callAddWagons, 6000);
     setTimeout(callRemoveWagons, 3000);
+    setTimeout(callAddWagons, 6000);
     setTimeout(trainDeparture, 9500);
 }
 
@@ -231,12 +231,12 @@ function trainDeparture() {
 // const xhr = new XMLHttpRequest();
 //$.ajax('test.json',
 
-$.ajax('',//../php_classes/Json.php?train=T1&hub=H2  
+$.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2  
     {
         success: function (data, status, xhr) {
             console.log(data);
 
-        var resObj= data;
+        var resObj = data;
         
         /*
         Riempimento treno in entrata

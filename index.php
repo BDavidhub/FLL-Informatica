@@ -3,7 +3,6 @@
 //ALL CREATED BY GIACOMO CASTELLAN
 
 session_start();
-echo $_SESSION['logged'];
 if(is_null(isset($_SESSION['logged']))){
   $_SESSION['logged'] = false;
 }
