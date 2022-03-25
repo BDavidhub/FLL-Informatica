@@ -125,22 +125,22 @@ function log_out(){
             <p class="fw-bold">Da dove</p>
 
            <select class="form-select" name="fdove" id="inputGroupSelect01">
-              <option value="Torino" >Torino</option>
-              <option value="Firenze">Udine</option>
-              <option value="Trento" selected>Milano</option>
-              <option value="Udine">Padova</option>
-              <option value="Trento">Venezia</option>
+              <option value="Torino"  selected>Torino</option>
+              <option value="Udine">Udine</option>
+              <option value="Milano">Milano</option>
+              <option value="Padova">Padova</option>
+              <option value="Venezia">Venezia</option>
             </select>
           </div>
            <div class="check-in">
                 <p class="fw-bold">Destinazione</p>
 
             <select class="form-select" name="fdestinazione" id="inputGroupSelect01">
-              <option value="Trento">Milano</option>
-              <option value="Udine">Padova</option>
-              <option value="Trento" selected>Venezia</option>
-              <option value="Trento">Torino</option>
-              <option value="Udine">Udine</option>
+              <option value="Milano">Milano</option>
+              <option value="Padova">Padova</option>
+              <option value="Venezia" >Venezia</option>
+              <option value="Torino">Torino</option>
+              <option value="Udine"  selected>Udine</option>
             </select>
           </div>
           <div class="check-out">
