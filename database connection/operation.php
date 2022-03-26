@@ -120,7 +120,15 @@
         $GLOBALS['connection']->query("select distinct ID_T,SerialNumberT from trains,passes_by,hubs where(trains.ID_T=passes_by.ID_T and passes_by.ID_H=hubs.ID_H and trains.ID_T='$codhub');");
       }
 
-
+      //dato il nome di una stazione, ne ritorna il codice
+      function codestation($name)
+      {
+        $ris=$GLOBALS['connection']->query("select ID_H from hubs where(NameH='$name');");
+        $row= $ris->fetch(PDO::FETCH_ASSOC);
+        if (! empty($row["ID_H"])) {
+          return $row;
+        }
+      }
       try {
         //instaurazione della connessione
         $hostname = "localhost";
