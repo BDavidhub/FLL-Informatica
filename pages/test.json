@@ -1,18 +1,25 @@
 {
     "array": [
         [
-            {"id":"W5","arrive":"Venezia","arrAbb":"VE"},
-            {"id":"W5","arrive":"Venezia","arrAbb":"VE"},
-            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
-            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
-            {"id":"W5","arrive":"Venezia","arrAbb":"MI"}   
+            {"id":"W5","arrive":"Padova","arrAbb":"VE"},
+            {"id":"W5","arrive":"Padova","arrAbb":"VE"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"}         
+
         ],
         [
-            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
-            {"id":"W5","arrive":"Venezia","arrAbb":"PD"},
-            {"id":"W5","arrive":"Venezia","arrAbb":"MI"},
-            {"id":"W5","arrive":"Venezia","arrAbb":"TO"}
-                 
+   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},   
+            {"id":"W5","arrive":"Padova","arrAbb":"MI"},            
+            {"id":"W5","arrive":"Padova","arrAbb":"TO"}                       
         ]
     ]
 }
