@@ -1,11 +1,11 @@
 <?php
     // require_once __WEBROOT__ . '/includes/safestring.class.php';
     session_start();
-    @include_once("./includes/navbar.php");
     require_once('../php_classes/Main.php');
     $main = unserialize(serialize($_SESSION['main']));
     // preparing array of train ticketes 
     $arrayindex = $main->findingTrainsAlgo($_SESSION['dove'], $_SESSION['destinazione'], $_SESSION['data']);
+    
     $_SESSION['arrayIndex'] = $arrayindex;
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  
+   <?php @include_once("./includes/navbar.php");?>
         <div class="section container-fluid">
 
             
@@ -31,8 +31,7 @@
                     echo '<img src="../assets/images/sadFace.png" alt="sad face" style="width:300px; height:240px; margin-top:10em;">';
                 }
                 // echo $main->getTrains()[$arrayindex[0]]->getDeparture();
-
-            
+                
                 for ($i = 0; $i < count($arrayindex); $i++) {
 
                     $time =  $main->getTrains()[$arrayindex[$i]]->getDateTimeDeparture()->format("H:i") ;
