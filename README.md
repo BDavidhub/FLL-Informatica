@@ -1,7 +1,7 @@
 # FLL-Informatica
 
 Per il progetto della FLL PLANCK TEAM
-
+1° push Maguolo
 <b>Cose da fare: </b>
 <ul>
     <li>metodo __toString delle classi Train e Wagon (<a href="https://devdojo.com/devdojo/php-to-string-equivalent">guardate questo</a>).</li>
