@@ -1,104 +1,59 @@
-// import { ciao } from './hubController.js';
-var aperto = false;
-  $('.stazione1').click(function(){
-      //  console.log($('.stazione1').attr('name'));
-       $('.rectBlue').children('h3').text($(this).attr('name'));
+// var aperto = false;
+// $('.stazione1').click(function () {
+//     $('.rectBlue').children('h3').text($(this).attr('name'));
 
 
-
-
-      //  callUpdateTrain();
-  });    
-// var stazione1 =  document.querySelectorAll('.stazione1');
-// stazione1.forEach(stazione1 => {
-// stazione1.addEventListener('click', event => {
-// console.log(stazione1.getAttribute('id'));
-// $('.rectB').toggle(4000);
 // });
+let tw = document.querySelectorAll(".tw");
+let sw = document.querySelectorAll(".sw");
+const button = document.getElementById("start");
+button.addEventListener("click", showTrains)
 
-//  });
+const arrivingTrain = []
+const leavingTrain = []
+function showTrains() {
+    tw.forEach(element => {
+        element.style = "display:none"
+    });
+    sw.forEach(element => {
+        element.style = "display:none"
+    });
 
-// let arrivingTrain = [MI,MI,MI,];
-// let leavingTrain = [];
-// let removeFromT = [];
-// let addToTrain = [];
 
-// const xhr = new XMLHttpRequest();
-$.ajax('test.json',  
+
+    for (var i = 0; i < arrivingTrain.length; i++) {
+        sw[i].style = "display:block"
+        sw[i].innerHTML = arrivingTrain[i]
+    }
+
+    for (var i = 0; i < leavingTrain.length; i++) {
+        tw[i].style = "display:block"
+        tw[i].innerHTML = leavingTrain[i]
+    }
+
+}
+
+$.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2  
     {
         success: function (data, status, xhr) {
-            console.log(data);
+            console.log(data)
+            var resObj = data
 
-        var resObj= data;
-            
-        
-        /*
-        FILL ARRIVINGTRAIN ARRAY
-        */
-        for (var i = 0; i < resObj.array[0].length; i++) {
-            arrivingTrain.push(resObj.array[0][i].arrAbb);
-        }
-
-        /*
-        FILL LEAVINGTRAIN ARRAY
-        */
-        for (var i = 0; i < resObj.array[1].length; i++) {
-            leavingTrain.push(resObj.array[1][i].arrAbb);
-        }
-        /*
-        FILL REMOVEFROMT ARRAY
-        */
-
-        var find = arrivingTrain[0]; 
-        var search = true;
-
-        for (var i = 0; i < leavingTrain.length; i++) {
-            if (leavingTrain[i] == find) {
-                console.log("si")
-                search = false;
+            /*
+            preparing entering train
+           */
+            for (var i = 0; i < resObj.array[0].length; i++) {
+                arrivingTrain.push(resObj.array[0][i].arrAbb);
             }
-        }
-
-        console.log(search);
-        if (search) {
-            console.log("si");
-            for (var i = 0; i < arrivingTrain.length; i++) {
-
-                if (arrivingTrain[i] == find) {
-                    console.log("--" + arrivingTrain[i])
-                    removeFromT.push(arrivingTrain[i])
-                    // console.log(removeFromT[i])
-                }
-
-            }
-        }
-
-        stazTit.innerHTML = " Stazione: " + removeFromT[0];
-        /*
-        FILL ADDTOTRAIN ARRAY
-        */
-        var cont = 0;
-        for (var i = 0; i < leavingTrain.length; i++) {
-            cont = 0;
-            for (var j = 0; j < arrivingTrain.length; j++) {
-                if (leavingTrain[i] == arrivingTrain[j]) {
-                    cont++;
-                }
-
+            /*
+            preparing exiting train
+            */
+            for (var i = 0; i < resObj.array[1].length; i++) {
+                leavingTrain.push(resObj.array[1][i].arrAbb);
             }
 
-            if (cont == 0) {
-
-        //  console.log(leavingTrain[i])
-                addToTrain.push(leavingTrain[i]);
-            }
+            console.log(arrivingTrain)
+            console.log(leavingTrain)
         }
+    });
 
-        console.log(arrivingTrain)
-        console.log(leavingTrain)
-        console.log(removeFromT)
-        console.log(addToTrain)
-
-
-        }
-});

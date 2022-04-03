@@ -1,4 +1,4 @@
-    @import "./custom";
+@import "./custom";
 
 body,
 html {
@@ -10,14 +10,13 @@ html {
     background-position: bottom;
     background-repeat: no-repeat;
 
-    .yourStaz{
+    .yourStaz {
         width: 500px;
         background-color: $primary;
         text-align: center;
         font-size: 2rem;
         padding: 0.1em;
         border-radius: 0 0 10px 0;
-
     }
     .info {
         position: absolute;
@@ -86,13 +85,14 @@ html {
 
     .head_sx {
         position: relative;
+        // display: none; //invisible
         z-index: 2;
         height: 50px;
-        width: 200px;
+        width: 1px;
         margin: 0;
-        background: url("../assets/images/motrice_sx-red.png") no-repeat;
-        background-position: center;
-        background-size: 200px;
+        // background: url("../assets/images/motrice_sx-red.png") no-repeat;
+        // background-position: center;
+        // background-size: 200px;
     }
     .head_dx {
         position: relative;

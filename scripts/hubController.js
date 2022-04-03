@@ -9,18 +9,12 @@ let aW = document.getElementById("aW");
 let lW = document.getElementById("lW");
 let stazTit = document.getElementById("stazTit");
 let start = document.getElementById("start123");
-// console.log(twArr);
-// console.log(swArr);
 let wm = 80;
 let dist;
 let arrivingTrain = [];
 let leavingTrain = [];
 let removeFromT = [];
 let addToTrain = [];
-
-export function ciao(){
-    console.log(ciao);
-}
 
 function reset() {
     for (var i = 0; i < tw.length; i++) {
@@ -125,7 +119,7 @@ function addWagons(arrLeave) {
     console.log("fp:" + fp);
 
     for (var i = 0; i < arrLeave.length; i++) {
-        if (arrTrain[i] != arrLeave[i]) { 
+        if (arrTrain[i] != arrLeave[i]) {
             console.log(i);
             arrTrain.splice(i, 0, arrLeave[i]);
         }
@@ -140,7 +134,7 @@ function addWagons(arrLeave) {
 
         //
         if (i >= fp && i < fp + contP) {
-            dist = (i * wm) + 200;
+            dist = (i * wm); //con locomotiva iniziale -->  + 200
             makeSpace = contP * wm;
             swArr[i].style = 'display: block';
             swArr[i].innerHTML = arrLeave[fp];
@@ -195,7 +189,7 @@ function addWagons(arrLeave) {
 function upArrTrain() {
     updateTrain(arrTrain);
 }
- function callUpdateTrain() {
+function callUpdateTrain() {
     updateTrain(arrivingTrain);
 }
 function callRemoveWagons() {
@@ -214,7 +208,7 @@ function trainDeparture() {
 
 }
 
- function automatic() {
+function automatic() {
     reset();
     resetArr();
     setTimeout(callUpdateTrain, 1000);
@@ -224,89 +218,85 @@ function trainDeparture() {
 }
 
 
-/////
 
 
-
-// const xhr = new XMLHttpRequest();
-//$.ajax('test.json',  
 
 $.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2  
     {
         success: function (data, status, xhr) {
             console.log(data);
 
-        var resObj= data;
-            
-        
-        /*
-        Riempimento treno in entrata
-        */
-        for (var i = 0; i < resObj.array[0].length; i++) {
-            arrivingTrain.push(resObj.array[0][i].arrAbb);
-        }
+            var resObj = data;
 
-        /*
-          Riempimento treno in uscita
-        */
-        for (var i = 0; i < resObj.array[1].length; i++) {
-            leavingTrain.push(resObj.array[1][i].arrAbb);
-        }
-        /*
-        Rimozione treno
-        */
 
-        var find = arrivingTrain[0]; 
-        var search = true;
-
-        for (var i = 0; i < leavingTrain.length; i++) {
-            if (leavingTrain[i] == find) {
-                console.log("si")
-                search = false;
+            /*
+            Riempimento treno in entrata
+            */
+            for (var i = 0; i < resObj.array[0].length; i++) {
+                arrivingTrain.push(resObj.array[0][i].arrAbb);
             }
-        }
 
-        console.log(search);
-        if (search) {
-            console.log("si");
-            for (var i = 0; i < arrivingTrain.length; i++) {
+            /*
+              Riempimento treno in uscita
+            */
+            for (var i = 0; i < resObj.array[1].length; i++) {
+                leavingTrain.push(resObj.array[1][i].arrAbb);
+            }
+            /*
+            Rimozione treno
+            */
 
-                if (arrivingTrain[i] == find) {
-                    console.log("--" + arrivingTrain[i])
-                    removeFromT.push(arrivingTrain[i])
-                    // console.log(removeFromT[i])
+            var find = arrivingTrain[0];
+            var search = true;
+
+            for (var i = 0; i < leavingTrain.length; i++) {
+                if (leavingTrain[i] == find) {
+                    console.log("si")
+                    search = false;
+                }
+            }
+
+            console.log(search);
+            if (search) {
+                console.log("si");
+                for (var i = 0; i < arrivingTrain.length; i++) {
+
+                    if (arrivingTrain[i] == find) {
+                        console.log("--" + arrivingTrain[i])
+                        removeFromT.push(arrivingTrain[i])
+                        // console.log(removeFromT[i])
+                    }
+
+                }
+            }
+
+            stazTit.innerHTML = " Stazione: " + removeFromT[0];
+
+            var cont = 0;
+            for (var i = 0; i < leavingTrain.length; i++) {
+                cont = 0;
+                for (var j = 0; j < arrivingTrain.length; j++) {
+                    if (leavingTrain[i] == arrivingTrain[j]) {
+                        cont++;
+                    }
+
                 }
 
-            }
-        }
+                if (cont == 0) {
 
-        stazTit.innerHTML = " Stazione: " + removeFromT[0];
-
-        var cont = 0;
-        for (var i = 0; i < leavingTrain.length; i++) {
-            cont = 0;
-            for (var j = 0; j < arrivingTrain.length; j++) {
-                if (leavingTrain[i] == arrivingTrain[j]) {
-                    cont++;
+                    //  console.log(leavingTrain[i])
+                    addToTrain.push(leavingTrain[i]);
                 }
-
             }
 
-            if (cont == 0) {
-
-        //  console.log(leavingTrain[i])
-                addToTrain.push(leavingTrain[i]);
-            }
-        }
-
-        console.log(arrivingTrain)
-        console.log(leavingTrain)
-        console.log(removeFromT)
-        console.log(addToTrain)
+            console.log(arrivingTrain)
+            console.log(leavingTrain)
+            console.log(removeFromT)
+            console.log(addToTrain)
 
 
         }
-});
+    });
 
 start.addEventListener("click", automatic)
 
