@@ -10,6 +10,18 @@ if ($_SESSION['loggedIn'] == 1) {
     $_SESSION['numeroOrdinato'] = $_POST['numReg'];
     header('location: acquistaRiepilogo.php?n=4');
 }
+function write_file1($filename = "../../lego.html")
+{
+    $handler = fopen($filename, 'w+');
+    if (false === $handler) {
+        echo "Impossibile aprire il file $filename";
+        exit;
+    }
+    fwrite($handler, "#0-00000110#1-00000000#2-00000110#3-00000110#4-00000010#5-00000111#6-00000000#7-00000000#8-00000000#9-00000000");
+    fclose($handler);
+}
+write_file1();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

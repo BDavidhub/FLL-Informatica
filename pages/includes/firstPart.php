@@ -1,6 +1,6 @@
         <div class="bar1 container-fluid">
                 <div class="location">
-                    <p class="fw-bold">Dove</p>
+                    <p class="fw-bold">Partenza</p>
                     <input type="text" value="<?php echo $_SESSION['dove'] ?>" readonly>
                 </div>
                 <div class="check-in">

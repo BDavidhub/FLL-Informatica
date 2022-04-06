@@ -122,7 +122,7 @@ function log_out(){
         <form action="php_classes/index.php" method="post">
         <div class="bar1 container-fluid">
           <div class="location">
-            <p class="fw-bold">Da dove</p>
+            <p class="fw-bold">Partenza</p>
 
            <select class="form-select" name="fdove" id="inputGroupSelect01">
               <option value="Torino"  selected>Torino</option>
