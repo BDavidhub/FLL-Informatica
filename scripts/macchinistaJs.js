@@ -1,14 +1,13 @@
-// var aperto = false;
-// $('.stazione1').click(function () {
-//     $('.rectBlue').children('h3').text($(this).attr('name'));
+var aperto = false;
+$('.stazione1').click(function () {
+    $('.rectBlue').children('h3').text($(this).attr('name'));
+    console.log("xxx");
+    showTrains();
 
-
-// });
+});
 let tw = document.querySelectorAll(".tw");
 let sw = document.querySelectorAll(".sw");
 const button = document.getElementById("start");
-button.addEventListener("click", showTrains)
-
 const arrivingTrain = []
 const leavingTrain = []
 function showTrains() {
@@ -56,4 +55,3 @@ $.ajax('test.json',//../php_classes/Json.php?train=T1&hub=H2
             console.log(leavingTrain)
         }
     });
-

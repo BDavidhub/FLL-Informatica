@@ -112,7 +112,7 @@ session_start();
                 </div>
             </div>
         </div>
-        <button id="start">BUTTON Start</button>
+        <!-- <button id="start">BUTTON Start</button> -->
     </div>
 
     <!-- main.js script  -->
