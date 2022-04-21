@@ -150,35 +150,44 @@ function log_out()
                 </div>
             </form>
         </div>
+        <form action="php_classes/index.php" method="post">
+            <div class="bar1 container-fluid">
+                <div class="location">
+                    <p class="fw-bold">Partenza</p>
 
+                    <select class="form-select" name="fdove" id="inputGroupSelect01">
+                        <option value="Torino" selected>Torino</option>
+                        <option value="Udine">Udine</option>
+                        <option value="Milano">Milano</option>
+                        <option value="Padova">Padova</option>
+                        <option value="Venezia">Venezia</option>
+                    </select>
+                </div>
+                <div class="check-in">
+                    <p class="fw-bold">Destinazione</p>
 
-        <div class="section container-fluid">
-
-            <div class="wrapper">
-                <h1>About</h1>
-                <ul class="flex cards">
-                    <li>
-                        <h2>Registration</h2>
-                        <p>Log in or if this is the first time you use our service, register by entering your name,
-                            surname, email and telephone number
-                        </p>
-                    </li>
-                    <li>
-                        <h2>Make an Order</h2>
-                        <p>Choose the route of the package or wagon you want to send, you don't have one? No problem
-                            with our service you can rent as many as you need
-                        </p>
-                    </li>
-                    <li>
-                        <h2>Our Offerings</h2>
-                        <p>What you have sent will arrive through the first available trains and you can follow it at
-                            any time thanks to continuous tracking
-                        </p>
-                    </li>
-                </ul>
+                    <select class="form-select" name="fdestinazione" id="inputGroupSelect01">
+                        <option value="Milano">Milano</option>
+                        <option value="Padova">Padova</option>
+                        <option value="Venezia">Venezia</option>
+                        <option value="Torino">Torino</option>
+                        <option value="Udine" selected>Udine</option>
+                    </select>
+                </div>
+                <div class="check-out">
+                    <nav class="check-out1">
+                        <p class="fw-bold">Data</p>
+                        <input type="date" name="fdata" value="<?php $td = new DateTime();
+                                                                echo $td->format('Y-m-d'); ?>" min="2022-01-01"
+                            max="2023-01-01" required>
+                    </nav>
+                    <span>
+                        <input type="submit" value=" " id="searchButton">
+                        <i class="lni lni-search-alt"></i>
+                    </span>
+                </div>
 
             </div>
-        </div>
 
 
     </div>

@@ -134,7 +134,7 @@
         $hostname = "localhost";
         $dbname = "mysql";
         $user = "root";
-        $pass = "";
+        $pass = "root";
         $GLOBALS['connection'] = new PDO ("mysql:host=$hostname;dbname=$dbname", $user, $pass);
         $GLOBALS['connection']->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $GLOBALS['connection']->query("use treni_fll;");

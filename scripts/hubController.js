@@ -320,5 +320,3 @@ function printAdd(add) {
         aW.innerHTML = "<br>" + "0x";
     }
 }
-
-
