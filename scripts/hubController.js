@@ -215,6 +215,7 @@ function automatic() {
     setTimeout(callRemoveWagons, 3000);
     setTimeout(callAddWagons, 6000);
     setTimeout(trainDeparture, 9500);
+    reset();
 }
 
 

@@ -1,9 +1,9 @@
-// var aperto = false;
-// $('.stazione1').click(function () {
-//     $('.rectBlue').children('h3').text($(this).attr('name'));
+var aperto = false;
+$('.stazione1').click(function () {
+    $('.rectBlue').children('h3').text($(this).attr('name'));
+    showTrains();
 
-
-// });
+});
 let tw = document.querySelectorAll(".tw");
 let sw = document.querySelectorAll(".sw");
 const button = document.getElementById("start");
